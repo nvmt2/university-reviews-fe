@@ -1,0 +1,108 @@
+.SignUp {
+    width: 100%;
+    height: 100%;
+    background: url(https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-blue-tech-geometric-graphic-party-sign-in-background-material-backgroundgeometryevening-sign-image_73734.jpg) ;
+}
+
+.title-SignUp {
+    width: 40vw;
+    font-size: 50px;
+    text-align: left;
+    margin: 10% auto;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 700;
+}
+
+form {
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 45px 10px 40px 10px;
+    border-radius: 10px;
+
+}
+
+form>h2 {
+    color: #7f7683;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-group {
+    width: 400px;
+    margin-top: 40px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title-input {
+    font-size: 16px;
+    font-weight: 500;
+    color: #766776;
+    margin-top: 20px;
+    margin-bottom: 3px;
+}
+
+.SignUp-input {
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 15px 0px 15px 10px;
+    border-radius: 30px;
+    box-shadow:  0px 5px 8px -9px rgba(0, 0, 0, 1);
+}
+
+.SignUp-input > input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+    padding-left: 10px;
+}
+
+::placeholder {
+    opacity: 0.5;
+}
+
+.hidden-pass {
+    text-align: right;
+    margin-left: 30%;
+}
+
+.acc {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-style: italic;
+    text-decoration: none;
+    color: #6e6798;
+    font-weight: 450;
+}
+
+.acc:hover {
+    text-decoration: none;
+    color: #4421de;
+}
+
+.done {
+    height: 50px;
+    border: none;
+    background-color: #7bd629;
+    border-radius: 99px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.done:hover {
+    background-color: #3f9b1a;
+    transition: 0.5s ease-in;
+}
