@@ -36,6 +36,10 @@ function SignUp() {
               </div>
               <a href="#" className="acc">Đã có tài khoản</a>
               <button className="done">Xong</button>
+              <div className="infor">
+                <p>Theo dõi chúng tôi qua</p>
+                <a href="https://www.facebook.com/messages/t/3555565087788394">https://www.facebook/cs41.04</a>
+              </div>
             </div>
           </form>
         </div>
