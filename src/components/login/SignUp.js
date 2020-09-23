@@ -5,7 +5,6 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
-import gsap from "gsap";
 import { TweenMax, Power2, Bounce} from "gsap";
 
 function SignUp() {
