@@ -44,9 +44,13 @@ function Index({ match }) {
       </div> */}
 
       <div>
-        <h1 className="test"> Trang chủ ( Thiện code) </h1>
-        {/* Code ở đây .......... */}
-        <p>Thiênj chó</p>
+        <h1>đây là body area</h1>
+        <div>
+          <a href="/topics">Click to Topic</a>
+          <i className="fas fa-hand-spock">11</i>
+          <h1 className="test"> Trang chủ ( Thiện code) </h1>
+          {/* Code ở đây .......... */}
+        </div>
       </div>
     </div>
   );
