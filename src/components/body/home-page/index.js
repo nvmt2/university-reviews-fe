@@ -1,13 +1,55 @@
 import React from "react";
+import "./../style.css";
+// import { NavLink } from "react-router-dom";
 
-function Index() {
+// const data = [
+//   {
+//     name: "Duy Tan",
+//     slug: "dtu",
+//     rating: 5,
+//   },
+//   {
+//     name: "Dai hoc bach khoa",
+//     slug: "bku",
+//     rating: 4,
+//   },
+//   {
+//     name: "Dai hoc Ha Noi",
+//     slug: "hn",
+//     rating: 4,
+//   },
+// ];
+// const slugs = data.map((item) => item.slug);
+function Index({ match }) {
   return (
     <div>
+      {/* <div>
+        <ul>
+          {data.map((item, index) => (
+            <li>
+              <NavLink
+                key={index}
+                to={(location) => {
+                  return {
+                    pathname: `${location.pathname}topics/${item.slug}`,
+                    state: { slugs: slugs },
+                  };
+                }}
+              >
+                Xem binh luận {item.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div> */}
+
       <div>
         <h1>đây là body area</h1>
         <div>
           <a href="/topics">Click to Topic</a>
           <i className="fas fa-hand-spock">11</i>
+          <h1 className="test"> Trang chủ ( Thiện code) </h1>
+          {/* Code ở đây .......... */}
         </div>
       </div>
     </div>

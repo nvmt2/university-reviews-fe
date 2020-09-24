@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useRef, useEffect } from "react";
 import "./SignIn.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -7,6 +8,10 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import { TweenMax, Power2, Elastic} from "gsap";
+=======
+import React from "react";
+import "./style.css";
+>>>>>>> cfadd050cd05bd880172608d1e0281f3fc6434fb
 
 function SignIn() {
   let title = useRef(null);
@@ -32,6 +37,7 @@ function SignIn() {
   },[])
 
   return (
+<<<<<<< HEAD
     <div className="SignIn">
       <div className="container">
         <div className="row">
@@ -79,6 +85,16 @@ function SignIn() {
               </div>
             </div>
           </form>
+=======
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-10 border">
+            <h1>Đăng nhập (Sang code)</h1>
+            
+          </div>
+          <div className="col-md-2"></div>
+>>>>>>> cfadd050cd05bd880172608d1e0281f3fc6434fb
         </div>
       </div>
     </div>

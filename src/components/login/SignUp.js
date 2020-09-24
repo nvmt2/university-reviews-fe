@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, {useRef, useEffect} from "react";
+=======
+import React from "react";
+
+>>>>>>> cfadd050cd05bd880172608d1e0281f3fc6434fb
 import "./SignUp.css";
 import "bootstrap/dist/css/bootstrap.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -64,7 +69,9 @@ function SignUp() {
                   <VisibilityOffIcon />
                 </div>
               </div>
-              <a href="#" className="acc">Đã có tài khoản</a>
+              <a href="#" className="acc">
+                Đã có tài khoản
+              </a>
               <button className="done">Xong</button>
               <div className="infor">
                 <p>Theo dõi chúng tôi qua</p>
