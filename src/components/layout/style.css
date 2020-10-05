@@ -1,0 +1,15 @@
+.header-page {
+  background-color: #27363d;
+}
+.header-page ul {
+  list-style-type: none;
+}
+.border {
+  border: 1px solid red;
+}
+.search {
+  height: 50px;
+  width: 60%;
+  background-color: grey;
+  color: white;
+}

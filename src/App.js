@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "../node_modules/@fortawesome/fontawesome-free/js/all";
