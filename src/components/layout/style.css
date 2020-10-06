@@ -1,11 +1,20 @@
-.header-page {
-  background-color: #27363d;
+.border-red {
+  border: 2px solid red;
 }
-.header-page ul {
+button,
+form {
+  background: none;
+}
+/* Css for header */
+.background-color-header {
+  background-color: #27363d;
+  color: white;
+}
+.list-header {
   list-style-type: none;
 }
-.border {
-  border: 1px solid red;
+.list-header li {
+  display: inline;
 }
 .search {
   height: 50px;
