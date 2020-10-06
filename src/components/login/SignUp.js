@@ -40,6 +40,7 @@ function SignUp() {
             ref={(el) => {
               formSignUp = el;
             }}
+            className="form-SignUp"
           >
             <h2>Đăng ký</h2>
             <div className="form-group">
