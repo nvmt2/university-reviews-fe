@@ -14,12 +14,12 @@ function SignIn() {
 
   useEffect(() => {
     TweenMax.from(title, {
-      duration: 2.5,
+      duration: 1.5,
       x: -1000,
       ease: Elastic.easeOut(1, 0.3),
     });
     TweenMax.from(formSignIn, {
-      duration: 2.5,
+      duration: 1.5,
       x: 1000,
       ease: Elastic.easeOut(1, 0.3),
     });
@@ -41,9 +41,10 @@ function SignIn() {
             ref={(el) => {
               formSignIn = el;
             }}
-          >
+            className="form-SignIn"
+            >
             <h2>Đăng nhập</h2>
-            <div className="form-SignIn">
+            <div className="form-group">
               <span className="title-input">Email</span>
               <div className="SignIn-input">
                 <MailOutlineIcon />

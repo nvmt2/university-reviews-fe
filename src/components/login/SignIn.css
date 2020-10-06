@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
 }
 
+
 .title-SignIn {
     width: 40vw;
     font-size: 50px;
@@ -17,15 +18,15 @@
 }
 
 .form-SignIn {
-    width: 400px;
-    margin-top: 40px;
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    flex-direction: column;
-    
-
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 45px 10px 20px 10px;
+    border-radius: 10px;
 }
 
 .SignIn-input {
@@ -91,8 +92,8 @@
 }
 
 .social {
-    color: #4e0ed1;
+    color: #ffffff;
     padding: 5px 8px 12px 9px;
     border-radius: 99px;
-    background-color: rgba(0, 0, 255, 0.3);
+    background-color: rgba(0, 0, 255, 0.1);
 }
