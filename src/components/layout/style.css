@@ -1,24 +1,62 @@
 .border-red {
   border: 2px solid red;
 }
-button,
-form {
-  background: none;
-}
+
 /* Css for header */
-.background-color-header {
+.header-page {
   background-color: #27363d;
+  font-size: 14px;
   color: white;
 }
-.list-header {
-  list-style-type: none;
+.nav {
+  padding: 5px 0px 10px 0px;
 }
-.list-header li {
-  display: inline;
+.header-page ::placeholder {
+  color: #bfbdbd;
 }
-.search {
-  height: 50px;
-  width: 60%;
-  background-color: grey;
+.icons {
+  color: #bfbdbd;
+  position: absolute;
+  margin: 12px 0px 0px 20px;
+}
+.input-field {
+  height: 40px;
+  width: 90%;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 5px;
+  margin-right: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #707070;
+}
+.input-field:hover {
+  background-color: #414141;
+  border: none;
+}
+.form-list-lang {
+  padding-top: 10px;
+}
+.form-list-lang img {
+  padding-right: 10px;
+  max-width: 50px;
+}
+.list-lang {
+  width: 50px;
+  background: none;
   color: white;
+  border: none;
+}
+.list-lang option {
+  color: black;
+}
+.wrap-account {
+  padding-top: 10px;
+}
+.wrap-account a {
+  color: #bfbdbd;
+  padding-left: 20px;
+  text-decoration: none;
+}
+.wrap-account a:hover {
+  font-weight: 600;
 }

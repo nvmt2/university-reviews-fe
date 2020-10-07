@@ -1,38 +1,63 @@
 import React from "react";
 import "./style.css";
 import NavBar from "./nav-link/NavBar";
-// import { } from ""
+// import { } from "<i class="fa fa-search-minus" aria-hidden="true"></i>"
 
 function Header() {
   return (
     <>
-      <div className="container-fluid border background-color-header">
+      <div className="container-fluid header-page">
         <div className="row">
-          <div className="col-lg-2 border">
-            <img src="" alt="logo"></img>
-          </div>
-          <div className="col-lg-7 border">
-            <ul className="list-header ">
-              <li>
-                <form className="border-red ">
-                  <input
-                    className="search border-red "
-                    type="text"
-                    placeholder="Tìm kiếm... "
-                  />
-                  <button type="submit">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                    <span>Nhập tên trường cần tìm</span>
-                  </button>
-                </form>
-              </li>
-              <li>logo VietNam</li>
-              <li>drop box</li>
-              <li>vi</li>
-            </ul>
-          </div>
-          <div className="col-lg-3 border">
-            <NavBar />
+          <div className="col-lg-10 offset-lg-1">
+            <div className="row">
+              <div className="col-lg-2">
+                <img
+                  src="/assets/header/logo-cat.png"
+                  alt="logo"
+                  width="90px"
+                ></img>
+              </div>
+
+              <div className="col-lg-8 nav">
+                {/* Search form */}
+                <div className="col-lg-9">
+                  <form>
+                    <div>
+                      <i
+                        className="fa fa-search fa-lg icons"
+                        aria-hidden="true"
+                      ></i>
+                      <input
+                        className="input-field"
+                        type="text"
+                        placeholder="Nhập tên trường cần tìm kiếm..."
+                      />
+                    </div>
+                  </form>
+                </div>
+                {/* select list languages */}
+                <div className="col-lg-3">
+                  <form className="form-list-lang">
+                    <img
+                      src="/assets/header/Vietnam.jpg"
+                      width="40px"
+                      alt="logo vietnam"
+                    />
+                    <select name="language" className="list-lang">
+                      <option>Vi</option>
+                      <option>En</option>
+                      <option>Fr</option>
+                    </select>
+                  </form>
+                </div>
+              </div>
+
+              <div className="col-lg-2 nav">
+                <div className="wrap-account">
+                  <NavBar />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
