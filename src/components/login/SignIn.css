@@ -11,22 +11,30 @@
     width: 40vw;
     font-size: 50px;
     text-align: left;
-    margin: 10% auto;
     color: #ffffff;
     font-style: italic;
     font-weight: 700;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .form-SignIn {
     width: auto;
     height: auto;
     background-color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 66px;
+    margin-bottom: 66px;
     margin-left: auto;
     margin-right: auto;
-    padding: 45px 10px 20px 10px;
+    padding: 84px 10px 20px 10px;
     border-radius: 10px;
+}
+
+.form-SignIn>h2 {
+    color: #818A91;
+    font: normal normal bold 35px/47px Segoe UI;
+    text-align: center;
 }
 
 .SignIn-input {
@@ -57,7 +65,7 @@
 .forgot {
     text-align: right;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
     font-style: italic;
     text-decoration: none;
     color: #6e6798;
@@ -71,7 +79,7 @@
 
 .infor-SignIn {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 65px;
 }
 
 .infor-SignIn>p {
@@ -92,8 +100,14 @@
 }
 
 .social {
-    color: #ffffff;
+    color: #370cad;
     padding: 5px 8px 12px 9px;
     border-radius: 99px;
-    background-color: rgba(0, 0, 255, 0.1);
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+.social:hover {
+    color: #ffffff;
+    background-color: #370cad;
+    transition: all 0.5s ;
 }

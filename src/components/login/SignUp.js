@@ -12,12 +12,12 @@ function SignUp() {
 
   useEffect(() => {
     TweenMax.from(title, {
-      duration: 1,
+      duration: 0.8,
       y: -1000,
       ease: Bounce,
     });
     TweenMax.from(formSignUp, {
-      duration: 1,
+      duration: 0.8,
       delay: 1,
       x: -1250,
       ease: Power2.in,
