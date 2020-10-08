@@ -8,17 +8,17 @@ function Header() {
     <>
       <div className="container-fluid header-page">
         <div className="row">
-          <div className="col-lg-10 offset-lg-1">
+          <div className="col-lg-10 offset-lg-1 ">
             <div className="row">
-              <div className="col-lg-2">
+              <div className="col-lg-1">
                 <img
                   src="/assets/header/logo-cat.png"
                   alt="logo"
-                  width="90px"
+                  width="80px"
                 ></img>
               </div>
 
-              <div className="col-lg-8 nav">
+              <div className="col-lg-9 nav">
                 {/* Search form */}
                 <div className="col-lg-9">
                   <form>
