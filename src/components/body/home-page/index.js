@@ -1,29 +1,19 @@
 import React from "react";
 import "./../style.css";
-// import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-// const data = [
-//   {
-//     name: "Duy Tan",
-//     slug: "dtu",
-//     rating: 5,
-//   },
-//   {
-//     name: "Dai hoc bach khoa",
-//     slug: "bku",
-//     rating: 4,
-//   },
-//   {
-//     name: "Dai hoc Ha Noi",
-//     slug: "hn",
-//     rating: 4,
-//   },
-// ];
-// const slugs = data.map((item) => item.slug);
+const data = [
+  {
+    name: "Duy Tan",
+    slug: "dtu",
+    rating: 5,
+  },
+];
+const slugs = data.map((item) => item.slug);
 function Index({ match }) {
   return (
     <div>
-      {/* <div>
+      <div>
         <ul>
           {data.map((item, index) => (
             <li>
@@ -36,12 +26,12 @@ function Index({ match }) {
                   };
                 }}
               >
-                Xem binh luận {item.name}
+                 {item.name}
               </NavLink>
             </li>
           ))}
         </ul>
-      </div> */}
+      </div>
 
       <div>
         <div id="banner">
