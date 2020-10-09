@@ -14,12 +14,12 @@ function SignIn() {
 
   useEffect(() => {
     TweenMax.from(title, {
-      duration: 1.5,
+      duration: 1,
       x: -1000,
       ease: Elastic.easeOut(1, 0.3),
     });
     TweenMax.from(formSignIn, {
-      duration: 1.5,
+      duration: 1,
       x: 1000,
       ease: Elastic.easeOut(1, 0.3),
     });
@@ -35,7 +35,7 @@ function SignIn() {
               title = el;
             }}
           >
-            Đăng nhập để cùng chia sẽ cảm nghĩ của bạn nào...
+            Đăng nhập để tìm kiếm con đường của bạn nào...
           </h1>
           <form
             ref={(el) => {
