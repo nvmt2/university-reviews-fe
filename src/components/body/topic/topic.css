@@ -1,0 +1,203 @@
+.banner-topic {
+    background-image: url(/assets/topic/bg-topic.png);
+    background-size: cover;
+    width: 100%;
+    height: 235px;
+}
+
+.title-banner-topic {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-school {
+    color: white;
+    font: normal normal bold 40px/53px Segoe UI;
+}
+
+.review-topic {
+    margin-top: 17px;
+    text-decoration: none;
+    font: normal normal bold 20px/27px Segoe UI;
+    color: #013248;
+    border-radius: 50px;
+    align-items: center;
+    padding: 6px 17px 6px 17px;
+}
+
+.review-topic:hover {
+    text-decoration: none;
+}
+
+.wirte {
+    width: 170px;
+    align-items: center;
+    background: #fff;
+}
+
+.read {
+    width: 295px;
+    align-items: center;
+    background: #CADEE8 0% 0% no-repeat padding-box;
+    ;
+    margin-bottom: 32px;
+}
+
+/*-------main topic--------------*/
+
+.main-topic {
+    margin-top: 78px;
+}
+
+.rows {
+    display: flex;
+}
+
+.items-topics {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    content: none;
+}
+
+.group-topic {
+    padding: 25px 35px 25px 35px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    margin-bottom: 60px;
+    height: auto;
+}
+
+.group-user {
+    flex: 10;
+    margin-right: 20%;
+}
+
+.group-user>.MuiSvgIcon-root {
+    width: 5rem;
+    height: 4rem;
+}
+
+.infor-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.title-user {
+    font: normal normal bold 16px/21px Segoe UI;
+    color: #013248;
+    font-size: 16px;
+    display: block;
+    margin: 0;
+}
+
+.date-topic {
+    font: normal normal normal 12px/16px Segoe UI;
+    letter-spacing: 0px;
+    color: #013248;
+    font-size: 12px;
+}
+
+.rating-topic {
+    margin-right: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.count-topic>svg {
+    color: #035C84;
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    margin-right: 2.5px;
+}
+
+.title-rating-topic {
+    font: normal normal normal 12px/16px Segoe UI;
+    color: #013248;
+    font-size: 12px;
+}
+
+.infor-topic {
+    margin-top: 18px;
+}
+
+.title-infor-topic {
+    font-size: 20px;
+    font: normal normal bold 20px/27px Segoe UI;
+    color: #013248;
+    margin-bottom: 11px;
+}
+
+.content-infor-topic {
+    font: normal normal normal 16px/21px Segoe UI;
+    letter-spacing: 0px;
+    color: #013248;
+    text-align: justify;
+}
+
+.view-topic {
+    margin: 0;
+}
+
+.viewMore-topic {
+    font: normal normal normal 16px/21px Segoe UI;
+    letter-spacing: 0px;
+    color: #013248;
+    flex: 1;
+}
+
+.content-categories-topic {
+    font: normal normal normal 12px/16px Segoe UI;
+    letter-spacing: 0px;
+    color: #013248;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 1px 8px 3px 8px;
+}
+
+.group-categories-topic {
+    height: 370px;
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    padding-left: 21px;
+    margin-left: 35px;
+}
+
+.title-categories-topic {
+    font: normal normal bold 14px/19px Segoe UI;
+    letter-spacing: 0px;
+    color: #5D963F;
+    margin-top: 16px;
+}
+
+.category-topic {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-category-topic {
+    font: normal normal normal 14px/19px Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: #818A91 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    padding: 2px 5px 3px 5px;
+    margin-right: 8px;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+.content-category-topic:hover {
+    text-decoration: none;
+    color: #084f70;
+}

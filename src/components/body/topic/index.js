@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 import "./../style.css";
+import "./topic.css";
+
+import CreateIcon from "@material-ui/icons/Create";
+import CameraRollIcon from "@material-ui/icons/CameraRoll";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function Index({ location }) {
-
   // const slugs = location.state ? location.state.slugs : [];
   // const checkslugs = (nameSlug) => nameSlug === slug;
   // useEffect(() => {
@@ -19,8 +23,138 @@ function Index({ location }) {
     if (!location.state) history.push("/notfound");
   }, []);
   return (
-    <div>
-      <h1>Chi tiết topic ( Thiện code )</h1>
+    <div className="topic">
+      <div className="banner-topic">
+        <div className="container">
+          <div className="title-banner-topic">
+            <h2 className="title-school">Đại học Duy Tân</h2>
+            <a href="#" className="review-topic wirte">
+              <CreateIcon />
+              Viết review
+            </a>
+            <a href="#" className="review-topic read">
+              <CameraRollIcon />
+              Xem thông tin về trường
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="main-topic">
+          <div className="row">
+            <div className="col-md-8 items-topics">
+              <div className="group-topic">
+                <div className="row content-topic">
+                  <div className="col-md-8 row group-user">
+                    <AccountCircleIcon />
+                    <div className="infor-user">
+                      <p className="title-user">Username1</p>
+                      <p className="date-post">05/08/2020</p>
+                    </div>
+                  </div>
+                  <div className="rating-topic">
+                    <div className="count-topic">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="far fa-star"></i>
+                    </div>
+                    <p className="title-rating-topic">Độ uy tín của Topic</p>
+                  </div>
+                </div>
+                <div className="infor-topic">
+                  <h2 className="title-infor-topic">
+                    Cơ sở vật chất thật tuyệt!!!
+                  </h2>
+                  <p className="content-infor-topic">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Maiores enim ab qui aperiam iste eos voluptate alias iure
+                    voluptatum, amet culpa, vero, consectetur voluptatem!
+                    Reprehenderit aut, tempora, quasi suscipit minima fugiat
+                    consequatur quas nisi at est maiores ab iure vero dolorem
+                    rem distinctio? Tempora, eligendi deserunt sint perspiciatis
+                    quis recusandae.
+                  </p>
+                  <div className="row view-topic">
+                    <p className="viewMore-topic">Đọc thêm...</p>
+                    <div className="row group-content-categories-topic">
+                      <p className="content-categories-topic">Carzy</p>
+                      <p className="content-categories-topic">Cơ sở vật chất</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="group-topic">
+                <div className="row content-topic">
+                  <div className="col-md-8 row group-user">
+                    <AccountCircleIcon />
+                    <div className="infor-user">
+                      <p className="title-user">Username1</p>
+                      <p className="date-post">05/08/2020</p>
+                    </div>
+                  </div>
+                  <div className="rating-topic">
+                    <div className="count-topic">
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="fas fa-star"></i>
+                      <i className="far fa-star"></i>
+                    </div>
+                    <p className="title-rating-topic">Độ uy tín của Topic</p>
+                  </div>
+                </div>
+                <div className="infor-topic">
+                  <h2 className="title-infor-topic">
+                    Cơ sở vật chất thật tuyệt!!!
+                  </h2>
+                  <p className="content-infor-topic">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Maiores enim ab qui aperiam iste eos voluptate alias iure
+                    voluptatum, amet culpa, vero, consectetur voluptatem!
+                    Reprehenderit aut, tempora, quasi suscipit minima fugiat
+                    consequatur quas nisi at est maiores ab iure vero dolorem
+                    rem distinctio? Tempora, eligendi deserunt sint perspiciatis
+                    quis recusandae.
+                  </p>
+                  <div className="row view-topic">
+                    <p className="viewMore-topic">Đọc thêm...</p>
+                    <div className="row group-content-categories-topic">
+                      <p className="content-categories-topic">Carzy</p>
+                      <p className="content-categories-topic">Cơ sở vật chất</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* --topic noi bat-- */}
+            <div className="col-md-3 group-categories-topic">
+              <p className="title-categories-topic">Chuyên mục nổi bật</p>
+              <div className="category-topic">
+                <a href="#" className="content-category-topic">
+                  Bạo lực
+                </a>
+                <a href="#" className="content-category-topic">
+                  Test
+                </a>
+                <a href="#" className="content-category-topic">
+                  Cơ sở vật chất
+                </a>
+                <a href="#" className="content-category-topic">
+                  Học phí
+                </a>
+                <a href="#" className="content-category-topic">
+                  Ngành học
+                </a>
+                <a href="#" className="content-category-topic">
+                  Sinh viên
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
