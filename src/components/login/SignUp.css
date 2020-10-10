@@ -10,33 +10,35 @@
     width: 40vw;
     font-size: 50px;
     text-align: left;
-    margin: 10% auto;
     color: #ffffff;
     font-style: italic;
     font-weight: 700;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .form-SignUp {
     width: auto;
     height: auto;
     background-color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 66px;
+    margin-bottom: 66px;
     margin-left: auto;
     margin-right: auto;
-    padding: 45px 10px 20px 10px;
+    padding: 84px 10px 20px 10px;
     border-radius: 10px;
 }
 
 .form-SignUp>h2 {
-    color: #7f7683;
-    font-weight: 700;
+    color: #818A91;
+    font: normal normal bold 35px/47px Segoe UI;
     text-align: center;
 }
 
 .form-group {
     width: 400px;
-    margin-top: 40px;
+    margin-top: 61px;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
@@ -44,12 +46,17 @@
     flex-direction: column;
 }
 
+.title-input:nth-child(1) {
+    margin-top: 0 !important;
+}
+
 .title-input {
     font-size: 16px;
     font-weight: 500;
     color: #766776;
-    margin-top: 20px;
+    margin-top: 35px;
     margin-bottom: 3px;
+    margin-left: 25px;
 }
 
 .SignUp-input {
@@ -80,7 +87,7 @@
 .acc {
     text-align: right;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
     font-style: italic;
     text-decoration: none;
     color: #6e6798;
@@ -95,7 +102,7 @@
 .done {
     height: 50px;
     border: none;
-    background-color: #7bd629;
+    background: transparent linear-gradient(91deg, #A2C78D 0%, #88D162 16%, #68CE32 46%, #8DDC63 100%) 0% 0% no-repeat padding-box;
     border-radius: 99px;
     color: #ffffff;
     font-size: 20px;
@@ -103,18 +110,18 @@
 }
 
 .done:hover {
-    background-color: #3f9b1a;
+    background: #49703a;
     transition: 0.5s ease-in;
 }
 
 .infor {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 65px;
 }
 
 .infor>p {
     font-weight: 600;
-    font-size: 12px;
+    font: normal normal bold 14px/19px Segoe UI;
     margin-bottom: 0;
 }
 

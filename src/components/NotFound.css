@@ -1,0 +1,15 @@
+.wrap-not-found {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.img-notFound {
+  width: 30%;
+  height: auto;
+}
+.text-not-found {
+  font-weight: 700;
+}
+.content {
+  font-size: medium;
+}
