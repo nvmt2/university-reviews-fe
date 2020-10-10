@@ -77,7 +77,7 @@ function Index({ location }) {
                     quis recusandae.
                   </p>
                   <div className="row view-topic">
-                    <p className="viewMore-topic">Đọc thêm...</p>
+                    <a href className="viewMore-topic">Đọc thêm...</a>
                     <div className="row group-content-categories-topic">
                       <p className="content-categories-topic">Carzy</p>
                       <p className="content-categories-topic">Cơ sở vật chất</p>

@@ -26,18 +26,22 @@
     padding: 6px 17px 6px 17px;
 }
 
+.review-topic> .MuiSvgIcon-root {
+    margin-right: 10px;
+}
+
 .review-topic:hover {
     text-decoration: none;
 }
 
 .wirte {
-    width: 170px;
+    width: 180px;
     align-items: center;
     background: #fff;
 }
 
 .read {
-    width: 295px;
+    width: 305px;
     align-items: center;
     background: #CADEE8 0% 0% no-repeat padding-box;
     ;
