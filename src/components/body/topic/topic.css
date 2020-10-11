@@ -1,247 +1,246 @@
-
-
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .banner-topic {
-    background-image: url(/assets/topic/bg-topic.png);
-    background-size: cover;
-    width: 100%;
-    height: 235px;
+  background-image: url(/assets/topic/bg-topic.png);
+  background-size: cover;
+  width: 100%;
+  height: 235px;
 }
 
 .title-banner-topic {
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title-school {
-    color: white;
-    font-size: 43px;
-    font-weight: bold;
+  color: white;
+  font-size: 43px;
+  font-weight: bold;
 }
 
 .review-topic {
-    margin-top: 17px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #013248;
-    border-radius: 50px;
-    align-items: center;
-    padding: 6px 17px 6px 17px;
+  margin-top: 17px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #013248;
+  border-radius: 50px;
+  align-items: center;
+  padding: 6px 17px 6px 17px;
 }
 
-.review-topic> .MuiSvgIcon-root {
-    margin-right: 10px;
+.review-topic > .MuiSvgIcon-root {
+  margin-right: 10px;
 }
 
 .review-topic:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .wirte {
-    width: 180px;
-    align-items: center;
-    background: #fff;
+  width: 180px;
+  align-items: center;
+  background: #fff;
 }
 
 .read {
-    width: 305px;
-    align-items: center;
-    background: #CADEE8 0% 0% no-repeat padding-box;
-    
-    margin-bottom: 32px;
+  width: 305px;
+  align-items: center;
+  background: #cadee8 0% 0% no-repeat padding-box;
+
+  margin-bottom: 32px;
 }
 
 /*-------main topic--------------*/
 
 .background-topic {
-    background: transparent linear-gradient(30deg, #F6F6F6 0%, #F2F6F0 15%, #D7F5C8 100%);
-    border-top-right-radius: 60%;
+  /* background: transparent
+    linear-gradient(30deg, #f6f6f6 0%, #f2f6f0 15%, #d7f5c8 100%); */
+  border-top-right-radius: 60%;
 }
 
 .main-topic {
-    margin-top: 78px;
+  margin-top: 78px;
 }
 
 .rows {
-    display: flex;
+  display: flex;
 }
 
 .items-topics {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    content: none;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  content: none;
 }
 
 .group-topic {
-    padding: 25px 35px 25px 35px;
-    border-radius: 5px;
-    background-color: rgba(218, 218, 218, .2);
-    align-items: center;
-    margin-bottom: 60px;
-    height: auto;
+  padding: 25px 35px 25px 35px;
+  border-radius: 5px;
+  background-color: rgba(218, 218, 218, 0.2);
+  align-items: center;
+  margin-bottom: 60px;
+  height: auto;
 }
 
 .group-topic:hover {
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
 }
 
 .group-user {
-    flex: 10;
-    margin-right: 20%;
-    color: #1e221d;
+  flex: 10;
+  margin-right: 20%;
+  color: #1e221d;
 }
 
 .group-user:hover {
-    text-decoration: none;
-    color: #1e221d;
+  text-decoration: none;
+  color: #1e221d;
 }
 
-.group-user>.MuiSvgIcon-root {
-    width: 50px;
-    height: 70px;
-    margin-left: 10px;
-    margin-right: 8px;
+.group-user > .MuiSvgIcon-root {
+  width: 50px;
+  height: 70px;
+  margin-left: 10px;
+  margin-right: 8px;
 }
 
 .infor-user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .title-user {
-    font-size: 16px;
-    color: #5cb85c;
-    font-size: 16px;
-    display: block;
-    margin: 0;
+  font-size: 16px;
+  color: #5cb85c;
+  font-size: 16px;
+  display: block;
+  margin: 0;
 }
 
 .date-topic {
-    color: #bbb;
-    font-size: .8rem;
-    display: block;
-    margin-left: -16px;
+  color: #bbb;
+  font-size: 0.8rem;
+  display: block;
+  margin-left: -16px;
 }
 
 .rating-topic {
-    margin-right: 0;
-    flex: 1;
-    text-align: center;
+  margin-right: 0;
+  flex: 1;
+  text-align: center;
 }
 
-.count-topic>svg {
-    color: #035C84;
-    font-size: 15px;
-    justify-content: center;
-    text-align: center;
-    margin-right: 2.5px;
+.count-topic > svg {
+  color: #035c84;
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  margin-right: 2.5px;
 }
 
 .title-rating-topic {
-    font-size: 12px;
-    color: #013248;
+  font-size: 12px;
+  color: #013248;
 }
 
 .infor-topic {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .title-infor-topic {
-    font-size: 18px;
-    font-weight: 600;
-    color: #013248;
-    margin-bottom: 3px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #013248;
+  margin-bottom: 3px;
 }
 
 .content-infor-topic {
-    font-weight: 300;
-    color: rgb(109, 109, 109);
-    margin-bottom: 15px;
-    font-size: 1rem;
-    line-height: 1.3rem;
+  font-weight: 300;
+  color: rgb(109, 109, 109);
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.3rem;
 }
 
 .view-topic {
-    margin: 0;
+  margin: 0;
 }
 
 .viewMore-topic {
-    font-size: .8rem;
-    font-weight: 300;
-    color: rgb(165, 165, 165);
-    vertical-align: middle;
-    flex: 1;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgb(165, 165, 165);
+  vertical-align: middle;
+  flex: 1;
 }
 
 .viewMore-topic:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .content-categories-topic {
-    font-size: .8rem;
-    font-weight: 300;
-    color: rgb(99, 99, 99);
-    vertical-align: middle;
-    margin-left: 10px;
-    border: 1px solid rgb(102, 102, 102);
-    border-radius: 20px;
-    padding: 1px 8px 3px 8px;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgb(99, 99, 99);
+  vertical-align: middle;
+  margin-left: 10px;
+  border: 1px solid rgb(102, 102, 102);
+  border-radius: 20px;
+  padding: 1px 8px 3px 8px;
 }
 
 .content-categories-topic:hover {
-    text-decoration: none;
-    background-color: rgba(20, 24, 68, 0.3);
-    transition: all 0.2s;
+  text-decoration: none;
+  background-color: rgba(20, 24, 68, 0.3);
+  transition: all 0.2s;
 }
 
 .group-categories-topic {
-    height: 370px;
-    background: #F3F3F3 ;
-    border-radius: 10px;
-    padding-left: 21px;
-    margin-left: 35px;
+  height: 370px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding-left: 21px;
+  margin-left: 35px;
 }
 
 .title-categories-topic {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0px;
-    color: #1e221d;
-    margin-top: 16px;
-    margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: #1e221d;
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
 .category-topic {
-    margin-top: 2px;
-    display: flex;
-    flex-wrap: wrap;
+  margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .content-category-topic {
-    font-size: .7rem;
-    font-weight: 450;
-    color: #FFFFFF;
-    background: #818A91;
-    border: 1px solid #707070;
-    border-radius: 18px;
-    padding: 2px 5px 3px 5px;
-    margin-right: 5px;
-    margin-top: 5px;
-    text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: #818a91;
+  border: 1px solid #707070;
+  border-radius: 18px;
+  padding: 2px 5px 3px 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  text-decoration: none;
 }
 
 .content-category-topic:hover {
-    text-decoration: none;
-    color: #084f70;
+  text-decoration: none;
+  color: #084f70;
 }
