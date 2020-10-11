@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .banner-topic {
     background-image: url(/assets/topic/bg-topic.png);
     background-size: cover;
@@ -13,13 +17,15 @@
 
 .title-school {
     color: white;
-    font: normal normal bold 40px/53px Segoe UI;
+    font-size: 43px;
+    font-weight: bold;
 }
 
 .review-topic {
     margin-top: 17px;
     text-decoration: none;
-    font: normal normal bold 20px/27px Segoe UI;
+    font-size: 20px;
+    font-weight: bold;
     color: #013248;
     border-radius: 50px;
     align-items: center;
@@ -44,7 +50,7 @@
     width: 305px;
     align-items: center;
     background: #CADEE8 0% 0% no-repeat padding-box;
-    ;
+    
     margin-bottom: 32px;
 }
 
@@ -70,10 +76,15 @@
 .group-topic {
     padding: 25px 35px 25px 35px;
     border-radius: 5px;
-    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+    background-color: rgba(218, 218, 218, .2);
     align-items: center;
     margin-bottom: 60px;
     height: auto;
+}
+
+.group-topic:hover {
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
 }
 
 .group-user {
@@ -82,8 +93,10 @@
 }
 
 .group-user>.MuiSvgIcon-root {
-    width: 5rem;
-    height: 4rem;
+    width: 50px;
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 8px;
 }
 
 .infor-user {
@@ -94,18 +107,18 @@
 }
 
 .title-user {
-    font: normal normal bold 16px/21px Segoe UI;
-    color: #013248;
+    font-size: 16px;
+    color: #5cb85c;
     font-size: 16px;
     display: block;
     margin: 0;
 }
 
 .date-topic {
-    font: normal normal normal 12px/16px Segoe UI;
-    letter-spacing: 0px;
-    color: #013248;
-    font-size: 12px;
+    color: #bbb;
+    font-size: .8rem;
+    display: block;
+    margin-left: -16px;
 }
 
 .rating-topic {
@@ -123,27 +136,27 @@
 }
 
 .title-rating-topic {
-    font: normal normal normal 12px/16px Segoe UI;
-    color: #013248;
     font-size: 12px;
+    color: #013248;
 }
 
 .infor-topic {
-    margin-top: 18px;
+    margin-top: 10px;
 }
 
 .title-infor-topic {
-    font-size: 20px;
-    font: normal normal bold 20px/27px Segoe UI;
+    font-size: 18px;
+    font-weight: 600;
     color: #013248;
-    margin-bottom: 11px;
+    margin-bottom: 3px;
 }
 
 .content-infor-topic {
-    font: normal normal normal 16px/21px Segoe UI;
-    letter-spacing: 0px;
-    color: #013248;
-    text-align: justify;
+    font-weight: 300;
+    color: rgb(109, 109, 109);
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.3rem;
 }
 
 .view-topic {
@@ -151,52 +164,66 @@
 }
 
 .viewMore-topic {
-    font: normal normal normal 16px/21px Segoe UI;
-    letter-spacing: 0px;
-    color: #013248;
+    font-size: .8rem;
+    font-weight: 300;
+    color: rgb(165, 165, 165);
+    vertical-align: middle;
     flex: 1;
 }
 
+.viewMore-topic:hover {
+    text-decoration: none;
+}
+
 .content-categories-topic {
-    font: normal normal normal 12px/16px Segoe UI;
-    letter-spacing: 0px;
-    color: #013248;
+    font-size: .8rem;
+    font-weight: 300;
+    color: rgb(99, 99, 99);
+    vertical-align: middle;
     margin-left: 10px;
-    border: 1px solid black;
+    border: 1px solid rgb(102, 102, 102);
     border-radius: 20px;
     padding: 1px 8px 3px 8px;
 }
 
+.content-categories-topic:hover {
+    text-decoration: none;
+    background-color: rgba(20, 24, 68, 0.3);
+    transition: all 0.2s;
+}
+
 .group-categories-topic {
     height: 370px;
-    background: #F3F3F3 0% 0% no-repeat padding-box;
+    background: #F3F3F3 ;
     border-radius: 10px;
     padding-left: 21px;
     margin-left: 35px;
 }
 
 .title-categories-topic {
-    font: normal normal bold 14px/19px Segoe UI;
+    font-size: 14px;
+    font-weight: 400;
     letter-spacing: 0px;
-    color: #5D963F;
+    color: #1e221d;
     margin-top: 16px;
+    margin-bottom: 0;
 }
 
 .category-topic {
-    margin-top: 14px;
+    margin-top: 2px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .content-category-topic {
-    font: normal normal normal 14px/19px Segoe UI;
-    letter-spacing: 0px;
+    font-size: .7rem;
+    font-weight: 450;
     color: #FFFFFF;
-    background: #818A91 0% 0% no-repeat padding-box;
+    background: #818A91;
     border: 1px solid #707070;
     border-radius: 18px;
     padding: 2px 5px 3px 5px;
-    margin-right: 8px;
+    margin-right: 5px;
     margin-top: 5px;
     text-decoration: none;
 }

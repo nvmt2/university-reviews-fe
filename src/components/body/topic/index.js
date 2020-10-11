@@ -49,7 +49,7 @@ function Index({ location }) {
                     <AccountCircleIcon />
                     <div className="infor-user">
                       <p className="title-user">Username1</p>
-                      <p className="date-post">05/08/2020</p>
+                      <p className="date-topic">05/08/2020</p>
                     </div>
                   </div>
                   <div className="rating-topic">
@@ -77,10 +77,16 @@ function Index({ location }) {
                     quis recusandae.
                   </p>
                   <div className="row view-topic">
-                    <a href className="viewMore-topic">Đọc thêm...</a>
+                    <a href="#" className="viewMore-topic">
+                      Đọc thêm...
+                    </a>
                     <div className="row group-content-categories-topic">
-                      <p className="content-categories-topic">Carzy</p>
-                      <p className="content-categories-topic">Cơ sở vật chất</p>
+                      <a href="3" className="content-categories-topic">
+                        Carzy
+                      </a>
+                      <a href="#" className="content-categories-topic">
+                        Cơ sở vật chất
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -91,7 +97,7 @@ function Index({ location }) {
                     <AccountCircleIcon />
                     <div className="infor-user">
                       <p className="title-user">Username1</p>
-                      <p className="date-post">05/08/2020</p>
+                      <p className="date-topic">05/08/2020</p>
                     </div>
                   </div>
                   <div className="rating-topic">
@@ -119,10 +125,16 @@ function Index({ location }) {
                     quis recusandae.
                   </p>
                   <div className="row view-topic">
-                    <p className="viewMore-topic">Đọc thêm...</p>
+                    <a href="#" className="viewMore-topic">
+                      Đọc thêm...
+                    </a>
                     <div className="row group-content-categories-topic">
-                      <p className="content-categories-topic">Carzy</p>
-                      <p className="content-categories-topic">Cơ sở vật chất</p>
+                      <a href="#" className="content-categories-topic">
+                        Carzy
+                      </a>
+                      <a href="#" className="content-categories-topic">
+                        Cơ sở vật chất
+                      </a>
                     </div>
                   </div>
                 </div>
