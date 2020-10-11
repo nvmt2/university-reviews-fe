@@ -1,3 +1,5 @@
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -56,6 +58,11 @@ html {
 
 /*-------main topic--------------*/
 
+.background-topic {
+    background: transparent linear-gradient(30deg, #F6F6F6 0%, #F2F6F0 15%, #D7F5C8 100%);
+    border-top-right-radius: 60%;
+}
+
 .main-topic {
     margin-top: 78px;
 }
@@ -90,6 +97,12 @@ html {
 .group-user {
     flex: 10;
     margin-right: 20%;
+    color: #1e221d;
+}
+
+.group-user:hover {
+    text-decoration: none;
+    color: #1e221d;
 }
 
 .group-user>.MuiSvgIcon-root {
