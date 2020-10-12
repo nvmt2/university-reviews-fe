@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
-import "./../style.css";
+import { NavLink } from "react-router-dom";
 import "./topic.css";
 import Categories from './Categories';
 
@@ -9,6 +9,7 @@ import CameraRollIcon from "@material-ui/icons/CameraRoll";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function Index({ location }) {
+  console.log("LOCATION", location)
   // const slugs = location.state ? location.state.slugs : [];
   // const checkslugs = (nameSlug) => nameSlug === slug;
   // useEffect(() => {
@@ -24,6 +25,17 @@ function Index({ location }) {
     if (!location.state) history.push("/notfound");
   }, []);
   return (
+    <>
+    <NavLink
+
+      to={() => {
+       return {
+        pathname: `${location.pathname}/comments`,
+        };
+      }}
+>
+ comment
+</NavLink>
     <div className="topic">
       <div className="banner-topic">
         <div className="container">
@@ -149,6 +161,7 @@ function Index({ location }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 export default Index;
