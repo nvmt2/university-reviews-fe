@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, useHistory, useLocation } from "react-router-dom";
 import "./../style.css";
 import "./topic.css";
+import Categories from './Categories';
 
 import CreateIcon from "@material-ui/icons/Create";
 import CameraRollIcon from "@material-ui/icons/CameraRoll";
@@ -142,29 +143,7 @@ function Index({ location }) {
                 </div>
               </div>
               {/* --topic noi bat-- */}
-              <div className="col-md-3 group-categories-topic">
-                <p className="title-categories-topic">Chuyên mục nổi bật</p>
-                <div className="category-topic">
-                  <a href="#" className="content-category-topic">
-                    Bạo lực
-                  </a>
-                  <a href="#" className="content-category-topic">
-                    Test
-                  </a>
-                  <a href="#" className="content-category-topic">
-                    Cơ sở vật chất
-                  </a>
-                  <a href="#" className="content-category-topic">
-                    Học phí
-                  </a>
-                  <a href="#" className="content-category-topic">
-                    Ngành học
-                  </a>
-                  <a href="#" className="content-category-topic">
-                    Sinh viên
-                  </a>
-                </div>
-              </div>
+              <Categories />
             </div>
           </div>
         </div>
