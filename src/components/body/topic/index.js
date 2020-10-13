@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, useLocation } from "react-router-dom";
 import "./../style.css";
 
 function Index({ location }) {
+
   // const slugs = location.state ? location.state.slugs : [];
   // const checkslugs = (nameSlug) => nameSlug === slug;
   // useEffect(() => {
@@ -15,7 +16,7 @@ function Index({ location }) {
 
   useEffect(() => {
     //Check current param with array params in data
-    if (!location.state) history.push("/error");
+    if (!location.state) history.push("/notfound");
   }, []);
   return (
     <div>
