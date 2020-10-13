@@ -1,5 +1,5 @@
 import React from "react";
-import "./../style.css";
+import "./home-page.css";
 import { NavLink } from "react-router-dom";
 
 const data = [
@@ -14,9 +14,9 @@ function Index({ match }) {
   return (
     <div>
       <div>
-        <ul>
+  
           {data.map((item, index) => (
-            <li>
+          
               <NavLink
                 key={index}
                 to={(location) => {
@@ -28,53 +28,53 @@ function Index({ match }) {
               >
                  {item.name}
               </NavLink>
-            </li>
+           
           ))}
-        </ul>
+    
       </div>
 
       <div>
         <div id="banner">
           <div id="bg-banner">
-            <h1 class="text-center text-capitalize font-weight-bold text-light pt-3">
+            <h1 className="text-center text-capitalize font-weight-bold text-light pt-3">
               university reviews
             </h1>
-            <h3 class="text-center text-light">
+            <h3 className="text-center text-light">
               A place to share your felling
             </h3>
           </div>
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9" id="content">
-              <div class="highlight-topic rounded-lg">
-                <div class="row">
-                  <div class="col-md-2">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-9" id="content">
+              <div className="highlight-topic rounded-lg">
+                <div className="row">
+                  <div className="col-md-2">
                     <div id="img-logo">
                       <a href="#">
                         <img
                           src="images/logoDTU.png"
                           alt=""
-                          class="anh logo-university img-fluid"
+                          className="anh logo-university img-fluid"
                         />
                       </a>
                     </div>
                   </div>
-                  <div class="col-md-10">
-                    <a href="a.com" class="university-name">
+                  <div className="col-md-10">
+                    <a href="a.com" className="university-name">
                       Đại Học Duy Tân
                     </a>
-                    <span class="address">
+                    <span className="address">
                       254, Nguyễn Văn Linh, Hải Châu, Đà Nẵng
                     </span>
-                    <span class="count-rate mr-3">
-                      <i class="fas fa-star"></i> 200 đánh giá
+                    <span className="count-rate mr-3">
+                      <i className="fas fa-star"></i> 200 đánh giá
                     </span>
-                    <span class="count-comment">
-                      <i class="fas fa-comments"></i> 462 bình luận
+                    <span className="count-comment">
+                      <i className="fas fa-comments"></i> 462 bình luận
                     </span>
 
-                    <p class="demo-content">
+                    <p className="demo-content">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Maiores enim ab qui aperiam iste eos voluptate alias iure
                       voluptatum, amet culpa, vero, consectetur voluptatem!
@@ -84,87 +84,87 @@ function Index({ match }) {
                       perspiciatis quis recusandae.
                     </p>
 
-                    <a href="a.com" class="detail">
-                      Chi tiết <i class="fas fa-chevron-right"></i>
+                    <a href="a.com" className="detail">
+                      Chi tiết <i className="fas fa-chevron-right"></i>
                     </a>
-                    <i class="far fa-bookmark"></i>
+                    <i className="far fa-bookmark"></i>
                   </div>
                 </div>
               </div>
 
               {/* <!-- ------phân trang  --> */}
 
-              <nav class="pagination justify-content-center">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <span class="page-link">Trước</span>
+              <nav className="pagination justify-content-center">
+                <ul className="pagination">
+                  <li className="page-item">
+                    <span className="page-link">Trước</span>
                   </li>
-                  <li class="page-item">
-                    <a href="a.com" class="page-link">
+                  <li className="page-item">
+                    <a href="a.com" className="page-link">
                       1
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a href="a.com" class="page-link">
+                  <li className="page-item">
+                    <a href="a.com" className="page-link">
                       2
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a href="a.com" class="page-link">
+                  <li className="page-item">
+                    <a href="a.com" className="page-link">
                       3
                     </a>
                   </li>
-                  <li class="page-item">
-                    <a href="a.com" class="page-link">
+                  <li className="page-item">
+                    <a href="a.com" className="page-link">
                       ...
                     </a>
                   </li>
-                  <li class="page-item">
-                    <span class="page-link">Sau</span>
+                  <li className="page-item">
+                    <span className="page-link">Sau</span>
                   </li>
                 </ul>
               </nav>
             </div>
             {/* <!-- =========end content=========== --> */}
-            <div class="col-md-3" id="sidebar">
-              <div id="count-start" class="text-center rounded-lg">
-                <p class="count-review">
+            <div className="col-md-3" id="sidebar">
+              <div id="count-start" className="text-center rounded-lg">
+                <p className="count-review">
                   Tổng đánh giá<span>(2100)</span>
                 </p>
-                <p class="count5">
-                  <span>600</span> review <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
+                <p className="count5">
+                  <span>600</span> review <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </p>
-                <p class="count4">
-                  <span>500</span> review <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
+                <p className="count4">
+                  <span>500</span> review <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="far fa-star"></i>
                 </p>
-                <p class="count3">
-                  <span>400</span> review <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
+                <p className="count3">
+                  <span>400</span> review <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
                 </p>
-                <p class="count2">
-                  <span>300</span> review <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
+                <p className="count2">
+                  <span>300</span> review <i className="fas fa-star"></i>
+                  <i className="fas fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
                 </p>
-                <p class="count1">
-                  <span>200</span> review <i class="fas fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
-                  <i class="far fa-star"></i>
+                <p className="count1">
+                  <span>200</span> review <i className="fas fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
+                  <i className="far fa-star"></i>
                 </p>
               </div>
             </div>
