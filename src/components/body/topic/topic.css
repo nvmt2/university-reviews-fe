@@ -26,10 +26,11 @@ html {
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  color: #013248;
+  color: #ffffff;
   border-radius: 50px;
   align-items: center;
   padding: 6px 17px 6px 17px;
+  background: #5cb85c;
 }
 
 .review-topic > .MuiSvgIcon-root {
@@ -38,29 +39,22 @@ html {
 
 .review-topic:hover {
   text-decoration: none;
+  color: #1e221d;
+  transition: 0.3s;
 }
 
 .wirte {
   width: 180px;
   align-items: center;
-  background: #fff;
 }
 
 .read {
   width: 305px;
   align-items: center;
-  background: #cadee8 0% 0% no-repeat padding-box;
-
   margin-bottom: 32px;
 }
 
 /*-------main topic--------------*/
-
-.background-topic {
-   background: transparent
-    linear-gradient(30deg, #f6f6f6 0%, #f2f6f0 15%, #d7f5c8 100%);
-  border-top-right-radius: 60%;
-}
 
 .main-topic {
   margin-top: 78px;
@@ -82,15 +76,15 @@ html {
 .group-topic {
   padding: 25px 35px 25px 35px;
   border-radius: 5px;
-  background-color: rgba(218, 218, 218, 0.6);
   align-items: center;
   margin-bottom: 60px;
   height: auto;
+  border-bottom: 0.8px solid rgba(49, 48, 48, 0.4);
 }
 
 .group-topic:hover {
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
+  background: #f5fbf2;
+  transition: all 0.2s;
 }
 
 .group-user {
@@ -121,7 +115,7 @@ html {
 .title-user {
   font-size: 16px;
   color: #5cb85c;
-  font-size: 16px;
+  font-weight: 500;
   display: block;
   margin: 0;
 }
@@ -139,8 +133,9 @@ html {
   text-align: center;
 }
 
+
 .count-topic > svg {
-  color: #035c84;
+  color: #5cb85c;
   font-size: 15px;
   justify-content: center;
   text-align: center;
@@ -149,7 +144,7 @@ html {
 
 .title-rating-topic {
   font-size: 12px;
-  color: #013248;
+  color: #5cb85c;
 }
 
 .infor-topic {
@@ -168,7 +163,10 @@ html {
   color: rgb(109, 109, 109);
   margin-bottom: 15px;
   font-size: 1rem;
-  line-height: 1.3rem;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .view-topic {
@@ -200,8 +198,9 @@ html {
 
 .content-categories-topic:hover {
   text-decoration: none;
-  background-color: rgba(20, 24, 68, 0.3);
+  background-color: #5cb85c;
   transition: all 0.2s;
+  color: #ffffff;
 }
 
 .group-categories-topic {
