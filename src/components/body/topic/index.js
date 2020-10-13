@@ -52,7 +52,6 @@ function Index({ location }) {
           </div>
         </div>
       </div>
-      <div className="background-topic">
         <div className="container">
           <div className="main-topic">
             <div className="row">
@@ -159,7 +158,6 @@ function Index({ location }) {
             </div>
           </div>
         </div>
-      </div>
     </div>
     </>
   );
