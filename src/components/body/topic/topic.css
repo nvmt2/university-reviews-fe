@@ -26,11 +26,18 @@ html {
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
+<<<<<<< HEAD
   color: #ffffff;
   border-radius: 50px;
   align-items: center;
   padding: 6px 17px 6px 17px;
   background: #5cb85c;
+=======
+  color: #013248;
+  border-radius: 50px;
+  align-items: center;
+  padding: 6px 17px 6px 17px;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .review-topic > .MuiSvgIcon-root {
@@ -39,23 +46,44 @@ html {
 
 .review-topic:hover {
   text-decoration: none;
+<<<<<<< HEAD
   color: #1e221d;
   transition: 0.3s;
+=======
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .wirte {
   width: 180px;
   align-items: center;
+<<<<<<< HEAD
+=======
+  background: #fff;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .read {
   width: 305px;
   align-items: center;
+<<<<<<< HEAD
+=======
+  background: #cadee8 0% 0% no-repeat padding-box;
+
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
   margin-bottom: 32px;
 }
 
 /*-------main topic--------------*/
 
+<<<<<<< HEAD
+=======
+.background-topic {
+  /* background: transparent
+    linear-gradient(30deg, #f6f6f6 0%, #f2f6f0 15%, #d7f5c8 100%); */
+  border-top-right-radius: 60%;
+}
+
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 .main-topic {
   margin-top: 78px;
 }
@@ -76,6 +104,7 @@ html {
 .group-topic {
   padding: 25px 35px 25px 35px;
   border-radius: 5px;
+<<<<<<< HEAD
   align-items: center;
   margin-bottom: 60px;
   height: auto;
@@ -85,6 +114,17 @@ html {
 .group-topic:hover {
   background: #f5fbf2;
   transition: all 0.2s;
+=======
+  background-color: rgba(218, 218, 218, 0.2);
+  align-items: center;
+  margin-bottom: 60px;
+  height: auto;
+}
+
+.group-topic:hover {
+  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .group-user {
@@ -115,7 +155,11 @@ html {
 .title-user {
   font-size: 16px;
   color: #5cb85c;
+<<<<<<< HEAD
   font-weight: 500;
+=======
+  font-size: 16px;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
   display: block;
   margin: 0;
 }
@@ -133,9 +177,14 @@ html {
   text-align: center;
 }
 
+<<<<<<< HEAD
 
 .count-topic > svg {
   color: #5cb85c;
+=======
+.count-topic > svg {
+  color: #035c84;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
   font-size: 15px;
   justify-content: center;
   text-align: center;
@@ -144,7 +193,11 @@ html {
 
 .title-rating-topic {
   font-size: 12px;
+<<<<<<< HEAD
   color: #5cb85c;
+=======
+  color: #013248;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .infor-topic {
@@ -163,10 +216,14 @@ html {
   color: rgb(109, 109, 109);
   margin-bottom: 15px;
   font-size: 1rem;
+<<<<<<< HEAD
   height: 30px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+=======
+  line-height: 1.3rem;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .view-topic {
@@ -198,9 +255,14 @@ html {
 
 .content-categories-topic:hover {
   text-decoration: none;
+<<<<<<< HEAD
   background-color: #5cb85c;
   transition: all 0.2s;
   color: #ffffff;
+=======
+  background-color: rgba(20, 24, 68, 0.3);
+  transition: all 0.2s;
+>>>>>>> b0be650b890265b614091a130ae7eb791b7edff6
 }
 
 .group-categories-topic {
