@@ -4,6 +4,7 @@ import SignIn from "./components/login/SignIn";
 import SignUp from "./components/login/SignUp";
 import Comment from "./components/body/comment"
 import NotFound from "./components/NotFound";
+import UserProfile from "./components/body/user-profile";
 
 export default [
   { path: "/", exact: true, component: Home },
@@ -11,5 +12,6 @@ export default [
   { path: "/login", component: SignIn },
   { path: "/register", component: SignUp },
   { path: "/topics/:slug/comments", component: Comment},
+  { path: "/user", component: UserProfile},
   { path: "/", component: NotFound },
 ];
