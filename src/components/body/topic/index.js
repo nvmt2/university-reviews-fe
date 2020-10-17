@@ -90,9 +90,7 @@ function Index({ location }) {
                       perspiciatis quis recusandae.
                     </p>
                     <div className="row view-topic">
-                      <a href="http://localhost:3000/topics/dtu/comments" className="viewMore-topic">
-                        Đọc thêm...
-                      </a>
+                      Đọc thêm
                       <div className="row group-content-categories-topic">
                         <a href="3" className="content-categories-topic">
                           Carzy
