@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./home-page.css";
 import { NavLink } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import homepageQueries  from "query/homepage";
+import MainHome from "./MainHome";
 
-const data = [
+const array = [
   {
     name: "Duy Tan",
     slug: "dtu",
     rating: 5,
   },
 ];
-const slugs = data.map((item) => item.slug);
+const slugs = array.map((item) => item.slug);
 function Index({ match }) {
+    const { data, loading, error } = useQuery(homepageQueries.GET_ALL_UNIVERSITY)
+    useEffect(() => {
+        
+    }, [data, loading, error])
   return (
     <div>
       <div>
-  
-          {data.map((item, index) => (
+          {/* {data.allUniversities.map((item, index) => (
+          
+
           
               <NavLink
                 key={index}
@@ -28,8 +36,7 @@ function Index({ match }) {
               >
                  {item.name}
               </NavLink>
-           
-          ))}
+          ))} */}
       </div>
       <div id="banner">
         <div id="bg-banner">   
@@ -106,26 +113,22 @@ function Index({ match }) {
                 </div> 
                 {/* <!-- ket thuc sidebar --> */}
                 <div class="col-md-9" id="content">
-                    <div class="highlight-topic">
-                        <div class="row">
-                            <div class="col-md-1">
-                                <div id="img-logo">
-                                    <a href="#" ><img src="/assets/home-page/logoDTU.png" alt=""class="anh logo-university img-fluid" /></a>
-                                </div>
-                            </div>
-                            <div class="col-md-11 padding-left-32">
-                                <a href="#" class="university-name">Đại Học Duy Tân</a>
-                                <span class="address">254, Nguyễn Văn Linh, Hải Châu, Đà Nẵng</span>
-                                <span class="count-rate mr-3"><i class="fas fa-star"></i> 200 đánh giá</span>
-                                <span class="count-comment"><i class="fas fa-comments"></i> 462 bình luận</span>
-                
-                                <p class="demo-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores enim ab qui aperiam iste eos voluptate alias iure voluptatum, amet culpa, vero, consectetur voluptatem! Reprehenderit aut, tempora, quasi suscipit minima fugiat consequatur quas nisi at est maiores ab iure vero dolorem rem distinctio? Tempora, eligendi deserunt sint perspiciatis quis recusandae.</p>
-                
-                                <a href="#" class="detail">Chi tiết <i class="fas fa-chevron-right"></i></a>
-                                <i class="far fa-bookmark"></i>                
-                            </div>
-                        </div>
-                    </div>
+
+                {
+                    
+                    !loading && !error && data ? (
+                        data.allUniversities.map((item, index)=> {
+                        return <MainHome {...item} key={index}/>
+                    })
+                    ) : 
+                    (
+                        <div>loading</div>
+                    )
+                }
+                {
+                    console.log("Index home page", data, loading, error)
+                }
+                  
 
                     {/* <!-- ------phân trang  --> */}
 
