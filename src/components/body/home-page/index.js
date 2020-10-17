@@ -7,6 +7,7 @@ import MainHome from "./MainHome";
 
 const array = [
   {
+    id: "123ie12bd@8",
     name: "Duy Tan",
     slug: "dtu",
     rating: 5,
@@ -21,11 +22,11 @@ function Index({ match }) {
   return (
     <div>
       <div>
-          {/* {data.allUniversities.map((item, index) => (
-          
+          {array.map((item, index) => {
+              return (
+                  <div>
 
-          
-              <NavLink
+                  <NavLink
                 key={index}
                 to={(location) => {
                   return {
@@ -34,9 +35,25 @@ function Index({ match }) {
                   };
                 }}
               >
-                 {item.name}
+                 Topic
               </NavLink>
-          ))} */}
+
+              <NavLink
+                key={index}
+                to={(location) => {
+                  return {
+                    pathname: `${location.pathname}detail-university/${item.slug}`,
+                    state: { slugs: slugs },
+                  };
+                }}
+              >
+                 Chi tiết mỗi trường
+              </NavLink>
+                  </div> 
+              )      
+              
+          })}
+     
       </div>
       <div id="banner">
         <div id="bg-banner">   
@@ -109,20 +126,17 @@ function Index({ match }) {
                             
                         </form>
                     </div>
-
                 </div> 
                 {/* <!-- ket thuc sidebar --> */}
                 <div class="col-md-9" id="content">
-
                 {
-                    
                     !loading && !error && data ? (
                         data.allUniversities.map((item, index)=> {
                         return <MainHome {...item} key={index}/>
                     })
                     ) : 
                     (
-                        <div>loading</div>
+                        <h5>Loading...</h5>
                     )
                 }
                 {
