@@ -5,7 +5,8 @@ import SignUp from "./components/login/SignUp";
 import Comment from "./components/body/comment"
 import NotFound from "./components/NotFound";
 import UserProfile from "./components/body/user-profile";
-import DetailUniversity from "./components/body/detail-university"
+import DetailUniversity from "./components/body/detail-university";
+
 
 export default [
   { path: "/", exact: true, component: Home },
@@ -15,6 +16,6 @@ export default [
   { path: "/topics/:slug/comments", component: Comment},
   { path: "/user", component: UserProfile},
   { path: "/detail-university/:slug", component: DetailUniversity},
+
   { path: "/", component: NotFound },
- 
 ];

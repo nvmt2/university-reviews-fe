@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Mạjor() {
+function Major() {
     return (
         <div>
             Nội dung trang chuyên ngành
@@ -8,4 +8,4 @@ function Mạjor() {
     )
 }
 
-export default Mạjor
+export default Major

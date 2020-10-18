@@ -24,28 +24,27 @@ function Index({ match }) {
       <div>
           {array.map((item, index) => {
               return (
-                  <div>
-
+                  <div   key={index}>
                   <NavLink
-                key={index}
+              
                 to={(location) => {
                   return {
                     pathname: `${location.pathname}topics/${item.slug}`,
                     state: { slugs: slugs },
                   };
-                }}
+                }}  
               >
                  Topic
               </NavLink>
-
+              <br/>
               <NavLink
-                key={index}
                 to={(location) => {
                   return {
                     pathname: `${location.pathname}detail-university/${item.slug}`,
                     state: { slugs: slugs },
                   };
                 }}
+                onClick={()=> localStorage.setItem("slugUniversity", slugs)}
               >
                  Chi tiết mỗi trường
               </NavLink>
@@ -58,32 +57,32 @@ function Index({ match }) {
       <div id="banner">
         <div id="bg-banner">   
         </div>
-        <h1 class=" text-capitalize font-weight-bold">university reviews</h1>
-        <h3 class="text-center text-light">A place to share basic information about university</h3>
+        <h1 className=" text-capitalize font-weight-bold">university reviews</h1>
+        <h3 className="text-center text-light">A place to share basic information about university</h3>
     </div>
 
-    <div class="container">
-      <div class="row">
-      <div class="col-md-3 p-0" id="sidebar">
-                    <div id="filter" class="text-center">
-                        <a href="#" class="map d-block text-center"><i class="fas fa-map-marked-alt"></i> Xem vị trí</a>
-                        <form action="" class="filter-form">
-                            <div class="form-group">
-                                <label for="" class="region d-block font-weight-bold">Tìm kiếm theo vùng</label>
-                                <label for="" class="locate d-block">
+    <div className="container">
+      <div className="row">
+      <div className="col-md-3 p-0" id="sidebar">
+                    <div id="filter" className="text-center">
+                        <a href="#" className="map d-block text-center"><i className="fas fa-map-marked-alt"></i> Xem vị trí</a>
+                        <form action="" className="filter-form">
+                            <div className="form-group">
+                                <label for="" className="region d-block font-weight-bold">Tìm kiếm theo vùng</label>
+                                <label for="" className="locate d-block">
                                     <input type="radio" name="locate" value="" id="bac" /><label for="bac">Miền Bắc</label>
                                 </label>
-                                <label for="" class="locate d-block">
+                                <label for="" className="locate d-block">
                                     <input type="radio" name="locate" value="" id="trung" /><label for="trung">Miền Trung</label>
                                 </label>
-                                <label for="" class="locate  d-block">
+                                <label for="" className="locate  d-block">
                                     <input type="radio" name="locate" value="" id="nam" /><label for="nam">Miền Nam</label>
                                 </label>
                                 <hr />
                                 {/* <!-- -----------end tìm kiếm theo vùng---------- --> */}
-                                <label for="" class="region d-block font-weight-bold mb-3">Nhóm ngành</label>
-                                <label for="" class="locate d-block margin-r-10">
-                                    <select name="nhomNghanh" id="nhomNghanh" class="form-control">
+                                <label for="" className="region d-block font-weight-bold mb-3">Nhóm ngành</label>
+                                <label for="" className="locate d-block margin-r-10">
+                                    <select name="nhomNghanh" id="nhomNghanh" className="form-control">
                                         <option value="">Tất cả nhóm nghành</option>
                                         <option value="">Sản xuất và chế biến</option>
                                         <option value="">Kiến trúc và xây dựng</option>
@@ -99,36 +98,36 @@ function Index({ match }) {
                                 </label>
                                 <hr />
                                 {/* <!-- -----------end nhóm nghành---------- --> */}
-                                <label for="" class="region d-block font-weight-bold mb-3">Ngành</label>
-                                <label for="" class="locate d-block margin-r-10">
-                                    <select name="nhomNghanh" id="nhomNghanh" class="form-control">
+                                <label for="" className="region d-block font-weight-bold mb-3">Ngành</label>
+                                <label for="" className="locate d-block margin-r-10">
+                                    <select name="nhomNghanh" id="nhomNghanh" className="form-control">
                                         <option value="">Tất cả nghành</option>
                                     </select>
                                 </label>
                                 <hr />
                                 {/* <!-- end ngành  --> */}
-                                <label for="" class="region d-block font-weight-bold mb-3">Loại trường</label>
-                                <label for="" class="locate d-block">
+                                <label for="" className="region d-block font-weight-bold mb-3">Loại trường</label>
+                                <label for="" className="locate d-block">
                                     <input type="checkbox" name="loaiTruong" value="" id="DHCL" /><label for="DHCL">Đại học công lập</label>
                                 </label>
-                                <label for="" class="locate d-block">
+                                <label for="" className="locate d-block">
                                     <input type="checkbox" name="loaiTruong" value="" id="DHTH" /><label for="DHTH">Đại học tư thục</label>
                                 </label>
-                                <label for="" class="locate d-block">
+                                <label for="" className="locate d-block">
                                     <input type="checkbox" name="loaiTruong" value="" id="CD" /><label for="CD">Cao đẳng</label>
                                 </label>
-                                <label for="" class="locate d-block">
+                                <label for="" className="locate d-block">
                                     <input type="checkbox" name="loaiTruong" value="" id="DTN" /><label for="DTN">Đào tạo nghề</label>
                                 </label>
                                 {/* <!-- end --> */}
-                                <button class="btn btn-loc">Lọc</button>
+                                <button className="btn btn-loc">Lọc</button>
                             </div>
                             
                         </form>
                     </div>
                 </div> 
                 {/* <!-- ket thuc sidebar --> */}
-                <div class="col-md-9" id="content">
+                <div className="col-md-9" id="content">
                 {
                     !loading && !error && data ? (
                         data.allUniversities.map((item, index)=> {
@@ -146,25 +145,25 @@ function Index({ match }) {
 
                     {/* <!-- ------phân trang  --> */}
 
-                    <nav class="pagination justify-content-center">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <span class="page-link">Trước</span>
+                    <nav className="pagination justify-content-center">
+                        <ul className="pagination">
+                            <li className="page-item">
+                                <span className="page-link">Trước</span>
                             </li>
-                            <li class="page-item">
-                                <a href="" class="page-link">1</a>
+                            <li className="page-item">
+                                <a href="" className="page-link">1</a>
                             </li>
-                            <li class="page-item">
-                                <a href="" class="page-link">2</a>
+                            <li className="page-item">
+                                <a href="" className="page-link">2</a>
                             </li>
-                            <li class="page-item">
-                                <a href="" class="page-link">3</a>
+                            <li className="page-item">
+                                <a href="" className="page-link">3</a>
                             </li>
-                            <li class="page-item">
-                                <a href="" class="page-link">...</a>
+                            <li className="page-item">
+                                <a href="" className="page-link">...</a>
                             </li>
-                            <li class="page-item">
-                                <span class="page-link">Sau</span>
+                            <li className="page-item">
+                                <span className="page-link">Sau</span>
                             </li>
                         </ul>
                     </nav>
