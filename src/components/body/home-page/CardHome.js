@@ -1,7 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-function MainHome(props) {
-    console.log("DATA", props)
+function CardHome(props) {
     const { address, introduce, logo, name, zone} = props;
     return (
         <div class="highlight-topic">
@@ -27,4 +26,4 @@ function MainHome(props) {
     )
 }
 
-export default MainHome
+export default CardHome

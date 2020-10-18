@@ -5,11 +5,10 @@ import {
   NavLink
 } from "react-router-dom";
 import { routes, toRoutes } from "routes-detail-university";
-import Wrapper from "./Wrapper"
+import Wrapper from "./Wrapper";
 
 function Index(props) {
   const slug = useParams();
-  console.log("LOCATION",props )
     return (
       <Wrapper>
         <ul>
@@ -19,7 +18,7 @@ function Index(props) {
                 <NavLink to = {
                   location => {
                     return {
-                      pathname: `/detail-university/${localStorage["slugUniversity"]}${item.field}`,
+                      pathname: `/detail-university/${localStorage["slugUniversity"]}${item.field}`, //Because it don't keep old slug, it update new slug
                     }
                   }
                 }>

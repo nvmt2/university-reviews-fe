@@ -3,7 +3,7 @@ import "./home-page.css";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import homepageQueries  from "query/homepage";
-import MainHome from "./MainHome";
+import CardHome from "./CardHome";
 
 const array = [
   {
@@ -15,7 +15,7 @@ const array = [
 ];
 const slugs = array.map((item) => item.slug);
 function Index({ match }) {
-    const { data, loading, error } = useQuery(homepageQueries.GET_ALL_UNIVERSITY)
+    const { data, loading, error } = useQuery(homepageQueries.GET_ALL_UNIVERSITY);
     useEffect(() => {
         
     }, [data, loading, error])
@@ -35,18 +35,6 @@ function Index({ match }) {
                 }}  
               >
                  Topic
-              </NavLink>
-              <br/>
-              <NavLink
-                to={(location) => {
-                  return {
-                    pathname: `${location.pathname}detail-university/${item.slug}`,
-                    state: { slugs: slugs },
-                  };
-                }}
-                onClick={()=> localStorage.setItem("slugUniversity", slugs)}
-              >
-                 Chi tiết mỗi trường
               </NavLink>
                   </div> 
               )      
@@ -131,7 +119,20 @@ function Index({ match }) {
                 {
                     !loading && !error && data ? (
                         data.allUniversities.map((item, index)=> {
-                        return <MainHome {...item} key={index}/>
+                        return (
+                        <NavLink 
+                            key={index}
+                            to={(location) => {
+                            return {
+                                pathname: `${location.pathname}detail-university/${item.id}`,
+                            };
+                            }}
+                            onClick={()=> localStorage.setItem("slugUniversity", item.id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
+                        >
+                            <CardHome {...item} />
+                        </NavLink>
+                        )
+                      
                     })
                     ) : 
                     (
