@@ -1,0 +1,21 @@
+.title-intro-Uni {
+    font-weight: 700;
+    margin-top: 20px;
+    font-size: 35px;
+    display: block;
+}
+
+.main-intro-Uni {
+    margin-top: 10px;
+}
+
+.title-main-intro {
+    font-size: 25px;
+    font-weight: 550;
+}
+
+.content-intro {
+    text-align: justify;
+    font-size: 16px;
+    white-space: 2px;
+}

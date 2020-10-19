@@ -1,0 +1,39 @@
+.title-galery {
+    font-weight: 700;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.gird-galery {
+    justify-content: space-around;
+}
+
+.main-galery {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.content-img-galery {
+    font-size: 16px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+.img-galery {
+    width: 350px;
+    height: 250px;
+}
+
+.small-img-galery {
+    width: 250px;
+    height: 250px;
+}
+
+.big-img-galery {
+    width: 565px;
+    height: 250px;
+}

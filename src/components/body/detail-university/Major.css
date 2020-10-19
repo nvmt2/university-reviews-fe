@@ -1,0 +1,37 @@
+.title-major-Uni {
+    font-size: 35px;
+    font-weight: 700;
+    display: block;
+    margin-top: 20px;
+}
+
+.main-major {
+    margin-top: 10px;
+}
+
+.item-major {
+    width: 80%;
+}
+.title-major {
+    border: 1px solid black;
+    padding: 5px 10px 5px 10px;
+    background: rgba(37, 201, 59, 0.4);
+    border-radius: 5px;
+    border-bottom-right-radius: none;
+    margin-bottom: 0;
+}
+
+.list-major {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.list-item-major {
+    list-style: none;
+    border: 1px solid black;
+    border-top: none;
+    font-size: 16px;
+    margin-left: -5px;
+    padding: 5px 10px 5px 10px;
+}
