@@ -1,23 +1,26 @@
 import Index from 'components/layout';
-import React from 'react';
-import "./major.css"
+import React, { useEffect } from 'react';
+import detailUniversityQuery from "query/detail-university";
+import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
+import Loading from "common/Loading";
+import "./major.css";
+
 
 function Major() {
-    const data = [
-        {
-            name: "cong nghe",
-            group: ["cong nghe thong tin", "an ninh mang"],
-        },
-        {
-            name: "Bac Sy",
-            group: ["Bac sy thu y", "Bac sy rang ham mat", "Bac sy tam than"]
-        },
-        {
-            name: "nong lan",
-            group: ["Nong lam thuy san", "Nong nghiep", "Cong nghiep", "Danh bat ca"]
+    const { slug } = useParams();
+    const { data, loading, error } = useQuery(detailUniversityQuery.GET_MAJOR, {
+        variables: {
+            id: slug
         }
-        
-    ]
+    })
+    useEffect(()=>{
+
+    }, [data, loading, error]);
+    
+    const contentMajor = !loading && !error && !!data && data.allUniversities[0].detailUniversity.majors
+
+
     return (
         <div>
         <table >
@@ -27,29 +30,34 @@ function Major() {
                 <th scope="col">Tổ hợp môn</th>
            </thead>
            {
-               data.map((groupMajor, indexGroupMajor) => {
+               !!contentMajor ? (
+                contentMajor.map((groupMajor, indexGroupMajor) => {
                 
-                    return (
-                    <tbody key={indexGroupMajor}>
-                    {
-                        groupMajor.group.map((branchMajor, indexBranchMajor)=>(
-                            <tr>
-                                {
+                return (
+                <tbody key={indexGroupMajor}>
+                {
+                    groupMajor.majors.map((branchMajor, indexBranchMajor)=>(
+                        <tr>
+                            {
 
-                                    indexBranchMajor === 0 && (
-                                        <th scope="row" rowspan={ groupMajor.group.length }> {groupMajor.name} </th>
-                                    )
-                                }
-                                <td>{branchMajor}</td>
-                                <td>A01</td>
-                      
-                            </tr>
-                        ))
-                    }
-                   
-                    </tbody>
-                    )
-               })
+                                indexBranchMajor === 0 && (
+                                    <th scope="row" rowspan={ groupMajor.majors.length }> {groupMajor.name} </th>
+                                )
+                            }
+                            <td>{branchMajor.name}</td>
+                            <td>{branchMajor.subject}</td>
+                  
+                        </tr>
+                    ))
+                }
+               
+                </tbody>
+                )
+           })
+               ) : (
+                 <Loading />
+               )
+              
            }
         </table>
            

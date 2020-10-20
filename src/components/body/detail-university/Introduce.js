@@ -3,6 +3,7 @@ import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
+import Loading from "common/Loading"
 
 function Introduce() {
     const { slug } = useParams();
@@ -16,7 +17,7 @@ function Introduce() {
     }, [data, loading, error]);
     const contentIntroduce = !loading && !error && !!data && data.allUniversities[0].detailUniversity.introduce
     return (
-        <div>
+        <div style={{minHeight: "600px"}}>
         {
             !!contentIntroduce ? (
                 <span>
@@ -25,7 +26,7 @@ function Introduce() {
                     }
                 </span>
             ) :(
-                <h5>Loading...</h5>
+                <Loading />
             )
         }
             Nội dung trang Giới thiệu

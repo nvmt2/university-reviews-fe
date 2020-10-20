@@ -133,17 +133,7 @@ function Index({ match }) {
                     !loading && !error && data ? (
                         data.allUniversities.map((item, index)=> {
                         return (
-                        <NavLink 
-                            key={index}
-                            to={(location) => {
-                            return {
-                                pathname: `${location.pathname}detail-university/${item.id}`,
-                            };
-                            }}
-                            onClick={()=> localStorage.setItem("slugUniversity", item.id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
-                        >
-                            <CardHome {...item} />
-                        </NavLink>
+                            <CardHome key={index} {...item} /> 
                         )
                       
                     })

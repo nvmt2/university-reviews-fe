@@ -3,6 +3,7 @@ import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
+import Loading from "common/Loading";
 
 function Gallery() {
     const { slug } = useParams();
@@ -18,17 +19,17 @@ function Gallery() {
     console.log("Galleries", galleries)
 
     return (
-        <div>
+        <div style={{  display: "flex", flexFlow: "row wrap"}}>
            {
                !!galleries ? (
                 galleries.map((item,index)=>{
-                    return <div>
+                    return <div style={{ height: "100px"}}>
                         <img src={item.image.publicUrl} alt=" gallery" style={{ maxHeight: "400px"}} />
                         <p>{item.name}</p>
                     </div>
                 })
                ) : (
-                   <h5>Loading...</h5>
+                   <Loading />
                )
            }
         </div>
