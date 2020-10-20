@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import parse from "html-react-parser"
+import parse from "html-react-parser";
 
 function Introduce() {
     const { slug } = useParams();

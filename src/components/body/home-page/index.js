@@ -36,6 +36,19 @@ function Index({ match }) {
               >
                  Topic
               </NavLink>
+              <br />
+              <NavLink
+              
+                to={(location) => {
+                  return {
+              
+                    pathname: `${location.pathname}detail-university/${item.slug}`,
+                    state: { slugs: slugs },
+                  };
+                }}  
+              >
+                 Chi tiet truong
+              </NavLink>
                   </div> 
               )      
               
