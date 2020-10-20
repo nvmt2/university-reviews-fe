@@ -1,3 +1,48 @@
+.intro-Uni {
+    background: transparent linear-gradient(12deg, #F6F6F6 0%, #F2F6F0 15%, #D7F5C8 100%);
+    border-top-right-radius: 70%;
+    padding-top: 20px;
+}
+.infor-intro {
+    opacity: 0.7;
+}
+
+.dates-intro {
+    opacity: 0.7;
+    margin-left: 0px;
+    margin-top: -15px;
+}
+
+.date-intro {
+    margin-right: 10px;
+    margin-bottom: -10px;
+}
+
+.view-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    position: absolute;
+    margin-left: 2%;
+
+}
+
+.logo-intro {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position:50% 50%;
+    margin-bottom: 10px;
+}
+
+.count-view {
+    margin-top: 10xp;
+    margin-bottom: 5px;
+}
+
 .title-intro-Uni {
     font-weight: 700;
     margin-top: 20px;
@@ -18,4 +63,74 @@
     text-align: justify;
     font-size: 16px;
     white-space: 2px;
+}
+
+.infrastructure {
+    margin-top: 10px;
+}
+
+.img-infrastructure {
+    height: 215px;
+}
+
+.title-infrastructure {
+    font-size: 21px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.contact-intro {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 750;
+    text-shadow: 2px 2px rgba(0,0,0,.5);
+    font-size: 35px;
+}
+
+.img-contact {
+    margin-top: 10px;
+    width: 440px;
+    height: 250px;
+}
+
+
+.address-contact {
+    margin-top: 5px;
+}
+
+.address-contact:last-child {
+    margin-bottom: 20px;
+    margin-top: -10px !important;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.name-contact {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding-left: 15px;
+    border: 0.5px solid rgba(0,0,0,.5);
+    outline: none;
+}
+
+.send-contact {
+    width: 30%;
+    height: 40px;
+    border-radius: 10px;
+    background:transparent linear-gradient(93deg, #A2C78D 0%, #88D162 16%, #68CE32 46%, #8DDC63 100%);
+    border: none;
+    margin-bottom: 20px;
+} 
+
+.send-contact:hover {
+    background: #70a851;
+    transition: 0.3s ease-in;
 }
