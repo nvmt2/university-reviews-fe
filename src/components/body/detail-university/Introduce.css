@@ -1,7 +1,19 @@
 .intro-Uni {
-    background: transparent linear-gradient(12deg, #F6F6F6 0%, #F2F6F0 15%, #D7F5C8 100%);
-    border-top-right-radius: 70%;
+    
     padding-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-Uni:before {
+    content: '';
+    position: absolute;
+    width: 500%;
+    height: 500%;
+    z-index: -1;
+    background:#E2FFD2;
+    transform: rotate(70deg);
+    margin-top: 16%;
 }
 .infor-intro {
     opacity: 0.7;

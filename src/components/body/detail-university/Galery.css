@@ -24,16 +24,7 @@
 }
 
 .img-galery {
-    width: 350px;
+    width: auto;
     height: 250px;
 }
 
-.small-img-galery {
-    width: 250px;
-    height: 250px;
-}
-
-.big-img-galery {
-    width: 565px;
-    height: 250px;
-}

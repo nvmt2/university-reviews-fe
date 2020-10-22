@@ -27,6 +27,7 @@ function Major() {
           <th className="th-major">Nhóm ngành</th>
           <th className="th-major">Ngành</th>
           <th className="th-major">Tổ hợp môn</th>
+          <th className="th-major">Điểm chuẩn</th>
         </tr>
         <tbody className="tbody-major">
           <tr>
@@ -38,6 +39,7 @@ function Major() {
               D01 (Toán, Ngữ Văn, Tiếng Anh)
               <br /> D90 (Toán, Tiếng Anh, KHTN)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">
@@ -47,6 +49,7 @@ function Major() {
               D01 (Toán, Ngữ Văn, Tiếng Anh)
               <br /> D90 (Toán, Tiếng Anh, KHTN)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Hệ thống thông tin</td>
@@ -54,6 +57,7 @@ function Major() {
               D01 (Toán, Ngữ Văn, Tiếng Anh)
               <br /> D90 (Toán, Tiếng Anh, KHTN)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Mạng máy tính và truyền thông dữ liệu</td>
@@ -61,6 +65,7 @@ function Major() {
               D01 (Toán, Ngữ Văn, Tiếng Anh)
               <br /> D90 (Toán, Tiếng Anh, KHTN)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           {/**------------------- */}
           <tr>
@@ -73,6 +78,7 @@ function Major() {
               <br />
               A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Kỹ thuật Robot</td>
@@ -80,6 +86,7 @@ function Major() {
               A00 (Toán, Lý, Hóa)
               <br /> A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Kỹ thuật máy tính và robot</td>
@@ -87,6 +94,7 @@ function Major() {
               A00 (Toán, Lý, Hóa)
               <br /> A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           {/**----------------------- */}
           <tr>
@@ -98,6 +106,7 @@ function Major() {
               A00 (Toán, Lý, Hóa)
               <br /> A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Kỹ thuật Robot</td>
@@ -106,6 +115,7 @@ function Major() {
               <br />
               A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Kỹ thuật Robot</td>
@@ -114,12 +124,14 @@ function Major() {
               <br /> A01 (Toán, Lý, Anh)
             </td>
           </tr>
+          <td className="td-major">27.0</td>
           <tr>
             <td className="td-major">Kỹ thuật Robot</td>
             <td className="td-major">
               A00 (Toán, Lý, Hóa)
               <br /> A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
           <tr>
             <td className="td-major">Kỹ thuật Robot</td>
@@ -127,6 +139,7 @@ function Major() {
               A00 (Toán, Lý, Hóa)
               <br /> A01 (Toán, Lý, Anh)
             </td>
+            <td className="td-major">27.0</td>
           </tr>
         </tbody>
       </table>
