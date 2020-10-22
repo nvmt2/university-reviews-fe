@@ -30,7 +30,7 @@ function Galery() {
               className="img-galery"
               src="https://cdn.duytan.edu.vn/upload/images/1-11-2017-14-33-38-8.jpg"
             />
-            <p className="content-img-galery">Trường duy tân</p>
+            <p className="content-img-galery">Trường duy tânTrường duy tânTrường duy tânTrường duy tânTrường duy tânTrường duy tânTrường duy tânTrường duy tânTrường duy tân</p>
           </div>
           <div className="item-galery">
             <img
