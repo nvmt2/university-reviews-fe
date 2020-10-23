@@ -7,6 +7,12 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 function Major() {
   return (
     <div className="major-Uni">
+         <div className="view-intro">
+        <img src="/assets/intro/logo.png" className="logo-intro" alt="logo" />
+        <FavoriteIcon />
+        <p className="count-view">0</p>
+        <VisibilityIcon />
+      </div>
       <div className="container">
         <p className="infor-intro">admin.duytan</p>
         <div className="row dates-intro">
@@ -16,21 +22,18 @@ function Major() {
         </div>
       </div>
       <h1 className="container title-major">Ngành nghề đào tạo</h1>
-      <div className="view-intro">
-        <img src="/assets/intro/logo.png" className="logo-intro" />
-        <FavoriteIcon />
-        <p className="count-view">0</p>
-        <VisibilityIcon />
-      </div>
+ 
       <table className="container table-major">
+      <thead>
         <tr>
           <th className="th-major">Nhóm ngành</th>
           <th className="th-major">Ngành</th>
           <th className="th-major">Tổ hợp môn</th>
           <th className="th-major">Điểm chuẩn</th>
         </tr>
+      </thead>
         <tbody className="tbody-major">
-          <tr>
+        <tr>
             <td rowSpan="4" className="td-major">
               Công nghệ thông tin
             </td>
@@ -67,80 +70,7 @@ function Major() {
             </td>
             <td className="td-major">27.0</td>
           </tr>
-          {/**------------------- */}
-          <tr>
-            <td rowSpan="3" className="td-major">
-              Máy tính và Robot
-            </td>
-            <td className="td-major">Kỹ thuật máy tính</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br />
-              A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          <tr>
-            <td className="td-major">Kỹ thuật Robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          <tr>
-            <td className="td-major">Kỹ thuật máy tính và robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          {/**----------------------- */}
-          <tr>
-            <td rowSpan="5" className="td-major">
-              Sư phạm
-            </td>
-            <td className="td-major">Kỹ thuật máy tính</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          <tr>
-            <td className="td-major">Kỹ thuật Robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br />
-              A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          <tr>
-            <td className="td-major">Kỹ thuật Robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-          </tr>
-          <td className="td-major">27.0</td>
-          <tr>
-            <td className="td-major">Kỹ thuật Robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
-          <tr>
-            <td className="td-major">Kỹ thuật Robot</td>
-            <td className="td-major">
-              A00 (Toán, Lý, Hóa)
-              <br /> A01 (Toán, Lý, Anh)
-            </td>
-            <td className="td-major">27.0</td>
-          </tr>
+         
         </tbody>
       </table>
       {/**--------------------- */}

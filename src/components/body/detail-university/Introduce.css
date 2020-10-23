@@ -1,148 +1,147 @@
 .intro-Uni {
-    
-    padding-top: 20px;
-    position: relative;
-    overflow: hidden;
+  padding-top: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .intro-Uni:before {
-    content: '';
-    position: absolute;
-    width: 500%;
-    height: 500%;
-    z-index: -1;
-    background:#E2FFD2;
-    transform: rotate(70deg);
-    margin-top: 16%;
+  content: "";
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  z-index: -1;
+  background: #e2ffd2;
+  transform: rotate(70deg);
+  margin-top: 16%;
 }
 .infor-intro {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .dates-intro {
-    opacity: 0.7;
-    margin-left: 0px;
-    margin-top: -15px;
+  opacity: 0.7;
+  margin-left: 0px;
+  /* margin-top: -15px; */
 }
 
 .date-intro {
-    margin-right: 10px;
-    margin-bottom: -10px;
+  margin-right: 10px;
+  line-height: 0.1;
+  /* margin-bottom: -10px; */
 }
 
 .view-intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    position: absolute;
-    margin-left: 2%;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  position: absolute;
+  margin-left: 2%;
 }
 
 .logo-intro {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position:50% 50%;
-    margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-bottom: 10px;
 }
 
 .count-view {
-    margin-top: 10xp;
-    margin-bottom: 5px;
+  margin-top: 10xp;
+  margin-bottom: 5px;
 }
 
 .title-intro-Uni {
-    font-weight: 700;
-    margin-top: 20px;
-    font-size: 35px;
-    display: block;
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 35px;
+  display: block;
 }
 
 .main-intro-Uni {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .title-main-intro {
-    font-size: 25px;
-    font-weight: 550;
+  font-size: 25px;
+  font-weight: 550;
 }
 
 .content-intro {
-    text-align: justify;
-    font-size: 16px;
-    white-space: 2px;
+  text-align: justify;
+  font-size: 16px;
+  white-space: 2px;
 }
 
 .infrastructure {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .img-infrastructure {
-    height: 215px;
+  height: 215px;
 }
 
 .title-infrastructure {
-    font-size: 21px;
-    font-weight: 700;
-    color: #000000;
+  font-size: 21px;
+  font-weight: 700;
+  color: #000000;
 }
 
 .contact-intro {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    font-weight: 750;
-    text-shadow: 2px 2px rgba(0,0,0,.5);
-    font-size: 35px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 750;
+  /* text-shadow: 2px 2px rgba(0, 0, 0, 0.5); */
+  font-size: 35px;
 }
 
 .img-contact {
-    margin-top: 10px;
-    width: 440px;
-    height: 250px;
+  margin-top: 10px;
+  width: 440px;
+  height: 250px;
 }
 
-
 .address-contact {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .address-contact:last-child {
-    margin-bottom: 20px;
-    margin-top: -10px !important;
+  margin-bottom: 20px;
+  margin-top: -10px !important;
 }
 
 .form-contact {
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-left: 0;
 }
 
 .name-contact {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    padding-left: 15px;
-    border: 0.5px solid rgba(0,0,0,.5);
-    outline: none;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding-left: 15px;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  outline: none;
 }
 
 .send-contact {
-    width: 30%;
-    height: 40px;
-    border-radius: 10px;
-    background:transparent linear-gradient(93deg, #A2C78D 0%, #88D162 16%, #68CE32 46%, #8DDC63 100%);
-    border: none;
-    margin-bottom: 20px;
-} 
+  width: 30%;
+  height: 40px;
+  border-radius: 10px;
+  background: transparent
+    linear-gradient(93deg, #a2c78d 0%, #88d162 16%, #68ce32 46%, #8ddc63 100%);
+  border: none;
+  margin-bottom: 20px;
+}
 
 .send-contact:hover {
-    background: #70a851;
-    transition: 0.3s ease-in;
+  background: #70a851;
+  transition: 0.3s ease-in;
 }
