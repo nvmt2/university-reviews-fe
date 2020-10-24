@@ -5,7 +5,7 @@ import Gallery from "./components/body/detail-university/Gallery";
 
 export const routes =  [
     { path: "/detail-university/:slug", exact: true, component: Introduce },
-    { path: "/detail-university/:slug/major", component: Major },
+    // { path: "/detail-university/:slug/major", component: Major },
     { path: "/detail-university/:slug/cooperation",  component: Cooperation },
     { path: "/detail-university/:slug/gallery",  component: Gallery },
 ]

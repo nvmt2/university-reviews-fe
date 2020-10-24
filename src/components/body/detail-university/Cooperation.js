@@ -1,8 +1,12 @@
+
 import React, { useEffect } from 'react';
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import Loading from "common/Loading"
+import Loading from "common/Loading";
+import Author from "./common/Author";
+import Sticky from "./common/Sticky";
+import "./style/cooperation.css";
 
 export default function Cooperation() {
     const { slug } = useParams();
@@ -14,25 +18,30 @@ export default function Cooperation() {
     useEffect(()=>{
     }, [data, loading, error]);
     const contentPartner = !loading && !error && !!data && data.allUniversities[0].detailUniversity.partner
+    console.log("contentPartner", contentPartner)
     return (
-        <div>
+        <>
+        <Sticky />
+        <div className="cooperation container">
+              <Author />
+              <h1 className="title-cooperation">Các đối tác quan hệ</h1>
             <table>
                 <thead>
-                    <th>Tên</th>
-                    <th>Khu vực</th>
-                    <th>Chương trình liên kết</th>
-                    <th>Mô tả</th>
+                    <th className="th-cooperation">Tên</th>
+                    <th className="th-cooperation">Khu vực</th>
+                    <th className="th-cooperation">Chương trình liên kết</th>
+                    <th className="th-cooperation">Mô tả</th>
                 </thead>
                 {
                     !!contentPartner ? (
-                        <tbody>
+                        <tbody className="tbody-cooperation">
                             {
                                 contentPartner.map((item, index)=>(
                             <tr>
-                                <td>{item.name}</td>
-                                <td>{item.state}</td>
-                                <td>{item.description}</td>
-                                <td>{item.link}</td>
+                                <td className="td-coopreation">{item.name}</td>
+                                <td className="td-coopreation">{item.state}</td>
+                                <td className="td-coopreation">{item.description}</td>
+                                <td className="td-coopreation">{item.link}</td>
                             </tr>
                             )
                                 
@@ -42,13 +51,12 @@ export default function Cooperation() {
                     ) : (
                         <Loading />
                     )
-                    
-                    
                 }
                 <tbody>
 
                 </tbody>
             </table>
-        </div>
-    )
-}
+                </div>
+                </>
+            );
+} 

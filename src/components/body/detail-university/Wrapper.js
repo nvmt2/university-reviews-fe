@@ -8,7 +8,6 @@ function Wrapper({children}) {
             <div>
                 {children}
             </div>
-            
         </div>
     )
 }

@@ -1,12 +1,84 @@
 import React from "react";
+import "./style.css";
 
 function Footer() {
   return (
-    <div
-      style={{ backgroundColor: "yellow", height: "200px", marginBottom: 0 }}
-    >
-      <h1>Footer ( thương code )</h1>
-    </div>
+
+<footer id="footer" class="footer-1">
+<div class="main-footer widgets-dark typo-light">
+<div class="container">
+<div class="row">
+  
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget subscribe no-box">
+<h5 class="widget-title">COMPANY NAME<span></span></h5>
+<p>About the company, little discription will goes here.. </p>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Quick Links<span></span></h5>
+<ul class="thumbnail-widget">
+<li>
+<div class="thumb-content"><a href="#.">Get Started</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">Top Leaders</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">Success Stories</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">Event/Tickets</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">News</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">Lifestyle</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="#.">About</a></div>	
+</li>
+</ul>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Get Started<span></span></h5>
+<p>Get access to your full Training and Marketing Suite.</p>
+<a class="btn" href="#." target="_blank">Register Now</a>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+
+<div class="widget no-box">
+<h5 class="widget-title">Contact Us<span></span></h5>
+
+<p>group.sun.vtp@gmail.com</p>
+<ul class="social-footer2">
+
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+  
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<p>@Bản quyền của nhóm CS1E.04 - mọi sự sao chép cần xin phép nhóm</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
   );
 }
 

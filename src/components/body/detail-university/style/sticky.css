@@ -1,0 +1,22 @@
+.view-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  position: absolute;
+  margin-left: 2%;
+}
+.logo-intro {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin-bottom: 10px;
+}
+
+.count-view {
+  margin-top: 10xp;
+  margin-bottom: 5px;
+}

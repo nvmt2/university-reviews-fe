@@ -1,10 +1,15 @@
+
 import Index from 'components/layout';
 import React, { useEffect } from 'react';
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Loading from "common/Loading";
-import "./major.css";
+import Author from "./common/Author";
+import Sticky from "./common/Sticky";
+
+import "./style/major.css";
+
 
 
 function Major() {
@@ -20,32 +25,37 @@ function Major() {
     
     const contentMajor = !loading && !error && !!data && data.allUniversities[0].detailUniversity.majors
 
-
     return (
-        <div>
-        <table >
+      <>
+        <Sticky />
+        <div className="container major-Uni">
+        <Author />
+      
+           <h1 className="container title-major">Ngành nghề đào tạo</h1>
+        <table className="table-major">
             <thead>
-                <th scope="col">Nhóm ngành</th>
-                <th scope="col">Chuyên ngành</th>
-                <th scope="col">Tổ hợp môn</th>
+             
+                <th className="th-major" scope="col">Nhóm ngành</th>
+                <th className="th-major" scope="col">Chuyên ngành Ngành</th>
+                <th className="th-major" scope="col">Tổ hợp môn</th>
+                {/* <th className="th-major" >Điểm chuẩn</th> */}
            </thead>
            {
                !!contentMajor ? (
                 contentMajor.map((groupMajor, indexGroupMajor) => {
                 
                 return (
-                <tbody key={indexGroupMajor}>
+                <tbody className="tbody-major" key={indexGroupMajor}>
                 {
                     groupMajor.majors.map((branchMajor, indexBranchMajor)=>(
                         <tr>
                             {
-
                                 indexBranchMajor === 0 && (
-                                    <th scope="row" rowspan={ groupMajor.majors.length }> {groupMajor.name} </th>
+                                    <th  className="td-major" scope="row" rowspan={ groupMajor.majors.length }> {groupMajor.name} </th>
                                 )
                             }
-                            <td>{branchMajor.name}</td>
-                            <td>{branchMajor.subject}</td>
+                            <td className="td-major">{branchMajor.name}</td>
+                            <td className="td-major">{branchMajor.subject}</td>
                   
                         </tr>
                     ))
@@ -60,9 +70,29 @@ function Major() {
               
            }
         </table>
-           
-        </div>
-    )
+        <button className="btn-major">Xem thêm</button>
+      <div className="contact-major">
+        <h4 className="title-contact-major">
+          Để lại thông tin để chúng tôi liên lạc
+        </h4>
+        <p className="p-title-contact">
+          Đừng lo, chúng tôi sẽ không gửi quá nhiều email
+        </p>
+        <input
+          type="email"
+          placeholder="Email"
+          className="input-contact-major"
+        />
+        <button type="submit" className="btn-submit-major">
+          Gửi thông tin
+        </button>
+      </div>
+      </div>
+      </>
+  );
 }
+export default Major;
+           
 
-export default Major
+
+

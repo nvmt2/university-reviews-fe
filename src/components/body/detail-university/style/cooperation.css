@@ -1,0 +1,48 @@
+.cooperation {
+  margin-bottom: 50px;
+}
+.title-cooperation {
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.main-cooperation {
+  margin-top: 10px;
+}
+
+.title-main-cooperation {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 650;
+  margin-top: 10px;
+}
+.table-cooperation {
+  width: 100%;
+}
+
+.th-cooperation {
+  border: 1px solid rgb(201, 199, 199);
+  text-align: left;
+  padding: 10px 15px 10px 15px;
+  background: #5d963f;
+  color: #ffffff;
+}
+
+.tbody-cooperation {
+  margin-top: 10px;
+}
+
+.tbody-cooperation:last-child {
+  border-bottom: 1px solid gray;
+}
+
+.td-coopreation {
+  text-align: left;
+  padding: 10px 15px 10px 15px;
+}
+
+.td-coopreation:last-child {
+  width: 35%;
+}

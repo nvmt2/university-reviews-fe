@@ -6,10 +6,12 @@ import {
 } from "react-router-dom";
 import { routes, toRoutes } from "routes-detail-university";
 import Wrapper from "./Wrapper";
+import "./Major.css"
 
 function Index(props) {
   const slug = useParams();
     return (
+     
       <Wrapper>
         <ul>
           {

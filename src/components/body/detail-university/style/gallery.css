@@ -1,0 +1,15 @@
+.gallery-container {
+  margin-bottom: 100px;
+}
+.title-galery {
+  font-weight: 700;
+  font-size: 35px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.img-gallery {
+  opacity: 0.8;
+}
+.img-gallery:hover {
+  opacity: 1;
+}
