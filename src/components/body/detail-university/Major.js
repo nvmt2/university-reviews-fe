@@ -6,8 +6,6 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Loading from "common/Loading";
 import Author from "./common/Author";
-import Sticky from "./common/Sticky";
-
 import "./style/major.css";
 
 
@@ -26,9 +24,7 @@ function Major() {
     const contentMajor = !loading && !error && !!data && data.allUniversities[0].detailUniversity.majors
 
     return (
-      <>
-        <Sticky />
-        <div className="container major-Uni">
+        <div className="container">
         <Author />
       
            <h1 className="container title-major">Ngành nghề đào tạo</h1>
@@ -67,7 +63,6 @@ function Major() {
                ) : (
                  <Loading />
                )
-              
            }
         </table>
         <button className="btn-major">Xem thêm</button>
@@ -88,7 +83,6 @@ function Major() {
         </button>
       </div>
       </div>
-      </>
   );
 }
 export default Major;

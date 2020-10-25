@@ -5,7 +5,6 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import Loading from "common/Loading";
 import Author from "./common/Author";
-import Sticky from "./common/Sticky";
 import "./style/cooperation.css";
 
 export default function Cooperation() {
@@ -20,9 +19,8 @@ export default function Cooperation() {
     const contentPartner = !loading && !error && !!data && data.allUniversities[0].detailUniversity.partner
     console.log("contentPartner", contentPartner)
     return (
-        <>
-        <Sticky />
-        <div className="cooperation container">
+
+        <div className="container">
               <Author />
               <h1 className="title-cooperation">Các đối tác quan hệ</h1>
             <table>
@@ -57,6 +55,6 @@ export default function Cooperation() {
                 </tbody>
             </table>
                 </div>
-                </>
+         
             );
 } 

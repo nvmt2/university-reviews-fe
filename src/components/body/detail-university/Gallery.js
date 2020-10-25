@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import Loading from "common/Loading";
 import GalleryImages from 'react-photo-gallery';
 import Author from "./common/Author";
-import Sticky from "./common/Sticky";
 import "./style/gallery.css";
 
 function Gallery() {
@@ -40,13 +39,9 @@ function Gallery() {
             setPhotoAlbum(array)
             }
         }
-
-  
     console.log("photo", photoAlbum);
     
     return (
-      <>
-      <Sticky />
     <div className="gallery-container container">
     
     <Author />
@@ -60,9 +55,6 @@ function Gallery() {
            
         }
     </div>
-      </>
- 
-
     )
 }
 

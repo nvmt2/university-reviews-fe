@@ -3,29 +3,33 @@ import "./style/banner.css";
 import Carousel from "react-bootstrap/Carousel";
 
 function Banner() {
+  const photos = [
+    {
+      className: "d-block w-100 img-Uni",
+      src: "https://as1.ftcdn.net/jpg/01/22/82/76/500_F_122827651_CP5EFYCbeFavIvnXa45GxnLgjTAG4Ae7.jpg",
+    },
+    {
+      className: "d-block w-100 img-Uni",
+      src: "https://as1.ftcdn.net/jpg/03/09/64/16/500_F_309641639_1tp2b5kobwsgaMccluTQnGUN7ckmEWO6.jpg",
+
+    },
+    {
+      className: "d-block w-100 img-Uni",
+      src: "https://as2.ftcdn.net/jpg/02/54/42/41/500_F_254424115_dx1k43aqXF7dGW42ElK0QwDSBBSeEW8h.jpg",
+
+    },
+  ]
   return (
     <div className="banner-Uni">
       <div className="carousel-Uni">
         <Carousel>
-          <Carousel.Item interval={1000}>
-            <img
-              className="d-block w-100 img-Uni"
-              src="/assets/"
-              alt="banner slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item interval={500}>
-            <img
-              className="d-block w-100 img-Uni"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1QnsjLmVSRKPd_FBBCntpxN-BNVeikhHOA5N024QNx-QRdAZwLeXDiUfZCPH-DTtyXxrSPc1wyV4htJ-m-_Eeu7BkNyu6wKhkYZzsEEk&usqp=CAU&ec=45714081"
-            />
-          </Carousel.Item>
+        {
+          photos.map((item, index)=>
           <Carousel.Item>
-            <img
-              className="d-block w-100 img-Uni"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSx5DOR4LE2JAJXcVXYiQUH-ng5LjOblLwa74kxqdbXiitLPd-3L4bJ1lFORWv2oD54fprBXrcP5ddhmlfMHQDUf9Dgc7z7ogF0rHf2-x0&usqp=CAU&ec=45714081"
-            />
+            <img {...item} key={index} alt="banner-slide"/>
           </Carousel.Item>
+          )
+        }
         </Carousel>
       </div>
     </div>

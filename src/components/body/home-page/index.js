@@ -22,7 +22,7 @@ function Index({ match }) {
         
     }, [data, loading, error])
   return (
-    <div>
+    <div className="body-homepage">
       <div>
           {array.map((item, index) => {
               return (
@@ -81,8 +81,7 @@ function Index({ match }) {
                 {
                     console.log("Index home page", data, loading, error)
                 }
-                  
-
+                
                     {/* <!-- ------phân trang  --> */}
 
                     <nav className="pagination justify-content-center">

@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
 import Loading from "common/Loading";
 import Author from "./common/Author";
-import Sticky from "./common/Sticky";
 import "./style/introduce.css";
 
 
@@ -21,12 +20,11 @@ function Introduce() {
     }, [data, loading, error]);
     const contentIntroduce = !loading && !error && !!data && data.allUniversities[0].detailUniversity.introduce
     return (
-      <>
-      <Sticky />
-      <div className="intro-Uni container">
-      <div className=" main-intro-Uni">
+      <div className="intro-background">
+      <div className="container ">
       <Author />
       <h1 className=" title-intro-Uni">Giới thiệu tổng quan</h1>
+      <div>
         {
             !!contentIntroduce ? (
                 <span>
@@ -38,8 +36,7 @@ function Introduce() {
                 <Loading />
             )
         }  
-     
-   
+        </div>
         <h4 className="contact-intro">Liên lạc với chúng tôi</h4>
         {/* Form contact  */}
         <div className="row group-contact">
@@ -68,9 +65,9 @@ function Introduce() {
             </p>
           </form>
         </div>
-      </div>
+
     </div>
-    </>
+    </div>
   );
 }
 

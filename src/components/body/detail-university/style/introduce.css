@@ -1,10 +1,10 @@
-.intro-Uni {
+/* .intro-Uni {
   padding-top: 20px;
   position: relative;
   overflow: hidden;
-}
+} */
 
-.intro-Uni:before {
+/* .intro-Uni:before {
   content: "";
   position: absolute;
   width: 500%;
@@ -13,7 +13,7 @@
   background: #e2ffd2;
   transform: rotate(70deg);
   margin-top: 16%;
-}
+} */
 .infor-intro {
   opacity: 0.7;
 }
@@ -25,9 +25,9 @@
   display: block;
 }
 
-.main-intro-Uni {
+/* .main-intro-Uni {
   margin-top: 10px;
-}
+} */
 
 .title-main-intro {
   font-size: 25px;

@@ -5,26 +5,26 @@ import Gallery from "./components/body/detail-university/Gallery";
 
 export const routes =  [
     { path: "/detail-university/:slug", exact: true, component: Introduce },
-    // { path: "/detail-university/:slug/major", component: Major },
+    { path: "/detail-university/:slug/major", component: Major },
     { path: "/detail-university/:slug/cooperation",  component: Cooperation },
     { path: "/detail-university/:slug/gallery",  component: Gallery },
 ]
 
 export const toRoutes = [
     {
-      name: "Introduce",
+      name: "Giới thiệu",
       field: ""
     },
     {
-      name: "Major",
+      name: "Chuyên ngành",
       field: "/major"
     },
     {
-      name: "Cooperation",
+      name: "Hợp tác ",
       field: "/cooperation"
     },
     {
-      name: "Gallery",
+      name: "Hoạt động",
       field: "/gallery"
     },
     
