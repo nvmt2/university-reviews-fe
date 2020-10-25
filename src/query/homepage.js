@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const GET_ALL_UNIVERSITY = gql`
-  query getUniversity {
-    allUniversities{
+  query getUniversity($first: Int, $skip: Int) {
+    allUniversities(first: $first, skip: $skip) {
       id
       name
       code
@@ -10,16 +10,15 @@ const GET_ALL_UNIVERSITY = gql`
       email
       zone
       introduce
-      logo{
+      logo {
         publicUrl
       }
-      
     }
   }
 `;
 
- const homepageQueries = {
+const homepageQueries = {
   GET_ALL_UNIVERSITY,
 };
 
-export default homepageQueries
+export default homepageQueries;
