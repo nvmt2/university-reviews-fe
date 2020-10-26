@@ -5,6 +5,7 @@ import "./PostComment.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function PostComment() {
   return (
@@ -32,7 +33,7 @@ function PostComment() {
             perspiciatis quis recusandae
           </p>
           <div className="like-comment">
-            <ThumbUpIcon />
+            <DeleteIcon />
           </div>
         </div>
         <div className="item-content-comment">
@@ -45,7 +46,7 @@ function PostComment() {
             perspiciatis quis recusandae
           </p>
           <div className="like-comment">
-            <ThumbUpIcon />
+            <DeleteIcon />
           </div>
         </div>
       </div>
