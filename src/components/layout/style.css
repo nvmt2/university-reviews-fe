@@ -234,13 +234,13 @@ ul.social-footer2 li a {
   width: 30px;
   text-align: center;
 }
-.btn {
+.btn-home-page {
   background-color: #5d963f;
   color: #fff;
 }
-.btn:hover,
-.btn:focus,
-.btn.active {
+.btn-home-page:hover,
+.btn-home-page:focus,
+.btn-home-page.active {
   background: #3f642a;
   color: #fff;
   -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
