@@ -52,10 +52,11 @@
 }
 
 .main-user {
-    margin-top: 80px;
+    margin-top: 50px;
     overflow: hidden;  
 }
 
+/*
 .my-posts {
     display: flex;
     flex-direction: column;
@@ -74,4 +75,29 @@
     color: rgb(69, 161, 74);
     border-bottom: 1px solid rgb(69, 161, 74);
     transition: all 0.3s ease-in;
+}
+*/
+.tabs-user {
+    width: 100%;
+}
+
+.tabList-user {
+    display: flex;
+}
+
+.tab-user {
+    list-style: none;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: 550;
+    font-size: 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f5f8f6;
+}
+
+.tab-user:hover {
+    color: #5D963F;
+    border-bottom: 3px solid #5D963F;
+    transform-origin: top;
+    transition: all 0.3s;
 }
