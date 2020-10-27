@@ -6,7 +6,11 @@ function FilterBar() {
   const [items, setItems] = useState("");
   const dispatch = useDispatch();
 
-  dispatch("Fuck");
+  dispatch(
+    fetchUniversityAction({
+      test: "fuck ",
+    })
+  );
 
   const addItem = (event) => {
     event.preventDefault();

@@ -24,8 +24,8 @@ function App() {
   return (
     <div>
       <ApolloProvider client={client}>
-        <Provider>
-          <Router store={store}>
+        <Provider store={store}>
+          <Router>
             <RouteWrapper />
           </Router>
         </Provider>
