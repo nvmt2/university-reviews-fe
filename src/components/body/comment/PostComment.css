@@ -5,7 +5,7 @@
 
 .input-post {
     width: 100%;
-    min-height: 50px;
+    min-height: 100px;
     white-space: normal;
     word-break: break-all;
     font-size: 16px;
@@ -62,6 +62,7 @@
     width: 2.3rem;
     height: 2.3rem;
     margin-top: 3px;
+    cursor: pointer;
 }
 
 /*---------footer comment------------*/

@@ -1,0 +1,132 @@
+.group-user-topic {
+    margin-top: 20px;
+    padding: 25px 35px 25px 35px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    align-items: center;
+    margin-bottom: 60px;
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .group-user-topic:hover {
+    background: #f5fbf2;
+    transition: all 0.3s;
+  }
+  
+  .group-users {
+    flex: 10;
+    margin-right: 20%;
+    color: #1e221d;
+  }
+  
+  .group-users:hover {
+    text-decoration: none;
+    color: #1e221d;
+  }
+  
+  .group-users > .MuiSvgIcon-root {
+    width: 50px;
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 8px;
+  }
+  
+  .infor-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+  }
+  
+  .title-users {
+    font-size: 16px;
+    color: #5cb85c;
+    font-weight: 450;
+    display: block;
+    margin: 0;
+  }
+  
+  .date-topics {
+    color: #bbb;
+    font-size: 0.8rem;
+    display: block;
+    margin-left: -16px;
+  }
+  
+  .rating-topics {
+    margin-right: 0;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .count-topics > svg {
+    color: #53a63a;
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    margin-right: 2.5px;
+  }
+  
+  .title-rating-topics {
+    font-size: 12px;
+    color: #013248;
+  }
+  
+  .infor-topics {
+    margin-top: 5px;
+  }
+  
+  .title-infor-topics {
+    font-size: 18px;
+    font-weight: 600;
+    color: #013248;
+    margin-bottom: 3px;
+  }
+  
+  .content-infor-topics {
+    font-weight: 300;
+    color: rgb(109, 109, 109);
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .view-topics {
+    margin: 0;
+  }
+  
+  .viewMore-topics {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgb(165, 165, 165);
+    vertical-align: middle;
+    flex: 1;
+  }
+  
+  .viewMore-topics:hover {
+    text-decoration: none;
+  }
+  
+  .content-categories-topics {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #53a63a;
+    vertical-align: middle;
+    margin-left: 10px;
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 20px;
+    padding: 1px 8px 3px 8px;
+  }
+  
+  .content-categories-topics:hover {
+    text-decoration: none;
+    background-color: #53a63a;
+    color: #ffffff;
+    transition: all 0.3s;
+  }
+  

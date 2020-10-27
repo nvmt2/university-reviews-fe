@@ -1,9 +1,11 @@
 import React from "react";
 
 import "./comment.css";
-import PostComment from './PostComment';
+import PostComment from "./PostComment";
 
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 
 const Index = () => {
   return (
@@ -11,13 +13,19 @@ const Index = () => {
       <div className="banner-comment">
         <div className="container">
           <h2 className="title-banner-comment">Cơ sở vật chất thật tuyệt!!!</h2>
-          <a href="#" className="row group-user-comment">
-            <AccountCircleIcon />
-            <div className="infor-user-comment">
-              <p className="title-user-comment">Username1</p>
-              <p className="date-topic-comment">05/08/2020</p>
+          <div className="row">
+            <a href="#" className="row group-user-comment">
+              <AccountCircleIcon />
+              <div className="infor-user-comment">
+                <p className="title-user-comment">Username1</p>
+                <p className="date-topic-comment">05/08/2020</p>
+              </div>
+            </a>
+            <div className="group-like-comment">
+              <ThumbUpAltIcon />
+              <ThumbDownIcon />
             </div>
-          </a>
+          </div>
         </div>
       </div>
       <div className="container news-comment">
