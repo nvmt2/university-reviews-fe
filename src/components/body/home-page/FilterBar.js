@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
 
 function FilterBar() {
   const [items, setItems] = useState("");
+  const dispatch = useDispatch();
+
+  dispatch("Fuck");
 
   const addItem = (event) => {
     event.preventDefault();
