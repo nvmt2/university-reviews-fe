@@ -23,19 +23,19 @@ function Major() {
     data.allUniversities[0].detailUniversity.majors;
 
   return (
-    <div className='container'>
+    <div className="container">
       <Author />
 
-      <h1 className='container title-major'>Ngành nghề đào tạo</h1>
-      <table className='table-major'>
+      <h1 className="container title-major">Ngành nghề đào tạo</h1>
+      <table className="table-major">
         <thead>
-          <th className='th-major' scope='col'>
+          <th className="th-major" scope="col">
             Nhóm ngành
           </th>
-          <th className='th-major' scope='col'>
-            Chuyên ngành Ngành
+          <th className="th-major" scope="col">
+            Chuyên ngành
           </th>
-          <th className='th-major' scope='col'>
+          <th className="th-major" scope="col">
             Tổ hợp môn
           </th>
           {/* <th className="th-major" >Điểm chuẩn</th> */}
@@ -43,21 +43,21 @@ function Major() {
         {!!contentMajor ? (
           contentMajor.map((groupMajor, indexGroupMajor) => {
             return (
-              <tbody className='tbody-major' key={indexGroupMajor}>
+              <tbody className="tbody-major" key={indexGroupMajor}>
                 {groupMajor.majors.map((branchMajor, indexBranchMajor) => (
                   <tr>
                     {indexBranchMajor === 0 && (
                       <th
-                        className='td-major'
-                        scope='row'
+                        className="td-major"
+                        scope="row"
                         rowspan={groupMajor.majors.length}
                       >
                         {" "}
                         {groupMajor.name}{" "}
                       </th>
                     )}
-                    <td className='td-major'>{branchMajor.name}</td>
-                    <td className='td-major'>{branchMajor.subject}</td>
+                    <td className="td-major">{branchMajor.name}</td>
+                    <td className="td-major">{branchMajor.subject}</td>
                   </tr>
                 ))}
               </tbody>
@@ -67,20 +67,20 @@ function Major() {
           <Loading />
         )}
       </table>
-      <button className='btn-major'>Xem thêm</button>
-      <div className='contact-major'>
-        <h4 className='title-contact-major'>
+      <button className="btn-major">Xem thêm</button>
+      <div className="contact-major">
+        <h4 className="title-contact-major">
           Để lại thông tin để chúng tôi liên lạc
         </h4>
-        <p className='p-title-contact'>
+        <p className="p-title-contact">
           Đừng lo, chúng tôi sẽ không gửi quá nhiều email
         </p>
         <input
-          type='email'
-          placeholder='Email'
-          className='input-contact-major'
+          type="email"
+          placeholder="Email"
+          className="input-contact-major"
         />
-        <button type='submit' className='btn-submit-major'>
+        <button type="submit" className="btn-submit-major">
           Gửi thông tin
         </button>
       </div>

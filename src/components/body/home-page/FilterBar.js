@@ -112,7 +112,7 @@ function FilterBar() {
         </fieldset>
         {/* <!-- end --> */}
 
-        <button className="btn  btn-outline-success btn-loc">Lọc</button>
+        <button className="btn btn-outline-success btn-loc">Lọc</button>
       </form>
     </div>
   );
