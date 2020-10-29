@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
@@ -7,41 +7,43 @@ import Loading from "common/Loading";
 import Author from "./common/Author";
 import "./style/introduce.css";
 
-
 function Introduce() {
-    const { slug } = useParams();
-    const { data, loading, error } = useQuery(detailUniversityQuery.GET_INTRODUCE, {
-        variables: {
-            id: slug
-        }
-    })
-    useEffect(()=>{
-
-    }, [data, loading, error]);
-    const contentIntroduce = !loading && !error && !!data && data.allUniversities[0].detailUniversity.introduce
-    return (
-      <div className="intro-background">
+  const { slug } = useParams();
+  const { data, loading, error } = useQuery(
+    detailUniversityQuery.GET_INTRODUCE,
+    {
+      variables: {
+        id: slug,
+      },
+    }
+  );
+  useEffect(() => {}, [data, loading, error]);
+  const contentIntroduce =
+    !loading &&
+    !error &&
+    !!data &&
+    data.allUniversities[0].detailUniversity.introduce;
+  return (
+    <div className="intro-background">
       <div className="container ">
-      <Author />
-      <h1 className=" title-intro-Uni">Giới thiệu tổng quan</h1>
-      <div>
-        {
-            !!contentIntroduce ? (
-                <span>
-                    {
-                     parse(`${contentIntroduce}`)
-                    }
-                </span>
-            ) :(
-                <Loading />
-            )
-        }  
+        <Author />
+        <h1 className=" title-intro-Uni">Giới thiệu tổng quan</h1>
+        <div>
+          {!!contentIntroduce ? (
+            <span>{parse(`${contentIntroduce}`)}</span>
+          ) : (
+            <Loading />
+          )}
         </div>
         <h4 className="contact-intro">Liên lạc với chúng tôi</h4>
         {/* Form contact  */}
         <div className="row group-contact">
           <div className="left-contact col-md-5">
-            <img src="/assets/intro/contact.png" className="img-contact" alt="logo" />
+            <img
+              src="/assets/intro/contact.png"
+              className="img-contact"
+              alt="logo"
+            />
             <p className="address-contact">
               Địa chỉ: 254 Nguyễn Văn Linh, Quận Thanh Khê - Tp. Đà Nẵng
             </p>
@@ -65,8 +67,7 @@ function Introduce() {
             </p>
           </form>
         </div>
-
-    </div>
+      </div>
     </div>
   );
 }
