@@ -47,7 +47,7 @@
   width: 50px;
   background: none;
   color: white;
-  border: none;
+  border: 1px solid #27363d;
 }
 .list-lang option {
   color: black;

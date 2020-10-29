@@ -6,6 +6,8 @@ import homepageQueries from "query/homepage";
 import CardHome from "./CardHome";
 import FilterBar from "./FilterBar";
 import Banner from "./Banner";
+import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
+import { useDispatch, useSelector } from "react-redux";
 
 const array = [
   {
@@ -16,11 +18,32 @@ const array = [
   },
 ];
 const slugs = array.map((item) => item.slug);
+
 function Index({ match }) {
+  const dispatch = useDispatch();
+
   const [paramPagination, setParamPagination] = useState({
     first: 5,
     skip: 0,
   });
+  const { data, loading, error } = useQuery(
+    homepageQueries.GET_ALL_UNIVERSITY,
+    {
+      variables: paramPagination,
+    }
+  );
+
+  const dataApi = !loading && !error && data && data.allUniversities; //get data from api
+  const state = useSelector((state) => state.homePage); //get data from reducer
+  const contentMainHome = !!state.data && state.data; //check data from reducer whether is available or not ?
+  console.log("STATE", state);
+
+  useEffect(() => {
+    if (!!data) {
+      dispatch(fetchUniversityAction(dataApi));
+    }
+  }, [data, loading, error, paramPagination, dataApi, dispatch]);
+
   // using callback to memoize function after each time render
   const increasePage = (index) => {
     setParamPagination({
@@ -29,37 +52,12 @@ function Index({ match }) {
     });
   };
 
-  const { data, loading, error } = useQuery(
-    homepageQueries.GET_ALL_UNIVERSITY,
-    {
-      variables: paramPagination,
-    }
-  );
-  useEffect(() => {}, [data, loading, error, paramPagination]);
-  const contentMainHome = !loading && !error && data && data.allUniversities;
-  // console.log(
-  //   "data || loading || error || count",
-  //   data,
-  //   loading,
-  //   error,
-  //   !!contentMainHome && contentMainHome.length
-  // );
   return (
     <div className="body-homepage">
       <div style={{ display: "none" }}>
         {array.map((item, index) => {
           return (
             <div key={index}>
-              <NavLink
-                to={(location) => {
-                  return {
-                    pathname: `${location.pathname}topics/${item.slug}`,
-                    state: { slugs: slugs },
-                  };
-                }}
-              >
-                Topic
-              </NavLink>
               <br />
               <NavLink
                 to={(location) => {
@@ -75,7 +73,6 @@ function Index({ match }) {
           );
         })}
       </div>
-
       <Banner />
       <div className="container">
         <div className="row">
@@ -83,6 +80,7 @@ function Index({ match }) {
             <FilterBar />
           </div>
           {/* <!-- ket thuc sidebar --> */}
+
           <div className="col-md-9" id="content">
             {!!contentMainHome ? (
               contentMainHome.map((item, index) => {
@@ -93,16 +91,15 @@ function Index({ match }) {
             )}
 
             {/* <!-- ------phân trang  --> */}
-
             <nav className="pagination justify-content-center">
               <ul className="pagination">
                 <li className="page-item">
                   <span className="page-link">Trước</span>
                 </li>
-                {Array(7)
+                {Array(8)
                   .fill(1)
                   .map((item, index) => (
-                    <li className="page-item">
+                    <li className="page-item" key={index}>
                       <span
                         className="page-link"
                         onClick={() => increasePage(index)}
@@ -120,7 +117,7 @@ function Index({ match }) {
               </ul>
             </nav>
           </div>
-          {/* <!-- =========end content=========== --> */}
+          {/* <!-- =========end content=========== -->  */}
         </div>
       </div>
     </div>

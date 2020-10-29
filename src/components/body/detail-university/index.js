@@ -5,6 +5,15 @@ import { routes, toRoutes } from "routes-detail-university";
 import Wrapper from "./Wrapper";
 import "./style/nav.css";
 
+const array = [
+  {
+    id: "123ie12bd@8",
+    name: "Duy Tan",
+    slug: "dtu",
+    rating: 5,
+  },
+];
+const slugs = array.map((item) => item.slug);
 function Index(props) {
   const slug = useParams();
   return (
@@ -24,6 +33,23 @@ function Index(props) {
               </NavLink>
             </li>
           ))}
+          <li>
+            <button className="btn btn-warning">
+              {array.map((item, index) => (
+                <NavLink
+                  key={index}
+                  to={(location) => {
+                    return {
+                      pathname: `/topics/${localStorage["slugUniversity"]}`,
+                      state: { slugs: localStorage["slugUniversity"] },
+                    };
+                  }}
+                >
+                  Bình luận
+                </NavLink>
+              ))}
+            </button>
+          </li>
         </ul>
         {routes.map((route, index) => (
           <Route {...route} key={index} />
