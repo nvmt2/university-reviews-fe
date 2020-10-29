@@ -3,7 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-//import Component and local file
+//import Component and local file.
 import Categories from "./Categories";
 import CardTopic from "./CardTopic";
 import Banner from "./Banner";
