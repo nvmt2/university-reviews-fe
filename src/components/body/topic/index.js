@@ -26,11 +26,10 @@ function Index({ location }) {
 
   const contentTopic = !loading && !error && !!data && data.allTopics;
   const nameUniversity = !!contentTopic && data.allTopics[0].university.name;
-  console.log("nameUniversity", nameUniversity);
-  console.log("DATA", data);
   return (
     <>
       <NavLink
+        style={{ display: "none" }}
         to={() => {
           return {
             pathname: `${location.pathname}/comments`,

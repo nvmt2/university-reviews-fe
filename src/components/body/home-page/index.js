@@ -54,7 +54,7 @@ function Index({ match }) {
 
   return (
     <div className="body-homepage">
-      <div style={{ display: "none" }}>
+      <div style={{ display: "block" }}>
         {array.map((item, index) => {
           return (
             <div key={index}>

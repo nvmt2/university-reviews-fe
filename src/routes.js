@@ -12,7 +12,7 @@ export default [
   { path: "/topics/:slug", exact: true, component: Topic },
   { path: "/login", component: SignIn },
   { path: "/register", component: SignUp },
-  { path: "/topics/:slug/comments", component: Comment },
+  { path: "/comments/:slug", component: Comment },
   { path: "/user", component: UserProfile },
   { path: "/detail-university/:slug", component: DetailUniversity },
 
