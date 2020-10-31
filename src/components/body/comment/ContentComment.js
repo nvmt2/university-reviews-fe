@@ -1,19 +1,40 @@
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
 
-function ContentComment() {
+import { useParams } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { commentMutation } from "query/comment";
+import DeleteIcon from "@material-ui/icons/Delete";
+import parse from "html-react-parser";
+
+function ContentComment(props) {
+  const { id, content, user } = props;
+  const [deleteComment, { data }] = useMutation(commentMutation.REMOVE_COMMENT);
+  const handleOnClick = () => {
+    deleteComment({
+      variables: {
+        id: id,
+      },
+    });
+  };
+  console.log("REMOVE", data);
+
   return (
     <div className="item-content-comment">
-      <p className="item-news-comment">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores enim
-        ab qui aperiam iste eos voluptate alias iure voluptatum, amet culpa,
-        vero, consectetur voluptatem! Reprehenderit aut, tempora, quasi suscipit
-        minima fugiat consequatur quas nisi at est maiores ab iure vero dolorem
-        rem distinctio? Tempora, eligendi deserunt sint perspiciatis quis
-        recusandae
-      </p>
+      <div className="item-news-comment">
+        <p>{parse(`${content}`)}</p>
+        <p>-{user.username} -</p>
+      </div>
       <div className="like-comment">
-        <DeleteIcon />
+        <button
+          className="btn btn-warning"
+          style={{
+            display: user.id !== "5f9a40681a488a2238f7dd53" && "none",
+          }}
+          onClick={handleOnClick}
+        >
+          Xóa
+        </button>
+        {/* <DeleteIcon /> */}
       </div>
     </div>
   );

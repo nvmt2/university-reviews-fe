@@ -13,8 +13,29 @@ const CREATE_COMMENT = gql`
     }
   }
 `;
-
-const CommentMutation = {
+const REMOVE_COMMENT = gql`
+  mutation removeComment($id: ID!) {
+    deleteComment(id: $id) {
+      content
+    }
+  }
+`;
+const GET_ALL_COMMENT = gql`
+  query($id: ID) {
+    allComments(where: { topic: { id: $id } }) {
+      id
+      content
+      user {
+        username
+        id
+      }
+    }
+  }
+`;
+export const commentMutation = {
   CREATE_COMMENT,
+  REMOVE_COMMENT,
 };
-export default CommentMutation;
+export const commentQuery = {
+  GET_ALL_COMMENT,
+};
