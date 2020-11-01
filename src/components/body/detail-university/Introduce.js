@@ -39,7 +39,7 @@ function Introduce() {
         </div>
         <h4 className="contact-intro">Liên lạc với chúng tôi</h4>
         {/* Form contact  */}
-        <div className="row group-contact">
+        <div className="container row group-contact">
           <div className="left-contact col-md-5">
             <img src="/assets/intro/contact.png" className="img-contact" alt="logo" />
             <p className="address-contact">
@@ -49,7 +49,7 @@ function Introduce() {
               Điện thoại: (+84) 236.3650403 - (+84) 236.3827111
             </p>
           </div>
-          <form className="form-contact col-md-7">
+          <form className="form-contact col-md-4">
             <input type="text" className="name-contact" placeholder="Họ" />
             <input type="text" className="name-contact" placeholder="Tên" />
             <input type="email" className="name-contact" placeholder="Email" />

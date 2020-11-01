@@ -89,6 +89,11 @@
     text-align: center;
 }
 
+.id-comment:focus {
+    color: white;
+    background: #27363D ;
+}
+
 .id-comment:hover {
     text-decoration: none;
     color: white;
