@@ -21,7 +21,7 @@ const REMOVE_COMMENT = gql`
   }
 `;
 const GET_ALL_COMMENT = gql`
-  query($id: ID) {
+  query getAllComment($id: ID) {
     allComments(where: { topic: { id: $id } }) {
       id
       content

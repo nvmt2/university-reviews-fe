@@ -63,5 +63,4 @@ function CardTopic(props) {
     </div>
   );
 }
-
 export default CardTopic;

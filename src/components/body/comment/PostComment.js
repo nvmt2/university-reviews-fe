@@ -1,12 +1,20 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
+//importing local file
 import { commentMutation } from "query/comment";
+import { commentQuery } from "query/comment";
+import {
+  fetchCommentAction,
+  renderCommentAction,
+} from "state/ducks/common/actions/comment";
 import "./style/PostComment.css";
 
 function PostComment() {
   const { slug } = useParams();
-  const [createNewcomment, { data }] = useMutation(
+  const dispatch = useDispatch();
+  const [createNewcomment, { data, loading, error, refetch }] = useMutation(
     commentMutation.CREATE_COMMENT
   );
   const [comment, setComment] = useState({
@@ -23,10 +31,19 @@ function PostComment() {
   const handleClick = () => {
     createNewcomment({
       variables: comment,
+      refetchQueries: [
+        {
+          query: commentQuery.GET_ALL_COMMENT,
+          variables: {
+            id: slug,
+          },
+        },
+      ],
     });
   };
-  useEffect(() => {}, [comment]);
-  console.log("COMMENT", data);
+  useEffect(() => {}, [comment, data, loading, error, dispatch]);
+  console.log("DATA: ", data, "- LOANDING: ", loading, "- REFETCH: ", refetch);
+
   return (
     <div className="container group-input-post">
       <textarea

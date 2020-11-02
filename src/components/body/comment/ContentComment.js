@@ -1,6 +1,5 @@
 import React from "react";
 
-import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { commentMutation } from "query/comment";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -16,8 +15,6 @@ function ContentComment(props) {
       },
     });
   };
-  console.log("REMOVE", data);
-
   return (
     <div className="item-content-comment">
       <div className="item-news-comment">

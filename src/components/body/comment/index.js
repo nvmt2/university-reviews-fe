@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
+import { useSelector, useDispatch } from "react-redux";
 //importing component
 import PostComment from "./PostComment";
 import HeaderComment from "./HeaderComment";
 import ContentComment from "./ContentComment";
 import PaginationComment from "./PaginationComment";
 import { commentQuery } from "query/comment";
+import { fetchCommentAction } from "state/ducks/common/actions/comment";
 import "./style/comment.css";
 
 const Index = ({ location }) => {
+  const dispatch = useDispatch();
   const { slug } = useParams();
   const { state } = location;
   const { data, loading, error } = useQuery(commentQuery.GET_ALL_COMMENT, {
@@ -18,8 +20,14 @@ const Index = ({ location }) => {
       id: slug,
     },
   });
-  const contentComment = !loading && !error && !!data && data.allComments;
-  useEffect(() => {}, [data, loading, error]);
+  const commentsLocal = useSelector((state) => state.comment);
+  const contentComment = !!commentsLocal.data && commentsLocal.data;
+  useEffect(() => {
+    if (!!data && !loading && !error) {
+      dispatch(fetchCommentAction(data.allComments));
+    }
+  }, [data, loading, error, dispatch]);
+  console.log("COMMENT SELECTOR", commentsLocal);
 
   return (
     <div className="comment">
