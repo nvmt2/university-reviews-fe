@@ -1,13 +1,14 @@
 .SignIn {
     width: 100%;
     height: 100%;
-    background-image: url(https://i.pinimg.com/originals/4a/ba/f3/4abaf352645fd2142ed6555f789e0a2e.jpg);
-    background-size: 100% 100%;
+    background-image: url(/assets/signIn/bglogin.png) ;
+     background-size: 100% 100%;
     background-repeat: no-repeat;
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
-
-.title-SignIn {
+/* .title-SignIn {
     width: 40vw;
     font-size: 50px;
     text-align: left;
@@ -17,23 +18,21 @@
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
-}
+} */
 
 .form-SignIn {
     width: auto;
     height: auto;
-    background-color: #ffffff;
-    margin-top: 66px;
-    margin-bottom: 66px;
     margin-left: auto;
     margin-right: auto;
-    padding: 84px 10px 20px 10px;
+    padding: 30px 10px 20px 10px;
     border-radius: 10px;
 }
 
 .form-SignIn>h2 {
-    color: #818A91;
-    font: normal normal bold 35px/47px Segoe UI;
+    color: #4faf57;
+    font-size: 40px;
+    font-weight: 700;
     text-align: center;
 }
 
@@ -43,10 +42,15 @@
     background-color: #eff2f5;
     padding: 15px 0px 15px 10px;
     border-radius: 30px;
-    box-shadow:  0px 5px 8px -9px rgba(0, 0, 0, 1);
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 1);
 }
 
-.SignIn-input > input {
+.SignIn-input>svg:first-child {
+    margin-left: 15px;
+    font-size: 1.8rem;
+}
+
+.SignIn-input>input {
     border: none;
     background-color: transparent;
     outline-width: 0;
@@ -68,8 +72,9 @@
     margin-bottom: 24px;
     font-style: italic;
     text-decoration: none;
-    color: #6e6798;
-    font-weight: 450;
+    color: #2c2d30;
+    font-weight: 500;
+    margin-right: 10px;
 }
 
 .forgot:hover {
@@ -79,35 +84,73 @@
 
 .infor-SignIn {
     text-align: center;
-    margin-top: 65px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
 }
 
 .infor-SignIn>p {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
 }
 
 .social-group {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    text-align: center;
+    margin-left: -20px;
 }
 
-.social-group > li {
+.social-group>li {
     list-style: none;
     margin-right: 10px;
 }
 
-.social {
-    color: #370cad;
-    padding: 5px 8px 12px 9px;
+.social> svg {
+    color: #eeeeee;
+    font-size: 3rem;
+    padding: 8px 8px 8px 8px;
     border-radius: 99px;
-    background-color: rgba(0, 0, 255, 0.5);
+    background-color: rgb(58, 84, 153) ;
 }
 
-.social:hover {
+.social:last-of-type> svg {
+    /* background-color: rgb(23, 162, 242); */
+}
+
+.social> svg:hover {
     color: #ffffff;
-    background-color: #370cad;
-    transition: all 0.5s ;
+    background-color: rgb(23, 162, 242);
+    transition: all 0.5s;
+}
+
+/**---account----*/
+
+.account-signIn {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.q-account {
+    font-size: 15px;
+    font-weight: 550;
+    margin-bottom: 0;
+    opacity: .7;
+}
+
+.signUp-acc {
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(248, 248, 241);
+}
+
+.signUp-acc:hover {
+    text-decoration: none;
+    transition: 0.3s;
+    color: rgba(5, 25, 107, 0.774);
 }
