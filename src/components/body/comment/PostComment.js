@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 //importing local file
 import { commentMutation } from "query/comment";
 import { commentQuery } from "query/comment";
-import {
-  fetchCommentAction,
-  renderCommentAction,
-} from "state/ducks/common/actions/comment";
 import "./style/PostComment.css";
+//material-Ui
+import Button from "@material-ui/core/Button";
+import SendIcon from "@material-ui/icons/Send";
 
 function PostComment() {
   const { slug } = useParams();
   const dispatch = useDispatch();
-  const [createNewcomment, { data, loading, error, refetch }] = useMutation(
+  const [createNewcomment, { data }] = useMutation(
     commentMutation.CREATE_COMMENT
   );
   const [comment, setComment] = useState({
@@ -41,8 +40,8 @@ function PostComment() {
       ],
     });
   };
-  useEffect(() => {}, [comment, data, loading, error, dispatch]);
-  console.log("DATA: ", data, "- LOANDING: ", loading, "- REFETCH: ", refetch);
+  useEffect(() => {}, [comment, data, dispatch]);
+  // console.log("RENDER_POST_COMMENT");
 
   return (
     <div className="container group-input-post">
@@ -53,9 +52,17 @@ function PostComment() {
         onChange={handleOnChange}
       />
       <div className="bg-btn-post">
-        <button type="submit" className="btn-post" onClick={handleClick}>
+        <Button
+          type="submit"
+          // className="btn-post"
+          onClick={handleClick}
+          variant="contained"
+          color="primary"
+          endIcon={<SendIcon />}
+          size="small"
+        >
           Đăng
-        </button>
+        </Button>
       </div>
     </div>
   );

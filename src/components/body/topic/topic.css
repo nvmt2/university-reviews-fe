@@ -3,8 +3,9 @@ html {
 }
 
 .banner-topic {
-  background-image: url(/assets/topic/bg-topic.png);
+  background-image: url(/assets/topic/banner.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 235px;
 }
@@ -93,8 +94,8 @@ html {
 }
 
 .group-user {
-  flex: 10;
-  margin-right: 20%;
+  /* flex: 10; */
+  /* margin-right: 20%; */
   color: #1e221d;
 }
 
@@ -103,17 +104,10 @@ html {
   color: #1e221d;
 }
 
-.group-user > .MuiSvgIcon-root {
-  width: 50px;
-  height: 70px;
-  margin-left: 10px;
-  margin-right: 8px;
-}
-
 .infor-user {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   padding-top: 10px;
 }
 
@@ -129,21 +123,19 @@ html {
   color: #bbb;
   font-size: 0.8rem;
   display: block;
-  margin-left: -16px;
+  /* margin-left: -16px; */
 }
 
 .rating-topic {
-  margin-right: 0;
-  flex: 1;
-  text-align: center;
+  /* text-align: center; */
+  text-align: right;
 }
-
 .count-topic > svg {
   color: #53a63a;
   font-size: 15px;
   justify-content: center;
-  text-align: center;
-  margin-right: 2.5px;
+  /* text-align: center; */
+  margin-right: 1.5px;
 }
 
 .title-rating-topic {
@@ -174,15 +166,13 @@ html {
 }
 
 .view-topic {
-  margin: 0;
+  padding-right: 10px;
 }
 
 .viewMore-topic {
   font-size: 0.8rem;
   font-weight: 300;
   color: rgb(165, 165, 165);
-  vertical-align: middle;
-  flex: 1;
 }
 
 .viewMore-topic:hover {
@@ -193,7 +183,7 @@ html {
   font-size: 0.8rem;
   font-weight: 400;
   color: #53a63a;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   margin-left: 10px;
   border: 1px solid rgb(102, 102, 102);
   border-radius: 20px;
@@ -246,4 +236,16 @@ html {
 .content-category-topic:hover {
   text-decoration: none;
   color: #084f70;
+}
+.ava-user {
+  float: left;
+}
+.ava-user > .MuiSvgIcon-root {
+  width: 50px;
+  height: 70px;
+  margin-left: 10px;
+  margin-right: 8px;
+}
+.wrap-topic-tag {
+  text-align: right;
 }

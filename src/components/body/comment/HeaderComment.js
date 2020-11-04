@@ -3,8 +3,8 @@ import parse from "html-react-parser";
 
 //importing material UI
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
+import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 
 function HeaderComment(props) {
   const {
@@ -30,8 +30,8 @@ function HeaderComment(props) {
               </div>
             </a>
             <div className="group-like-comment">
-              <ThumbUpAltIcon />
-              <ThumbDownIcon />
+              <ThumbDownAltOutlinedIcon />
+              <ThumbUpOutlinedIcon />
             </div>
           </div>
         </div>

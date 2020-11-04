@@ -3,6 +3,9 @@
 }
 
 /* Css for header */
+#logo-header {
+  margin-top: -12px;
+}
 .header-page {
   background-color: #27363d;
   height: 50px;

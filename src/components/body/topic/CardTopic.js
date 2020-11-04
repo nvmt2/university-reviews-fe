@@ -14,16 +14,18 @@ function CardTopic(props) {
     user: { username },
   } = props;
   return (
-    <div className="group-topic">
-      <div className="row content-topic">
-        <a href="/" className="col-md-8 row group-user">
-          <AccountCircleIcon />
+    <div className="group-topic container">
+      <div className="row">
+        <a href="/" className="col-md-8 group-user ">
+          <div className="ava-user">
+            <AccountCircleIcon />
+          </div>
           <div className="infor-user">
             <p className="title-user">{username}</p>
             <p className="date-topic">{date}</p>
           </div>
         </a>
-        <div className="rating-topic">
+        <div className="rating-topic col-md-4 ">
           <div className="count-topic">
             <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
@@ -38,23 +40,25 @@ function CardTopic(props) {
         <h2 className="title-infor-topic">{title}</h2>
         <p className="content-infor-topic">{parse(`${content}`)}</p>
         <div className="row view-topic">
-          <a href="." className="viewMore-topic">
-            <NavLink
-              to={(location) => {
-                return {
-                  pathname: `/comments/${id}`,
-                  state: props,
-                };
-              }}
-            >
-              Chi tiết
-            </NavLink>
-          </a>
-          <div className="row group-content-categories-topic">
-            <a href="3" className="content-categories-topic">
+          <div className="col-md-2">
+            <a href="." className="viewMore-topic">
+              <NavLink
+                to={(location) => {
+                  return {
+                    pathname: `/comments/${id}`,
+                    state: props,
+                  };
+                }}
+              >
+                Chi tiết
+              </NavLink>
+            </a>
+          </div>
+          <div className="col-md-10 wrap-topic-tag">
+            <a href="." className="content-categories-topic">
               {tags}
             </a>
-            <a href="#" className="content-categories-topic">
+            <a href="." className="content-categories-topic">
               Cơ sở vật chất
             </a>
           </div>

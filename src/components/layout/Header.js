@@ -14,9 +14,11 @@ function Header() {
               <div className="col-lg-1">
                 <NavLink to="/">
                   <img
-                    src="/assets/header/logo-cat.png"
+                    id="logo-header"
+                    src="/assets/header/logo.png"
                     alt="logo"
                     width="80px"
+                    height="auto"
                   ></img>
                 </NavLink>
               </div>

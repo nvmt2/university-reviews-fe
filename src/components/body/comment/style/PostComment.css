@@ -1,6 +1,7 @@
 .group-input-post {
   width: 100%;
   height: auto;
+  padding-top: 50px;
 }
 
 .input-post {
@@ -16,9 +17,8 @@
 }
 
 .bg-btn-post {
-  background: #e8e8e8;
-  width: 100%;
-  height: 50px;
+  background-color: #e8e8e8;
+  padding: 10px 5px 10px 0px;
   align-items: center;
   text-align: right;
 }
@@ -53,8 +53,7 @@
 .like-comment {
   background: #e8e8e8;
   width: 100%;
-  height: 50px;
-  align-items: center;
+  padding: 10px 10px 10px 0px;
   text-align: right;
   margin: 0;
 }

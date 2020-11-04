@@ -33,8 +33,9 @@ const Index = ({ location }) => {
     <div className="comment">
       <HeaderComment {...state} />
       {/* Form which to post comment */}
-      <div className="PostComment">
+      <div className="body-comment">
         <PostComment />
+        {/* Block of content comments */}
         <div className="container group-content-comment">
           {!!contentComment ? (
             contentComment.map((item, index) => <ContentComment {...item} />)

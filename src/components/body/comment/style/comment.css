@@ -57,10 +57,13 @@
   text-align: right;
   cursor: pointer;
 }
-
 .group-like-comment > svg {
-  font-size: 35px;
+  font-size: 25px;
 }
+.group-like-comment > svg:hover {
+  color: gray;
+}
+
 /**-------news comment*/
 
 .news-comment {
@@ -73,4 +76,13 @@
   padding: 10px 10px 20px 10px;
   text-align: justify;
   font-size: 16px;
+}
+.body-comment {
+  margin-top: 50px;
+}
+.item-content-comment .MuiButton-contained {
+  background-color: #ffc107;
+}
+.item-content-comment .MuiButton-contained:hover {
+  background-color: #fdd353;
 }
