@@ -6,15 +6,17 @@ import Comment from "./components/body/comment";
 import NotFound from "./components/NotFound";
 import UserProfile from "./components/body/user-profile";
 import DetailUniversity from "./components/body/detail-university";
+import NewPost from "./components/body/new-post";
 
 export default [
   { path: "/", exact: true, component: Home },
+  { path: "/topics/new-post", exact: true, component: NewPost },
   { path: "/topics/:slug", exact: true, component: Topic },
-  { path: "/login", component: SignIn },
-  { path: "/register", component: SignUp },
-  { path: "/comments/:slug", component: Comment },
+  { path: "/topics/:slug/comments", component: Comment },
   { path: "/user", component: UserProfile },
   { path: "/detail-university/:slug", component: DetailUniversity },
+  { path: "/login", component: SignIn },
+  { path: "/register", component: SignUp },
 
   { path: "/", component: NotFound },
 ];

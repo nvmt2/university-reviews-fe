@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import Loading from "common/Loading";
 import Author from "./common/Author";
 import "./style/cooperation.css";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 export default function Cooperation() {
   const { slug } = useParams();
@@ -24,6 +25,7 @@ export default function Cooperation() {
     <div className="container">
       <Author />
       <h1 className="title-cooperation">Các đối tác quan hệ</h1>
+
       <table>
         <thead>
           <th className="th-cooperation">Tên</th>

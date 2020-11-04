@@ -7,19 +7,19 @@ import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import { TweenMax, Power2, Bounce } from "gsap";
 
 function SignUp() {
-  let title = useRef(null);
+  //let title = useRef(null);
   let formSignUp = useRef(null);
 
   useEffect(() => {
-    TweenMax.from(title, {
-      duration: 0.8,
-      y: -1000,
-      ease: Bounce,
-    });
+    // TweenMax.from(title, {
+    //   duration: 0.8,
+    //   y: -1000,
+    //   ease: Bounce,
+    // });
     TweenMax.from(formSignUp, {
       duration: 0.8,
-      delay: 1,
-      x: -1250,
+      delay: 0,
+      y: -1250,
       ease: Power2.in,
     });
   }, []);
@@ -27,19 +27,17 @@ function SignUp() {
   return (
     <div className="SignUp">
       <div className="container">
-        <div className="row">
-          <h1
-            className="title-SignUp"
-            ref={(el) => {
-              title = el;
-            }}
-          >
-            Đăng ký nhanh để trải nghiệm ngay ...
-          </h1>
+        <div
+          ref={(el) => {
+            formSignUp = el;
+          }}
+          className="row main-signIn"
+        >
+          <img src="/assets/signIn/SignIn.png" className="img-signIn" />
           <form
-            ref={(el) => {
-              formSignUp = el;
-            }}
+            // ref={(el) => {
+            //   formSignUp = el;
+            // }}
             className="form-SignUp"
           >
             <h2>Đăng ký</h2>
@@ -62,6 +60,17 @@ function SignUp() {
                   <VisibilityOffIcon />
                 </div>
               </div>
+              <span className="title-input">Nhập lại mật khẩu</span>
+              <div className="SignUp-input">
+                <LockOpenIcon />
+                <input
+                  type="password"
+                  placeholder="Nhập lại mật khẩu của bạn"
+                />
+                <div className="hidden-pass">
+                  <VisibilityOffIcon />
+                </div>
+              </div>
               <a href="#" className="acc">
                 Đã có tài khoản
               </a>
@@ -75,6 +84,10 @@ function SignUp() {
             </div>
           </form>
         </div>
+        {/**---------background---SignIn--------- */}
+        {/* <div className='bg-signIn'>
+        
+          </div> */}
       </div>
     </div>
   );

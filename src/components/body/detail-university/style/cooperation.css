@@ -5,25 +5,35 @@
   margin-bottom: 10px;
 }
 
-.main-cooperation {
-  margin-top: 10px;
+.tabList-cooperation {
+  display: flex;
+  list-style: none;
+  margin-left:-35px;
 }
 
-.title-main-cooperation {
-  text-align: center;
-  font-size: 28px;
-  font-weight: 650;
-  margin-top: 10px;
+.tab-cooperation {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 3px solid rgba(241, 255, 233, 1);
 }
+
+.tab-cooperation:hover {
+  cursor: pointer;
+  border-bottom: 3px solid #5d963f;
+  transition: 0.3s ease-in-out;
+}
+
 .table-cooperation {
   width: 100%;
 }
 
 .th-cooperation {
-  border: 1px solid rgb(201, 199, 199);
+  border: 2px solid rgb(201, 199, 199);
   text-align: left;
   padding: 10px 15px 10px 15px;
-  background: #5d963f;
+  background: #013248;
   color: #ffffff;
 }
 
@@ -38,6 +48,7 @@
 .td-coopreation {
   text-align: left;
   padding: 10px 15px 10px 15px;
+  border: 2px solid white;
 }
 
 .td-coopreation:last-child {

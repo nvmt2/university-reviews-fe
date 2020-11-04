@@ -9,16 +9,15 @@ import { TweenMax, Power2, Elastic } from "gsap";
 import "./style.css";
 
 function SignIn() {
-
-  let title = useRef(null);
+  // let title = useRef(null);
   let formSignIn = useRef(null);
 
   useEffect(() => {
-    TweenMax.from(title, {
-      duration: 1,
-      x: -1000,
-      ease: Elastic.easeOut(1, 0.3),
-    });
+    // TweenMax.from(title, {
+    //   duration: 1,
+    //   x: -1000,
+    //   ease: Elastic.easeOut(1, 0.3),
+    // });
     TweenMax.from(formSignIn, {
       duration: 1,
       x: 1000,
@@ -29,21 +28,19 @@ function SignIn() {
   return (
     <div className="SignIn">
       <div className="container">
-        <div className="row">
-          <h1
-            className="title-SignIn"
-            ref={(el) => {
-              title = el;
-            }}
-          >
-            Đăng nhập để tìm kiếm con đường của bạn nào...
-          </h1>
+        <div
+          ref={(el) => {
+            formSignIn = el;
+          }}
+          className="row main-signIn"
+        >
+          <img src="/assets/signIn/SignIn.png" className="img-signIn" />
           <form
-            ref={(el) => {
-              formSignIn = el;
-            }}
+            // ref={(el) => {
+            //   formSignIn = el;
+            // }}
             className="form-SignIn"
-            >
+          >
             <h2>Đăng nhập</h2>
             <div className="form-group">
               <span className="title-input">Email</span>
@@ -62,9 +59,9 @@ function SignIn() {
               <a href="#" className="forgot">
                 Quên mật khẩu
               </a>
-              <button className="done">Xong</button>
+              <button className="done">Đăng nhập</button>
               <div className="infor-SignIn">
-                <p>Theo dõi chúng tôi qua</p>
+                <p className="fl-me">Hoặc đăng nhập qua </p>
                 <ul className="social-group">
                   <li>
                     <a href="#" className="social">
@@ -77,6 +74,13 @@ function SignIn() {
                     </a>
                   </li>
                 </ul>
+              </div>
+              {/**------da co account----- */}
+              <div className="account-signIn">
+                <p className="q-account">Bạn chưa có tài khoản ?</p>
+                <a href="#" className="signUp-acc">
+                  Đăng ký ngay
+                </a>
               </div>
             </div>
           </form>
