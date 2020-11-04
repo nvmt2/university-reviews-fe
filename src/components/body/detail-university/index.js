@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Route, NavLink } from "react-router-dom";
 import { routes, toRoutes } from "routes-detail-university";
+//importing local
 import Wrapper from "./Wrapper";
 import "./style/nav.css";
 
@@ -34,21 +35,16 @@ function Index(props) {
             </li>
           ))}
           <li>
-            <button className="btn btn-warning">
-              {array.map((item, index) => (
-                <NavLink
-                  key={index}
-                  to={(location) => {
-                    return {
-                      pathname: `/topics/${localStorage["slugUniversity"]}`,
-                      state: { slugs: localStorage["slugUniversity"] },
-                    };
-                  }}
-                >
-                  Bình luận
-                </NavLink>
-              ))}
-            </button>
+            <NavLink
+              to={(location) => {
+                return {
+                  pathname: `/topics/${localStorage["slugUniversity"]}`,
+                  state: { slugs: localStorage["slugUniversity"] },
+                };
+              }}
+            >
+              <button className="btn btn-warning">Bình luận </button>
+            </NavLink>
           </li>
         </ul>
         {routes.map((route, index) => (

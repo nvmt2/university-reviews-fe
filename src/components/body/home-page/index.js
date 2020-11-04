@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./home-page.css";
 import { NavLink } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
+import { useDispatch, useSelector } from "react-redux";
+//importing local file
 import homepageQueries from "query/homepage";
 import CardHome from "./CardHome";
 import FilterBar from "./FilterBar";
 import Banner from "./Banner";
-import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
-import { useDispatch, useSelector } from "react-redux";
+//importing material UI
+import Pagination from "@material-ui/lab/Pagination";
+import Button from "@material-ui/core/Button";
 
 const array = [
   {
@@ -45,10 +49,10 @@ function Index({ match }) {
   }, [data, loading, error, paramPagination, dataApi, dispatch]);
 
   // using callback to memoize function after each time render
-  const increasePage = (index) => {
+  const increasePage = (e, page) => {
     setParamPagination({
       first: 5,
-      skip: 5 * index,
+      skip: 5 * (page - 1),
     });
   };
 
@@ -91,31 +95,16 @@ function Index({ match }) {
             )}
 
             {/* <!-- ------phân trang  --> */}
-            <nav className="pagination justify-content-center">
-              <ul className="pagination">
-                <li className="page-item">
-                  <span className="page-link">Trước</span>
-                </li>
-                {Array(8)
-                  .fill(1)
-                  .map((item, index) => (
-                    <li className="page-item" key={index}>
-                      <span
-                        className="page-link"
-                        onClick={() => increasePage(index)}
-                      >
-                        {index}
-                      </span>
-                    </li>
-                  ))}
-                <li className="page-item">
-                  <span className="page-link">...</span>
-                </li>
-                <li className="page-item">
-                  <span className="page-link">Sau</span>
-                </li>
-              </ul>
-            </nav>
+            <div className="offset-md-3 col-md-9 pagination-material">
+              <Pagination
+                count={8}
+                color="primary"
+                shape="rounded"
+                variant="outlined"
+                size="medium"
+                onChange={increasePage}
+              />
+            </div>
           </div>
           {/* <!-- =========end content=========== -->  */}
         </div>

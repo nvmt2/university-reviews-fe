@@ -10,6 +10,8 @@ import Banner from "./Banner";
 import topicQuery from "query/topic";
 import Loading from "common/Loading";
 import "./topic.css";
+//importing material-ui
+import Pagination from "@material-ui/lab/Pagination";
 
 function Index({ location }) {
   const { slug } = useParams();
@@ -54,7 +56,20 @@ function Index({ location }) {
                 )}
               </div>
               {/* Bar topic right */}
-              <Categories />
+              <div className="col-md-3 group-categories-topic">
+                <Categories />
+              </div>
+              <div className="col-md-8 mb-5 ">
+                <div style={{ width: "50%", margin: "auto" }}>
+                  <Pagination
+                    count={20}
+                    color="primary"
+                    shape="rounded"
+                    variant="outlined"
+                    size="medium"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

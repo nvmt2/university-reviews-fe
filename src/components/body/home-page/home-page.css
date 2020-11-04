@@ -1,7 +1,5 @@
 .body-homepage {
-  /* background-color: #e4e4e494; */
-  background-image: linear-gradient(rgb(255, 255, 255), #cad1cb);
-  background-repeat: no-repeat;
+  background: linear-gradient(rgb(255, 255, 255), #cad1cb);
 }
 #banner {
   height: 215px;
@@ -115,6 +113,9 @@
 .page-link {
   color: #000000;
   font-weight: 500;
+}
+.pagination-material {
+  margin-bottom: 50px;
 }
 
 /* --------------------Filter Form component ------------- */
