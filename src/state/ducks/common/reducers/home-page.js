@@ -1,10 +1,8 @@
 import homePageTypes from "./../types/home-page";
 
 const initialState = {
-  homePage: {
-    loading: "",
-    data: false,
-  },
+  loading: "",
+  data: false,
 };
 
 export const homePageReducer = (state = initialState, action) => {
@@ -12,10 +10,8 @@ export const homePageReducer = (state = initialState, action) => {
     case homePageTypes.FETCH_UNIVERSITY:
       return {
         ...state,
-        hommePage: {
-          loading: "",
-          data: action.data,
-        },
+        loading: "",
+        data: action.payload,
       };
     default:
       return state;

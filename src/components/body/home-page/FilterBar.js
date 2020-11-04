@@ -1,27 +1,41 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useQuery } from "@apollo/client";
 import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
+import homepageQueries from "query/homepage";
 
 function FilterBar() {
-  const [items, setItems] = useState("");
+  const [items, setItems] = useState({
+    first: 5,
+    skip: 0,
+  });
   const dispatch = useDispatch();
 
-  dispatch(
-    fetchUniversityAction({
-      test: "fuck ",
-    })
+  const { data, loading, error } = useQuery(
+    homepageQueries.GET_ALL_UNIVERSITY,
+    {
+      variables: items,
+    }
   );
+  const dataApi = !loading && !error && !!data && data.allUniversities;
+
+  // const state = useSelector((state) => state);
 
   const addItem = (event) => {
     event.preventDefault();
+    dispatch(fetchUniversityAction(dataApi));
     console.log("ITEMS", items);
   };
+
   const handleOnChange = (e) => {
     setItems({
       ...items,
       [e.target.name]: e.target.value,
     });
   };
+  useEffect(() => {}, [dispatch, items]);
+
+  // console.log("SELECTOR", state);
 
   return (
     <div id="filter">
@@ -35,31 +49,31 @@ function FilterBar() {
             <input
               type="radio"
               id="bac"
-              name="locate"
+              name="zone"
               value="Mien Bac"
               onChange={handleOnChange}
             />
-            <label for="bac">Miền Bắc</label>
+            <label htmlFor="bac">Miền Bắc</label>
           </label>
           <label className="locate d-block">
             <input
               type="radio"
               id="trung"
-              name="locate"
+              name="zone"
               value="Mien Trung"
               onChange={handleOnChange}
             />
-            <label for="trung">Miền Trung</label>
+            <label htmlFor="trung">Miền Trung</label>
           </label>
           <label className="locate d-block">
             <input
               type="radio"
               id="nam"
-              name="locate"
+              name="zone"
               value="Mien Nam"
               onChange={handleOnChange}
             />
-            <label for="nam">Miền Nam</label>
+            <label htmlFor="nam">Miền Nam</label>
           </label>
         </fieldset>
         {/* <!-- -----------end tìm kiếm theo vùng---------- -->  */}
@@ -92,7 +106,7 @@ function FilterBar() {
 
         <fieldset>
           <legend>Chuyên ngành</legend>
-          <label for="" className="locate d-block margin-r-10">
+          <label htmlFor="nhomNghanh" className="locate d-block margin-r-10">
             <select name="nhomNghanh" id="nhomNghanh" className="form-control">
               <option value="">Tất cả nghành</option>
             </select>
@@ -102,21 +116,21 @@ function FilterBar() {
 
         <fieldset>
           <legend>Loại trường</legend>
-          <label for="" className="locate d-block">
+          <label className="locate d-block">
             <input type="checkbox" name="loaiTruong" value="" id="DHCL" />
-            <label for="DHCL">Đại học công lập</label>
+            <label htmlFor="DHCL">Đại học công lập</label>
           </label>
-          <label for="" className="locate d-block">
+          <label className="locate d-block">
             <input type="checkbox" name="loaiTruong" value="" id="DHTH" />
-            <label for="DHTH">Đại học tư thục</label>
+            <label htmlFor="DHTH">Đại học tư thục</label>
           </label>
-          <label for="" className="locate d-block">
+          <label className="locate d-block">
             <input type="checkbox" name="loaiTruong" value="" id="CD" />
-            <label for="CD">Cao đẳng</label>
+            <label htmlFor="CD">Cao đẳng</label>
           </label>
-          <label for="" className="locate d-block">
+          <label className="locate d-block">
             <input type="checkbox" name="loaiTruong" value="" id="DTN" />
-            <label for="DTN">Đào tạo nghề</label>
+            <label htmlFor="DTN">Đào tạo nghề</label>
           </label>
         </fieldset>
         {/* <!-- end --> */}

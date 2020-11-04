@@ -1,21 +1,19 @@
 .body-homepage {
-  /* background-color: #e4e4e494; */
-  background-image: linear-gradient(rgb(255, 255, 255), #dee9e0);
-  background-repeat: no-repeat;
+  background: linear-gradient(rgb(255, 255, 255), #cad1cb);
 }
 #banner {
   height: 215px;
   margin-bottom: 50px;
-  background: #7b7b7b;
-  position: relative;
 }
 #bg-banner {
-  background-image: url(/assets/home-page/banner.png);
-  height: 215px;
+  background-image: url("/assets/home-page/banner.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.9;
+  margin-bottom: 50px;
+  height: 200px;
+  padding-top: 50px;
 }
 #banner h1 {
   position: absolute;
@@ -39,38 +37,44 @@
 
 .highlight-topic {
   /* box-shadow: 5px 5px 5px #1a262b4f; */
-  padding: 10px 20px;
   /* border-bottom: 1px solid #727272;     */
   margin-bottom: 50px;
   transition: all 0.25s;
   background-color: #ffffff;
 }
-.highlight-topic:hover {
+.body-card-home {
+  padding: 10px 20px;
+}
+.body-card-home:hover {
   /* box-shadow: 10px 10px 30px #696969; */
-  background-color: rgba(227, 238, 228, 0.466);
+  background-color: rgba(227, 238, 228, 0.2);
   transition: all 0.25s;
 }
 
 #img-logo {
   display: block;
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
   border-radius: 50%;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  padding-right: 5px;
 }
 #img-logo a {
   display: block;
 }
 
-.highlight-topic a.university-name {
+.university-name {
   display: block;
-  color: #1a262b;
-  font-size: 25px;
-  font-weight: 500;
+  color: #53a63a;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.university-name:hover {
+  color: #448b2f;
 }
 .highlight-topic span.address {
-  color: #53a63a;
+  color: #007ac8;
   font-size: 16px;
   display: block;
   margin-bottom: 15px;
@@ -82,31 +86,36 @@
   color: #727272;
   font-size: 13px;
 }
-.padding-left-32 {
+/* .padding-left-32 {
   padding-left: 32px;
-}
+} */
 .highlight-topic p.demo-content {
   font-size: 14px;
   color: #5e5e5e;
   margin-bottom: 5px;
 }
-.highlight-topic a.detail {
+.highlight-topic a.detail-card-home {
   display: inline-block;
-  color: #5d963f;
   font-size: 14px;
   font-weight: 600;
+  margin-left: 18px;
 }
 
-.highlight-topic i.fa-bookmark {
-  color: #1a262b;
-  font-size: 25px;
+.highlight-topic .fa-bookmark {
+  font-size: 20px;
   float: right;
+}
+.highlight-topic .fa-bookmark:hover {
+  color: #5d963f;
 }
 
 /* -----------Phân trang ---------- */
 .page-link {
   color: #000000;
   font-weight: 500;
+}
+.pagination-material {
+  margin-bottom: 50px;
 }
 
 /* --------------------Filter Form component ------------- */
@@ -184,4 +193,10 @@ label {
 }
 #filter {
   margin-bottom: 100px;
+}
+.fa-chevron-right {
+  margin-left: 5px;
+}
+.footer-card-home {
+  padding: 10px 10px;
 }

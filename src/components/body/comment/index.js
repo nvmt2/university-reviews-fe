@@ -1,47 +1,51 @@
-import React from "react";
-
-import "./comment.css";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { useSelector, useDispatch } from "react-redux";
+//importing component
 import PostComment from "./PostComment";
+import HeaderComment from "./HeaderComment";
+import ContentComment from "./ContentComment";
+import PaginationComment from "./PaginationComment";
+import { commentQuery } from "query/comment";
+import { fetchCommentAction } from "state/ducks/common/actions/comment";
+import "./style/comment.css";
 
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+const Index = ({ location }) => {
+  const dispatch = useDispatch();
+  const { slug } = useParams();
+  const { state } = location;
+  const { data, loading, error } = useQuery(commentQuery.GET_ALL_COMMENT, {
+    variables: {
+      id: slug,
+    },
+  });
+  const commentsLocal = useSelector((state) => state.comment);
+  const contentComment = !!commentsLocal.data && commentsLocal.data;
+  useEffect(() => {
+    if (!!data && !loading && !error) {
+      dispatch(fetchCommentAction(data.allComments));
+    }
+  }, [data, loading, error, dispatch]);
+  console.log("COMMENT SELECTOR", commentsLocal);
 
-const Index = () => {
   return (
     <div className="comment">
-      <div className="banner-comment">
-        <div className="container">
-          <h2 className="title-banner-comment">Cơ sở vật chất thật tuyệt!!!</h2>
-          <div className="row">
-            <a href="#" className="row group-user-comment">
-              <AccountCircleIcon />
-              <div className="infor-user-comment">
-                <p className="title-user-comment">Username1</p>
-                <p className="date-topic-comment">05/08/2020</p>
-              </div>
-            </a>
-            <div className="group-like-comment">
-              <ThumbUpAltIcon />
-              <ThumbDownIcon />
-            </div>
-          </div>
+      <HeaderComment {...state} />
+      {/* Form which to post comment */}
+      <div className="body-comment">
+        <PostComment />
+        {/* Block of content comments */}
+        <div className="container group-content-comment">
+          {!!contentComment ? (
+            contentComment.map((item, index) => <ContentComment {...item} />)
+          ) : (
+            <h1>Loading</h1>
+          )}
         </div>
+        <PaginationComment />
       </div>
-      <div className="container news-comment">
-        <p className="content-comment">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores enim
-          ab qui aperiam iste eos voluptate alias iure voluptatum, amet culpa,
-          vero, consectetur voluptatem! Reprehenderit aut, tempora, quasi
-          suscipit minima fugiat consequatur quas nisi at est maiores ab iure
-          vero dolorem rem distinctio? Tempora, eligendi deserunt sint
-          perspiciatis quis recusandae
-        </p>
-      </div>
-      {/* Post comment */}
-      <PostComment />
     </div>
   );
 };
 export default Index;
-

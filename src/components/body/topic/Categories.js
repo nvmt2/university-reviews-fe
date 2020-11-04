@@ -4,7 +4,7 @@ import "./Categories.css";
 
 function Categories() {
   return (
-    <div className="col-md-3 group-categories-topic">
+    <div>
       <p className="title-categories-topic">Chuyên mục nổi bật</p>
       <div className="category-topic">
         <a href="#" className="content-category-topic">

@@ -7,6 +7,13 @@
   position: absolute;
   margin: 150px 0px 0px 2%;
 }
+
+.view-intro >svg {
+  font-size: 25px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
 .logo-intro {
   width: 40px;
   height: 40px;

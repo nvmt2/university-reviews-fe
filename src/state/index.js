@@ -4,8 +4,9 @@ import { ENVIRONMENT } from "query/config";
 
 export default function configureStore(initialState = {}) {
   if (ENVIRONMENT === "dev") {
-    createStore(
+    return createStore(
       appReducer,
+      initialState,
       window.__REDUX_DEVTOOLS_EXTENSION__ &&
         window.__REDUX_DEVTOOLS_EXTENSION__()
     );

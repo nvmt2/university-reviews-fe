@@ -1,162 +1,79 @@
 import React, { useEffect } from "react";
-import { useParams, useHistory, useLocation } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import "./topic.css";
-import Categories from './Categories';
+import { useQuery } from "@apollo/client";
 
-import CreateIcon from "@material-ui/icons/Create";
-import CameraRollIcon from "@material-ui/icons/CameraRoll";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+//import Component and local file.
+import Categories from "./Categories";
+import CardTopic from "./CardTopic";
+import Banner from "./Banner";
+import topicQuery from "query/topic";
+import Loading from "common/Loading";
+import "./topic.css";
+//importing material-ui
+import Pagination from "@material-ui/lab/Pagination";
 
 function Index({ location }) {
-  console.log("LOCATION", location)
-  // const slugs = location.state ? location.state.slugs : [];
-  // const checkslugs = (nameSlug) => nameSlug === slug;
-  // useEffect(() => {
-  //   //Check current param with array params in data
-  //   var result = slugs.find(checkslugs);
-  //   if (!result) history.push("/error");
-  // }, []);
   const { slug } = useParams();
   let history = useHistory();
-
+  const { data, loading, error } = useQuery(topicQuery.GET_TOPICS, {
+    variables: {
+      id: slug,
+    },
+  });
   useEffect(() => {
     //Check current param with array params in data
     if (!location.state) history.push("/notfound");
-  }, []);
+  }, [data, loading, error]);
+
+  const contentTopic = !loading && !error && !!data && data.allTopics;
+  const nameUniversity = !!contentTopic && data.allTopics[0].university.name;
   return (
     <>
-    <NavLink
+      <NavLink
+        style={{ display: "none" }}
+        to={() => {
+          return {
+            pathname: `${location.pathname}/comments`,
+          };
+        }}
+      >
+        comment
+      </NavLink>
+      <div className="topic">
+        {!!nameUniversity && <Banner name={nameUniversity} />}
 
-      to={() => {
-       return {
-        pathname: `${location.pathname}/comments`,
-        };
-      }}
->
- comment
-</NavLink>
-    <div className="topic">
-      <div className="banner-topic">
-        <div className="container">
-          <div className="title-banner-topic">
-            <h2 className="title-school">Đại học Duy Tân</h2>
-            <a href="#" className="review-topic wirte">
-              <CreateIcon />
-              Viết review
-            </a>
-            <a href="#" className="review-topic read">
-              <CameraRollIcon />
-              Xem thông tin về trường
-            </a>
-          </div>
-        </div>
-      </div>
         <div className="container">
           <div className="main-topic">
             <div className="row">
               <div className="col-md-8 items-topics">
-                <div className="group-topic">
-                  <div className="row content-topic">
-                    <a href="#" className="col-md-8 row group-user">
-                      <AccountCircleIcon />
-                      <div className="infor-user">
-                        <p className="title-user">Username1</p>
-                        <p className="date-topic">05/08/2020</p>
-                      </div>
-                    </a>
-                    <div className="rating-topic">
-                      <div className="count-topic">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                      </div>
-                      <p className="title-rating-topic">Độ uy tín của Topic</p>
-                    </div>
-                  </div>
-                  <div className="infor-topic">
-                    <h2 className="title-infor-topic">
-                      Cơ sở vật chất thật tuyệt!!!
-                    </h2>
-                    <p className="content-infor-topic">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Maiores enim ab qui aperiam iste eos voluptate alias iure
-                      voluptatum, amet culpa, vero, consectetur voluptatem!
-                      Reprehenderit aut, tempora, quasi suscipit minima fugiat
-                      consequatur quas nisi at est maiores ab iure vero dolorem
-                      rem distinctio? Tempora, eligendi deserunt sint
-                      perspiciatis quis recusandae.
-                    </p>
-                    <div className="row view-topic">
-                      Đọc thêm
-                      <div className="row group-content-categories-topic">
-                        <a href="3" className="content-categories-topic">
-                          Carzy
-                        </a>
-                        <a href="#" className="content-categories-topic">
-                          Cơ sở vật chất
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="group-topic">
-                  <div className="row content-topic">
-                    <a href="#" className="col-md-8 row group-user">
-                      <AccountCircleIcon />
-                      <div className="infor-user">
-                        <p className="title-user">Username1</p>
-                        <p className="date-topic">05/08/2020</p>
-                      </div>
-                    </a>
-                    <div className="rating-topic">
-                      <div className="count-topic">
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="fas fa-star"></i>
-                        <i className="far fa-star"></i>
-                      </div>
-                      <p className="title-rating-topic">Độ uy tín của Topic</p>
-                    </div>
-                  </div>
-                  <div className="infor-topic">
-                    <h2 className="title-infor-topic">
-                      Cơ sở vật chất thật tuyệt!!!
-                    </h2>
-                    <p className="content-infor-topic">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Maiores enim ab qui aperiam iste eos voluptate alias iure
-                      voluptatum, amet culpa, vero, consectetur voluptatem!
-                      Reprehenderit aut, tempora, quasi suscipit minima fugiat
-                      consequatur quas nisi at est maiores ab iure vero dolorem
-                      rem distinctio? Tempora, eligendi deserunt sint
-                      perspiciatis quis recusandae.
-                    </p>
-                    <div className="row view-topic">
-                      <a href="#" className="viewMore-topic">
-                        Đọc thêm...
-                      </a>
-                      <div className="row group-content-categories-topic">
-                        <a href="#" className="content-categories-topic">
-                          Carzy
-                        </a>
-                        <a href="#" className="content-categories-topic">
-                          Cơ sở vật chất
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                {!!contentTopic ? (
+                  contentTopic.map((item, index) => (
+                    <CardTopic key={index} {...item} />
+                  ))
+                ) : (
+                  <Loading />
+                )}
+              </div>
+              {/* Bar topic right */}
+              <div className="col-md-3 group-categories-topic">
+                <Categories />
+              </div>
+              <div className="col-md-8 mb-5 ">
+                <div style={{ width: "50%", margin: "auto" }}>
+                  <Pagination
+                    count={20}
+                    color="primary"
+                    shape="rounded"
+                    variant="outlined"
+                    size="medium"
+                  />
                 </div>
               </div>
-              {/* --topic noi bat-- */}
-              <Categories />
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </>
   );
 }

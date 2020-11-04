@@ -1,0 +1,99 @@
+.group-input-post {
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+}
+
+.input-post {
+  width: 100%;
+  min-height: 100px;
+  white-space: normal;
+  word-break: break-all;
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  outline: thin;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.bg-btn-post {
+  background-color: #e8e8e8;
+  padding: 10px 5px 10px 0px;
+  align-items: center;
+  text-align: right;
+}
+
+.btn-post {
+  align-items: center;
+  margin-right: 40px;
+  width: 115px;
+  height: 40px;
+  color: white;
+  background: #005981;
+  border-radius: 10px;
+  margin-top: 3px;
+  border: none;
+}
+.btn-post:hover {
+  background: #023a53;
+}
+
+.item-content-comment {
+  margin-top: 65px;
+}
+
+.item-news-comment {
+  text-align: justify;
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
+  border: 0.2px solid rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+.like-comment {
+  background: #e8e8e8;
+  width: 100%;
+  padding: 10px 10px 10px 0px;
+  text-align: right;
+  margin: 0;
+}
+
+.like-comment > .MuiSvgIcon-root {
+  margin-right: 40px;
+  align-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+/*---------footer comment------------*/
+
+.footer-comment {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  display: flex;
+}
+
+.group-id-comment > li {
+  list-style: none;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.id-comment {
+  padding: 5px 10px 7px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #5e6c72;
+  text-align: center;
+}
+
+.id-comment:hover {
+  text-decoration: none;
+  color: white;
+  background: #27363d;
+  transition: all 0.2s ease-in;
+}

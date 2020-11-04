@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
 function Banner() {
-    return (
-        <div id="banner">
-        <div id="bg-banner">   
-        </div>
-        <h1 className=" text-capitalize font-weight-bold">university reviews</h1>
-        <h3 className="text-center text-light">A place to share basic information about university</h3>
+  return (
+    <div id="bg-banner" className="text-center">
+      <h1 className="font-weight-bold text-white">UNIVERSITY REVIEWS</h1>
+      <h3 className="text-center text-light">
+        A place to share basic information
+      </h3>
     </div>
-    )
+  );
 }
 
-export default Banner
+export default Banner;
