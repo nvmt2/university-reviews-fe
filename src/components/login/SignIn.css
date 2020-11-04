@@ -4,8 +4,8 @@
     background-image: url(/assets/signIn/bglogin.png) ;
      background-size: 100% 100%;
     background-repeat: no-repeat;
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
 
 /* .title-SignIn {
@@ -40,7 +40,7 @@
     display: flex;
     align-items: center;
     background-color: #eff2f5;
-    padding: 15px 0px 15px 10px;
+    padding: 8px 0px 8px 10px;
     border-radius: 30px;
     box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 1);
 }

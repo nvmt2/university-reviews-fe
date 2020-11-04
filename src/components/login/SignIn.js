@@ -28,12 +28,17 @@ function SignIn() {
   return (
     <div className="SignIn">
       <div className="container">
-        <div className="row main-signIn">
+        <div
+          ref={(el) => {
+            formSignIn = el;
+          }}
+          className="row main-signIn"
+        >
           <img src="/assets/signIn/SignIn.png" className="img-signIn" />
           <form
-            ref={(el) => {
-              formSignIn = el;
-            }}
+            // ref={(el) => {
+            //   formSignIn = el;
+            // }}
             className="form-SignIn"
           >
             <h2>Đăng nhập</h2>
