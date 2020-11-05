@@ -45,7 +45,7 @@ function CardTopic(props) {
               <NavLink
                 to={(location) => {
                   return {
-                    pathname: `/comments/${id}`,
+                    pathname: `/topics/${id}/comments`,
                     state: props,
                   };
                 }}

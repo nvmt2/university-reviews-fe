@@ -11,7 +11,6 @@ import FilterBar from "./FilterBar";
 import Banner from "./Banner";
 //importing material UI
 import Pagination from "@material-ui/lab/Pagination";
-import Button from "@material-ui/core/Button";
 
 const array = [
   {

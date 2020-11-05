@@ -18,9 +18,56 @@ const GET_TOPICS = gql`
     }
   }
 `;
+const CREATE_TOPIC = gql`
+  mutation createNewTopic(
+    $title: String
+    $content: String
+    $date: DateTime
+    $idUser: ID!
+    $idUniversity: ID!
+  ) {
+    createTopic(
+      data: {
+        title: $title
+        content: $content
+        date: $date
+        user: { connect: { id: $idUser } }
+        university: { connect: { id: $idUniversity } }
+      }
+    ) {
+      id
+      content
+    }
+  }
+`;
+const UPDATE_TOPIC = gql`
+  mutation updateTopic(
+    $id: ID!
+    $title: String
+    $content: String
+    $date: DateTime
+  ) {
+    updateTopic(
+      id: $id
+      data: { title: $title, content: $content, date: $date }
+    ) {
+      id
+    }
+  }
+`;
+const DELTETE_TOPIC = gql`
+  mutation deleteTopic($id: ID!) {
+    deleteTopic(id: $id) {
+      content
+    }
+  }
+`;
 
-const topicQuery = {
+export const topicQuery = {
   GET_TOPICS,
 };
-
-export default topicQuery;
+export const topicMutation = {
+  CREATE_TOPIC,
+  UPDATE_TOPIC,
+  DELTETE_TOPIC,
+};

@@ -7,7 +7,7 @@ import { useQuery } from "@apollo/client";
 import Categories from "./Categories";
 import CardTopic from "./CardTopic";
 import Banner from "./Banner";
-import topicQuery from "query/topic";
+import { topicQuery } from "query/topic";
 import Loading from "common/Loading";
 import "./topic.css";
 //importing material-ui

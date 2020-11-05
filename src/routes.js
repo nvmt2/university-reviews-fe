@@ -10,8 +10,8 @@ import NewPost from "./components/body/new-post";
 
 export default [
   { path: "/", exact: true, component: Home },
-  { path: "/topics/new-post", exact: true, component: NewPost },
   { path: "/topics/:slug", exact: true, component: Topic },
+  { path: "/topics/:slug/new-post", component: NewPost },
   { path: "/topics/:slug/comments", component: Comment },
   { path: "/user", component: UserProfile },
   { path: "/detail-university/:slug", component: DetailUniversity },

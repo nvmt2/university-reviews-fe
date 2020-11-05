@@ -9,6 +9,10 @@ import "./style/PostComment.css";
 //material-Ui
 import Button from "@material-ui/core/Button";
 import SendIcon from "@material-ui/icons/Send";
+import Alert from "@material-ui/lab/Alert";
+import Collapse from "@material-ui/core/Collapse";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 
 function PostComment() {
   const { slug } = useParams();
@@ -21,6 +25,7 @@ function PostComment() {
     idUser: "5f9a40681a488a2238f7dd53",
     idTopic: slug,
   });
+  const [open, setOpen] = useState(false);
   const handleOnChange = (e) => {
     setComment({
       ...comment,
@@ -39,6 +44,7 @@ function PostComment() {
         },
       ],
     });
+    setOpen(true);
   };
   useEffect(() => {}, [comment, data, dispatch]);
   // console.log("RENDER_POST_COMMENT");
@@ -57,12 +63,31 @@ function PostComment() {
           // className="btn-post"
           onClick={handleClick}
           variant="contained"
-          color="primary"
           endIcon={<SendIcon />}
           size="small"
+          color="primary"
         >
           Đăng
         </Button>
+
+        <Collapse in={open}>
+          <Alert
+            color="info"
+            action={
+              <IconButton
+                aria-label="close"
+                size="small"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            Đăng bình luận thành công !
+          </Alert>
+        </Collapse>
       </div>
     </div>
   );
