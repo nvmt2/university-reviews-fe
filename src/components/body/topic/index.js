@@ -62,7 +62,7 @@ function Index({ location }) {
                       <AccountCircleIcon />
                       <div className="infor-user">
                         <p className="title-user">Username1</p>
-                        <p className="date-topic">05/08/2020</p>
+                        <p className="date-topic">05/08/2020aaaaaaaaaaaaaaaaaa</p>
                       </div>
                     </a>
                     <div className="rating-topic">

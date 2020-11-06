@@ -58,5 +58,6 @@
 
 .content-category-topic:hover {
     text-decoration: none;
-    color: #218621;
+    color: #000000;
+    font-weight: 530;
 }

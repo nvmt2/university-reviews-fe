@@ -9,9 +9,11 @@ function Sticky() {
         <div>
             <div className="view-intro">
                 <img src="/assets/intro/logo.png" className="logo-intro" alt="logo" />
-                <ThumbUpIcon />
+                {/*<ThumbUpIcon />*/}
+                <i class="fas fa-heart"></i>
                 <p className="count-view">0</p>
-                <ThumbDownIcon />
+                {/*<ThumbDownIcon />*/}
+                <i class="fas fa-heart down-sticky"></i>
                 <VisibilityIcon />
             </div>
         </div>

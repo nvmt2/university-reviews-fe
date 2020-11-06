@@ -54,8 +54,17 @@
     align-items: center;
     text-align: right;
     margin: 0;
+    
 }
 
+.btn-like {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 3px;
+    margin-right: 40px;
+    outline: none;
+    border: none;
+}
 .like-comment > .MuiSvgIcon-root {
     margin-right: 40px;
     align-items: center;

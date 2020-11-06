@@ -46,12 +46,23 @@ function SignIn() {
               <span className="title-input">Email</span>
               <div className="SignIn-input">
                 <MailOutlineIcon />
-                <input type="email" placeholder="Nhập tài khoản Email" />
+                <input
+                  type="email"
+                  placeholder="Nhập tài khoản Email"
+                  required="required"
+                  maxLength="50"
+                />
               </div>
               <span className="title-input">Mật khẩu</span>
               <div className="SignIn-input">
                 <LockOpenIcon />
-                <input type="password" placeholder="Nhập mật khẩu của bạn" />
+                <input
+                  type="password"
+                  placeholder="Nhập mật khẩu của bạn"
+                  required="required"
+                  maxLength="15"
+                  minLength="6"
+                />
                 <div className="hidden-pass">
                   <VisibilityOffIcon />
                 </div>
@@ -61,16 +72,21 @@ function SignIn() {
               </a>
               <button className="done">Đăng nhập</button>
               <div className="infor-SignIn">
-                <p className="fl-me">Hoặc đăng nhập qua </p>
+                <p className="fl-me">Đăng nhập thông qua </p>
                 <ul className="social-group">
                   <li>
-                    <a href="#" className="social">
-                      <FacebookIcon />
+                    <a href="#" className="social fb">
+                      <i class="fab fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="social">
-                      <TwitterIcon />
+                    <a href="#" className="social gg">
+                      <i class="fab fa-google-plus"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="social tt">
+                      <i class="fab fa-twitter"></i>
                     </a>
                   </li>
                 </ul>

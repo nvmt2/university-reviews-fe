@@ -14,6 +14,11 @@
   cursor: pointer;
 }
 
+.down-sticky {
+  transform: rotate(180deg);
+  margin-bottom: 10px;
+}
+
 .logo-intro {
   width: 40px;
   height: 40px;

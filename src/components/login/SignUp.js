@@ -45,17 +45,33 @@ function SignUp() {
               <span className="title-input">Tên người dùng</span>
               <div className="SignUp-input">
                 <AccountCircleIcon />
-                <input type="text" placeholder="Nhập tên của bạn" />
+                <input
+                  type="text"
+                  placeholder="Nhập tên của bạn"
+                  required="required"
+                  maxLength="50"
+                />
               </div>
               <span className="title-input">Email</span>
               <div className="SignUp-input">
                 <MailOutlineIcon />
-                <input type="email" placeholder="Nhập tài khoản Email" />
+                <input
+                  type="email"
+                  placeholder="Nhập tài khoản Email"
+                  required="required"
+                  maxLength="50"
+                />
               </div>
               <span className="title-input">Mật khẩu</span>
               <div className="SignUp-input">
                 <LockOpenIcon />
-                <input type="password" placeholder="Nhập mật khẩu của bạn" />
+                <input
+                  type="password"
+                  placeholder="Nhập mật khẩu của bạn"
+                  required="required"
+                  maxLength="15"
+                  minLength="6"
+                />
                 <div className="hidden-pass">
                   <VisibilityOffIcon />
                 </div>
@@ -66,6 +82,9 @@ function SignUp() {
                 <input
                   type="password"
                   placeholder="Nhập lại mật khẩu của bạn"
+                  required="required"
+                  maxLength="15"
+                  minLength="6"
                 />
                 <div className="hidden-pass">
                   <VisibilityOffIcon />
