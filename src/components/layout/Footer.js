@@ -10,51 +10,54 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget subscribe no-box">
                 <h5 className="widget-title">
-                  COMPANY NAME<span></span>
+                  NHÓM C1SE.04<span></span>
                 </h5>
-                <p>About the company, little discription will goes here.. </p>
+                <p>
+                  Là trang web cung cấp thông tin về các trường đại học, và nơi
+                  chia sẻ quan điểm...{" "}
+                </p>
               </div>
             </div>
 
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Quick Links<span></span>
+                  Truy cập nhanh<span></span>
                 </h5>
                 <ul className="thumbnail-widget">
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Get Started</a>
+                      <a href="#.">Trang chủ</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Top Leaders</a>
+                      <a href="#.">Chi tiết trường học</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Success Stories</a>
+                      <a href="#.">Bài đăng nổi bật</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Event/Tickets</a>
+                      <a href="#.">Đánh giá</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">News</a>
+                      <a href="#.">Khu vực</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Lifestyle</a>
+                      <a href="#.">Chuyên ngành</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">About</a>
+                      <a href="#.">Câu hỏi thường găp</a>
                     </div>
                   </li>
                 </ul>
@@ -64,9 +67,9 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Get Started<span></span>
+                  Bắt đầu<span></span>
                 </h5>
-                <p>Get access to your full Training and Marketing Suite.</p>
+                <p>Đăng nhập để cùng trải nghiệm</p>
                 <a className="btn btn-home-page" href="#." target="_blank">
                   Register Now
                 </a>
@@ -75,9 +78,9 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Contact Us<span></span>
+                  Liên lạc<span></span>
                 </h5>
-                <p>group.sun.vtp@gmail.com</p>
+                <p>cs1e.04@gmail.com</p>
                 <ul className="social-footer2"></ul>
               </div>
             </div>

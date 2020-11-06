@@ -45,10 +45,11 @@ function Introduce() {
               alt="logo"
             />
             <p className="address-contact">
-              Địa chỉ: 254 Nguyễn Văn Linh, Quận Thanh Khê - Tp. Đà Nẵng
+              Địa chỉ: Số 99 đường Hùng Vương, phường Hải Châu 1, quận Hải Châu,
+              Tp. Đà Nẵng
             </p>
             <p className="address-contact">
-              Điện thoại: (+84) 236.3650403 - (+84) 236.3827111
+              Điện thoại: (+84) 254.66441123- (+84) 254.6644112324
             </p>
           </div>
           <form className="form-contact col-md-4">
@@ -63,7 +64,7 @@ function Introduce() {
             <button className="send-contact">Gửi thông tin</button>
             <p className="content-form-contact">
               Hoặc muốn biết thêm thông tin về trường liên lạc qua{" "}
-              <b className="more-contact">dtu@gmail.com</b>
+              <b className="more-contact">yduoc@gmail.com</b>
             </p>
           </form>
         </div>
