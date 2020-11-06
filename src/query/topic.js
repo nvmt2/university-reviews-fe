@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-const GET_TOPICS = gql`
-  query getTopics($id: ID) {
+const GET_ALL_TOPICS = gql`
+  query getAllTopics($id: ID) {
     allTopics(where: { university: { id: $id } }) {
       id
       title
@@ -14,6 +14,21 @@ const GET_TOPICS = gql`
       }
       university {
         name
+      }
+    }
+  }
+`;
+const GET_TOPIC = gql`
+  query getTopic($id: ID!) {
+    Topic(where: { id: $id }) {
+      title
+      content
+      tags
+      date
+      like
+      user {
+        id
+        username
       }
     }
   }
@@ -59,12 +74,16 @@ const DELTETE_TOPIC = gql`
   mutation deleteTopic($id: ID!) {
     deleteTopic(id: $id) {
       content
+      university {
+        id
+      }
     }
   }
 `;
 
 export const topicQuery = {
-  GET_TOPICS,
+  GET_ALL_TOPICS,
+  GET_TOPIC,
 };
 export const topicMutation = {
   CREATE_TOPIC,

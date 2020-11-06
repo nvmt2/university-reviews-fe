@@ -39,7 +39,6 @@ function Index(props) {
               to={(location) => {
                 return {
                   pathname: `/topics/${localStorage["slugUniversity"]}`,
-                  state: { slugs: localStorage["slugUniversity"] },
                 };
               }}
             >

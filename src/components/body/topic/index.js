@@ -16,14 +16,14 @@ import Pagination from "@material-ui/lab/Pagination";
 function Index({ location }) {
   const { slug } = useParams();
   let history = useHistory();
-  const { data, loading, error } = useQuery(topicQuery.GET_TOPICS, {
+  const { data, loading, error } = useQuery(topicQuery.GET_ALL_TOPICS, {
     variables: {
       id: slug,
     },
   });
   useEffect(() => {
     //Check current param with array params in data
-    if (!location.state) history.push("/notfound");
+    if (error) history.push("/notfound");
   }, [data, loading, error]);
 
   const contentTopic = !loading && !error && !!data && data.allTopics;
