@@ -57,9 +57,6 @@ function CardTopic(props) {
             <a href="." className="content-categories-topic">
               {tags}
             </a>
-            <a href="." className="content-categories-topic">
-              Cơ sở vật chất
-            </a>
           </div>
         </div>
       </div>

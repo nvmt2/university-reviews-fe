@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 //import local file
-import { topicMutation } from "query/topic";
+import { topicMutation, topicQuery } from "query/topic";
 import { myGetDate } from "components/helper/getDate";
 import "./style/main.css";
 
 //material-ui
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import Chip from "@material-ui/core/Chip";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 function Index() {
   const { slug } = useParams();
@@ -16,6 +18,7 @@ function Index() {
   const [input, setInput] = useState({
     title: "",
     content: "",
+    tags: "",
     date: myGetDate(),
     idUser: "5f9a40681a488a2238f7dd53",
     idUniversity: slug,
@@ -30,8 +33,23 @@ function Index() {
     }
     createNewTopic({
       variables: input,
+      refetchQueries: [
+        {
+          query: topicQuery.GET_ALL_TOPICS,
+          variables: {
+            id: localStorage["slugUniversity"],
+          },
+        },
+      ],
     });
   };
+  //handle input Tag chip
+  const [optionTag, setOptionTag] = useState([
+    "bão",
+    "cơ sở vật chất",
+    "thân thiện",
+    "hài hước",
+  ]);
 
   useEffect(() => {
     if (!!data) {
@@ -50,7 +68,7 @@ function Index() {
                   id="outlined-basic"
                   label="Chủ đề bài đăng"
                   variant="outlined"
-                  fullWidth={true}
+                  fullWidth
                   name="title"
                   onChange={(e) =>
                     setInput({
@@ -65,8 +83,8 @@ function Index() {
                   id="outlined-basic"
                   label="Nội dung"
                   variant="outlined"
-                  fullWidth={true}
-                  multiline={true}
+                  fullWidth
+                  multiline
                   rows={15}
                   name="content"
                   onChange={(e) =>
@@ -78,12 +96,34 @@ function Index() {
                 />
               </div>
               <div>
-                <TextField
-                  id="outlined-basic"
-                  label="Thẻ tag"
-                  variant="outlined"
-                  fullWidth={true}
-                  size="small"
+                <Autocomplete
+                  multiple
+                  id="tags-filled"
+                  options={optionTag.map((option) => option)}
+                  defaultValue={[optionTag[0]]}
+                  freeSolo
+                  renderTags={(value, getTagProps) =>
+                    value.map((option, index) => {
+                      return (
+                        <Chip label={option} {...getTagProps({ index })} />
+                      );
+                    })
+                  }
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      variant="outlined"
+                      label="Thẻ"
+                      placeholder="Thẻ liên quan"
+                      onChange={(e) => {
+                        console.log("INPUt", input);
+                        setInput({
+                          ...input,
+                          tags: e.target.value,
+                        });
+                      }}
+                    />
+                  )}
                 />
               </div>
             </form>

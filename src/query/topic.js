@@ -38,6 +38,7 @@ const CREATE_TOPIC = gql`
     $title: String
     $content: String
     $date: DateTime
+    $tags: String
     $idUser: ID!
     $idUniversity: ID!
   ) {
@@ -46,6 +47,7 @@ const CREATE_TOPIC = gql`
         title: $title
         content: $content
         date: $date
+        tags: $tags
         user: { connect: { id: $idUser } }
         university: { connect: { id: $idUniversity } }
       }

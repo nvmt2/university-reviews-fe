@@ -62,8 +62,9 @@
 
 .news-comment {
   margin-top: 45px;
-  box-shadow: 0px 2px rgba(61, 61, 60, 0.5);
   margin-bottom: 20px;
+  padding-bottom: 15px;
+  box-shadow: 0px 2px rgba(61, 61, 60, 0.5);
 }
 
 .content-comment {
@@ -87,4 +88,10 @@
 .group-btn-header-comment .MuiButton-outlinedPrimary,
 .MuiButton-outlinedSecondary {
   opacity: 0.8;
+}
+.news-comment .MuiChip-outlined,
+.MuiChip-outlined,
+.MuiChip-outlined {
+  color: #5d963f;
+  border: 1px solid #5d963f;
 }

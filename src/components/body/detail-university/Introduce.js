@@ -49,7 +49,7 @@ function Introduce() {
               Tp. Đà Nẵng
             </p>
             <p className="address-contact">
-              Điện thoại: (+84) 254.66441123- (+84) 254.6644112324
+              Điện thoại: (+84) 254.66441123- (+84) 254.6644112325
             </p>
           </div>
           <form className="form-contact col-md-4">

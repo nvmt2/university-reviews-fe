@@ -13,6 +13,8 @@ import ThumbUpOutlinedIcon from "@material-ui/icons/ThumbUpOutlined";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
+import Chip from "@material-ui/core/Chip";
+import DoneIcon from "@material-ui/icons/Done";
 
 function HeaderComment() {
   const history = useHistory();
@@ -108,10 +110,18 @@ function HeaderComment() {
             </div>
           </div>
           {/* content of topic */}
-          <div className="container news-comment">
+          <div className="container news-comment ">
             <p className="content-comment">
               {parse(`${contentHeaderComment.content}`)}
             </p>
+            <Chip
+              label={contentHeaderComment.tags}
+              icon={<DoneIcon />}
+              clickable
+              size="small"
+              variant="outlined"
+              className=""
+            />
           </div>
         </>
       ) : (
