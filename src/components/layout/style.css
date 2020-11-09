@@ -1,8 +1,17 @@
-.border-red {
-  border: 2px solid red;
+.parrent-layout {
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
-/* Css for header */
+.parrent-layout .MuiFab-primary {
+  background-color: #5d963f;
+}
+.parrent-layout .MuiFab-primary:hover {
+  background-color: #497532;
+}
+.child-layout {
+  min-height: 600;
+}
+/* -------------Css for header-------------- */
 #logo-header {
   margin-top: -12px;
 }

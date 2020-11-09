@@ -1,22 +1,26 @@
 import React from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { NavLink } from "react-router-dom";
+//importing local file
 import "./user.css";
 import MyPost from "./MyPost";
-
+import PinPost from "./PinPost";
+//material-ui
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 export default function Index() {
   return (
     <div className="user">
       <div className="banner-user">
         <div className="container">
-          <a href="#" className="group-banner-user">
+          <div className="group-banner-user">
             <AccountCircleIcon />
             <span className="userName">UserName1</span>
-          </a>
-          <a href="#" className="edit-presonal">
+          </div>
+
+          <NavLink className="edit-presonal" to="/user/editor">
             Chỉnh sửa trang cá nhân
-          </a>
+          </NavLink>
         </div>
       </div>
       <div className="container main-user">
@@ -46,8 +50,13 @@ export default function Index() {
           <TabPanel className="tabPanel-user">
             <MyPost />
             <MyPost />
+            <MyPost />
+            <MyPost />
           </TabPanel>
-          <TabPanel className="tabPanel-user">vnfngvkfmv</TabPanel>
+          <TabPanel className="tabPanel-user">
+            <PinPost />
+            <PinPost />
+          </TabPanel>
         </Tabs>
       </div>
     </div>

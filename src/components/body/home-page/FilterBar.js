@@ -100,10 +100,10 @@ function FilterBar() {
             <option value="">Nghệ thuật-thẩm mỹ-đồ họa</option>
             <option value="">Sư Phạm</option>
             <option value="">Nông-lâm-ngư nghiệp</option>
+            <option value="">Tất cả</option>
           </select>
         </fieldset>
         {/* <!-- -----------end nhóm nghành---------- --> */}
-
         <fieldset>
           <legend>Chuyên ngành</legend>
           <label htmlFor="nhomNghanh" className="locate d-block margin-r-10">

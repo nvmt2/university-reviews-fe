@@ -1,0 +1,46 @@
+.form-user-editor {
+  width: 70%;
+  margin: 0px auto;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 50px;
+}
+.user-editor input,
+button {
+  margin-top: 10px;
+}
+.form-control {
+  height: 45px;
+}
+
+#btn-cap-nhat-tt {
+  background: #5d963f;
+  color: #ffffff;
+  font-weight: 500;
+  width: 20%;
+  font-size: 18px;
+  margin-top: 20px;
+}
+#btn-cap-nhat-tt:hover {
+  background: #73b64f;
+  color: #ffffff;
+}
+#btn-huy-tt {
+  font-weight: 500;
+  width: 20%;
+  margin-top: 0px;
+}
+
+#thay-doi-avatar {
+  position: relative;
+}
+#thay-doi-avatar #them-anh {
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+}
+#thay-doi-avatar #display-anh-dai-dien {
+  width: 20%;
+  max-height: 20%;
+  display: inline-block;
+}

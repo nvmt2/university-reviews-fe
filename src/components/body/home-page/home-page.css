@@ -47,7 +47,7 @@
 }
 .body-card-home:hover {
   /* box-shadow: 10px 10px 30px #696969; */
-  background-color: rgba(227, 238, 228, 0.2);
+  background-color: rgba(150, 190, 152, 0.2);
   transition: all 0.25s;
 }
 
