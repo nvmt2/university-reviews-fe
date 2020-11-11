@@ -16,7 +16,7 @@ function CardTopic(props) {
   return (
     <div className="group-topic container">
       <div className="row">
-        <a href="/" className="col-md-8 group-user ">
+        <div className="col-md-8 group-user ">
           <div className="ava-user">
             <AccountCircleIcon />
           </div>
@@ -24,7 +24,7 @@ function CardTopic(props) {
             <p className="title-user">{username}</p>
             <p className="date-topic">{date}</p>
           </div>
-        </a>
+        </div>
         <div className="rating-topic col-md-4 ">
           <div className="count-topic">
             <i className="fas fa-star"></i>
@@ -45,8 +45,7 @@ function CardTopic(props) {
               <NavLink
                 to={(location) => {
                   return {
-                    pathname: `/comments/${id}`,
-                    state: props,
+                    pathname: `/topics/${id}/comments`,
                   };
                 }}
               >
@@ -57,9 +56,6 @@ function CardTopic(props) {
           <div className="col-md-10 wrap-topic-tag">
             <a href="." className="content-categories-topic">
               {tags}
-            </a>
-            <a href="." className="content-categories-topic">
-              Cơ sở vật chất
             </a>
           </div>
         </div>

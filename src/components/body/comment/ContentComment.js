@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { commentMutation } from "query/comment";
 import { useParams } from "react-router-dom";

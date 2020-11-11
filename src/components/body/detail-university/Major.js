@@ -81,7 +81,7 @@ function Major() {
           className="input-contact-major"
         />
         <button type="submit" className="btn-submit-major">
-          Gửi thông tin
+          Gửi thông tin !
         </button>
       </div>
     </div>

@@ -11,10 +11,9 @@ import { commentQuery } from "query/comment";
 import { fetchCommentAction } from "state/ducks/common/actions/comment";
 import "./style/comment.css";
 
-const Index = ({ location }) => {
+const Index = () => {
   const dispatch = useDispatch();
   const { slug } = useParams();
-  const { state } = location;
   const { data, loading, error } = useQuery(commentQuery.GET_ALL_COMMENT, {
     variables: {
       id: slug,
@@ -31,7 +30,7 @@ const Index = ({ location }) => {
 
   return (
     <div className="comment">
-      <HeaderComment {...state} />
+      <HeaderComment />
       {/* Form which to post comment */}
       <div className="body-comment">
         <PostComment />

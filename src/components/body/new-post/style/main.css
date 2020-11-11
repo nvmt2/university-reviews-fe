@@ -1,66 +1,22 @@
-.new-post {
-    margin-top: 50px;
-    /* border: 1px solid black; */
-    justify-content: center;
-}
-
-.title-new-post {
-    text-align: center;
-    font-size: 34px;
-    font-weight: 600;
-}
-
-.form-new-post {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-
-}
-
-.title-post {
-    width: 100%;
-    height: 45px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding-left: 15px;
-    outline: none;
-    font-size: 20px;
-    font-weight: 550;
-}
-
-.content-post {
-    margin-top: 20px;
-    width: 100%;
-    height: 40vh;
-    padding-left: 15px;
-    border-radius: 5px;
-    outline: none;
-    font-size: 16px;
-}
-
-.tag-post {
-    width: 100%;
-    height: 45px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding-left: 15px;
-    outline: none;
-    font-size: 16px;
-    font-weight: 550;
-    margin-top: 20px;
-}
-
 .btn-new-post {
-    /* display: flex; */
-    text-align: center;
-    margin-top: 20px;
-    float: right;
-    background-color: #3c9e29;
-    color: white;
-    border: none;
-    width: 130px;
-    height: 35px;
-    outline: none;
-    border-radius: 8px;
-    font-weight: 500;
+  text-align: right;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.btn-new-post button.MuiButton-outlined {
+  color: #5d963f;
+  border: 1px solid rgba(93, 150, 63, 0.5);
+}
+
+.container-news-post {
+  width: 60%;
+  margin: auto;
+}
+.form-flex-container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px 50px 0px;
+}
+.form-flex-container div {
+  margin-top: 10px;
 }

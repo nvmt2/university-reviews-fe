@@ -11,7 +11,6 @@ import FilterBar from "./FilterBar";
 import Banner from "./Banner";
 //importing material UI
 import Pagination from "@material-ui/lab/Pagination";
-import Button from "@material-ui/core/Button";
 
 const array = [
   {
@@ -58,7 +57,7 @@ function Index({ match }) {
 
   return (
     <div className="body-homepage">
-      <div style={{ display: "block" }}>
+      <div style={{ display: "none" }}>
         {array.map((item, index) => {
           return (
             <div key={index}>

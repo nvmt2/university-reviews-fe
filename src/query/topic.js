@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
-const GET_TOPICS = gql`
-  query getTopics($id: ID) {
+const GET_ALL_TOPICS = gql`
+  query getAllTopics($id: ID) {
     allTopics(where: { university: { id: $id } }) {
       id
       title
@@ -18,9 +18,77 @@ const GET_TOPICS = gql`
     }
   }
 `;
+const GET_TOPIC = gql`
+  query getTopic($id: ID!) {
+    Topic(where: { id: $id }) {
+      title
+      content
+      tags
+      date
+      like
+      user {
+        id
+        username
+      }
+    }
+  }
+`;
+const CREATE_TOPIC = gql`
+  mutation createNewTopic(
+    $title: String
+    $content: String
+    $date: DateTime
+    $tags: String
+    $idUser: ID!
+    $idUniversity: ID!
+  ) {
+    createTopic(
+      data: {
+        title: $title
+        content: $content
+        date: $date
+        tags: $tags
+        user: { connect: { id: $idUser } }
+        university: { connect: { id: $idUniversity } }
+      }
+    ) {
+      id
+      content
+    }
+  }
+`;
+const UPDATE_TOPIC = gql`
+  mutation updateTopic(
+    $id: ID!
+    $title: String
+    $content: String
+    $date: DateTime
+  ) {
+    updateTopic(
+      id: $id
+      data: { title: $title, content: $content, date: $date }
+    ) {
+      id
+    }
+  }
+`;
+const DELTETE_TOPIC = gql`
+  mutation deleteTopic($id: ID!) {
+    deleteTopic(id: $id) {
+      content
+      university {
+        id
+      }
+    }
+  }
+`;
 
-const topicQuery = {
-  GET_TOPICS,
+export const topicQuery = {
+  GET_ALL_TOPICS,
+  GET_TOPIC,
 };
-
-export default topicQuery;
+export const topicMutation = {
+  CREATE_TOPIC,
+  UPDATE_TOPIC,
+  DELTETE_TOPIC,
+};
