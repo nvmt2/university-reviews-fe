@@ -1,0 +1,23 @@
+-| layout/Header.js
+-| layout/Footer
+-| layyout/Body
+----| component/homepage
+-----|Filter
+-----| Banner
+-----| Card 
+-------| component/detail-university
+-----------| Introduce
+-----------| Major
+-----------| Cooperation
+-----------| Gallery
+-----------| Banner
+-------------| Topic
+-------------| Tag
+-------------| Banner
+-------------| Card
+---------------| Comment
+---------------| Header
+---------------| PostComment
+---------------| Card
+
+

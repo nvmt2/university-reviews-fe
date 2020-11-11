@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Route, NavLink } from "react-router-dom";
-import { routes, toRoutes } from "routes-detail-university";
+import { routes, navigations } from "routes-detail-university";
 //importing local
 import Wrapper from "./Wrapper";
 import "./style/nav.css";
@@ -21,7 +21,7 @@ function Index(props) {
     <Wrapper>
       <div className="wrap-detail-university">
         <ul className="nav-detail-university">
-          {toRoutes.map((item, index) => (
+          {navigations.map((item, index) => (
             <li key={index}>
               <NavLink
                 to={() => {

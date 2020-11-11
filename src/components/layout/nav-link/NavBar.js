@@ -1,5 +1,5 @@
 import React from "react";
-import navigations from "./../../../navigations";
+import { navigations } from "./../../../routes-main";
 import { NavLink } from "react-router-dom";
 
 const handleNavigations = (array) => {

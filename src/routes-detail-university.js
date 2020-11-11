@@ -10,7 +10,7 @@ export const routes = [
   { path: "/detail-university/:slug/gallery", component: Gallery },
 ];
 
-export const toRoutes = [
+export const navigations = [
   {
     name: "Giới thiệu",
     field: "",

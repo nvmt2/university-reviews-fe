@@ -22,7 +22,7 @@ function Header() {
                   ></img>
                 </NavLink>
               </div>
-              <div className="col-lg-9 nav">
+              <div className="col-lg-8 nav">
                 {/* Search form */}
                 <div className="col-lg-9">
                   <form>
@@ -56,7 +56,7 @@ function Header() {
                 </div>
               </div>
 
-              <div className="col-lg-2 nav">
+              <div className="col-lg-3 nav">
                 <div className="wrap-account">
                   <NavBar />
                 </div>
