@@ -1,15 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
+//import local file
+import detailUniversityQuery from "query/detail-university";
+import LoadingText from "common/loading/LoadingText";
 import "./../style/author.css";
 
 function Author() {
+  const { slug } = useParams();
+  const { data, loading, error } = useQuery(
+    detailUniversityQuery.GET_UNIVERSITY,
+    {
+      variables: {
+        id: slug,
+      },
+    }
+  );
+  const contentAuthor = !loading && !error && data.University;
+  useEffect(() => {}, [data, error, loading]);
+
   return (
     <div>
-      <p className="infor-intro">admin.duytan</p>
-      <div className="row dates-intro">
-        <p>07/05/2020</p>
-        <p>4:30:PM</p>
-        <p>- 89 lượt đọc</p>
-      </div>
+      {!!contentAuthor ? (
+        <div>
+          <p className="infor-intro">{`${contentAuthor.email} - ${contentAuthor.code}`}</p>
+          <div className="row dates-intro">
+            <p>{contentAuthor.address}</p>
+          </div>
+        </div>
+      ) : (
+        <LoadingText />
+      )}
     </div>
   );
 }

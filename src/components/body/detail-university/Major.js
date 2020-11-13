@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import Loading from "common/Loading";
+import LoadingIcon from "common/loading/LoadingIcon";
 import Author from "./common/Author";
 import "./style/major.css";
 
@@ -64,7 +64,7 @@ function Major() {
             );
           })
         ) : (
-          <Loading />
+          <LoadingIcon />
         )}
       </table>
       <button className="btn-major">Xem thêm</button>

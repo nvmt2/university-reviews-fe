@@ -75,6 +75,11 @@
 .wrap-account a:hover {
   font-weight: 600;
 }
+/*-------------------------Scroll up icon----------------------*/
+.rotate-icon:hover {
+  transition: 0.5s;
+  transform: rotate(360deg);
+}
 /* -------------------------- Footer --------------------------*/
 footer .main-footer {
   padding: 20px 0;

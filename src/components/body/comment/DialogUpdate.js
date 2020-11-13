@@ -55,6 +55,12 @@ function DialogUpdate(props) {
             id: slug,
           },
         },
+        {
+          query: topicQuery.GET_ALL_TOPICS,
+          variables: {
+            id: localStorage["slugUniversity"],
+          },
+        },
       ],
     });
     console.log("INPUT", input);
@@ -114,7 +120,7 @@ function DialogUpdate(props) {
                 {...params}
                 variant="outlined"
                 label="Thẻ"
-                placeholder="Thẻ liên quan"
+                placeholder="Thẻ liên quan ."
                 name="tags"
                 onChange={handleOnChange}
               />

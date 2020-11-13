@@ -3,7 +3,7 @@ import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import parse from "html-react-parser";
-import Loading from "common/Loading";
+import LoadingIcon from "common/loading/LoadingIcon";
 import Author from "./common/Author";
 import "./style/introduce.css";
 
@@ -32,7 +32,7 @@ function Introduce() {
           {!!contentIntroduce ? (
             <span>{parse(`${contentIntroduce}`)}</span>
           ) : (
-            <Loading />
+            <LoadingIcon />
           )}
         </div>
         <h4 className="contact-intro">Liên lạc với chúng tôi</h4>
