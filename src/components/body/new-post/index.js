@@ -65,7 +65,6 @@ function Index() {
             <form>
               <div>
                 <TextField
-                  id="outlined-basic"
                   label="Chủ đề bài đăng"
                   variant="outlined"
                   fullWidth
@@ -80,7 +79,6 @@ function Index() {
               </div>
               <div>
                 <TextField
-                  id="outlined-basic"
                   label="Nội dung"
                   variant="outlined"
                   fullWidth
@@ -98,7 +96,6 @@ function Index() {
               <div>
                 <Autocomplete
                   multiple
-                  id="tags-filled"
                   options={optionTag.map((option) => option)}
                   defaultValue={[optionTag[0]]}
                   freeSolo

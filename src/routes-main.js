@@ -9,7 +9,7 @@ import DetailUniversity from "./components/body/detail-university";
 import NewPost from "./components/body/new-post";
 import UserEditor from "./components/body/user-editor";
 
-export default [
+export const routes = [
   { path: "/", exact: true, component: Home },
   { path: "/topics/:slug", exact: true, component: Topic },
   { path: "/topics/:slug/new-post", component: NewPost },
@@ -21,4 +21,19 @@ export default [
   { path: "/register", component: SignUp },
 
   { path: "/", component: NotFound },
+];
+
+export const navigations = [
+  {
+    name: "Tên",
+    to: "/user",
+  },
+  {
+    name: "Đăng nhập",
+    to: "/login",
+  },
+  {
+    name: "Đăng ký",
+    to: "/register",
+  },
 ];

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import Loading from "common/Loading";
+import LoadingIcon from "common/loading/LoadingIcon";
 import Author from "./common/Author";
 import "./style/cooperation.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -47,7 +47,7 @@ export default function Cooperation() {
             ))}
           </tbody>
         ) : (
-          <Loading />
+          <LoadingIcon />
         )}
         <tbody></tbody>
       </table>

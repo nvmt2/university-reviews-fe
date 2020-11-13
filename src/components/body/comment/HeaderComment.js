@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import { useQuery } from "@apollo/client";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, NavLink } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 //importing local file
 import { topicMutation } from "query/topic";
 import { topicQuery } from "query/topic";
+import DialogUpdate from "./DialogUpdate";
 //importing material UI
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
@@ -19,11 +20,13 @@ import DoneIcon from "@material-ui/icons/Done";
 function HeaderComment() {
   const history = useHistory();
   const { slug } = useParams();
+  //call api get one topic
   const { data, loading, error } = useQuery(topicQuery.GET_TOPIC, {
     variables: {
       id: slug,
     },
   });
+  // call api for remove topic
   const [deleteTopic, { data: response }] = useMutation(
     topicMutation.DELTETE_TOPIC
   );
@@ -42,6 +45,16 @@ function HeaderComment() {
       ],
     });
   };
+  // handle editor topic
+  const [openDialog, setOpenDialog] = useState(false);
+  const handleClickOpen = () => {
+    setOpenDialog(true);
+  };
+
+  const handleClose = () => {
+    setOpenDialog(false);
+  };
+
   useEffect(() => {
     if (!!response)
       history.push(`/topics/${response.deleteTopic.university.id}`);
@@ -82,11 +95,19 @@ function HeaderComment() {
                         "5f9a40681a488a2238f7dd53" && "none",
                   }}
                 >
+                  {/* start dialog */}
+                  <DialogUpdate
+                    open={openDialog}
+                    onClose={handleClose}
+                    data={contentHeaderComment}
+                  />
+                  {/* end dialog */}
                   <Button
                     size="small"
-                    color="primary"
                     variant="outlined"
+                    color="primary"
                     startIcon={<EditIcon />}
+                    onClick={handleClickOpen}
                   >
                     Chỉnh sửa
                   </Button>

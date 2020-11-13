@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "./components/layout";
-import routes from "./routes";
+import { routes } from "./routes-main";
 import { Route, Switch } from "react-router-dom";
 
 function RouteWrapper() {

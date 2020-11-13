@@ -53,10 +53,23 @@ const GET_GALLERY = gql`
     }
   }
 `;
+const GET_UNIVERSITY = gql`
+  query getUniversity($id: ID!) {
+    University(where: { id: $id }) {
+      email
+      code
+      address
+      logo {
+        publicUrlTransformed(transformation: { width: "40", height: "40" })
+      }
+    }
+  }
+`;
 const detailUniversityQuery = {
   GET_INTRODUCE,
   GET_MAJOR,
   GET_PARTNER,
   GET_GALLERY,
+  GET_UNIVERSITY,
 };
 export default detailUniversityQuery;

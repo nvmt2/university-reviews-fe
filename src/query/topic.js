@@ -63,10 +63,11 @@ const UPDATE_TOPIC = gql`
     $title: String
     $content: String
     $date: DateTime
+    $tags: String
   ) {
     updateTopic(
       id: $id
-      data: { title: $title, content: $content, date: $date }
+      data: { title: $title, content: $content, date: $date, tags: $tags }
     ) {
       id
     }

@@ -13,7 +13,9 @@ function Index({ children }) {
       <div id="children" className="child-layout">
         <ScrollToTop showUnder={160}>
           <Fab size="medium" color="primary" aria-label="scoll-top">
-            <ExpandLessOutlinedIcon />
+            <div className="rotate-icon">
+              <ExpandLessOutlinedIcon />
+            </div>
           </Fab>
         </ScrollToTop>
         {children}

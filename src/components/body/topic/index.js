@@ -8,7 +8,7 @@ import Categories from "./Categories";
 import CardTopic from "./CardTopic";
 import Banner from "./Banner";
 import { topicQuery } from "query/topic";
-import Loading from "common/Loading";
+import LoadingIcon from "common/loading/LoadingIcon";
 import "./topic.css";
 //importing material-ui
 import Pagination from "@material-ui/lab/Pagination";
@@ -52,7 +52,7 @@ function Index({ location }) {
                     <CardTopic key={index} {...item} />
                   ))
                 ) : (
-                  <Loading />
+                  <LoadingIcon />
                 )}
               </div>
               {/* Bar topic right */}

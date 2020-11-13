@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import Loading from "common/Loading";
+import LoadingIcon from "common/loading/LoadingIcon";
 import GalleryImages from "react-photo-gallery";
 import Author from "./common/Author";
 import Carousel, { Modal, ModalGateway } from "react-images";
@@ -87,7 +87,7 @@ function Gallery() {
           </ModalGateway>
         </div>
       ) : (
-        <Loading />
+        <LoadingIcon />
       )}
     </div>
   );
