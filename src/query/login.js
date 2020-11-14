@@ -11,8 +11,20 @@ const GET_ACCOUNT = gql`
   }
 `;
 
-const loginQuery = {
+const CREATE_ACCOUNT = gql`
+  mutation signUp($email: String, $passwordUser: String, $username: String) {
+    createAccount(
+      data: { email: $email, passwordUser: $passwordUser, username: $username }
+    ) {
+      id
+      username
+    }
+  }
+`;
+
+export const loginQuery = {
   GET_ACCOUNT,
 };
-
-export default loginQuery;
+export const loginMutation = {
+  CREATE_ACCOUNT,
+};
