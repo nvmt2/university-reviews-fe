@@ -1,5 +1,5 @@
 import React from "react";
-import { navigations } from "./../../../routes-main";
+// import { navigations } from "./../../../routes-main";
 import { NavLink } from "react-router-dom";
 
 const handleNavigations = (array) => {
@@ -15,8 +15,8 @@ const handleNavigations = (array) => {
   }
   return result;
 };
-function NavBar() {
+function NavBar(props) {
+  const { navigations } = props;
   return <>{handleNavigations(navigations)}</>;
 }
-
 export default NavBar;

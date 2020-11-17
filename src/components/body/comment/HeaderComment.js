@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import parse from "html-react-parser";
 import { useQuery } from "@apollo/client";
+import { useSelector } from "react-redux";
 import { useParams, useHistory, NavLink } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 //importing local file
@@ -26,6 +27,7 @@ function HeaderComment() {
       id: slug,
     },
   });
+  const contentHeaderComment = !loading && !error && !!data && data.Topic;
   // call api for remove topic
   const [deleteTopic, { data: response }] = useMutation(
     topicMutation.DELTETE_TOPIC
@@ -54,12 +56,18 @@ function HeaderComment() {
   const handleClose = () => {
     setOpenDialog(false);
   };
+  // Authorization
+  const state = useSelector((state) => state.login.data.id);
+  const checkAuthor = () => {
+    let result = state === contentHeaderComment.user.id ? "block" : "none";
+    return { display: result };
+  };
 
   useEffect(() => {
     if (!!response)
       history.push(`/topics/${response.deleteTopic.university.id}`);
   }, [data, loading, error, response]);
-  const contentHeaderComment = !loading && !error && !!data && data.Topic;
+
   return (
     <>
       {!!contentHeaderComment ? (
@@ -89,11 +97,12 @@ function HeaderComment() {
                 </div>
                 <div
                   className="col-md-8 group-btn-header-comment"
-                  style={{
-                    display:
-                      contentHeaderComment.user.id !==
-                        "5f9a40681a488a2238f7dd53" && "none",
-                  }}
+                  // style={{
+                  //   display:
+                  //     contentHeaderComment.user.id !==
+                  //       "5f9a40681a488a2238f7dd53" && "none",
+                  // }}
+                  style={checkAuthor()}
                 >
                   {/* start dialog */}
                   <DialogUpdate

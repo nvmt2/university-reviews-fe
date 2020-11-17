@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMutation } from "@apollo/client";
 import { commentMutation } from "query/comment";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 //importing local file
 import { commentQuery } from "query/comment";
 import DeleteOutlineRoundedIcon from "@material-ui/icons/DeleteOutlineRounded";
 import parse from "html-react-parser";
 //material-ui
-import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 
 function ContentComment(props) {
   const { slug } = useParams();
@@ -28,6 +29,12 @@ function ContentComment(props) {
       ],
     });
   };
+  // Authorization
+  const state = useSelector((state) => state.login.data.id);
+  const checkAuthor = () => {
+    let result = state === user.id ? "block" : "none";
+    return { display: result };
+  };
   console.log("RENDER_CONTENT");
   return (
     <div className="item-content-comment">
@@ -36,18 +43,14 @@ function ContentComment(props) {
         <p>-{user.username} -</p>
       </div>
       <div className="like-comment">
-        <Button
-          style={{
-            display: user.id !== "5f9a40681a488a2238f7dd53" && "none",
-          }}
+        <IconButton
+          style={checkAuthor()}
           onClick={handleOnClick}
-          className="button-remove"
-          variant="contained"
-          startIcon={<DeleteOutlineRoundedIcon />}
-          size="small"
+          aria-label="delete"
+          color="primary"
         >
-          Xóa
-        </Button>
+          <DeleteOutlineRoundedIcon />
+        </IconButton>
       </div>
     </div>
   );

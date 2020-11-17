@@ -1,5 +1,6 @@
 import { gql } from "@apollo/client";
 
+
 const GET_ACCOUNT = gql`
   query getAccount($email: String, $passwordUser: String) {
     allAccounts(

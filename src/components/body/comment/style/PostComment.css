@@ -51,18 +51,11 @@
 
 .like-comment {
   background: #e8e8e8;
-  width: 100%;
-  padding: 10px 10px 10px 0px;
-  text-align: right;
-  margin: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.like-comment > .MuiSvgIcon-root {
-  margin-right: 40px;
-  align-items: center;
-  width: 2.3rem;
-  height: 2.3rem;
-  margin-top: 3px;
+.like-comment button {
   cursor: pointer;
 }
 
