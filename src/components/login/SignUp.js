@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import "./SignUp.css";
+import "./style/signup.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
