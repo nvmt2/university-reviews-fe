@@ -1,22 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { Route, NavLink } from "react-router-dom";
 import { routes, navigations } from "routes-detail-university";
 //importing local
 import Wrapper from "./Wrapper";
 import "./style/nav.css";
 
-const array = [
-  {
-    id: "123ie12bd@8",
-    name: "Duy Tan",
-    slug: "dtu",
-    rating: 5,
-  },
-];
-const slugs = array.map((item) => item.slug);
 function Index(props) {
-  const slug = useParams();
   return (
     <Wrapper>
       <div className="wrap-detail-university">

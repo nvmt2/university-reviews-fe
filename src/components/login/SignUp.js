@@ -1,4 +1,6 @@
 import React, { useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+
 import "./style/signup.css";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
@@ -71,9 +73,10 @@ function SignUp() {
                   <VisibilityOffIcon />
                 </div>
               </div>
-              <a href="#" className="acc">
+              <NavLink className="acc" to="/login">
+                {" "}
                 Đã có tài khoản
-              </a>
+              </NavLink>
               <button className="done">Xong</button>
               <div className="infor">
                 <p>Theo dõi chúng tôi qua</p>

@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+import { TweenMax, Power2, Elastic } from "gsap";
 //import local file
 import {
   fetchAccountAction,
@@ -10,12 +11,12 @@ import {
 import { loginQuery } from "query/login";
 import "./style/signin.css";
 
+//material-ui
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import { TweenMax, Power2, Elastic } from "gsap";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -101,7 +102,7 @@ function SignIn() {
                 Quên mật khẩu
               </a>
               <button className="done">Đăng nhập</button>
-              {/* <div className="infor-SignIn">
+              <div className="infor-SignIn">
                 <p className="fl-me">Hoặc đăng nhập qua </p>
                 <ul className="social-group">
                   <li>
@@ -116,13 +117,11 @@ function SignIn() {
                   </li>
                 </ul>
               </div>
-         
+
               <div className="account-signIn">
                 <p className="q-account">Bạn chưa có tài khoản ?</p>
-                <a href="/register" className="signUp-acc">
-                  Đăng ký ngay
-                </a>
-              </div> */}
+                <NavLink to="/register">Đăng ký ngay</NavLink>
+              </div>
             </div>
           </form>
         </div>

@@ -1,4 +1,3 @@
-import Index from "components/layout";
 import React, { useEffect } from "react";
 import detailUniversityQuery from "query/detail-university";
 import { useQuery } from "@apollo/client";
