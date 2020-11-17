@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useMutation } from "@apollo/client";
+import { useSelector } from "react-redux";
 //importing local file
 import { commentMutation } from "query/comment";
 import { commentQuery } from "query/comment";
@@ -15,6 +16,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
 function PostComment() {
+  const idAuthor = useSelector((state) => state.login.data.id);
   const { slug } = useParams();
   const dispatch = useDispatch();
   const [createNewcomment, { data }] = useMutation(
@@ -22,7 +24,7 @@ function PostComment() {
   );
   const [comment, setComment] = useState({
     content: "",
-    idUser: "5f9a40681a488a2238f7dd53",
+    idUser: idAuthor,
     idTopic: slug,
   });
   const [open, setOpen] = useState(false);
@@ -32,6 +34,7 @@ function PostComment() {
       content: e.target.value,
     });
   };
+  //handle remove comment event
   const handleClick = () => {
     createNewcomment({
       variables: comment,
@@ -50,7 +53,7 @@ function PostComment() {
   // console.log("RENDER_POST_COMMENT");
 
   return (
-    <div className="container group-input-post">
+    <div className=" group-input-post">
       <textarea
         type="text"
         className="input-post"

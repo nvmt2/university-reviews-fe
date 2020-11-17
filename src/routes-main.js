@@ -23,10 +23,10 @@ export const routes = [
   { path: "/", component: NotFound },
 ];
 
-export const navigations = [
+export const navigationsUnAuthen = [
   {
-    name: "Tên",
-    to: "/user",
+    name: "Trang chủ",
+    to: "/",
   },
   {
     name: "Đăng nhập",
@@ -35,5 +35,19 @@ export const navigations = [
   {
     name: "Đăng ký",
     to: "/register",
+  },
+];
+export const navigationsAuthentication = [
+  {
+    name: "Trang chủ",
+    to: "/",
+  },
+  {
+    name: "Cài đặt",
+    to: "/user/editor",
+  },
+  {
+    name: "Bài Đăng",
+    to: "/user",
   },
 ];

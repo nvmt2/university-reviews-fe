@@ -8,7 +8,7 @@
 .tabList-cooperation {
   display: flex;
   list-style: none;
-  margin-left:-35px;
+  margin-left: -35px;
 }
 
 .tab-cooperation {
@@ -31,7 +31,7 @@
 
 .th-cooperation {
   border: 2px solid rgb(201, 199, 199);
-  text-align: left;
+  text-align: center;
   padding: 10px 15px 10px 15px;
   background: #013248;
   color: #ffffff;
@@ -49,6 +49,7 @@
   text-align: left;
   padding: 10px 15px 10px 15px;
   border: 2px solid white;
+  background: #ececec;
 }
 
 .td-coopreation:last-child {

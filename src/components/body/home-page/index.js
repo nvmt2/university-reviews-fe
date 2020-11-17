@@ -39,7 +39,7 @@ function Index({ match }) {
   const dataApi = !loading && !error && data && data.allUniversities; //get data from api
   const state = useSelector((state) => state.homePage); //get data from reducer
   const contentMainHome = !!state.data && state.data; //check data from reducer whether is available or not ?
-  console.log("STATE", state);
+  // console.log("STATE", state);
 
   useEffect(() => {
     if (!!data) {

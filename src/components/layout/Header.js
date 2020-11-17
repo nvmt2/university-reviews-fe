@@ -1,10 +1,14 @@
 import React from "react";
-import "./style.css";
-import NavBar from "./nav-link/NavBar";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-// import { } from "<i class="fa fa-search-minus" aria-hidden="true"></i>"
+
+import { navigationsUnAuthen, navigationsAuthentication } from "routes-main";
+import NavBar from "./nav-link/NavBar";
+import "./style.css";
 
 function Header() {
+  const state = useSelector((state) => state);
+  console.log("HEADER", state.login.data);
   return (
     <>
       <div className="container-fluid header-page">
@@ -58,7 +62,11 @@ function Header() {
 
               <div className="col-lg-3 nav">
                 <div className="wrap-account">
-                  <NavBar />
+                  {!!state.login.data ? (
+                    <NavBar navigations={navigationsAuthentication} />
+                  ) : (
+                    <NavBar navigations={navigationsUnAuthen} />
+                  )}
                 </div>
               </div>
             </div>

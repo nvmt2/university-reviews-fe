@@ -11,7 +11,9 @@ function Banner(props) {
       <div className="container">
         <div className="title-banner-topic">
           <h2 className="title-school">{name}</h2>
+
           <NavLink
+            style={{}}
             className="review-topic wirte"
             to={() => {
               return { pathname: `/topics/${slug}/new-post` };
