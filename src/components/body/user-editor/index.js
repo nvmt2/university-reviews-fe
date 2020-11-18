@@ -1,7 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { fetchAccountAction } from "state/ducks/common/actions/login";
 import "./style.css";
 
 function Index() {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  // dispath empty object into login state in reducer
+  const handleLogOut = () => {
+    dispatch(fetchAccountAction());
+    history.push("/login");
+  };
   return (
     <div className="container user-editor">
       <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
@@ -32,7 +43,6 @@ function Index() {
           <input type="radio" name="gioitinh" id="nu" value="Nu" />
           <label for="nu">Nữ</label>
         </div>
-
         <textarea
           name="moTa-thong-tin"
           id="maTa"
@@ -41,7 +51,6 @@ function Index() {
           placeholder="Mô tả thông tin về bạn .."
           className="form-control"
         ></textarea>
-
         <input
           type="password"
           id="upd-passwor-1"
@@ -61,9 +70,12 @@ function Index() {
           </button>
         </div>
         <hr />
-
-        <button id="btn-huy-tt" className="btn btn-outline-danger">
-          Hủy
+        <button
+          id="btn-huy-tt"
+          className="btn btn-outline-danger"
+          onClick={handleLogOut}
+        >
+          Đăng xuất
         </button>
       </form>
     </div>

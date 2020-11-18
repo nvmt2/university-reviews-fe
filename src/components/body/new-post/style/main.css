@@ -20,3 +20,7 @@
 .form-flex-container div {
   margin-top: 10px;
 }
+.hold-block-500 {
+  height: 500px;
+  margin-top: 50px;
+}

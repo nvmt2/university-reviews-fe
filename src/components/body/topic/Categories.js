@@ -1,30 +1,24 @@
 import React from "react";
-
 import "./Categories.css";
 
 function Categories() {
+  const tags = [
+    "  Bạo lực",
+    "test",
+    "cơ sở vật chất",
+    "hộc phí",
+    "ngành học",
+    "sinh viên",
+  ];
   return (
     <div>
       <p className="title-categories-topic">Chuyên mục nổi bật</p>
       <div className="category-topic">
-        <a href="#" className="content-category-topic">
-          Bạo lực
-        </a>
-        <a href="#" className="content-category-topic">
-          Test
-        </a>
-        <a href="#" className="content-category-topic">
-          Cơ sở vật chất
-        </a>
-        <a href="#" className="content-category-topic">
-          Học phí
-        </a>
-        <a href="#" className="content-category-topic">
-          Ngành học
-        </a>
-        <a href="#" className="content-category-topic">
-          Sinh viên
-        </a>
+        {tags.map((item, index) => (
+          <a href="." key={index} className="content-category-topic">
+            {item}
+          </a>
+        ))}
       </div>
     </div>
   );

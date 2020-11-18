@@ -41,17 +41,16 @@ function CardTopic(props) {
         <p className="content-infor-topic">{parse(`${content}`)}</p>
         <div className="row view-topic">
           <div className="col-md-2">
-            <a href="." className="viewMore-topic">
-              <NavLink
-                to={(location) => {
-                  return {
-                    pathname: `/topics/${id}/comments`,
-                  };
-                }}
-              >
-                Chi tiết
-              </NavLink>
-            </a>
+            <NavLink
+              className="viewMore-topic"
+              to={(location) => {
+                return {
+                  pathname: `/topics/${id}/comments`,
+                };
+              }}
+            >
+              Chi tiết
+            </NavLink>
           </div>
           <div className="col-md-10 wrap-topic-tag">
             <a href="." className="content-categories-topic">

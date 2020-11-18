@@ -18,11 +18,13 @@ function Introduce() {
     }
   );
   useEffect(() => {}, [data, loading, error]);
+
   const contentIntroduce =
     !loading &&
     !error &&
-    !!data &&
+    !!data.allUniversities[0].detailUniversity &&
     data.allUniversities[0].detailUniversity.introduce;
+  console.log("INTROCDUCE", data);
   return (
     <div className="intro-background">
       <div className="container ">
