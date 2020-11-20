@@ -1,0 +1,67 @@
+1/ Project proposal ( Mục đich, lý do của giải pháp phần mềm này ra đời. đưa ra các dự tính về thời gian và chi phí cho toàn bộ dự án )
+Dự tính dự án bắt đầu
+August 13 - December 05
+
+Sprint 1	28	29- August -20	25-September-20
+Sprint 2	28	25- September -20	22-October-20
+Sprint 3	21	22- October -20	11- November 20
+Sprint 4	21	11- November -20	01- December -20
+
+2/ User story ( Mô tả tính năng bằng ngôn ngữ tự nhiên )
+Dự tính dự án bắt đầu
+14 – Sep – 2020 
+
+
+
+
+
+
+
+BỐ CỤC THUYẾT TRÌNH
+GIỚI THIỆU
+ - Nhóm từ HTTT
+ - Sản phẩm 90% tự code, hạn chế dùng thư viện, code mẫu trên mạng
+
+VỀ SẢN PHẨM
+* Đi thẳng vào ý chính, tiết kiệm thời gian nhất có thể
+* Phải show nhiều nhất những thừ mình làm
+
+1/ Mục đích và lý do tạo nên trang web 
+ - lấy nhu cầu từ các học sinh đang trong giai đoạn chọn trường đại học ( muốn tham khảo về tất cả các thông tin cơ bản liên quan đến trường đó )
+ - muốn nghe được các trải nghiệm thực tế từ các sinh viên đi trước
+
+2/ Tính năng chính 
+  - Cho 3 actors: user, admin university, admin
+  - Hiển thị những thông tin chi tiết về các trường đại học ở Việt Nam
+  - Cho phép người dùng tương tác với câc trường thông qua bình luận
+
+ 3/ Hơn gì so với các trang khác 
+  - TuyenSinhSo
+   + Trang load chậm, không trực quan, chủ yếu đánh vào mục tin tức, và  chủ yếu hiện thị thông tin chứ có không có tương tác cho học sinh sinh viên
+  - Edu2Review
+   + Chủ yếu về các trường, ngành hoc liên quan đén ngôn ngữ
+   + Tế nhị khi cho phép đánh giá số sao về từng trường.
+
+TÀI LIỆU
+
+DEMO
+ 1/ Trang cho người dùng
+ 2/ Trang cho admin
+
+KẾT THÚC
+1/Hoàn thành được 80% tiến độ dự án
+2/ Kế hoạch tiếp theo ( 2 tuần )
+ - Sản phẩm 
+ + Hoàn thành phần phân quyền cho admin 
+ + Sửa lỗi phần đăng ký 
+ + Đánh giá bình luận
+ - Tài liệu
+  + Các tài liệu liên quan đến sprint 4 ( test, sprint backlog )
+3/ Đánh giá 
+ - Được thực hành về cách lên ý tưởng, lấy yêu cầu và thống nhất ý kiến, thiết kế, tiếp xúc quy trình scrum
+ - Học thêm các công nghệ mới ( React, Database noSQL, JS, nhiều thư viện, và phần mềm thứ 3 hỗ trợ khác )
+ - khó khăn: trong quá trình kiểm soát công việc, phân chia các tasks cho từng sprints chưa hợp lý ( không biết cái nào trường nào sau, vì ý tưởng mới lên, vẫn còn phát triền, nên làm đến đâu phát triển đến đó )
+
+
+ 
+
