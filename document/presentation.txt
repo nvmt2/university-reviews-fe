@@ -11,9 +11,27 @@ Sprint 4	21	11- November -20	01- December -20
 Dự tính dự án bắt đầu
 14 – Sep – 2020 
 
+3/ Product Backlog ( liệt kê danh sách các tính năng chính + mức độ ưu tiên mỗi tính năng )
+
+Những tính năng còn lại
+Sprint 1: PB1, PB4
+Sprint 2: PB10, PB18 ( lôĩ ), PB20
+Sprint 3: PB13, PB14, PB16, PB33, PB34, 
+sprint 4: PB3, PB5, PB7, PB24, PB25
+
+4/ Project plan ( lên kế hoạch cho việc test, sao cho phù hợp với ngân sách, nhân lực, tính năng )
+17 - Sep -2020
+
+5/ User interface ( Hướng dẫn sử dụng các tính năng trong giao diện )
+Sai các lỗi về chính tả
+
+6/ Database design ( vẽ mô tả các ràng buộc, và liên ết trong database )
+Chưa hiểu bảng Figure 01
+
+7/ Sprint backlog
 
 
-
+ * thiêu nodeJS trong phần công nghệ
 
 
 
