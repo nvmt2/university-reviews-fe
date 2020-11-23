@@ -25,8 +25,8 @@ function Banner() {
       <div className="carousel-Uni">
         <Carousel>
           {photos.map((item, index) => (
-            <Carousel.Item interval={2000}>
-              <img {...item} key={index} alt="banner-slide" />
+            <Carousel.Item interval={2000} key={index}>
+              <img {...item} alt="banner-slide" />
             </Carousel.Item>
           ))}
         </Carousel>
