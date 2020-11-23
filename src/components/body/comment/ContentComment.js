@@ -13,7 +13,7 @@ import IconButton from "@material-ui/core/IconButton";
 function ContentComment(props) {
   const { slug } = useParams();
   const { id, content, user } = props;
-  const [deleteComment, { data }] = useMutation(commentMutation.REMOVE_COMMENT);
+  const [deleteComment] = useMutation(commentMutation.REMOVE_COMMENT);
   const handleOnClick = () => {
     deleteComment({
       variables: {

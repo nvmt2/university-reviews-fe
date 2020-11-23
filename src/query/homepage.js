@@ -20,22 +20,6 @@ const GET_ALL_UNIVERSITY = gql`
     }
   }
 `;
-const FILTER_UNIVERSITY = gql`
-  query filterUniversity($first: Int, $skip: Int) {
-    allUniversities(first: $first, skip: $skip) {
-      id
-      name
-      code
-      address
-      email
-      zone
-      introduce
-      logo {
-        publicUrl
-      }
-    }
-  }
-`;
 
 const homepageQueries = {
   GET_ALL_UNIVERSITY,

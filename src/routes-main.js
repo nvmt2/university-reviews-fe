@@ -6,7 +6,7 @@ import Comment from "./components/body/comment";
 import NotFound from "./components/NotFound";
 import UserProfile from "./components/body/user-profile";
 import DetailUniversity from "./components/body/detail-university";
-import NewPost from "./components/body/new-post";
+import NewPost from "./components/body/new-post/FormCreate";
 import UserEditor from "./components/body/user-editor";
 
 export const routes = [
@@ -39,15 +39,15 @@ export const navigationsUnAuthen = [
 ];
 export const navigationsAuthentication = [
   {
-    name: "Trang chủ",
-    to: "/",
-  },
-  {
     name: "Cài đặt",
     to: "/user/editor",
   },
   {
     name: "Bài Đăng",
     to: "/user",
+  },
+  {
+    name: "Đăng xuất",
+    to: "/login",
   },
 ];

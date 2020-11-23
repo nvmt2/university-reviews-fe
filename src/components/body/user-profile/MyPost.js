@@ -38,14 +38,14 @@ function MyPost() {
             perspiciatis quis recusandae.
           </p>
           <div className="row view-topics">
-            <a href="#" className="viewMore-topics">
+            <a href="." className="viewMore-topics">
               Đọc thêm...
             </a>
             <div className="row group-content-categories-topics">
               <a href="3" className="content-categories-topics">
                 Carzy
               </a>
-              <a href="#" className="content-categories-topics">
+              <a href="." className="content-categories-topics">
                 Cơ sở vật chất
               </a>
             </div>

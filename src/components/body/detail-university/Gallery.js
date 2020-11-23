@@ -26,7 +26,7 @@ function Gallery() {
 
   const [photoAlbum, setPhotoAlbum] = useState([]);
 
-  // Assign image to state photoAlbum from image api
+  // Assign image to state photoAlbum variable from image api
   const fetchPhoto = () => {
     if (!!galleries) {
       let array = [];
