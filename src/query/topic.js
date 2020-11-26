@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const GET_ALL_TOPICS = gql`
-  query getAllTopics($id: ID) {
-    allTopics(where: { university: { id: $id } }) {
+  query getAllTopics($id: ID, $tag: String) {
+    allTopics(where: { university: { id: $id }, tags: $tag }) {
       id
       title
       content
@@ -30,6 +30,13 @@ const GET_TOPIC = gql`
         id
         username
       }
+    }
+  }
+`;
+const GET_TAGS = gql`
+  query getAllOfTags($idUniversity: ID) {
+    allTopics(where: { university: { id: $idUniversity } }) {
+      tags
     }
   }
 `;
@@ -87,6 +94,7 @@ const DELTETE_TOPIC = gql`
 export const topicQuery = {
   GET_ALL_TOPICS,
   GET_TOPIC,
+  GET_TAGS,
 };
 export const topicMutation = {
   CREATE_TOPIC,
