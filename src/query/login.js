@@ -29,7 +29,12 @@ const AUTHENICATION = gql`
 const CREATE_ACCOUNT = gql`
   mutation signUp($email: String, $passwordUser: String, $username: String) {
     createAccount(
-      data: { email: $email, passwordUser: $passwordUser, username: $username }
+      data: {
+        email: $email
+        passwordUser: $passwordUser
+        username: $username
+        isAdmin: false
+      }
     ) {
       id
       username

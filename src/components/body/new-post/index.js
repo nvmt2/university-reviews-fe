@@ -13,9 +13,11 @@ function Index() {
   return (
     <div className="container">
       <div className="row">
-        <div className="offset-md-2 col-md-8">
+        <div className="offset-md-2 col-md-2">
           {!!idAuthor ? (
-            <FormCreate />
+            {
+              /* <FormCreate /> */
+            }
           ) : (
             <div className="hold-block-500">
               <Alert color="warning">

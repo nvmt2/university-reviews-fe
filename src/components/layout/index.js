@@ -11,6 +11,7 @@ function Index({ children }) {
       <Header />
       {/* short code of { props.children } */}
       <div id="children" className="child-layout">
+        {/* button scoll up */}
         <ScrollToTop showUnder={160}>
           <Fab size="medium" color="primary" aria-label="scoll-top">
             <div className="rotate-icon">
