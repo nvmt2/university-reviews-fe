@@ -1,6 +1,5 @@
 import { gql } from "@apollo/client";
 
-
 const GET_ACCOUNT = gql`
   query getAccount($email: String, $passwordUser: String) {
     allAccounts(
@@ -8,6 +7,21 @@ const GET_ACCOUNT = gql`
     ) {
       id
       username
+    }
+  }
+`;
+
+const AUTHENICATION = gql`
+  mutation {
+    authenticateAccountWithPassword(
+      email: "admin@gmail.com"
+      password: "12345678"
+    ) {
+      token
+      item {
+        email
+        id
+      }
     }
   }
 `;
@@ -27,5 +41,6 @@ export const loginQuery = {
   GET_ACCOUNT,
 };
 export const loginMutation = {
+  AUTHENICATION,
   CREATE_ACCOUNT,
 };
