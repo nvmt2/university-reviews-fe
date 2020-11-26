@@ -28,10 +28,12 @@ export default function Cooperation() {
 
       <table>
         <thead>
-          <th className="th-cooperation">Tên</th>
-          <th className="th-cooperation">Khu vực</th>
-          <th className="th-cooperation">Chương trình liên kết</th>
-          <th className="th-cooperation">Mô tả</th>
+          <tr>
+            <th className="th-cooperation">Tên</th>
+            <th className="th-cooperation">Khu vực</th>
+            <th className="th-cooperation">Chương trình liên kết</th>
+            <th className="th-cooperation">Mô tả</th>
+          </tr>
         </thead>
         {!!contentPartner ? (
           <tbody className="tbody-cooperation">
@@ -47,9 +49,14 @@ export default function Cooperation() {
             ))}
           </tbody>
         ) : (
-          <LoadingIcon />
+          <tbody>
+            <tr>
+              <td>
+                <LoadingIcon />
+              </td>
+            </tr>
+          </tbody>
         )}
-        <tbody></tbody>
       </table>
     </div>
   );

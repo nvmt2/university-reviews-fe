@@ -46,8 +46,8 @@ export const navigationsAuthentication = [
     name: "Bài Đăng",
     to: "/user",
   },
-  {
-    name: "Đăng xuất",
-    to: "/login",
-  },
+  // {
+  //   name: "Đăng xuất",
+  //   to: "/login",
+  // },
 ];
