@@ -2,7 +2,8 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { NavLink } from "react-router-dom";
 //importing local file
-import "./user.css";
+import "./style/user.css";
+import "./style/my-post.css";
 import MyPost from "./MyPost";
 import PinPost from "./PinPost";
 //material-ui

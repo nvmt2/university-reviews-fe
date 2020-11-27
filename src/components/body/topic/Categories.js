@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useQuery } from "@apollo/client";
-
+//import local file
 import { topicQuery } from "query/topic";
 import { useParams } from "react-router-dom";
 
@@ -13,6 +13,7 @@ function Categories(props) {
   });
   useEffect(() => {}, [data, loading, error]);
   const listTags = !loading && !error && data.allTopics;
+  // remove the same elements in array
   let uniqueTags =
     !!listTags &&
     listTags.filter(
@@ -35,7 +36,7 @@ function Categories(props) {
             </button>
           ))
         ) : (
-          <h1>loading</h1>
+          <h1>...</h1>
         )}
       </div>
     </div>

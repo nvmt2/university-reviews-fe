@@ -11,6 +11,7 @@ import { topicQuery } from "query/topic";
 import LoadingIcon from "common/loading/LoadingIcon";
 import "./style/topic.css";
 import "./style/categories.css";
+
 //importing material-ui
 import Pagination from "@material-ui/lab/Pagination";
 
@@ -42,16 +43,6 @@ function Index({ location }) {
 
   return (
     <>
-      <NavLink
-        style={{ display: "none" }}
-        to={() => {
-          return {
-            pathname: `${location.pathname}/comments`,
-          };
-        }}
-      >
-        comment
-      </NavLink>
       <div className="topic">
         {!!nameUniversity && <Banner name={nameUniversity} />}
 
