@@ -48,22 +48,31 @@ function Index() {
     localStorage.removeItem("idUser");
     history.push("/login");
   };
-
+  //display image profile when upload
+  function loadFile(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById("outputUserProfile");
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  }
   return (
     <div className="container user-editor">
       <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
       <form className="form-user-editor">
         <div id="thay-doi-avatar">
           <div id="display-anh-dai-dien" className="mb-3">
-            <label for="file">Ảnh đại diện :</label>
+            <label>Ảnh đại diện :</label>
             <img
-              src="/assets/user-editor/avt.jpg"
-              alt="ảnh đại diện"
-              className=" img-fluid rounded"
+              id="outputUserProfile"
+              alt="profile user"
+              height="150px"
+              width="150px"
             />
           </div>
           <div id="them-anh" className="form-group ml-2">
-            <input type="file" name="file-avatar" />
+            <input type="file" accept="image/*" onChange={loadFile} />
           </div>
         </div>
         <div>

@@ -6,7 +6,7 @@ import Comment from "./components/body/comment";
 import NotFound from "./components/NotFound";
 import UserProfile from "./components/body/user-profile";
 import DetailUniversity from "./components/body/detail-university";
-import NewPost from "./components/body/new-post/FormCreate";
+import NewPost from "./components/body/new-post";
 import UserEditor from "./components/body/user-editor";
 
 export const routes = [

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -7,8 +7,11 @@ import NavBar from "./nav-link/NavBar";
 import "./style.css";
 
 function Header() {
-  const state = useSelector((state) => state);
-  console.log("HEADER", state.login.data);
+  let toi = useSelector((state) => state);
+  // useEffect(() => {
+
+  // });
+  // console.log("HEADER", state.login.data);
   return (
     <>
       <div className="container-fluid header-page">
@@ -62,7 +65,7 @@ function Header() {
 
               <div className="col-lg-3 nav">
                 <div className="wrap-account">
-                  {!!state.login.data ? (
+                  {!!toi.login.data.id ? (
                     <NavBar navigations={navigationsAuthentication} />
                   ) : (
                     <NavBar navigations={navigationsUnAuthen} />

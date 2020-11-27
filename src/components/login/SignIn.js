@@ -21,7 +21,6 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 function SignIn() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const { login } = useSelector((state) => state);
   let formSignIn = useRef(null);
   const [form, setForm] = useState({
     email: "",
@@ -40,6 +39,8 @@ function SignIn() {
     } else {
       dispatch(fetchAccountAction(data.allAccounts[0]));
       localStorage.setItem("idUser", data.allAccounts[0].id);
+      //turn back home-page when sign in success
+      history.push("/");
     }
   };
   const handleOnChange = (e) => {
@@ -49,15 +50,13 @@ function SignIn() {
     });
   };
   useEffect(() => {
-    //turn back home-page when sign in success
-    if (!!login.data) history.push("/");
     // TweenMax.from(formSignIn, {
     //   duration: 1,
     //   x: 1000,
     //   ease: Elastic.easeOut(1, 0.3),
     // });
-  }, [data, loading, error, login, history]);
-  console.log("SIGN_IN");
+  }, [data, loading, error, history]);
+  console.log("SIGN_IN", data);
   return (
     <div className="SignIn">
       <div className="container">
