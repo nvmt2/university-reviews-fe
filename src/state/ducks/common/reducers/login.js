@@ -2,7 +2,9 @@ import loginTypes from "./../types/login";
 
 const initialState = {
   loading: "",
-  data: false,
+  data: {
+    id: localStorage["idUser"],
+  },
 };
 
 export const loginReducer = (state = initialState, action) => {

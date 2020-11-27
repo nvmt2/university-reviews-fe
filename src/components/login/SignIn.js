@@ -37,10 +37,9 @@ function SignIn() {
     //show alert when sign in fail
     if (data.allAccounts.length === 0) {
       alert("Tài khoản hoặc mật khâu không hợp lệ");
-    }
-    //turn back home-page when sign in success
-    else {
+    } else {
       dispatch(fetchAccountAction(data.allAccounts[0]));
+      localStorage.setItem("idUser", data.allAccounts[0].id);
     }
   };
   const handleOnChange = (e) => {
@@ -50,6 +49,7 @@ function SignIn() {
     });
   };
   useEffect(() => {
+    //turn back home-page when sign in success
     if (!!login.data) history.push("/");
     // TweenMax.from(formSignIn, {
     //   duration: 1,

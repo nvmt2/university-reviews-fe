@@ -1,18 +1,54 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import { useMutation } from "@apollo/client";
+//import local file
+import { userEditorMutation } from "query/user-editor";
 import { fetchAccountAction } from "state/ducks/common/actions/login";
 import "./style.css";
 
 function Index() {
   const dispatch = useDispatch();
   const history = useHistory();
-  // dispath empty object into login state in reducer
+  const idUser = useSelector((state) => state.login.data.id);
+  const [formData, setFormData] = useState({
+    idUser,
+    passwordUser: "",
+    username: "",
+  });
+  const [updateUserProfile, { data, error, loading }] = useMutation(
+    userEditorMutation.EDIT_USER_PROFILE
+  );
+
+  const handleOnChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  //handle button update
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    if (formData.username.length <= 0 || formData.passwordUser.length <= 0)
+      alert("Nhập đầy đủ thông tin ở các trường bên dưới ");
+    else {
+      updateUserProfile({
+        variables: formData,
+      });
+    }
+  };
+  useEffect(() => {
+    !!data && alert("Cập nhập thành công");
+    !!error && alert("Lỗi 404");
+  }, [data, error, loading]);
+
+  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
   const handleLogOut = () => {
-    dispatch(fetchAccountAction());
+    dispatch(fetchAccountAction(false));
+    localStorage.removeItem("idUser");
     history.push("/login");
   };
+
   return (
     <div className="container user-editor">
       <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
@@ -35,6 +71,8 @@ function Index() {
             type="text"
             placeholder="Tên người dùng"
             className="form-control"
+            name="username"
+            onChange={handleOnChange}
           />
         </div>
         <div className="form-group">
@@ -56,6 +94,8 @@ function Index() {
           id="upd-passwor-1"
           placeholder="Nhập mật khẩu"
           className="form-control mb-3"
+          name="passwordUser"
+          onChange={handleOnChange}
         />
         <input
           type="password"
@@ -65,7 +105,7 @@ function Index() {
         />
 
         <div className="text-right">
-          <button id="btn-cap-nhat-tt" className="btn">
+          <button id="btn-cap-nhat-tt" className="btn" onClick={handleUpdate}>
             Cập nhật
           </button>
         </div>

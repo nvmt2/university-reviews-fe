@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./MyPost.css";
-
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function MyPost() {
