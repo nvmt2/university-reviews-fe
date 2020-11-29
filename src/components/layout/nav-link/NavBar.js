@@ -7,7 +7,7 @@ const handleNavigations = (array) => {
   if (array.length > 0) {
     result = array.map(({ name, ...rest }, index) => {
       return (
-        <NavLink key={index} {...rest}>
+        <NavLink key={index} {...rest} className="my-nav-link">
           {name}
         </NavLink>
       );

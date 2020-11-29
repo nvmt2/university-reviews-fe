@@ -12,6 +12,21 @@
   min-height: 600;
 }
 /* -------------Css for header-------------- */
+.my-nav-link {
+  color: grey;
+  display: block;
+  margin: 10px 10px 10px 10px;
+}
+.my-nav-link:hover {
+  text-decoration: none;
+}
+.name-header {
+  color: white;
+}
+.name-header:hover {
+  color: white;
+  text-decoration: none;
+}
 #logo-header {
   margin-top: -12px;
 }

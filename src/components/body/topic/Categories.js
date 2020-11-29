@@ -3,6 +3,8 @@ import { useQuery } from "@apollo/client";
 //import local file
 import { topicQuery } from "query/topic";
 import { useParams } from "react-router-dom";
+import MyProgress from "common/loading/MyProgress";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 function Categories(props) {
   const { slug } = useParams();
@@ -36,6 +38,7 @@ function Categories(props) {
             </button>
           ))
         ) : (
+          /* <MyProgress />  */
           <h1>...</h1>
         )}
       </div>

@@ -25,10 +25,6 @@ export const routes = [
 
 export const navigationsUnAuthen = [
   {
-    name: "Trang chủ",
-    to: "/",
-  },
-  {
     name: "Đăng nhập",
     to: "/login",
   },

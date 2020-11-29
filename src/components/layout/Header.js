@@ -7,7 +7,7 @@ import NavBar from "./nav-link/NavBar";
 import "./style.css";
 
 function Header() {
-  let toi = useSelector((state) => state);
+  let state = useSelector((state) => state);
   // useEffect(() => {
 
   // });
@@ -57,7 +57,7 @@ function Header() {
                     <select name="language" className="list-lang">
                       <option>Vi</option>
                       <option>En</option>
-                      <option>Fr</option>
+                      <option>France</option>
                     </select>
                   </form>
                 </div>
@@ -65,7 +65,7 @@ function Header() {
 
               <div className="col-lg-3 nav">
                 <div className="wrap-account">
-                  {!!toi.login.data.id ? (
+                  {!!state.login.data.id ? (
                     <NavBar navigations={navigationsAuthentication} />
                   ) : (
                     <NavBar navigations={navigationsUnAuthen} />
