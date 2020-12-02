@@ -1,59 +1,59 @@
 .banner-user {
-    width: 100%;
-    height: 250px;
-    background: #DBDBDB;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 250px;
+  background: #dbdbdb;
+  display: flex;
+  flex-direction: column;
 }
 
 .group-banner-user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 2%;
-    width: 12rem;
-    height: 12rem;
-    color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 2%;
+  width: 12rem;
+  height: 12rem;
+  color: #000000;
 }
 
 .group-banner-user > .MuiSvgIcon-root {
-    width: 8.5rem;
-    height: 8.5rem;
+  width: 8.5rem;
+  height: 8.5rem;
 }
 
 .userName {
-    color: #000000;
-    font-size: 26px;
-    font-weight: 700;
+  color: #000000;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .group-banner-user:hover {
-    text-decoration: none;
-    color: rgb(22, 22, 22);
+  text-decoration: none;
+  color: rgb(22, 22, 22);
 }
 
 .edit-presonal {
-    margin-left: 80%;
-    color: #000000;
-    padding: 5px 5px 5px 5px;
-    border: 1px solid rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 500;
+  margin-left: 80%;
+  color: #000000;
+  padding: 5px 10px 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .edit-presonal:hover {
-    color: white;
-    text-decoration: none;
-    background: rgb(69, 161, 74);
-    transition: 0.3s ease-in;
+  color: white;
+  text-decoration: none;
+  background: rgb(69, 161, 74);
+  transition: 0.1s ease-in;
 }
 
 .main-user {
-    margin-top: 50px;
-    overflow: hidden;  
+  margin-top: 50px;
+  overflow: hidden;
 }
 
 /*
@@ -78,26 +78,33 @@
 }
 */
 .tabs-user {
-    width: 100%;
+  width: 100%;
 }
 
 .tabList-user {
-    display: flex;
+  display: flex;
 }
 
 .tab-user {
-    list-style: none;
-    margin-right: 20px;
-    cursor: pointer;
-    font-weight: 550;
-    font-size: 18px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #f5f8f6;
+  list-style: none;
+  margin-right: 20px;
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 18px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #f5f8f6;
 }
 
 .tab-user:hover {
-    color: #5D963F;
-    border-bottom: 3px solid #5D963F;
-    transform-origin: top;
-    transition: all 0.3s;
+  color: #5d963f;
+  border-bottom: 3px solid #5d963f;
+  transform-origin: top;
+  transition: all 0.3s;
+}
+
+.tabs-user .react-tabs__tab--selected {
+  color: #5d963f;
+  border-bottom: 3px solid #5d963f;
+  transform-origin: top;
+  transition: all 0.3s;
 }

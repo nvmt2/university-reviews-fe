@@ -25,23 +25,6 @@ export default function Index() {
         </div>
       </div>
       <div className="container main-user">
-        {/*<div className="row">
-          <div className="my-posts">
-            <a href="#" className="my-post">
-              Bài viết của tôi
-            </a>
-            <MyPost />
-            <MyPost />
-          </div>
-          <div className="pin-posts">
-            <a href="#" className="my-post">
-              Bài viết ghim
-            </a>
-          </div>
-        </div>*/}
-
-        {/**------------tab----- */}
-
         <Tabs className="tabs-user">
           <TabList className="tabList-user">
             <Tab className="tab-user">Bài viết của tôi</Tab>
@@ -52,10 +35,8 @@ export default function Index() {
             <MyPost />
             <MyPost />
             <MyPost />
-            <MyPost />
           </TabPanel>
           <TabPanel className="tabPanel-user">
-            <PinPost />
             <PinPost />
           </TabPanel>
         </Tabs>
