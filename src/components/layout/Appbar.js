@@ -184,6 +184,7 @@ export default function PrimarySearchAppBar() {
             >
               <MenuIcon />
             </IconButton>
+
             <Typography className={classes.title} variant="h6">
               <NavLink className="name-header" to="/">
                 URs
