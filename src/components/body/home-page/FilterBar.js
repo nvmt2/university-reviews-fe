@@ -3,6 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@apollo/client";
 import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
 import homepageQueries from "query/homepage";
+//material-ui
+import Slider from "@material-ui/core/Slider";
+
+const marks = [
+  {
+    value: 0,
+    label: "0$",
+  },
+  {
+    value: 40,
+    label: "1000$",
+  },
+  {
+    value: 60,
+    label: "3000$",
+  },
+];
 
 function FilterBar() {
   const [items, setItems] = useState({
@@ -134,6 +151,17 @@ function FilterBar() {
           </label>
         </fieldset>
         {/* <!-- end --> */}
+        <fieldset>
+          <legend>Mức học phí</legend>
+          <Slider
+            defaultValue={20}
+            // getAriaValueText={valuetext}
+            aria-labelledby="discrete-slider-custom"
+            step={10}
+            valueLabelDisplay="auto"
+            marks={marks}
+          />
+        </fieldset>
 
         <button className="btn btn-outline-success btn-loc">Lọc</button>
       </form>

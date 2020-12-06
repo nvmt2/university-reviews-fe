@@ -93,6 +93,16 @@
   font-size: 14px;
   color: #5e5e5e;
   margin-bottom: 5px;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: height 1s;
+  height: 20px;
+}
+p.demo-content:hover {
+  height: 80px;
+  /* white-space: normal;
+  overflow: unset; */
 }
 .highlight-topic a.detail-card-home {
   display: inline-block;
