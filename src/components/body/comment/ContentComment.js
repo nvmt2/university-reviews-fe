@@ -9,6 +9,8 @@ import DeleteOutlineRoundedIcon from "@material-ui/icons/DeleteOutlineRounded";
 import parse from "html-react-parser";
 //material-ui
 import IconButton from "@material-ui/core/IconButton";
+import Avatar from "@material-ui/core/Avatar";
+import { makeStyles } from "@material-ui/core/styles";
 
 function ContentComment(props) {
   const { slug } = useParams();
@@ -36,11 +38,32 @@ function ContentComment(props) {
     return { display: result };
   };
   console.log("RENDER_CONTENT");
+  const useStyles = makeStyles((theme) => ({
+    large: {
+      width: theme.spacing(7),
+      height: theme.spacing(7),
+    },
+  }));
+  const classes = useStyles();
   return (
     <div className="item-content-comment">
       <div className="item-news-comment">
-        <p>{parse(`${content}`)}</p>
-        <p>-{user.username} -</p>
+        <div className="container">
+          <div className="row">
+            <div sytle={{ display: "float", float: "right" }}>
+              <Avatar variant="rounded" className={classes.large}>
+                T
+              </Avatar>
+            </div>
+            <div className="col-md-8">
+              <p>{user.username}</p>
+              <p style={{ marginTop: -10 }}>Sinh viên năm 3</p>
+            </div>
+            <div className="col-md-5">
+              <p>- {parse(`${content}`)}</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="like-comment">
         <IconButton
