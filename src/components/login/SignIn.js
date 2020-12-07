@@ -10,13 +10,13 @@ import {
 } from "state/ducks/common/actions/login";
 import { loginQuery } from "query/login";
 import "./style/signin.css";
-
 //material-ui
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -105,13 +105,18 @@ function SignIn() {
                 <p className="fl-me">Hoặc đăng nhập qua </p>
                 <ul className="social-group">
                   <li>
-                    <a href="/" className="social">
+                    <a href="/">
                       <FacebookIcon />
                     </a>
                   </li>
                   <li>
-                    <a href="/" className="social">
+                    <a href="/">
                       <TwitterIcon />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <GitHubIcon />
                     </a>
                   </li>
                 </ul>
