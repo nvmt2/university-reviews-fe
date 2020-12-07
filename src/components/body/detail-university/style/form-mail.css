@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&display=swap');
+
+#form_thong_tin_LH {
+    border: 0.5px solid #b8b8b8e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+#form_thong_tin_LH #label_thong_tin_lien_he {
+    font-family: 'Lobster', cursive;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6e6e6ec5;
+}
+
+#form_thong_tin_LH .tieu-de-lien-he {
+    font-family: 'Lobster', cursive;
+}
+
+#form_thong_tin_LH .tieu-de-lien-he #doi-mau {
+    color: #5D963F;
+}
+
+#form_thong_tin_LH img#trangtri {
+    margin: 0px auto;
+    display: block;
+}
+
+#form_thong_tin_LH span.icon-LH {
+    width: 60px;
+    height: 60px;
+    display: block;
+    color: white;
+    font-size: 30px;
+    margin: 0px auto;
+    background-color: #70ac50;
+    border-radius: 50%;
+}
+
+.icon-LH {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-LH > svg {
+    margin-top: 15px;
+    align-items: center;
+}
+
+/* #form_thong_tin_LH span.icon-LH i{
+    display: block;
+    text-align: center;
+    padding: 15px;
+} */
+
+#form_thong_tin_LH p.chi-tietLH, p.lable-dia-chi {
+    margin: 0px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+}
+
+#form_thong_tin_LH p.chi-tietLH {
+    color: #6e6e6ec5;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.btn {
+    margin-left: 20px;
+}
