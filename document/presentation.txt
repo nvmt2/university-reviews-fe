@@ -67,14 +67,11 @@ DEMO
  2/ Trang cho admin
 
 KẾT THÚC
-1/Hoàn thành được 80% tiến độ dự án
+1/Hoàn thành được 90% tiến độ dự án
 2/ Kế hoạch tiếp theo ( 2 tuần )
- - Sản phẩm 
- + Hoàn thành phần phân quyền cho admin 
- + Sửa lỗi phần đăng ký 
- + Đánh giá bình luận
- - Tài liệu
-  + Các tài liệu liên quan đến sprint 4 ( test, sprint backlog )
+ - Sản phẩm
+  + Đánh giá trường 
+  + Chức năng thông báo
 3/ Đánh giá 
  - Được thực hành về cách lên ý tưởng, lấy yêu cầu và thống nhất ý kiến, thiết kế, tiếp xúc quy trình scrum
  - Học thêm các công nghệ mới ( React, Database noSQL, JS, nhiều thư viện, và phần mềm thứ 3 hỗ trợ khác )
