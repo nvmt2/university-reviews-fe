@@ -96,7 +96,7 @@
   /* white-space: nowrap; */
   text-overflow: ellipsis;
   overflow: hidden;
-  transition: height 1s;
+  transition: height 0.5s;
   height: 20px;
 }
 p.demo-content:hover {
