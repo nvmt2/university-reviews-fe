@@ -129,6 +129,9 @@ p.demo-content:hover {
 }
 
 /* --------------------Filter Form component ------------- */
+#sidebar {
+  z-index: 1000;
+}
 #sidebar #filter {
   background-color: #ffffff;
   padding: 10px 0px;

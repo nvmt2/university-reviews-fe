@@ -1,10 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { pageTransition } from "common/page-transition/configVarian";
 
 function CardHome(props) {
   const { address, introduce, logo, name, zone, id } = props;
   return (
-    <div className="highlight-topic container-fluid">
+    <motion.div
+      className="highlight-topic container-fluid"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+    >
       <div className="row body-card-home border-bottom">
         <div className="col-md-1">
           <div id="img-logo">
@@ -47,7 +55,7 @@ function CardHome(props) {
           <i className="far fa-bookmark "></i>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

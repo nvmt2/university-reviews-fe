@@ -9,7 +9,7 @@ import Author from "./common/Author";
 import FormMail from "./common/FormMail";
 import detailUniversityQuery from "query/detail-university";
 import "./style/introduce.css";
-import { CSSTransition } from "react-transition-group";
+
 function Introduce() {
   const { slug } = useParams();
   const { data, loading, error } = useQuery(
@@ -40,23 +40,11 @@ function Introduce() {
         <Author />
         <h1 className=" title-intro-Uni">Giới thiệu tổng quan</h1>
         <div>
-          <CSSTransition
-            in={!loading}
-            timeout={1000}
-            unmountOnExit
-            mountOnEnter
-            classNames="fade"
-          >
-            <span>{parse(`${contentIntroduce}`)}</span>
-          </CSSTransition>
-          {/* {
-           
-            
-            !!contentIntroduce ? (
+          {!!contentIntroduce ? (
             <span>{parse(`${contentIntroduce}`)}</span>
           ) : (
             <LoadingIcon />
-          )} */}
+          )}
         </div>
 
         <div className="container row group-contact">

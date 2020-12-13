@@ -48,6 +48,10 @@ function PostComment() {
       ],
     });
     setOpen(true);
+    //auto close alert afer 1s
+    setTimeout(function () {
+      setOpen(false);
+    }, 1000);
   };
   useEffect(() => {}, [comment, data, dispatch]);
   // console.log("RENDER_POST_COMMENT");

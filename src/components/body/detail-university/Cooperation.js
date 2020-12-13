@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import LoadingIcon from "common/loading/LoadingIcon";
 import Author from "./common/Author";
 import "./style/cooperation.css";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 export default function Cooperation() {
   const { slug } = useParams();
