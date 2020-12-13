@@ -1,46 +1,80 @@
 import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 //importing local file
 import "./style/user.css";
 import "./style/my-post.css";
+import Header from "./Header";
 import MyPost from "./MyPost";
 import PinPost from "./PinPost";
+import TabPanel, { a11yProps } from "common/tabs/TabPanel";
+import { pageTransition } from "common/page-transition/configVarian";
 //material-ui
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import { useTheme, makeStyles } from "@material-ui/core/styles";
+import SwipeableViews from "react-swipeable-views";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+// import PropTypes from "prop-types";
 
-export default function Index() {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.background.paper,
+  },
+}));
+
+export default function FullWidthTabs() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeIndex = (index) => {
+    setValue(index);
+  };
+
   return (
-    <div className="user">
-      <div className="banner-user">
-        <div className="container">
-          <div className="group-banner-user">
-            <AccountCircleIcon />
-            <span className="userName">UserName1</span>
-          </div>
-
-          <NavLink className="edit-presonal" to="/user/editor">
-            Chỉnh sửa trang cá nhân
-          </NavLink>
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+      className="user"
+    >
+      <Header />
+      <div className="container main-user">
+        <div className={classes.root}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="fullWidth"
+            aria-label="full width tabs example"
+          >
+            <Tab
+              label="Bài viết đã đăng"
+              {...a11yProps(0)} // option, it's helpful for SEO
+            />
+            <Tab label="Bài viết yêu thích" {...a11yProps(1)} />
+          </Tabs>
+          <SwipeableViews
+            axis={theme.direction === "rtl" ? "x-reverse" : "x"} //option, it's helpful for SEO
+            index={value}
+            onChangeIndex={handleChangeIndex}
+          >
+            <TabPanel value={value} index={0}>
+              <MyPost />
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <PinPost />
+              <PinPost />
+              <PinPost />
+            </TabPanel>
+          </SwipeableViews>
         </div>
       </div>
-      <div className="container main-user">
-        <Tabs className="tabs-user">
-          <TabList className="tabList-user">
-            <Tab className="tab-user">Bài viết của tôi</Tab>
-            <Tab className="tab-user">Bài viết đã ghim</Tab>
-          </TabList>
-
-          <TabPanel className="tabPanel-user">
-            <MyPost />
-            <MyPost />
-            <MyPost />
-          </TabPanel>
-          <TabPanel className="tabPanel-user">
-            <PinPost />
-          </TabPanel>
-        </Tabs>
-      </div>
-    </div>
+    </motion.div>
   );
 }

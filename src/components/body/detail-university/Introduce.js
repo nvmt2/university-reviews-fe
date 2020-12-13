@@ -20,7 +20,13 @@ function Introduce() {
       },
     }
   );
-  useEffect(() => {}, [data, loading, error]);
+  let myLoading = false;
+  setTimeout(() => {
+    myLoading = false;
+  }, 3000);
+  console.log("myLoading: ", myLoading);
+
+  useEffect(() => {}, [data, loading, error, myLoading]);
 
   const contentIntroduce =
     !loading &&
@@ -40,9 +46,9 @@ function Introduce() {
             <LoadingIcon />
           )}
         </div>
-   
+
         <div className="container row group-contact">
-        <FormMail />
+          <FormMail />
         </div>
       </div>
     </div>

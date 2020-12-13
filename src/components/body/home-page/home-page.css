@@ -96,7 +96,7 @@
   /* white-space: nowrap; */
   text-overflow: ellipsis;
   overflow: hidden;
-  transition: height 1s;
+  transition: height 0.5s;
   height: 20px;
 }
 p.demo-content:hover {
@@ -129,6 +129,9 @@ p.demo-content:hover {
 }
 
 /* --------------------Filter Form component ------------- */
+#sidebar {
+  z-index: 1000;
+}
 #sidebar #filter {
   background-color: #ffffff;
   padding: 10px 0px;

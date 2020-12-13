@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useMutation } from "@apollo/client";
+import { motion } from "framer-motion";
 //import local file
 import { userEditorMutation } from "query/user-editor";
 import { fetchAccountAction } from "state/ducks/common/actions/login";
+import { pageTransition } from "common/page-transition/configVarian";
 import "./style.css";
 
 function Index() {
@@ -58,7 +60,13 @@ function Index() {
     reader.readAsDataURL(event.target.files[0]);
   }
   return (
-    <div className="container user-editor">
+    <motion.div
+      className="container user-editor"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransition}
+    >
       <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
       <form className="form-user-editor">
         <div id="thay-doi-avatar">
@@ -127,7 +135,7 @@ function Index() {
           Đăng xuất
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 }
 
