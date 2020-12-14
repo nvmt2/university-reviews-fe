@@ -73,7 +73,7 @@ function Index({ match }) {
   // using callback to memoize function after each time render
 
   return (
-    <div>
+    <div className="body-homepage">
       <Banner />
       <div className="container">
         <div className="row">

@@ -5,6 +5,8 @@ import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
 import homepageQueries from "query/homepage";
 //material-ui
 import Slider from "@material-ui/core/Slider";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const marks = [
   {
@@ -133,22 +135,25 @@ function FilterBar() {
 
         <fieldset>
           <legend>Loại trường</legend>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DHCL" />
-            <label htmlFor="DHCL">Đại học công lập</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DHTH" />
-            <label htmlFor="DHTH">Đại học tư thục</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="CD" />
-            <label htmlFor="CD">Cao đẳng</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DTN" />
-            <label htmlFor="DTN">Đào tạo nghề</label>
-          </label>
+
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đại học công lập"
+          />
+
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đại học tư thục"
+          />
+
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Cao đẳng"
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đào tạo nghề"
+          />
         </fieldset>
         {/* <!-- end --> */}
         <fieldset>

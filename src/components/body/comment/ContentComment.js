@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { commentQuery } from "query/comment";
 import DeleteOutlineRoundedIcon from "@material-ui/icons/DeleteOutlineRounded";
 import parse from "html-react-parser";
+import "./style/animationBorder.scss";
 //material-ui
 import IconButton from "@material-ui/core/IconButton";
 import Avatar from "@material-ui/core/Avatar";
@@ -50,30 +51,32 @@ function ContentComment(props) {
       <div className="item-news-comment">
         <div className="container">
           <div className="row">
-            <div sytle={{ display: "float", float: "right" }}>
+            <div>
               <Avatar variant="rounded" className={classes.large}>
                 T
               </Avatar>
             </div>
-            <div className="col-md-8">
-              <p>{user.username}</p>
-              <p style={{ marginTop: -10 }}>Sinh viên năm 3</p>
+            <div className="col-md-7">
+              <p className="name-student">{user.username}</p>
+              <p className="grade-student">Sinh viên năm 3</p>
             </div>
-            <div className="col-md-5">
-              <p>- {parse(`${content}`)}</p>
+            <div className="offset-md-3 col-md-1 like-comment">
+              <IconButton
+                style={checkAuthor()}
+                onClick={handleOnClick}
+                aria-label="delete"
+                color="primary"
+                size="large"
+              >
+                <DeleteOutlineRoundedIcon />
+              </IconButton>
+            </div>
+
+            <div className="col-md-8">
+              <p> {parse(`${content}`)}</p>
             </div>
           </div>
         </div>
-      </div>
-      <div className="like-comment">
-        <IconButton
-          style={checkAuthor()}
-          onClick={handleOnClick}
-          aria-label="delete"
-          color="primary"
-        >
-          <DeleteOutlineRoundedIcon />
-        </IconButton>
       </div>
     </div>
   );
