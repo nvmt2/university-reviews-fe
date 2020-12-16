@@ -135,7 +135,6 @@ function FilterBar() {
 
         <fieldset>
           <legend>Loại trường</legend>
-
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
             label="Đại học công lập"
