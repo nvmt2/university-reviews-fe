@@ -11,16 +11,17 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 const marks = [
   {
     value: 0,
-    label: "0$",
+    label: "0 tr",
   },
   {
     value: 40,
-    label: "1000$",
+    label: "40 tr",
   },
   {
-    value: 60,
-    label: "3000$",
+    value: 80,
+    label: "80 tr",
   },
+ 
 ];
 
 function FilterBar() {

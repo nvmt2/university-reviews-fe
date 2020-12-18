@@ -4,7 +4,7 @@ html {
 
 .banner-topic {
   background-image: url(/assets/topic/banner.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
   height: 235px;
@@ -86,10 +86,12 @@ html {
   align-items: center;
   margin-bottom: 60px;
   height: auto;
+  border: 1px solid green;
+  background: #f8fcf6;
 }
 
 .group-topic:hover {
-  background: #f5fbf2;
+  background: #f3ffee;
   transition: all 0.3s;
 }
 
