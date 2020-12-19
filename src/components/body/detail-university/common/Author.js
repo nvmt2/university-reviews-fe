@@ -17,20 +17,20 @@ function Author() {
     }
   );
   const contentAuthor = !loading && !error && data.University;
-  useEffect(() => {}, [data, error, loading]);
+  useEffect(() => { }, [data, error, loading]);
 
   return (
     <div>
       {!!contentAuthor ? (
         <div>
-          <p className="infor-intro">{`${contentAuthor.email} - ${contentAuthor.code}`}</p>
+          <p className="infor-intro">{`${contentAuthor.name} - ${contentAuthor.code}`}</p>
           <div className="row dates-intro">
             <p>{contentAuthor.address}</p>
           </div>
         </div>
       ) : (
-        <LoadingText />
-      )}
+          <LoadingText />
+        )}
     </div>
   );
 }

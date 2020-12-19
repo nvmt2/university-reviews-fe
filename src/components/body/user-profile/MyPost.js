@@ -1,8 +1,14 @@
 import React from "react";
-
+import parse from "html-react-parser";
+import { NavLink } from "react-router-dom";
+//local file
+import { myParseDate } from "components/helper/parse"
+//material-ui
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
-function MyPost() {
+function MyPost(props) {
+  console.log("MYPOST", props)
+  const { title, content, date, user: { username }, tags, id } = props;
   return (
     <div className="myPost">
       <div className="group-user-topic">
@@ -10,8 +16,8 @@ function MyPost() {
           <a href="#" className="col-md-8 row group-users">
             <AccountCircleIcon />
             <div className="infor-users">
-              <p className="title-users">Username1</p>
-              <p className="date-topics">05/08/2020</p>
+              <p className="title-users">{username}</p>
+              <p className="date-topics"> {myParseDate(date)}</p>
             </div>
           </a>
           <div className="rating-topics">
@@ -26,26 +32,24 @@ function MyPost() {
           </div>
         </div>
         <div className="infor-topics">
-          <h2 className="title-infor-topics">Cơ sở vật chất thật tuyệt!!!</h2>
+          <h2 className="title-infor-topics">{title}</h2>
           <p className="content-infor-topics">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
-            enim ab qui aperiam iste eos voluptate alias iure voluptatum, amet
-            culpa, vero, consectetur voluptatem! Reprehenderit aut, tempora,
-            quasi suscipit minima fugiat consequatur quas nisi at est maiores ab
-            iure vero dolorem rem distinctio? Tempora, eligendi deserunt sint
-            perspiciatis quis recusandae.
+            {parse(`${content}`)}
           </p>
           <div className="row view-topics">
-            <a href="." className="viewMore-topics">
+            <NavLink className="viewMore-topics" to={() => {
+              return {
+                pathname: `/topics/${id}/comments`,
+              };
+            }}>
               Đọc thêm...
-            </a>
+            </NavLink>
+
             <div className="row group-content-categories-topics">
               <a href="3" className="content-categories-topics">
-                Carzy
+                {tags}
               </a>
-              <a href="." className="content-categories-topics">
-                Cơ sở vật chất
-              </a>
+
             </div>
           </div>
         </div>

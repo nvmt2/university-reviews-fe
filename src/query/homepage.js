@@ -1,11 +1,17 @@
 import { gql } from "@apollo/client";
 
 const GET_ALL_UNIVERSITY = gql`
-  query getUniversity($first: Int, $skip: Int, $zone: String) {
+  query getUniversity($first: Int, $skip: Int, $zone: String, $name_major: String) {
     allUniversities(
       first: $first
       skip: $skip
-      where: { zone_contains: $zone }
+      where: { 
+        zone_contains: $zone
+        detailUniversity: {
+          majors_some:{
+            name_contains: $name_major
+          }
+        } }
     ) {
       id
       name

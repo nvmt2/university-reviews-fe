@@ -21,7 +21,7 @@ const marks = [
     value: 80,
     label: "80 tr",
   },
- 
+
 ];
 
 function FilterBar() {
@@ -48,12 +48,14 @@ function FilterBar() {
   };
 
   const handleOnChange = (e) => {
+    console.log(e.target.name, ": ", e.target.value)
     setItems({
       ...items,
       [e.target.name]: e.target.value,
     });
+
   };
-  useEffect(() => {}, [dispatch, items]);
+  useEffect(() => { }, [dispatch, items]);
 
   // console.log("SELECTOR", state);
 
@@ -103,35 +105,35 @@ function FilterBar() {
           <select
             id="nhomNghanh"
             className="form-control"
-            name="major"
+            name="name_major"
             onChange={handleOnChange}
           >
-            <optgroup label="Nhóm ngành về kỹ thuật">
-              <option>Công nghệ thông tin</option>
-              <option>Kiến trúc và xây dựng</option>
-              <option value="">Khoa học cơ bản</option>
-            </optgroup>
-            <optgroup label="Nhóm ngành về Kinh Tế">
-              <option>Quản trị</option>
-              <option>Sản xuất và chế biến</option>
-              <option value="">Báo chí-khoa học và xã hội</option>
-            </optgroup>
-            <option value="">Luật và nhân văn</option>
-            <option value="">Nghệ thuật-thẩm mỹ-đồ họa</option>
-            <option value="">Sư Phạm</option>
-            <option value="">Nông-lâm-ngư nghiệp</option>
             <option value="">Tất cả</option>
+            <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+            <option value="">Sản xuất và chế biến</option>
+            <option value="">Kiến trúc và xây dựng</option>
+            <option value="Kinh doanh">Kinh doanh</option>
+            <option value="">Công nghệ - thông tin</option>
+            <option value="Luật">Luật - nhân văn</option>
+            <option value="">Nghệ thuật - thẩm mỹ - đồ họa</option>
+            <option value="">Báo chí - khoa học và xã hội</option>
+            <option value="">Khoa học cơ bản</option>
+            <option value="">Sư phạm</option>
+            <option value="">Nông - lâm - ngư nghiệp</option>
+            <option value="Y học">Y học</option>
+
+
           </select>
         </fieldset>
         {/* <!-- -----------end nhóm nghành---------- --> */}
-        <fieldset>
+        {/* <fieldset>
           <legend>Chuyên ngành</legend>
           <label htmlFor="nhomNghanh" className="locate d-block margin-r-10">
             <select name="nhomNghanh" id="nhomNghanh" className="form-control">
               <option value="">Tất cả nghành</option>
             </select>
           </label>
-        </fieldset>
+        </fieldset> */}
         {/* <!-- end ngành  -->  */}
 
         <fieldset>

@@ -31,7 +31,7 @@ function Index(props) {
                 };
               }}
             >
-              <button className="btn btn-warning">Bình luận </button>
+              Bình luận
             </NavLink>
           </li>
         </ul>

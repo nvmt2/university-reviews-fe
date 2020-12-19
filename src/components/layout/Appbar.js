@@ -20,10 +20,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import Divider from "@material-ui/core/Divider";
+import Avatar from '@material-ui/core/Avatar';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 const useStyles = makeStyles((theme) => ({
   displayInline: {
@@ -40,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: "block",
+    marginLeft: 15,
   },
   search: {
     position: "relative",
@@ -145,8 +145,8 @@ export default function PrimarySearchAppBar() {
         {!!state.login.data.id ? (
           <NavBar navigations={navigationsAuthentication} />
         ) : (
-          <NavBar navigations={navigationsUnAuthen} />
-        )}
+            <NavBar navigations={navigationsUnAuthen} />
+          )}
       </MenuItem>
     </Menu>
   );
@@ -174,16 +174,17 @@ export default function PrimarySearchAppBar() {
   return (
     <div className={classes.grow}>
       <AppBar position="static" className={classes.backgorundHeader}>
-        <div className="container">
+        <div className="container my-app-bar">
           <Toolbar>
-            <IconButton
+            <Avatar alt="Remy Sharp" variant="rounded" src="/assets/header/logo.png" />
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="open drawer"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
 
             <Typography className={classes.title} variant="h6">
               <NavLink className="name-header" to="/">
@@ -205,11 +206,6 @@ export default function PrimarySearchAppBar() {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton aria-label="show 4 new mails" color="inherit">
-                <Badge badgeContent={14} color="secondary">
-                  <MailIcon />
-                </Badge>
-              </IconButton>
               <IconButton
                 aria-label="show notification about topics"
                 aria-controls={menuNotificationId}
@@ -229,7 +225,7 @@ export default function PrimarySearchAppBar() {
                 onClick={handleProfileMenuOpen} //handle event passing position into state
                 color="inherit"
               >
-                <AccountCircle />
+                <MenuIcon />
               </IconButton>
             </div>
           </Toolbar>

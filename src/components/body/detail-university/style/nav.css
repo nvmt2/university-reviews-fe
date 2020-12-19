@@ -24,3 +24,8 @@ ul.nav-detail-university a {
   color: white;
   font-weight: 500;
 }
+ul.nav-detail-university a.active {
+ 
+  font-weight: 500;
+  border-bottom: 3px solid white;
+}

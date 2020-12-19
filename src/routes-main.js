@@ -35,11 +35,11 @@ export const navigationsUnAuthen = [
 ];
 export const navigationsAuthentication = [
   {
-    name: "Cài đặt",
+    name: "Thiết lập tài khoản",
     to: "/user/editor",
   },
   {
-    name: "Bài Đăng",
+    name: "Bài viết cá nhân",
     to: "/user",
   },
   // {

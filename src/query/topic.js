@@ -11,6 +11,9 @@ const GET_ALL_TOPICS = gql`
       date
       user {
         username
+        avatar{
+          publicUrl
+        }
       }
       university {
         name
@@ -29,6 +32,9 @@ const GET_TOPIC = gql`
       user {
         id
         username
+        avatar{
+          publicUrl
+        }
       }
     }
   }

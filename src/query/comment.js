@@ -28,6 +28,9 @@ const GET_ALL_COMMENT = gql`
       user {
         username
         id
+        avatar{
+          publicUrl
+        }
       }
     }
   }

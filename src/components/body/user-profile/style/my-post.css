@@ -36,8 +36,8 @@
   .infor-users {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding-top: 10px;
+    margin: 5px 0px 0px 5px
   }
   
   .title-users {
@@ -45,7 +45,7 @@
     color: #5cb85c;
     font-weight: 450;
     display: block;
-    margin: 0;
+    margin: 0px 0px 0px -10px;
   }
   
   .date-topics {
@@ -56,11 +56,11 @@
   }
   
   .rating-topics {
-    margin-right: 0;
+    padding-left: 240px;
     flex: 1;
     text-align: center;
   }
-  
+
   .count-topics > svg {
     color: #53a63a;
     font-size: 15px;
@@ -117,7 +117,8 @@
     font-weight: 400;
     color: #53a63a;
     vertical-align: middle;
-    margin-left: 10px;
+
+    margin-right: 40px;
     border: 1px solid rgb(102, 102, 102);
     border-radius: 20px;
     padding: 1px 8px 3px 8px;

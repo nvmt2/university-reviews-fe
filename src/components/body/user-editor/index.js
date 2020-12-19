@@ -58,6 +58,7 @@ function Index() {
       output.src = reader.result;
     };
     reader.readAsDataURL(event.target.files[0]);
+    console.log("event.target.files[0]: ", event.target.files[0])
   }
   return (
     <motion.div

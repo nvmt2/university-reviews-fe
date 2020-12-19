@@ -38,7 +38,6 @@ function ContentComment(props) {
     let result = state === user.id ? "block" : "none";
     return { display: result };
   };
-  console.log("RENDER_CONTENT");
   const useStyles = makeStyles((theme) => ({
     large: {
       width: theme.spacing(7),
@@ -52,8 +51,7 @@ function ContentComment(props) {
         <div className="container">
           <div className="row">
             <div>
-              <Avatar variant="rounded" className={classes.large}>
-                T
+              <Avatar variant="rounded" src={!!user.avatar && user.avatar.publicUrl} className={classes.large}>
               </Avatar>
             </div>
             <div className="col-md-7">

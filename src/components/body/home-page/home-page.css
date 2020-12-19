@@ -213,3 +213,6 @@ label {
 .footer-card-home {
   padding: 10px 10px;
 }
+.content-main-home {
+  min-height: 1000px;
+}

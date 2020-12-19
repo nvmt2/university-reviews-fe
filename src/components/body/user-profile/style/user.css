@@ -18,9 +18,9 @@
   color: #000000;
 }
 
-.group-banner-user > .MuiSvgIcon-root {
-  width: 8.5rem;
-  height: 8.5rem;
+.group-banner-user .MuiAvatar-root {
+  width: 7rem;
+  height: 7rem;
 }
 
 .userName {
