@@ -23,8 +23,9 @@ ul.nav-detail-university li {
 ul.nav-detail-university a {
   color: white;
   font-weight: 500;
+  text-decoration: none;
 }
-ul.nav-detail-university a.active {
+ul.nav-detail-university a:focus {
  
   font-weight: 500;
   border-bottom: 3px solid white;
