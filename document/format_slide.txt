@@ -1,0 +1,30 @@
+Tổng quan
+ 1. Nêu trực tiếp, trang web này để làm gì, tính năng chính nào. (P)
+  1.1 Lý do tại sao làm web này ( R )
+  1.2 Trên thị trường đã có web nào tương tự ( ưu, nhược điểm ) ( E )
+ 2. Nêu tóm tắt lại và chuyển sang Architect, model ( P )
+
+Quy trình dự án
+ 1. Model Funciton
+  1.1 Giới thiệu sơ lược về các tính năng chính
+ 2. Architecture
+  1.1 Sơ đồ của 2 trang
+  1.2 Database Relationship
+  1.3 Các công nghệ áp dụng
+ 3. Quy trình và tiến độ
+  3.1 Áp dụng Scrum và tiến độ mỗi sprint
+Demo
+Tổng kết
+ 
+
+
+
+
+
+
+* Rút bớt các function trong model product backlog
+* Đưa 2 hình ảnh chính của 2 landing page lên phần giới thiệu
+* đưa 4 biểu đồ sprint-backlog vào 1 hoặc 2 slide
+* Ý nghĩa của system context trong architecture ( hỏi kỹ về system context )
+* Ý nghĩa model trong product backlog
+  
