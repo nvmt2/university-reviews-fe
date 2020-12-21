@@ -1,7 +1,11 @@
 .banner-user {
+  background-image: url(/assets/user-profile/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   width: 100%;
   height: 250px;
-  background: #dbdbdb;
+  /* background: #dbdbdb; */
   display: flex;
   flex-direction: column;
 }

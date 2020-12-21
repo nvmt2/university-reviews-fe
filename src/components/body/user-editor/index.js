@@ -93,11 +93,15 @@ function Index() {
             onChange={handleOnChange}
           />
         </div>
-        <div className="form-group">
-          <input type="radio" name="gioitinh" id="nam" value="Nam" />
-          <label for="nam">Nam</label>
-          <input type="radio" name="gioitinh" id="nu" value="Nu" />
-          <label for="nu">Nữ</label>
+        <div className="form-group form-users">
+          <div class="row">
+            <input type="radio" name="gioitinh" id="nam" value="Nam" />
+            <label for="nam">Nam</label>
+          </div>
+          <div class="row">
+            <input type="radio" name="gioitinh" id="nu" value="Nu" />
+            <label for="nu">Nữ</label>
+          </div>
         </div>
         <textarea
           name="moTa-thong-tin"

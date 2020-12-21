@@ -3,7 +3,7 @@ html {
 }
 
 .banner-topic {
-  background-image: url(/assets/topic/banner.jpg);
+  background-image: url(/assets/topic/banner3.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -17,7 +17,7 @@ html {
 }
 
 .title-school {
-  color: white;
+  color: black;
   font-size: 43px;
   font-weight: bold;
 }

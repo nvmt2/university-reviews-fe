@@ -13,6 +13,10 @@ button {
   height: 45px;
 }
 
+.form-users {
+  display: flex !important;
+}
+
 #btn-cap-nhat-tt {
   background: #5d963f;
   color: #ffffff;
