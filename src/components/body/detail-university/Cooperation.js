@@ -19,7 +19,7 @@ export default function Cooperation() {
     !error &&
     !!data &&
     data.allUniversities[0].detailUniversity.partner;
-  console.log("contentPartner", contentPartner);
+
   return (
     <div className="container">
       <Author />

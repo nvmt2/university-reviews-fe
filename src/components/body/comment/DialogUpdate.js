@@ -63,9 +63,8 @@ function DialogUpdate(props) {
         },
       ],
     });
-    console.log("INPUT", input);
   };
-  console.log("RENDER_DIALOG");
+
   useEffect(() => {
     if (!!dataUpdate) handleClose();
   }, [dataUpdate]);
@@ -111,7 +110,6 @@ function DialogUpdate(props) {
             freeSolo
             renderTags={(value, getTagProps) =>
               value.map((option, index) => {
-                // console.log("VALUE", option);
                 return <Chip label={option} {...getTagProps({ index })} />;
               })
             }

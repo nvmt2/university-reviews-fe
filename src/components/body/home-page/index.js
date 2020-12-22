@@ -52,7 +52,7 @@ function Index({ match }) {
   };
 
   const state_1 = useSelector((state) => state);
-  console.log("STATE_1", state_1);
+
   // const [
   //   authenticaiton,
   //   { data: authData, loading: authLoading, error: authError },
@@ -89,8 +89,8 @@ function Index({ match }) {
                   return <CardHome key={index} {...item} />;
                 })
               ) : (
-                  <h5>Loading...</h5>
-                )}
+                <h5>Loading...</h5>
+              )}
             </div>
 
             {/*end of cards include content of university */}

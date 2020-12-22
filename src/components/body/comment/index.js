@@ -38,7 +38,6 @@ const Index = () => {
       dispatch(fetchCommentAction(data.allComments));
     }
   }, [data, loading, error, dispatch]);
-  console.log("COMMENT SELECTOR", commentsLocal);
 
   return (
     <div className="comment">
@@ -48,13 +47,10 @@ const Index = () => {
         {!!author ? (
           <PostComment />
         ) : (
-          <>
-            {" "}
-            <Alert color="info">
-              <NavLink to="/login">Đăng nhập</NavLink>{" "}
-              <span>để có thể bình luận</span>
-            </Alert>
-          </>
+          <Alert color="info">
+            <NavLink to="/login">Đăng nhập</NavLink>{" "}
+            <span>để có thể bình luận</span>
+          </Alert>
         )}
 
         {/* Block of content comments */}

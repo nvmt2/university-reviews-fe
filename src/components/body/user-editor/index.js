@@ -58,7 +58,6 @@ function Index() {
       output.src = reader.result;
     };
     reader.readAsDataURL(event.target.files[0]);
-    console.log("event.target.files[0]: ", event.target.files[0])
   }
   return (
     <motion.div
@@ -94,11 +93,11 @@ function Index() {
           />
         </div>
         <div className="form-group form-users">
-          <div class="row">
+          <div className="row">
             <input type="radio" name="gioitinh" id="nam" value="Nam" />
             <label for="nam">Nam</label>
           </div>
-          <div class="row">
+          <div className="row">
             <input type="radio" name="gioitinh" id="nu" value="Nu" />
             <label for="nu">Nữ</label>
           </div>

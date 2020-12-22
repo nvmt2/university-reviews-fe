@@ -8,7 +8,7 @@ import { useMutation } from "@apollo/client";
 import { topicMutation } from "query/topic";
 import { topicQuery } from "query/topic";
 import DialogUpdate from "./DialogUpdate";
-import { myParseDate } from "components/helper/parse"
+import { myParseDate } from "components/helper/parse";
 //importing material UI
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
@@ -70,9 +70,9 @@ function HeaderComment() {
   }, [data, loading, error, response]);
 
   return (
-    <>
+    <div>
       {!!contentHeaderComment ? (
-        <>
+        <div>
           <div className="banner-comment">
             {/* header of topic */}
             <div className="container">
@@ -91,8 +91,7 @@ function HeaderComment() {
                         {contentHeaderComment.user.username}
                       </p>
                       <p className="date-topic-comment">
-                        {
-                          myParseDate(contentHeaderComment.date)}
+                        {myParseDate(contentHeaderComment.date)}
                       </p>
                     </div>
                   </a>
@@ -155,11 +154,11 @@ function HeaderComment() {
               className=""
             />
           </div>
-        </>
+        </div>
       ) : (
-          <h1>Loading</h1>
-        )}
-    </>
+        <h1>Loading</h1>
+      )}
+    </div>
   );
 }
 

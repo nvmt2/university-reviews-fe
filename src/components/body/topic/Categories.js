@@ -22,7 +22,6 @@ function Categories(props) {
       (arr, index, self) => index === self.findIndex((t) => t.tags === arr.tags)
     );
 
-  console.log("uniqueTags", uniqueTags);
   return (
     <div>
       <p className="title-categories-topic">Chuyên mục nổi bật</p>

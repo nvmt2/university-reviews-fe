@@ -46,7 +46,6 @@ function Gallery() {
       setPhotoAlbum(array);
     }
   };
-  console.log("photo", photoAlbum);
 
   //Feature: clicking shows image full size on screen
   const [currentImage, setCurrentImage] = useState(0);
@@ -87,8 +86,8 @@ function Gallery() {
           </ModalGateway>
         </div>
       ) : (
-          <LoadingIcon />
-        )}
+        <LoadingIcon />
+      )}
     </div>
   );
 }

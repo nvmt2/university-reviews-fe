@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NotificationCard(props) {
   const { name, src, status } = props;
-  console.log("prop: ", props);
+
   const classes = useStyles();
   return (
     <Card className={classes.root}>

@@ -56,7 +56,7 @@ function SignIn() {
     //   ease: Power2.in,
     // });
   }, [data, loading, error, history]);
-  console.log("SIGN_IN", data);
+
   return (
     <div className="SignIn">
       <div className="container">

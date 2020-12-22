@@ -21,7 +21,6 @@ const marks = [
     value: 80,
     label: "80 tr",
   },
-
 ];
 
 function FilterBar() {
@@ -44,20 +43,15 @@ function FilterBar() {
   const addItem = (event) => {
     event.preventDefault();
     dispatch(fetchUniversityAction(dataApi));
-    console.log("ITEMS", items);
   };
 
   const handleOnChange = (e) => {
-    console.log(e.target.name, ": ", e.target.value)
     setItems({
       ...items,
       [e.target.name]: e.target.value,
     });
-
   };
-  useEffect(() => { }, [dispatch, items]);
-
-  // console.log("SELECTOR", state);
+  useEffect(() => {}, [dispatch, items]);
 
   return (
     <div id="filter">
@@ -110,19 +104,17 @@ function FilterBar() {
           >
             <option value="">Tất cả</option>
             <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-            <option >Sản xuất và chế biến</option>
-            <option >Kiến trúc và xây dựng</option>
+            <option>Sản xuất và chế biến</option>
+            <option>Kiến trúc và xây dựng</option>
             <option value="Kinh doanh">Kinh doanh</option>
             <option>Công nghệ - thông tin</option>
             <option value="Luật">Luật - nhân văn</option>
-            <option >Nghệ thuật - thẩm mỹ - đồ họa</option>
+            <option>Nghệ thuật - thẩm mỹ - đồ họa</option>
             <option>Báo chí - khoa học và xã hội</option>
-            <option >Khoa học cơ bản</option>
-            <option >Sư phạm</option>
-            <option >Nông - lâm - ngư nghiệp</option>
+            <option>Khoa học cơ bản</option>
+            <option>Sư phạm</option>
+            <option>Nông - lâm - ngư nghiệp</option>
             <option value="Y học">Y học</option>
-
-
           </select>
         </fieldset>
         {/* <!-- -----------end nhóm nghành---------- --> */}

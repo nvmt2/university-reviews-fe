@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import Appbar from "./Appbar";
 import Footer from "./Footer";
 import ScrollToTop from "react-scroll-up";

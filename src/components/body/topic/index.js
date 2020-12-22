@@ -39,45 +39,42 @@ function Index({ location }) {
   const handleClickTag = (tag) => {
     setTag(tag);
   };
-  console.log("re-render index.js Topic");
 
   return (
-    <>
-      <div className="topic">
-        {!!nameUniversity && <Banner name={nameUniversity} />}
+    <div className="topic">
+      {!!nameUniversity && <Banner name={nameUniversity} />}
 
-        <div className="container">
-          <div className="main-topic">
-            <div className="row">
-              <div className="col-md-8 items-topics">
-                {!!contentTopic ? (
-                  contentTopic.map((item, index) => (
-                    <CardTopic key={index} {...item} />
-                  ))
-                ) : (
-                    <LoadingIcon />
-                  )}
-              </div>
-              {/* show list tags at right */}
-              <div className="col-md-3 group-categories-topic">
-                <Categories handleEvent={handleClickTag} />
-              </div>
-              <div className="col-md-8 mb-5 ">
-                <div style={{ width: "50%", margin: "auto" }}>
-                  <Pagination
-                    count={2}
-                    color="primary"
-                    shape="rounded"
-                    variant="outlined"
-                    size="medium"
-                  />
-                </div>
+      <div className="container">
+        <div className="main-topic">
+          <div className="row">
+            <div className="col-md-8 items-topics">
+              {!!contentTopic ? (
+                contentTopic.map((item, index) => (
+                  <CardTopic key={index} {...item} />
+                ))
+              ) : (
+                <LoadingIcon />
+              )}
+            </div>
+            {/* show list tags at right */}
+            <div className="col-md-3 group-categories-topic">
+              <Categories handleEvent={handleClickTag} />
+            </div>
+            <div className="col-md-8 mb-5 ">
+              <div style={{ width: "50%", margin: "auto" }}>
+                <Pagination
+                  count={2}
+                  color="primary"
+                  shape="rounded"
+                  variant="outlined"
+                  size="medium"
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Index;

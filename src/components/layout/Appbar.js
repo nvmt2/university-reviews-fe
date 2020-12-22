@@ -21,8 +21,8 @@ import Menu from "@material-ui/core/Menu";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsIcon from "@material-ui/icons/Notifications";
-import Avatar from '@material-ui/core/Avatar';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Avatar from "@material-ui/core/Avatar";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 
 const useStyles = makeStyles((theme) => ({
   displayInline: {
@@ -145,8 +145,8 @@ export default function PrimarySearchAppBar() {
         {!!state.login.data.id ? (
           <NavBar navigations={navigationsAuthentication} />
         ) : (
-            <NavBar navigations={navigationsUnAuthen} />
-          )}
+          <NavBar navigations={navigationsUnAuthen} />
+        )}
       </MenuItem>
     </Menu>
   );
@@ -162,11 +162,9 @@ export default function PrimarySearchAppBar() {
       onClose={handleMenuClose}
     >
       {listAva.map((item, index) => (
-        <>
-          <MenuItem onClick={handleMenuClose} key={index}>
-            <NotificationCard {...item} />
-          </MenuItem>
-        </>
+        <MenuItem onClick={handleMenuClose} key={index}>
+          <NotificationCard {...item} />
+        </MenuItem>
       ))}
     </Menu>
   );
@@ -176,7 +174,11 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static" className={classes.backgorundHeader}>
         <div className="container my-app-bar">
           <Toolbar>
-            <Avatar alt="Remy Sharp" variant="rounded" src="/assets/header/logo.png" />
+            <Avatar
+              alt="Remy Sharp"
+              variant="rounded"
+              src="/assets/header/logo.png"
+            />
             {/* <IconButton
               edge="start"
               className={classes.menuButton}

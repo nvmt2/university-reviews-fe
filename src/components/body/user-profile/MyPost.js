@@ -2,13 +2,19 @@ import React from "react";
 import parse from "html-react-parser";
 import { NavLink } from "react-router-dom";
 //local file
-import { myParseDate } from "components/helper/parse"
+import { myParseDate } from "components/helper/parse";
 //material-ui
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 function MyPost(props) {
-  console.log("MYPOST", props)
-  const { title, content, date, user: { username }, tags, id } = props;
+  const {
+    title,
+    content,
+    date,
+    user: { username },
+    tags,
+    id,
+  } = props;
   return (
     <div className="myPost">
       <div className="group-user-topic">
@@ -33,15 +39,16 @@ function MyPost(props) {
         </div>
         <div className="infor-topics">
           <h2 className="title-infor-topics">{title}</h2>
-          <p className="content-infor-topics">
-            {parse(`${content}`)}
-          </p>
+          <p className="content-infor-topics">{parse(`${content}`)}</p>
           <div className="row view-topics">
-            <NavLink className="viewMore-topics" to={() => {
-              return {
-                pathname: `/topics/${id}/comments`,
-              };
-            }}>
+            <NavLink
+              className="viewMore-topics"
+              to={() => {
+                return {
+                  pathname: `/topics/${id}/comments`,
+                };
+              }}
+            >
               Đọc thêm...
             </NavLink>
 
@@ -49,7 +56,6 @@ function MyPost(props) {
               <a href="3" className="content-categories-topics">
                 {tags}
               </a>
-
             </div>
           </div>
         </div>

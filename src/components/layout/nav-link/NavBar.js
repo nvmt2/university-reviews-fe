@@ -17,6 +17,6 @@ const handleNavigations = (array) => {
 };
 function NavBar(props) {
   const { navigations } = props;
-  return <>{handleNavigations(navigations)}</>;
+  return <div>{handleNavigations(navigations)}</div>;
 }
 export default NavBar;

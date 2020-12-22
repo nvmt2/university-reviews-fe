@@ -2,8 +2,8 @@ import React from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { NavLink } from "react-router-dom";
 import parse from "html-react-parser";
-import { myParseDate } from "components/helper/parse"
-import Avatar from '@material-ui/core/Avatar';
+import { myParseDate } from "components/helper/parse";
+import Avatar from "@material-ui/core/Avatar";
 import "./style/topic.css";
 
 function CardTopic(props) {
@@ -14,9 +14,9 @@ function CardTopic(props) {
     date,
     like,
     tags,
-    user: { username, avatar }
+    user: { username, avatar },
   } = props;
-  console.log("TYPE_OF_DATE: ", typeof date)
+
   return (
     <div className="group-topic container">
       <div className="row">
@@ -32,10 +32,12 @@ function CardTopic(props) {
         <div className="rating-topic col-md-4 ">
           <div className="count-topic">
             {
-              Array(Math.floor(Math.random() * 5) + 1).fill().map(() => <i className="fas fa-star"></i>) //random number of start
+              Array(4)
+                .fill()
+                .map((item, index) => (
+                  <i className="fas fa-star" key={index}></i>
+                )) //random number of start
             }
-
-
           </div>
           <p className="title-rating-topic">Độ uy tín của Topic</p>
         </div>

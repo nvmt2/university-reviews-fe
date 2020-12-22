@@ -54,7 +54,6 @@ function PostComment() {
     }, 1000);
   };
   useEffect(() => {}, [comment, data, dispatch]);
-  // console.log("RENDER_POST_COMMENT");
 
   return (
     <div className=" group-input-post">

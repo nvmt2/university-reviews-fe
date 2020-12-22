@@ -109,7 +109,6 @@ function FormCreate() {
                 label="Thẻ"
                 placeholder="Thẻ liên quan"
                 onChange={(e) => {
-                  console.log("INPUt", input);
                   setInput({
                     ...input,
                     tags: e.target.value,

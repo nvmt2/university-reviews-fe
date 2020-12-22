@@ -31,7 +31,6 @@ function SignUp() {
   };
   const signUp = (event) => {
     event.preventDefault();
-    console.log("dataForm", dataForm);
     register({
       variables: dataForm,
     });

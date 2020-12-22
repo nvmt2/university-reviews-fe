@@ -24,7 +24,6 @@ function Introduce() {
   setTimeout(() => {
     myLoading = false;
   }, 3000);
-  console.log("myLoading: ", myLoading);
 
   useEffect(() => {}, [data, loading, error, myLoading]);
 
@@ -33,7 +32,7 @@ function Introduce() {
     !error &&
     !!data.allUniversities[0].detailUniversity &&
     data.allUniversities[0].detailUniversity.introduce;
-  console.log("INTROCDUCE", data);
+
   return (
     <div className="intro-background">
       <div className="container ">
