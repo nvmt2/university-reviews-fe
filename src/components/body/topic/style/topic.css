@@ -1,7 +1,12 @@
 html {
   scroll-behavior: smooth;
 }
-
+.topic {
+  background: url("/assets/topic/background_1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
 .banner-topic {
   background-image: url(/assets/topic/banner3.jpg);
   background-size: 100% 100%;

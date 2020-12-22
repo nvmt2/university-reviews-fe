@@ -15,7 +15,7 @@ ul.nav-detail-university {
   list-style-type: none;
   height: 60px;
   padding-top: 20px;
-  padding-left: 170px;
+  padding-left: 170px;  
 }
 ul.nav-detail-university li {
   margin-right: 30px;
@@ -26,7 +26,7 @@ ul.nav-detail-university a {
   text-decoration: none;
 }
 ul.nav-detail-university a:focus {
- 
+  
   font-weight: 500;
   border-bottom: 3px solid white;
 }

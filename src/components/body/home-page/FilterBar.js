@@ -110,16 +110,16 @@ function FilterBar() {
           >
             <option value="">Tất cả</option>
             <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-            <option value="">Sản xuất và chế biến</option>
-            <option value="">Kiến trúc và xây dựng</option>
+            <option >Sản xuất và chế biến</option>
+            <option >Kiến trúc và xây dựng</option>
             <option value="Kinh doanh">Kinh doanh</option>
-            <option value="">Công nghệ - thông tin</option>
+            <option>Công nghệ - thông tin</option>
             <option value="Luật">Luật - nhân văn</option>
-            <option value="">Nghệ thuật - thẩm mỹ - đồ họa</option>
-            <option value="">Báo chí - khoa học và xã hội</option>
-            <option value="">Khoa học cơ bản</option>
-            <option value="">Sư phạm</option>
-            <option value="">Nông - lâm - ngư nghiệp</option>
+            <option >Nghệ thuật - thẩm mỹ - đồ họa</option>
+            <option>Báo chí - khoa học và xã hội</option>
+            <option >Khoa học cơ bản</option>
+            <option >Sư phạm</option>
+            <option >Nông - lâm - ngư nghiệp</option>
             <option value="Y học">Y học</option>
 
 
