@@ -27,10 +27,10 @@ function CardHome(props) {
           <p className="university-name">{name}</p>
           <span className="address">{address}</span>
           <span className="count-rate mr-3">
-            <i className="fas fa-star"></i> 200 đánh giá
+            <i className="fas fa-star"></i> 5 đánh giá
           </span>
           <span className="count-comment">
-            <i className="fas fa-comments"></i> 462 bình luận
+            <i className="fas fa-comments"></i> 15 bình luận
           </span>
 
           <p className="demo-content">{introduce}</p>

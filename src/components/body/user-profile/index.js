@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import { useQuery } from "@apollo/client";
+import { useSelector } from "react-redux";
 //importing local file
 import "./style/user.css";
 import "./style/my-post.css";
 import Header from "./Header";
 import MyPost from "./MyPost";
-import PinPost from "./PinPost";
 import TabPanel, { a11yProps } from "common/tabs/TabPanel";
 import { pageTransition } from "common/page-transition/configVarian";
+import { userProfileQueries } from "query/user-profile";
 //material-ui
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
@@ -22,6 +24,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function FullWidthTabs() {
+  const idUser = useSelector((state) => state.login.data.id);
+  const { data, loading, error } = useQuery(userProfileQueries.GET_PERONAL_TOPIC, {
+    variables: {
+      id: idUser
+    }
+  })
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -33,7 +41,9 @@ export default function FullWidthTabs() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
+  useEffect(() => {
 
+  }, [data, loading, error])
   return (
     <motion.div
       initial="out"
@@ -64,13 +74,22 @@ export default function FullWidthTabs() {
             index={value}
             onChangeIndex={handleChangeIndex}
           >
+            {/* this tab show personal topic */}
             <TabPanel value={value} index={0}>
-              <MyPost />
+              {
+                !!data && data.allTopics.map((post, index) => <MyPost key={index} {...post} />)
+              }
+
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <PinPost />
-              <PinPost />
-              <PinPost />
+              <h5>.</h5>
+              <h5>.</h5>
+              <h5>.</h5>
+              <h5>Comming soon !!</h5>
+              <h5>.</h5>
+              <h5>.</h5>
+              <h5>.</h5>
+
             </TabPanel>
           </SwipeableViews>
         </div>

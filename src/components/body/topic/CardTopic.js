@@ -2,6 +2,9 @@ import React from "react";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { NavLink } from "react-router-dom";
 import parse from "html-react-parser";
+import { myParseDate } from "components/helper/parse"
+import Avatar from '@material-ui/core/Avatar';
+import "./style/topic.css";
 
 function CardTopic(props) {
   const {
@@ -11,27 +14,28 @@ function CardTopic(props) {
     date,
     like,
     tags,
-    user: { username },
+    user: { username, avatar }
   } = props;
+  console.log("TYPE_OF_DATE: ", typeof date)
   return (
     <div className="group-topic container">
       <div className="row">
         <div className="col-md-8 group-user ">
           <div className="ava-user">
-            <AccountCircleIcon />
+            <Avatar alt="avatar of user" src={!!avatar && avatar.publicUrl} />
           </div>
           <div className="infor-user">
             <p className="title-user">{username}</p>
-            <p className="date-topic">{date}</p>
+            <p className="date-topic">{myParseDate(date)}</p>
           </div>
         </div>
         <div className="rating-topic col-md-4 ">
           <div className="count-topic">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="far fa-star"></i>
+            {
+              Array(Math.floor(Math.random() * 5) + 1).fill().map(() => <i className="fas fa-star"></i>) //random number of start
+            }
+
+
           </div>
           <p className="title-rating-topic">Độ uy tín của Topic</p>
         </div>

@@ -73,7 +73,7 @@ function Index({ match }) {
   // using callback to memoize function after each time render
 
   return (
-    <div>
+    <div className="body-homepage">
       <Banner />
       <div className="container">
         <div className="row">
@@ -83,13 +83,16 @@ function Index({ match }) {
 
           <div className="col-md-9" id="content">
             {/* card include content of university */}
-            {!!contentMainHome ? (
-              contentMainHome.map((item, index) => {
-                return <CardHome key={index} {...item} />;
-              })
-            ) : (
-              <h5>Loading...</h5>
-            )}
+            <div className="content-main-home">
+              {!!contentMainHome ? (
+                contentMainHome.map((item, index) => {
+                  return <CardHome key={index} {...item} />;
+                })
+              ) : (
+                  <h5>Loading...</h5>
+                )}
+            </div>
+
             {/*end of cards include content of university */}
 
             {/* start of pagination */}

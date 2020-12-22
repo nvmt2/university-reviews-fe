@@ -55,8 +55,8 @@ function Index({ location }) {
                     <CardTopic key={index} {...item} />
                   ))
                 ) : (
-                  <LoadingIcon />
-                )}
+                    <LoadingIcon />
+                  )}
               </div>
               {/* show list tags at right */}
               <div className="col-md-3 group-categories-topic">
@@ -65,7 +65,7 @@ function Index({ location }) {
               <div className="col-md-8 mb-5 ">
                 <div style={{ width: "50%", margin: "auto" }}>
                   <Pagination
-                    count={20}
+                    count={2}
                     color="primary"
                     shape="rounded"
                     variant="outlined"

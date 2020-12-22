@@ -38,24 +38,13 @@
 }
 
 .item-content-comment {
-  margin-top: 65px;
-}
-
-.item-news-comment {
-  font-size: 16px;
-  padding: 10px 10px 10px 10px;
-  border: 0.2px solid rgba(0, 0, 0, 0.2);
-  margin: 0;
-}
-
-.like-comment {
-  background: #e8e8e8;
-  display: flex;
-  justify-content: flex-end;
+  margin-top: 50px;
 }
 
 .like-comment button {
   cursor: pointer;
+  margin-left: 60px;
+  margin-top: -10px;
 }
 
 /*---------footer comment------------*/

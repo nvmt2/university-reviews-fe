@@ -56,6 +56,7 @@ const GET_GALLERY = gql`
 const GET_UNIVERSITY = gql`
   query getUniversity($id: ID!) {
     University(where: { id: $id }) {
+      name
       email
       code
       address

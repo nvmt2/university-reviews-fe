@@ -6,7 +6,7 @@
   margin-bottom: 50px;
 }
 #bg-banner {
-  background-image: url("/assets/home-page/banner.jpg");
+  background-image: url("/assets/home-page/banner_1.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -171,13 +171,14 @@ p.demo-content:hover {
 }
 
 .btn-loc {
-  margin-left: 20%;
-  width: 50%;
+  margin-left: 20% !important;
+  width: 60%;
   color: #5d963f;
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600 !important;
+  font-size: 18px !important;
 }
 .btn-loc:hover {
+  transition: all .8s ease-in-out;
   background-color: #5d963f;
   color: #ffffff;
 }
@@ -212,4 +213,7 @@ label {
 }
 .footer-card-home {
   padding: 10px 10px;
+}
+.content-main-home {
+  min-height: 1000px;
 }

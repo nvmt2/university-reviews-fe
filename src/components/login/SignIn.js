@@ -53,7 +53,7 @@ function SignIn() {
     // TweenMax.from(formSignIn, {
     //   duration: 1,
     //   x: 1000,
-    //   ease: Elastic.easeOut(1, 0.3),
+    //   ease: Power2.in,
     // });
   }, [data, loading, error, history]);
   console.log("SIGN_IN", data);

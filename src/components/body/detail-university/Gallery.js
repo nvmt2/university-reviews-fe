@@ -87,8 +87,8 @@ function Gallery() {
           </ModalGateway>
         </div>
       ) : (
-        <LoadingIcon />
-      )}
+          <LoadingIcon />
+        )}
     </div>
   );
 }

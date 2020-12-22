@@ -5,20 +5,23 @@ import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
 import homepageQueries from "query/homepage";
 //material-ui
 import Slider from "@material-ui/core/Slider";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 const marks = [
   {
     value: 0,
-    label: "0$",
+    label: "0 tr",
   },
   {
     value: 40,
-    label: "1000$",
+    label: "40 tr",
   },
   {
-    value: 60,
-    label: "3000$",
+    value: 80,
+    label: "80 tr",
   },
+
 ];
 
 function FilterBar() {
@@ -45,12 +48,14 @@ function FilterBar() {
   };
 
   const handleOnChange = (e) => {
+    console.log(e.target.name, ": ", e.target.value)
     setItems({
       ...items,
       [e.target.name]: e.target.value,
     });
+
   };
-  useEffect(() => {}, [dispatch, items]);
+  useEffect(() => { }, [dispatch, items]);
 
   // console.log("SELECTOR", state);
 
@@ -100,55 +105,57 @@ function FilterBar() {
           <select
             id="nhomNghanh"
             className="form-control"
-            name="major"
+            name="name_major"
             onChange={handleOnChange}
           >
-            <optgroup label="Nhóm ngành về kỹ thuật">
-              <option>Công nghệ thông tin</option>
-              <option>Kiến trúc và xây dựng</option>
-              <option value="">Khoa học cơ bản</option>
-            </optgroup>
-            <optgroup label="Nhóm ngành về Kinh Tế">
-              <option>Quản trị</option>
-              <option>Sản xuất và chế biến</option>
-              <option value="">Báo chí-khoa học và xã hội</option>
-            </optgroup>
-            <option value="">Luật và nhân văn</option>
-            <option value="">Nghệ thuật-thẩm mỹ-đồ họa</option>
-            <option value="">Sư Phạm</option>
-            <option value="">Nông-lâm-ngư nghiệp</option>
             <option value="">Tất cả</option>
+            <option value="Công nghệ thông tin">Công nghệ thông tin</option>
+            <option >Sản xuất và chế biến</option>
+            <option >Kiến trúc và xây dựng</option>
+            <option value="Kinh doanh">Kinh doanh</option>
+            <option>Công nghệ - thông tin</option>
+            <option value="Luật">Luật - nhân văn</option>
+            <option >Nghệ thuật - thẩm mỹ - đồ họa</option>
+            <option>Báo chí - khoa học và xã hội</option>
+            <option >Khoa học cơ bản</option>
+            <option >Sư phạm</option>
+            <option >Nông - lâm - ngư nghiệp</option>
+            <option value="Y học">Y học</option>
+
+
           </select>
         </fieldset>
         {/* <!-- -----------end nhóm nghành---------- --> */}
-        <fieldset>
+        {/* <fieldset>
           <legend>Chuyên ngành</legend>
           <label htmlFor="nhomNghanh" className="locate d-block margin-r-10">
             <select name="nhomNghanh" id="nhomNghanh" className="form-control">
               <option value="">Tất cả nghành</option>
             </select>
           </label>
-        </fieldset>
+        </fieldset> */}
         {/* <!-- end ngành  -->  */}
 
         <fieldset>
           <legend>Loại trường</legend>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DHCL" />
-            <label htmlFor="DHCL">Đại học công lập</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DHTH" />
-            <label htmlFor="DHTH">Đại học tư thục</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="CD" />
-            <label htmlFor="CD">Cao đẳng</label>
-          </label>
-          <label className="locate d-block">
-            <input type="checkbox" name="loaiTruong" value="" id="DTN" />
-            <label htmlFor="DTN">Đào tạo nghề</label>
-          </label>
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đại học công lập"
+          />
+
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đại học tư thục"
+          />
+
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Cao đẳng"
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Đào tạo nghề"
+          />
         </fieldset>
         {/* <!-- end --> */}
         <fieldset>

@@ -5,7 +5,7 @@ function PaginationComment() {
   return (
     <div className="container footer-comment">
       <Pagination
-        count={8}
+        count={1}
         color="primary"
         shape="rounded"
         variant="outlined"
