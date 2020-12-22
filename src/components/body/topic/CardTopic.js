@@ -32,6 +32,7 @@ function CardTopic(props) {
         <div className="rating-topic col-md-4 ">
           <div className="count-topic">
             {
+              // Math.floor(Math.random() * 5) + 1
               Array(4)
                 .fill()
                 .map((item, index) => (
