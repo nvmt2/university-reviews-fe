@@ -20,11 +20,4 @@ Tổng kết
 
 
 
-
-
-* Rút bớt các function trong model product backlog
-* Đưa 2 hình ảnh chính của 2 landing page lên phần giới thiệu
-* đưa 4 biểu đồ sprint-backlog vào 1 hoặc 2 slide
-* Ý nghĩa của system context trong architecture ( hỏi kỹ về system context )
-* Ý nghĩa model trong product backlog
   

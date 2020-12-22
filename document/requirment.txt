@@ -1,0 +1,27 @@
+Cập nhập UI 2 trang chính của user với admintrastor
+
+
+
+
+
+Asking mentor
+System context diagram ý nghĩa là gì
+Ý nghĩa C & C view
+Hỏi cô mấy được mấy phút thuyết trình
+
+
+
+công việc của Thiện
+ - thêm ảnh ở mục công cụ develop
+
+công việc của Tới
+ - cắt ảnh từ adminstrator
+
+
+
+Công việc của Thương
+Sửa Allocation view
+
+
+Công việc của Sang
+- Cập nhập diagram field Avatar vào table Account gửi Thiện
