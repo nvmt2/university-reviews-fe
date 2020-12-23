@@ -1,13 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+import React, { useEffect } from "react";
+import { NavLink, useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useQuery } from "@apollo/client";
 // import local file
+import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
+import homepageQueries from "query/homepage";
 import NavBar from "./nav-link/NavBar";
 import { navigationsUnAuthen, navigationsAuthentication } from "routes-main";
 import NotificationCard from "./card-notification";
+import { fetchAccountAction } from "state/ducks/common/actions/login";
 import "./style.css";
-
 //import material ui
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,7 +24,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import Avatar from "@material-ui/core/Avatar";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 
 const useStyles = makeStyles((theme) => ({
   displayInline: {
@@ -52,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     width: "60%",
   },
   searchIcon: {
+    marginLeft: 30,
     padding: theme.spacing(0, 2),
     height: "100%",
     position: "absolute",
@@ -101,6 +104,29 @@ export default function PrimarySearchAppBar() {
       status: "Đã bình luận Topic của bạn",
     },
   ];
+  const [contentSearch, setContentSearch] = React.useState({
+    first: 5,
+    skip: 0,
+  });
+  const dispatch = useDispatch();
+  const { data, loading, error } = useQuery(
+    homepageQueries.GET_ALL_UNIVERSITY,
+    {
+      variables: contentSearch,
+    }
+  );
+  const dataApi = !loading && !error && !!data && data.allUniversities;
+
+  const handleOnchange = (e) => {
+    setContentSearch({
+      ...contentSearch,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const clickSearch = () => {
+    dispatch(fetchUniversityAction(dataApi));
+  };
+  useEffect(() => {}, [dispatch, contentSearch]);
 
   const state = useSelector((state) => state);
   const classes = useStyles();
@@ -130,6 +156,13 @@ export default function PrimarySearchAppBar() {
     handleMobileMenuClose();
   };
 
+  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
+  const history = useHistory();
+  const handleLogout = () => {
+    dispatch(fetchAccountAction(false));
+    localStorage.removeItem("idUser");
+    history.push("/login");
+  };
   const menuId = "primary-search-account-menu";
   const renderMenuProfile = (
     <Menu
@@ -194,9 +227,11 @@ export default function PrimarySearchAppBar() {
               </NavLink>
             </Typography>
             <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
+              <IconButton aria-label="search" onClick={clickSearch}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+              </IconButton>
               <InputBase
                 placeholder="Search…"
                 classes={{
@@ -204,6 +239,8 @@ export default function PrimarySearchAppBar() {
                   input: classes.inputInput,
                 }}
                 inputProps={{ "aria-label": "search" }}
+                name="nameUniversity"
+                onChange={handleOnchange}
               />
             </div>
             <div className={classes.grow} />
@@ -229,6 +266,11 @@ export default function PrimarySearchAppBar() {
               >
                 <MenuIcon />
               </IconButton>
+              {!!state.login.data.id && (
+                <IconButton color="inherit" onClick={handleLogout}>
+                  <ExitToAppIcon />
+                </IconButton>
+              )}
             </div>
           </Toolbar>
         </div>

@@ -18,6 +18,7 @@ import Button from "@material-ui/core/Button";
 import EditIcon from "@material-ui/icons/Edit";
 import Chip from "@material-ui/core/Chip";
 import DoneIcon from "@material-ui/icons/Done";
+import IconButton from "@material-ui/core/IconButton";
 
 function HeaderComment() {
   const history = useHistory();
@@ -64,6 +65,24 @@ function HeaderComment() {
     return { display: result };
   };
 
+  const [statusLike, setStatusLike] = useState({
+    dislike: false,
+    like: false,
+  });
+  const handleDislike = () => {
+    setStatusLike({
+      ...statusLike,
+      dislike: !statusLike.dislike,
+      like: statusLike.dislike && false,
+    });
+  };
+  const handleLike = () => {
+    setStatusLike({
+      ...statusLike,
+      like: !statusLike.like,
+      dislike: statusLike.like && false,
+    });
+  };
   useEffect(() => {
     if (!!response)
       history.push(`/topics/${response.deleteTopic.university.id}`);
@@ -134,8 +153,16 @@ function HeaderComment() {
                 </div>
 
                 <div className="col-md-1 group-like-comment">
-                  <ThumbDownAltOutlinedIcon />
-                  <ThumbUpOutlinedIcon />
+                  <IconButton onClick={handleDislike}>
+                    <ThumbDownAltOutlinedIcon
+                      style={{ color: statusLike.dislike ? "red" : "white" }}
+                    />
+                  </IconButton>
+                  <IconButton onClick={handleLike}>
+                    <ThumbUpOutlinedIcon
+                      style={{ color: statusLike.like ? "red" : "white" }}
+                    />
+                  </IconButton>
                 </div>
               </div>
             </div>

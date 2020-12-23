@@ -2,9 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { pageTransition } from "common/page-transition/configVarian";
+//material-ui
+import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
+import IconButton from "@material-ui/core/IconButton";
 
 function CardHome(props) {
   const { address, introduce, logo, name, zone, id } = props;
+  const [mark, setMark] = React.useState(false);
+  const handldeClickMark = () => {
+    setMark(!mark);
+  };
   return (
     <motion.div
       className="highlight-topic container-fluid"
@@ -52,7 +59,11 @@ function CardHome(props) {
             </NavLink>
           }
           <i className="fas fa-chevron-right"></i>
-          <i className="far fa-bookmark "></i>
+          <div className="favourite-bookmark">
+            <IconButton onClick={handldeClickMark}>
+              <BookmarkBorderIcon style={{ color: mark ? "blue" : "" }} />
+            </IconButton>
+          </div>
         </div>
       </div>
     </motion.div>
