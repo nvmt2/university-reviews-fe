@@ -3,6 +3,7 @@ import parse from "html-react-parser";
 import { NavLink } from "react-router-dom";
 //local file
 import { myParseDate } from "components/helper/parse";
+import { countStart } from "components/helper/countStart";
 //material-ui
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
@@ -14,6 +15,8 @@ function MyPost(props) {
     user: { username },
     tags,
     id,
+    like,
+    unlike,
   } = props;
   return (
     <div className="myPost">
@@ -28,11 +31,19 @@ function MyPost(props) {
           </a>
           <div className="rating-topics">
             <div className="count-topics">
+              {
+                // Math.floor(Math.random() * 5) + 1
+                Array(countStart(like, unlike))
+                  .fill()
+                  .map((item, index) => (
+                    <i className="fas fa-star" key={index}></i>
+                  )) //random number of start
+              }
+              {/* <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="far fa-star"></i>
+              <i className="far fa-star"></i> */}
             </div>
             <p className="title-rating-topics">Độ uy tín của Topic</p>
           </div>

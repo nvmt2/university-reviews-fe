@@ -7,11 +7,12 @@ const GET_ALL_TOPICS = gql`
       title
       content
       like
+      unlike
       tags
       date
       user {
         username
-        avatar{
+        avatar {
           publicUrl
         }
       }
@@ -29,10 +30,11 @@ const GET_TOPIC = gql`
       tags
       date
       like
+      unlike
       user {
         id
         username
-        avatar{
+        avatar {
           publicUrl
         }
       }

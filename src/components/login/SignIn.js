@@ -13,7 +13,6 @@ import "./style/signin.css";
 //material-ui
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
-import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -93,9 +92,6 @@ function SignIn() {
                   name="passwordUser"
                   placeholder="Nhập mật khẩu của bạn"
                 />
-                <div className="hidden-pass">
-                  <VisibilityOffIcon />
-                </div>
               </div>
               <a href="/" className="forgot">
                 Quên mật khẩu

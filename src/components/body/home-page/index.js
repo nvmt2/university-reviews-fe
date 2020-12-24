@@ -86,15 +86,13 @@ function Index({ match }) {
             <div className="content-main-home">
               {!!contentMainHome ? (
                 contentMainHome.map((item, index) => {
-                  return <CardHome key={index} {...item} />;
+                  return <CardHome key={index} {...item} status={"homepage"} />;
                 })
               ) : (
                 <h5>Loading...</h5>
               )}
             </div>
-
             {/*end of cards include content of university */}
-
             {/* start of pagination */}
             <div className="offset-md-3 col-md-9 pagination-material">
               <Pagination

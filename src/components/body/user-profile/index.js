@@ -7,6 +7,7 @@ import "./style/user.css";
 import "./style/my-post.css";
 import Header from "./Header";
 import MyPost from "./MyPost";
+import CardUniversity from "components/body/home-page/CardHome";
 import TabPanel, { a11yProps } from "common/tabs/TabPanel";
 import { pageTransition } from "common/page-transition/configVarian";
 import { userProfileQueries } from "query/user-profile";
@@ -25,11 +26,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FullWidthTabs() {
   const idUser = useSelector((state) => state.login.data.id);
-  const { data, loading, error } = useQuery(userProfileQueries.GET_PERONAL_TOPIC, {
-    variables: {
-      id: idUser
+  //get topic individual
+  const { data, loading, error } = useQuery(
+    userProfileQueries.GET_PERONAL_TOPIC,
+    {
+      variables: {
+        id: idUser,
+      },
     }
-  })
+  );
+  //get Favourite university which was marked by user
+  const {
+    data: dataFavourite,
+    loading: loadingFavourite,
+    error: errorFavourite,
+  } = useQuery(userProfileQueries.GET_FAVOURITE_UNIVERSITY, {
+    variables: {
+      idUser: idUser,
+    },
+  });
+  console.log("dataFavourite", !!dataFavourite && dataFavourite);
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -41,9 +57,8 @@ export default function FullWidthTabs() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-  useEffect(() => {
-
-  }, [data, loading, error])
+  useEffect(() => {}, [data, loading, error]);
+  useEffect(() => {}, [dataFavourite, loadingFavourite, errorFavourite]);
   return (
     <motion.div
       initial="out"
@@ -76,20 +91,18 @@ export default function FullWidthTabs() {
           >
             {/* this tab show personal topic */}
             <TabPanel value={value} index={0}>
-              {
-                !!data && data.allTopics.map((post, index) => <MyPost key={index} {...post} />)
-              }
-
+              {!!data &&
+                data.allTopics.map((post, index) => (
+                  <MyPost key={index} {...post} />
+                ))}
             </TabPanel>
             <TabPanel value={value} index={1}>
-              <h5>.</h5>
-              <h5>.</h5>
-              <h5>.</h5>
-              <h5>Comming soon !!</h5>
-              <h5>.</h5>
-              <h5>.</h5>
-              <h5>.</h5>
-
+              {!!dataFavourite &&
+                dataFavourite.Account.favouriteUniversity.map(
+                  (university, index) => (
+                    <CardUniversity key={index} {...university} />
+                  )
+                )}
             </TabPanel>
           </SwipeableViews>
         </div>

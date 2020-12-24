@@ -95,11 +95,11 @@ function Index() {
         <div className="form-group form-users">
           <div className="row">
             <input type="radio" name="gioitinh" id="nam" value="Nam" />
-            <label for="nam">Nam</label>
+            <label>Nam</label>
           </div>
           <div className="row">
             <input type="radio" name="gioitinh" id="nu" value="Nu" />
-            <label for="nu">Nữ</label>
+            <label>Nữ</label>
           </div>
         </div>
         <textarea

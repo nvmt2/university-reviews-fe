@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { TweenMax, Power2, Bounce } from "gsap";
 import { useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
 
 //import local file
 import "./style/signup.css";
@@ -11,9 +12,9 @@ import { loginMutation } from "query/login";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import MailOutlineIcon from "@material-ui/icons/MailOutline";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
-import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 
 function SignUp() {
+  const history = useHistory();
   //let title = useRef(null);
   let formSignUp = useRef(null);
 
@@ -22,18 +23,25 @@ function SignUp() {
     email: "",
     passwordUser: "",
   });
-  const [register, { data }] = useMutation(loginMutation.CREATE_ACCOUNT);
+  const [passwordAgain, setPasswordAgain] = useState("");
+  const [register, { data, error }] = useMutation(loginMutation.CREATE_ACCOUNT);
   const handleOnChange = (e) => {
     setDataForm({
       ...dataForm,
       [e.target.name]: e.target.value,
     });
   };
+  const handOnChangePasswordAgain = (e) => {
+    setPasswordAgain(e.target.value);
+  };
   const signUp = (event) => {
     event.preventDefault();
-    register({
-      variables: dataForm,
-    });
+    if (passwordAgain !== dataForm.passwordUser) alert("Mật khẩu không trùng");
+    else {
+      register({
+        variables: dataForm,
+      });
+    }
   };
   useEffect(() => {
     // TweenMax.from(title, {
@@ -50,7 +58,10 @@ function SignUp() {
   }, []);
   useEffect(() => {
     if (!!data) alert("Đăng ký thành công");
-  }, [data]);
+    if (!!error) {
+      alert("Email này đã tồn tại");
+    }
+  }, [data, error]);
 
   return (
     <div className="SignUp">
@@ -83,6 +94,7 @@ function SignUp() {
                   placeholder="Nhập tên của bạn"
                   name="username"
                   onChange={handleOnChange}
+                  required
                 />
               </div>
               <span className="title-input">Email</span>
@@ -93,6 +105,7 @@ function SignUp() {
                   placeholder="Nhập tài khoản Email"
                   name="email"
                   onChange={handleOnChange}
+                  required
                 />
               </div>
               <span className="title-input">Mật khẩu</span>
@@ -103,10 +116,8 @@ function SignUp() {
                   placeholder="Nhập mật khẩu của bạn"
                   name="passwordUser"
                   onChange={handleOnChange}
+                  required
                 />
-                <div className="hidden-pass">
-                  <VisibilityOffIcon />
-                </div>
               </div>
               <span className="title-input">Nhập lại mật khẩu</span>
               <div className="SignUp-input">
@@ -114,10 +125,10 @@ function SignUp() {
                 <input
                   type="password"
                   placeholder="Nhập lại mật khẩu của bạn"
+                  name="passwordAgain"
+                  onChange={handOnChangePasswordAgain}
+                  required
                 />
-                <div className="hidden-pass">
-                  <VisibilityOffIcon />
-                </div>
               </div>
               <NavLink className="acc" to="/login">
                 {" "}

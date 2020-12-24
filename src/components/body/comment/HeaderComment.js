@@ -9,6 +9,7 @@ import { topicMutation } from "query/topic";
 import { topicQuery } from "query/topic";
 import DialogUpdate from "./DialogUpdate";
 import { myParseDate } from "components/helper/parse";
+import { userProfileQueries } from "query/user-profile";
 //importing material UI
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ThumbDownAltOutlinedIcon from "@material-ui/icons/ThumbDownAltOutlined";
@@ -23,6 +24,7 @@ import IconButton from "@material-ui/core/IconButton";
 function HeaderComment() {
   const history = useHistory();
   const { slug } = useParams();
+  const idAuthor = useSelector((state) => state.login.data.id);
   //call api get one topic
   const { data, loading, error } = useQuery(topicQuery.GET_TOPIC, {
     variables: {
@@ -46,6 +48,12 @@ function HeaderComment() {
             id: localStorage["slugUniversity"],
           },
         },
+        {
+          query: userProfileQueries.GET_PERONAL_TOPIC,
+          variables: {
+            id: idAuthor,
+          },
+        },
       ],
     });
   };
@@ -59,9 +67,9 @@ function HeaderComment() {
     setOpenDialog(false);
   };
   // Authorization
-  const state = useSelector((state) => state.login.data.id);
+
   const checkAuthor = () => {
-    let result = state === contentHeaderComment.user.id ? "block" : "none";
+    let result = idAuthor === contentHeaderComment.user.id ? "block" : "none";
     return { display: result };
   };
 

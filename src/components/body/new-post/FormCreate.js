@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 //import local file
 import { topicMutation, topicQuery } from "query/topic";
 import { myGetDate } from "components/helper/getDate";
+import { userProfileQueries } from "query/user-profile";
 
 //material-ui
 import Button from "@material-ui/core/Button";
@@ -39,6 +40,12 @@ function FormCreate() {
           query: topicQuery.GET_ALL_TOPICS,
           variables: {
             id: localStorage["slugUniversity"],
+          },
+        },
+        {
+          query: userProfileQueries.GET_PERONAL_TOPIC,
+          variables: {
+            id: idAuthor,
           },
         },
       ],
