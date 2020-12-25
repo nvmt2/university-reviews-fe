@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-
 import { useQuery, useMutation } from "@apollo/client";
 import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
 import { useDispatch, useSelector } from "react-redux";
 //importing local file
 import homepageQueries from "query/homepage";
 import { loginMutation } from "query/login";
-
 import CardHome from "./CardHome";
 import FilterBar from "./FilterBar";
 import Banner from "./Banner";
-import "./home-page.css";
+import "./style/home-page.css";
 //importing material UI
 import Pagination from "@material-ui/lab/Pagination";
 
@@ -89,8 +87,8 @@ function Index({ match }) {
                   return <CardHome key={index} {...item} status={"homepage"} />;
                 })
               ) : (
-                <h5>Loading...</h5>
-              )}
+                  <h5>Loading...</h5>
+                )}
             </div>
             {/*end of cards include content of university */}
             {/* start of pagination */}
