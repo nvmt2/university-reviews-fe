@@ -1,142 +1,63 @@
 import React from "react";
-import "./style/rating.css"
+import "./style/rating.css";
 
 function Rating() {
-    return ( <
-        div className = "rating" >
-        <
-        div className = "container" >
-        <
-        div className = "row" >
-        <
-        div className = "col-xs-12 col-md-6" >
-        <
-        div className = "well well-sm" >
-        <
-        div className = "row" >
-        <
-        div className = "col-xs-12 col-md-6 text-center" >
-        <
-        h1 className = "rating-num" >
-        4.0 < /h1> <
-        div className = "rating" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span><span className="glyphicon glyphicon-star"> < /
-        span > < span className = "glyphicon glyphicon-star" > < /span > < span className = "glyphicon glyphicon-star" > <
-        /span><span className="glyphicon glyphicon-star-empty"></span >
-        <
-        /div> <
-        div >
-        <
-        span className = "glyphicon glyphicon-user" > < /span>1,050,008 total < /
-        div > <
-        /div> <
-        div className = "col-xs-12 col-md-6" >
-        <
-        div className = "row rating-desc" >
-        <
-        div className = "col-xs-3 col-md-3 text-right" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span>5 < /
-        div > <
-        div className = "col-xs-8 col-md-9" >
-        <
-        div className = "progress progress-striped" >
-        <
-        div className = "progress-bar progress-bar-success rating-h"
-        role = "progressbar"
-        aria - valuenow = "20"
-        aria - valuemin = "0"
-        aria - valuemax = "100" >
-        <
-        span className = "sr-only" > 80 % < /span> < /
-        div > <
-        /div> < /
-        div > <
-        div className = "col-xs-3 col-md-3 text-right" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span>4 < /
-        div > <
-        div className = "col-xs-8 col-md-9" >
-        <
-        div className = "progress" >
-        <
-        div className = "progress-bar progress-bar-success"
-        role = "progressbar"
-        aria - valuenow = "20"
-        aria - valuemin = "0"
-        aria - valuemax = "100"
-        style = "width: 60%" >
-        <
-        span className = "sr-only" > 60 % < /span> < /
-        div > <
-        /div> < /
-        div > <
-        div className = "col-xs-3 col-md-3 text-right" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span>3 < /
-        div > <
-        div className = "col-xs-8 col-md-9" >
-        <
-        div className = "progress" >
-        <
-        div className = "progress-bar progress-bar-info"
-        role = "progressbar"
-        aria - valuenow = "20"
-        aria - valuemin = "0"
-        aria - valuemax = "100"
-        style = "width: 40%" >
-        <
-        span className = "sr-only" > 40 % < /span> < /
-        div > <
-        /div> < /
-        div > <
-        div className = "col-xs-3 col-md-3 text-right" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span>2 < /
-        div > <
-        div className = "col-xs-8 col-md-9" >
-        <
-        div className = "progress" >
-        <
-        div className = "progress-bar progress-bar-warning"
-        role = "progressbar"
-        aria - valuenow = "20"
-        aria - valuemin = "0"
-        aria - valuemax = "100"
-        style = "width: 20%" >
-        <
-        span className = "sr-only" > 20 % < /span> < /
-        div > <
-        /div> < /
-        div > <
-        div className = "col-xs-3 col-md-3 text-right" >
-        <
-        span className = "glyphicon glyphicon-star" > < /span>1 < /
-        div > <
-        div className = "col-xs-8 col-md-9" >
-        <
-        div className = "progress" >
-        <
-        div className = "progress-bar progress-bar-danger"
-        role = "progressbar"
-        aria - valuenow = "80"
-        aria - valuemin = "0"
-        aria - valuemax = "100"
-        style = "className" >
-        <
-        span classNameName = "sr-only" > 15 % < /span> < /
-        div > <
-        /div> < /
-        div > <
-        /div> < /
-        div > <
-        /div> < /
-        div > <
-        /div> < /
-        div > <
-        /div> < /
-        div >
+    return (
+        <div className="rating">
+            <div className="row">
+                <div className='rating-left'>
+                    <h3 className='rating-title'>4.0</h3>
+                    <div className='row rating-star'>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="fas fa-star"></i>
+                        <i className="far fa-star"></i>
+                    </div>
+                    <div className='rating-content row'>
+                        <i class="fas fa-user"></i>
+                        <span className='rating-total'>99 đánh giá</span>
+                    </div>
+                </div>
+                <div className='rating-right'>
+                    <div className='rating-item row'>
+                        <i className="fas fa-star"></i>
+                        <p className='rating-count'>5</p>
+                        <div className='rating-progress'>
+                            <div className='rating-progress-bar rp-five'></div>
+                        </div>
+                    </div>
+                    <div className='rating-item row'>
+                        <i className="fas fa-star"></i>
+                        <p className='rating-count'>4</p>
+                        <div className='rating-progress'>
+                            <div className='rating-progress-bar rp-four'></div>
+                        </div>
+                    </div>
+                    <div className='rating-item row'>
+                        <i className="fas fa-star"></i>
+                        <p className='rating-count'>3</p>
+                        <div className='rating-progress'>
+                            <div className='rating-progress-bar rp-three'></div>
+                        </div>
+                    </div>
+                    <div className='rating-item row'>
+                        <i className="fas fa-star"></i>
+                        <p className='rating-count'>2</p>
+                        <div className='rating-progress'>
+                            <div className='rating-progress-bar rp-two'></div>
+                        </div>
+                    </div>
+                    <div className='rating-item row'>
+                        <i className="fas fa-star"></i>
+                        <p className='rating-count'>1</p>
+                        <div className='rating-progress'>
+                            <div className='rating-progress-bar rp-one'></div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </div >
     )
 
 }
