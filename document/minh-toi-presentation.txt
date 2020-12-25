@@ -1,0 +1,21 @@
+Good morning teacher, thank you for take part in our presentation,
+- let's me introduce a bit about my team, We have four people, I'm Minh Toi, and I'm product owner, next, Huu Thien is scrum master, Xuan Sang and Quy Thuong are team member, We from Management Information System and were lead by Dr. Ha Thi Nhu Hang.
+ - Today I show you our project named University Reviews. 
+There are five part I'm going to say 
+First, Bussiness Issuse, 
++ solution, 
++ architecture project, 
++ process,
++ last is Demo
+About business issuse, Every sigle year in Viet nam, there are about 640.000 student who graduate high school, and four per five of them keep study at unversity enviroment. They need to choose correct major, and they really want to hear about reality experiece from student are studying the university which they enjoy.
+- Untill this movement, There two page support for above issuse, that's Tuyensinhso and Edu2review, however, Tuyensinhso don't have place for user post their comment, and Edu2review just focus on University of language
+- My group decide to make University Reviews with two main features, first, show basic information about all of university in Vietname, second, it allow user post their comment, their feeling 
+ Our project support for three actor:  
+ + User: like student who have just graduated hight school, student who studying university or their parent
++ University: who represent university update information about their university year by year
++ Admin: Who can control everything, Admin have highest priority
+- Here, I'll present Architecture of project
+ 
+
+ 
+
