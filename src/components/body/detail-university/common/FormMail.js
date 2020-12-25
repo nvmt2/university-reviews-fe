@@ -100,6 +100,13 @@ function FormMail() {
 
           <div className="col-md-5">
             <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61349.621264723115!2d108.17168634199756!3d16.047248394951094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c792252a13%3A0xfc14e3a044436487!2zxJDDoCBO4bq1bmcsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZywgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1608903968172!5m2!1svi!2s"
+              width="100%"
+              height="80%"
+              aria-hidden="false"
+              title="google map"
+            ></iframe>
+            {/* <iframe
               title="map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.8204743580077!2d108.22070411468421!3d16.074803188877496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314218307d81c91d%3A0xbc7c14cab8a09c8!2sDuy%20Tan%20University!5e0!3m2!1sen!2s!4v1606904089524!5m2!1sen!2s"
               width="100%"
@@ -109,7 +116,7 @@ function FormMail() {
               // allowfullscreen=""
               aria-hidden="false"
               // tabindex="0"
-            ></iframe>
+            ></iframe> */}
           </div>
         </div>
       </div>

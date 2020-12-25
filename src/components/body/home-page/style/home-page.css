@@ -218,3 +218,8 @@ label {
 .content-main-home {
   min-height: 1000px;
 }
+
+.card-star{
+  outline: none;
+  border: none;
+}

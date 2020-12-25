@@ -7,6 +7,7 @@ import homepageQueries from "query/homepage";
 import Slider from "@material-ui/core/Slider";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Tooltip from "@material-ui/core/Tooltip";
 
 const marks = [
   {
@@ -55,9 +56,24 @@ function FilterBar() {
 
   return (
     <div id="filter">
-      <a href="/" className="map d-block text-center">
-        <i className="fas fa-map-marked-alt"></i> Xem vị trí
-      </a>
+      <Tooltip
+        title={
+          <React.Fragment>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15738108.916615233!2d96.86368427428319!3d15.628379032561192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31157a4d736a1e5f%3A0xb03bb0c9e2fe62be!2zVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1608904361721!5m2!1svi!2s"
+              width="280"
+              height="300"
+              aria-hidden="false"
+              title="google map vietnam"
+            ></iframe>
+          </React.Fragment>
+        }
+      >
+        <a href="/" className="map d-block text-center">
+          <i className="fas fa-map-marked-alt"></i> Xem vị trí
+        </a>
+      </Tooltip>
+
       <form action="" className="filter-form" onSubmit={addItem}>
         <fieldset>
           <legend>Tìm kiếm theo vùng</legend>

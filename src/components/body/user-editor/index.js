@@ -118,12 +118,12 @@ function Index() {
           name="passwordUser"
           onChange={handleOnChange}
         />
-        <input
+        {/* <input
           type="password"
           id="upd-password-2"
           placeholder="Nhập lại mật khẩu"
           className="form-control"
-        />
+        /> */}
 
         <div className="text-right">
           <button id="btn-cap-nhat-tt" className="btn" onClick={handleUpdate}>

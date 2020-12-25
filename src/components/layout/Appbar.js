@@ -245,17 +245,22 @@ export default function PrimarySearchAppBar() {
             </div>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton
-                aria-label="show notification about topics"
-                aria-controls={menuNotificationId}
-                aria-haspopup="true"
-                onClick={handleNotificationMenuOpen}
-                color="inherit"
-              >
-                <Badge badgeContent={4} color="secondary">
-                  <NotificationsIcon />
-                </Badge>
-              </IconButton>
+              {
+                !!state.login.data.id && (
+                  <IconButton
+                  aria-label="show notification about topics"
+                  aria-controls={menuNotificationId}
+                  aria-haspopup="true"
+                  onClick={handleNotificationMenuOpen}
+                  color="inherit"
+                >
+                  <Badge badgeContent={4} color="secondary">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                )
+              }
+            
               <IconButton
                 edge="end"
                 aria-label="user login"
