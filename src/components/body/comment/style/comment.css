@@ -57,6 +57,9 @@
 .group-like-comment > svg:hover {
   color: gray;
 }
+.group-like-comment button {
+  padding: 0px;
+}
 
 /**-------news comment*/
 

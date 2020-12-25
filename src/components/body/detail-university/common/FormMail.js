@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 import "./../style/form-mail.css";
+import detailUniversityQuery from "query/detail-university";
 
 function FormMail() {
+  const { slug } = useParams();
+  const { data, loading, error } = useQuery(
+    detailUniversityQuery.GET_UNIVERSITY,
+    {
+      variables: {
+        id: slug,
+      },
+    }
+  );
+  const contentAuthor = !loading && !error && data.University;
+  useEffect(() => {}, [data, error, loading]);
   return (
     <div className="container">
       <div id="form_thong_tin_LH">
@@ -12,29 +26,34 @@ function FormMail() {
           <span id="doi-mau">Liên hệ</span> với chúng tôi
         </h1>
         <img id="trangtri" src="images/Image 26.png" alt="" />
-        <div className="row mt-3">
-          <div className="col-md-4">
-            <span className="icon-LH">
-              <i className="fas fa-map-marker-alt"></i>
-            </span>
-            <p className="lable-dia-chi text-center">Địa Chỉ</p>
-            <p className="chi-tietLH text-center">254 Nguyễn Văn Linh</p>
+        {!!contentAuthor ? (
+          <div className="row mt-3 ">
+            <div className="col-md-4">
+              <span className="icon-LH">
+                <i className="fas fa-map-marker-alt"></i>
+              </span>
+              <p className="lable-dia-chi text-center">Địa Chỉ</p>
+              <p className="chi-tietLH text-center">{contentAuthor.address}</p>
+            </div>
+            <div className="col-md-4">
+              <span className="icon-LH">
+                <i className="fas fa-phone"></i>
+              </span>
+              <p className="lable-dia-chi text-center">Điện Thoại</p>
+              <p className="chi-tietLH text-center">09056633225</p>
+            </div>
+            <div className="col-md-4">
+              <span className="icon-LH">
+                <i className="far fa-envelope"></i>
+              </span>
+              <p className="lable-dia-chi text-center">Email</p>
+              <p className="chi-tietLH text-center">{contentAuthor.email}</p>
+            </div>
           </div>
-          <div className="col-md-4">
-            <span className="icon-LH">
-              <i className="fas fa-phone"></i>
-            </span>
-            <p className="lable-dia-chi text-center">Điện Thoại</p>
-            <p className="chi-tietLH text-center">09056633225</p>
-          </div>
-          <div className="col-md-4">
-            <span className="icon-LH">
-              <i className="far fa-envelope"></i>
-            </span>
-            <p className="lable-dia-chi text-center">Email</p>
-            <p className="chi-tietLH text-center">BachKhoaMamNon@gmail.com</p>
-          </div>
-        </div>
+        ) : (
+          <h5>Loading</h5>
+        )}
+
         <hr />
 
         <div className="row">

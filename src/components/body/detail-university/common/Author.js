@@ -17,7 +17,7 @@ function Author() {
     }
   );
   const contentAuthor = !loading && !error && data.University;
-  useEffect(() => { }, [data, error, loading]);
+  useEffect(() => {}, [data, error, loading]);
 
   return (
     <div>
@@ -29,8 +29,8 @@ function Author() {
           </div>
         </div>
       ) : (
-          <LoadingText />
-        )}
+        <LoadingText />
+      )}
     </div>
   );
 }

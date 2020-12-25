@@ -1,10 +1,11 @@
 import React from "react";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { NavLink } from "react-router-dom";
 import parse from "html-react-parser";
 import { myParseDate } from "components/helper/parse";
-import Avatar from "@material-ui/core/Avatar";
+import { countStart } from "components/helper/countStart";
 import "./style/topic.css";
+//material-UI
+import Avatar from "@material-ui/core/Avatar";
 
 function CardTopic(props) {
   const {
@@ -13,6 +14,7 @@ function CardTopic(props) {
     content,
     date,
     like,
+    unlike,
     tags,
     user: { username, avatar },
   } = props;
@@ -33,14 +35,14 @@ function CardTopic(props) {
           <div className="count-topic">
             {
               // Math.floor(Math.random() * 5) + 1
-              Array(4)
+              Array(countStart(like, unlike))
                 .fill()
                 .map((item, index) => (
                   <i className="fas fa-star" key={index}></i>
                 )) //random number of start
             }
           </div>
-          <p className="title-rating-topic">Độ uy tín của Topic</p>
+          <p className="title-rating-topic">Độ tin cậy của Topic</p>
         </div>
       </div>
       <div className="infor-topic">

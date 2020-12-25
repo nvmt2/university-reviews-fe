@@ -111,11 +111,12 @@ p.demo-content:hover {
   margin-left: 18px;
 }
 
-.highlight-topic .fa-bookmark {
+.highlight-topic button {
+  padding: 0px;
   font-size: 20px;
   float: right;
 }
-.highlight-topic .fa-bookmark:hover {
+.highlight-topic button:hover {
   color: #5d963f;
 }
 
@@ -178,7 +179,7 @@ p.demo-content:hover {
   font-size: 18px !important;
 }
 .btn-loc:hover {
-  transition: all .8s ease-in-out;
+  transition: all 0.8s ease-in-out;
   background-color: #5d963f;
   color: #ffffff;
 }
