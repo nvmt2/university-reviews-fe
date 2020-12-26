@@ -1,20 +1,36 @@
 Good morning teacher, thank you for take part in our presentation,
-- let's me introduce a bit about my team, We have four people, I'm Minh Toi, and I'm product owner, next, Huu Thien is scrum master, Xuan Sang and Quy Thuong are team member, We from Management Information System and were lead by Dr. Ha Thi Nhu Hang.
  - Today I show you our project named University Reviews. 
-There are five part I'm going to say 
+First I would like to introduce a bit my project team. We have four people, I'm Minh Toi, and I'm product owner, next, Huu Thien is scrum master, Xuan Sang and Quy Thuong are team member, We from Management Information System class and were lead by Dr. Ha Thi Nhu Hang.
+
+- There are five part I'm going to say 
 First, Bussiness Issuse, 
 + solution, 
 + architecture project, 
 + process,
 + last is Demo
-About business issuse, Every sigle year in Viet nam, there are about 640.000 student who graduate high school, and four per five of them keep study at unversity enviroment. They need to choose correct major, and they really want to hear about reality experiece from student are studying the university which they enjoy.
-- Untill this movement, There two page support for above issuse, that's Tuyensinhso and Edu2review, however, Tuyensinhso don't have place for user post their comment, and Edu2review just focus on University of language
+About business issuse, Every single year in Viet nam, there are about 640.000 student who graduate high school, and four per five of them keep study at unversity enviroment. They need to choose correct major, and they really want to hear about reality experiece from student are studying the university which they enjoy.
+- Untill this movement, There two web page support for above issues, that's Tuyensinhso and Edu2review, however, Tuyensinhso don't have place for user post their comment, and Edu2review just focus on University of language
+
 - My group decide to make University Reviews with two main features, first, show basic information about all of university in Vietname, second, it allow user post their comment, their feeling 
+x	
  Our project support for three actor:  
  + User: like student who have just graduated hight school, student who studying university or their parent
 + University: who represent university update information about their university year by year
 + Admin: Who can control everything, Admin have highest priority
-- Here, I'll present Architecture of project
+- Here web UI for user and UI for admin and University
+- Then, I'll present Architecture of project, This is system context diagram, there are three actor. 
++ User who can see overview all of university, or they can post your feeling, modify and remove their comment
++ University: Provide their University information 
++ Admin management all of content what show on web user, and manage all of account
+
+About C&C, User access in system through web Browser and do basic interaction or search information, When they do some event like post or creating new, it'll call API through GraphQL to CMS, CMS process and send data or data from MongoDB . here Admin and University also access in CMS through Web, here they can manage all of content which show on web user
+
+
+
+
+
+* kiểm tra lại slide
+ kiểm tra lỗi chính tả
  
 
  
