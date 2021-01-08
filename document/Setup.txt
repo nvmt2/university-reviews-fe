@@ -1,0 +1,10 @@
+Requirment: 
+ + install NodeJS
+ + Install npm ( or Yarn )
+ + MongoDB ( option )
+
+Running:
+ - This project include two landing page 
+ + Content Management System ( university-reviews-database ) for Admin
+ + User web ( university-reviews-fe )
+ - For more detail about running, read file .README in each folder
