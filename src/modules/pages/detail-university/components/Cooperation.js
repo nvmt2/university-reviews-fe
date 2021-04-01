@@ -1,18 +1,23 @@
-import React, { useEffect } from "react";
-import detailUniversityQuery from "query/detail-university";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import LoadingIcon from "common/loading/LoadingIcon";
-import Author from "./common/Author";
-import "./style/cooperation.css";
+import React, { useEffect } from 'react';
+
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+//internal modules
+import detailUniversityQuery from 'query/detail-university';
+//internal component
+import LoadingIcon from 'common/loading/LoadingIcon';
+import Author from 'modules/pages/detail-university/common/Author';
 
 export default function Cooperation() {
+  //STATE
   const { slug } = useParams();
   const { data, loading, error } = useQuery(detailUniversityQuery.GET_PARTNER, {
     variables: {
       id: slug,
     },
   });
+
+  //LIFECYCLE
   useEffect(() => {}, [data, loading, error]);
   const contentPartner =
     !loading &&

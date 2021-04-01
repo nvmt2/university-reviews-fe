@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-//import local file
-import detailUniversityQuery from "query/detail-university";
-import LoadingText from "common/loading/LoadingText";
-import "./../style/author.css";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+//internal modules
+import detailUniversityQuery from 'query/detail-university';
+import LoadingText from 'common/loading/LoadingText';
 
 function Author() {
   const { slug } = useParams();

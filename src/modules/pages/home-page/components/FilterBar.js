@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useQuery } from "@apollo/client";
-import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
-import homepageQueries from "query/homepage";
-//material-ui
-import Slider from "@material-ui/core/Slider";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Tooltip from "@material-ui/core/Tooltip";
-
-const marks = [
-  {
-    value: 0,
-    label: "0 tr",
-  },
-  {
-    value: 40,
-    label: "40 tr",
-  },
-  {
-    value: 80,
-    label: "80 tr",
-  },
-];
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useQuery } from '@apollo/client';
+import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
+import homepageQueries from 'query/homepage';
+//material-ui component
+import Slider from '@material-ui/core/Slider';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Tooltip from '@material-ui/core/Tooltip';
 
 function FilterBar() {
+  //STATE
   const [items, setItems] = useState({
     first: 5,
     skip: 0,
@@ -38,21 +24,32 @@ function FilterBar() {
     }
   );
   const dataApi = !loading && !error && !!data && data.allUniversities;
+  const marks = [
+    {
+      value: 0,
+      label: '0 tr',
+    },
+    {
+      value: 40,
+      label: '40 tr',
+    },
+    {
+      value: 80,
+      label: '80 tr',
+    },
+  ];
 
-  // const state = useSelector((state) => state);
-
+  //METHOD
   const addItem = (event) => {
     event.preventDefault();
     dispatch(fetchUniversityAction(dataApi));
   };
-
   const handleOnChange = (e) => {
     setItems({
       ...items,
       [e.target.name]: e.target.value,
     });
   };
-  useEffect(() => {}, [dispatch, items]);
 
   return (
     <div id="filter">

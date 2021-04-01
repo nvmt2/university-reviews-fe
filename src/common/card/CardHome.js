@@ -1,18 +1,20 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-import { pageTransition } from "common/page-transition/configVarian";
-import Rating from "./Rating";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+//internal modules
+import { pageTransition } from 'common/page-transition/configVarian';
+//internal components
+import Rating from 'common/rate/Rating';
 //material-ui
-import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
-import IconButton from "@material-ui/core/IconButton";
-import Tooltip from "@material-ui/core/Tooltip";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
 function CardHome(props) {
   const { address, introduce, logo, name, id, status } = props;
   const [mark, setMark] = React.useState(false);
-  const handldeClickMark = () => {
+  const handleClickMark = () => {
     setMark(!mark);
   };
   return (
@@ -28,7 +30,7 @@ function CardHome(props) {
           <div id="img-logo">
             <img
               src={logo.publicUrl}
-              alt="logo univesity"
+              alt="logo university"
               className="logo-university img-fluid"
             />
           </div>
@@ -57,7 +59,7 @@ function CardHome(props) {
                   pathname: `/detail-university/${id}`,
                 };
               }}
-              onClick={() => localStorage.setItem("slugUniversity", id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
+              onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
             >
               Chi tiết
             </NavLink>
@@ -72,8 +74,8 @@ function CardHome(props) {
               }
             >
               {/* <button className="card-star"></button> */}
-              <IconButton onClick={handldeClickMark}>
-                <BookmarkBorderIcon style={{ color: mark ? "blue" : "" }} />
+              <IconButton onClick={handleClickMark}>
+                <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
               </IconButton>
             </Tooltip>
           </div>

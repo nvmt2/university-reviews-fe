@@ -1,9 +1,8 @@
-import React from "react";
-import { Route, NavLink } from "react-router-dom";
-import { routes, navigations } from "routes-detail-university";
+import React from 'react';
+import { Route, NavLink } from 'react-router-dom';
+import { routes, navigations } from 'routes-detail-university';
 //importing local
-import Wrapper from "./Wrapper";
-import "./style/nav.css";
+import Wrapper from 'modules/pages/detail-university/components/Wrapper';
 
 function Index(props) {
   return (
@@ -15,7 +14,7 @@ function Index(props) {
               <NavLink
                 to={() => {
                   return {
-                    pathname: `/detail-university/${localStorage["slugUniversity"]}${item.field}`, //Because it don't keep old slug, it update new slug
+                    pathname: `/detail-university/${localStorage['slugUniversity']}${item.field}`, //Because it don't keep old slug, it update new slug
                   };
                 }}
               >
@@ -27,7 +26,7 @@ function Index(props) {
             <NavLink
               to={(location) => {
                 return {
-                  pathname: `/topics/${localStorage["slugUniversity"]}`,
+                  pathname: `/topics/${localStorage['slugUniversity']}`,
                 };
               }}
             >

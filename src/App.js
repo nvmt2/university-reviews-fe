@@ -1,16 +1,18 @@
-import React from "react";
+import React from 'react';
+import { Provider } from 'react-redux';
 // react-redux
-import { Provider } from "react-redux";
-import configureStore from "state";
+import configureStore from 'state';
 // react-router
-import { BrowserRouter as Router } from "react-router-dom";
-import RouteWrapper from "./Route";
+import { BrowserRouter as Router } from 'react-router-dom';
+import RouteWrapper from './Route';
 // graphQL
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
-import { API_CMS } from "./query/config";
-
-import "../node_modules/@fortawesome/fontawesome-free/js/all";
-import "bootstrap/dist/css/bootstrap.css";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { API_CMS } from './query/config';
+// font awesome
+import '../node_modules/@fortawesome/fontawesome-free/js/all';
+import 'bootstrap/dist/css/bootstrap.css';
+// internal style
+import 'App.css';
 
 // Configuration graphQL
 const client = new ApolloClient({

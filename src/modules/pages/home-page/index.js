@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
-import { fetchUniversityAction } from "state/ducks/common/actions/home-page";
-import { useDispatch, useSelector } from "react-redux";
-//importing local file
-import homepageQueries from "query/homepage";
-import { loginMutation } from "query/login";
-import CardHome from "./CardHome";
-import FilterBar from "./FilterBar";
-import Banner from "./Banner";
-import "./style/home-page.css";
-//importing material UI
-import Pagination from "@material-ui/lab/Pagination";
+import React, { useEffect, useState } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+
+import { useDispatch, useSelector } from 'react-redux';
+//internal modules
+import homepageQueries from 'query/homepage';
+import { loginMutation } from 'query/login';
+import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
+//internal components
+import CardHome from 'common/card/CardHome';
+import FilterBar from 'modules/pages/home-page/components/FilterBar';
+import Banner from 'modules/pages/home-page/components/Banner';
+//material UI component
+import Pagination from '@material-ui/lab/Pagination';
 
 function Index({ match }) {
+  //STATE
   const dispatch = useDispatch();
-
   // using for pagination
   const [paramPagination, setParamPagination] = useState({
     // its mean show 5 universities from index = 0
@@ -28,19 +29,11 @@ function Index({ match }) {
       variables: paramPagination,
     }
   );
-
-  const dataApi = !loading && !error && data && data.allUniversities; //check where data is available or not ?
   const state = useSelector((state) => state.homePage);
-
+  const dataApi = !loading && !error && data && data.allUniversities; //check where data is available or not ?
   const contentMainHome = !!state.data && state.data; //check data from reducer whether is available or not ?
 
-  useEffect(() => {
-    if (!!data) {
-      // pass data into reducer
-      dispatch(fetchUniversityAction(dataApi));
-    }
-  }, [data, loading, error, paramPagination, dataApi, dispatch]); // re-render when one of variables changing
-
+  //METHOD
   //handle event pagination
   const increasePage = (e, page) => {
     setParamPagination({
@@ -49,7 +42,13 @@ function Index({ match }) {
     });
   };
 
-  const state_1 = useSelector((state) => state);
+  //LIFECYCLE
+  useEffect(() => {
+    if (!!data) {
+      // pass data into reducer
+      dispatch(fetchUniversityAction(dataApi));
+    }
+  }, [data, loading, error, paramPagination, dataApi, dispatch]);
 
   // const [
   //   authenticaiton,
@@ -78,20 +77,17 @@ function Index({ match }) {
           <div className="col-md-3 p-0" id="sidebar">
             <FilterBar />
           </div>
-
           <div className="col-md-9" id="content">
             {/* card include content of university */}
             <div className="content-main-home">
               {!!contentMainHome ? (
                 contentMainHome.map((item, index) => {
-                  return <CardHome key={index} {...item} status={"homepage"} />;
+                  return <CardHome key={index} {...item} status={'homepage'} />;
                 })
               ) : (
-                  <h5>Loading...</h5>
-                )}
+                <h5>Loading...</h5>
+              )}
             </div>
-            {/*end of cards include content of university */}
-            {/* start of pagination */}
             <div className="offset-md-3 col-md-9 pagination-material">
               <Pagination
                 count={8}
@@ -103,7 +99,6 @@ function Index({ match }) {
               />
             </div>
           </div>
-          {/* end of pagination */}
         </div>
       </div>
     </div>

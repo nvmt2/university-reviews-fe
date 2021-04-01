@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import "./../style/form-mail.css";
-import detailUniversityQuery from "query/detail-university";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import detailUniversityQuery from 'query/detail-university';
 
 function FormMail() {
   const { slug } = useParams();

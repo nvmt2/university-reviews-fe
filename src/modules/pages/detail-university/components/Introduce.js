@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import parse from "html-react-parser";
-//import local file
-import LoadingIcon from "common/loading/LoadingIcon";
-import Author from "./common/Author";
-import FormMail from "./common/FormMail";
-import detailUniversityQuery from "query/detail-university";
-import "./style/introduce.css";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import parse from 'html-react-parser';
+//internal modules
+import detailUniversityQuery from 'query/detail-university';
+//internal components
+import LoadingIcon from 'common/loading/LoadingIcon';
+import Author from 'modules/pages/detail-university/common/Author';
+import FormMail from 'modules/pages/detail-university/common/FormMail';
 
 function Introduce() {
   const { slug } = useParams();

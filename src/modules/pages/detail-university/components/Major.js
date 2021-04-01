@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import detailUniversityQuery from "query/detail-university";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
-import LoadingIcon from "common/loading/LoadingIcon";
-import Author from "./common/Author";
-import "./style/major.css";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+//internal modules
+import detailUniversityQuery from 'query/detail-university';
+//internal components
+import LoadingIcon from 'common/loading/LoadingIcon';
+import Author from 'modules/pages/detail-university/common/Author';
 
 function Major() {
+  //STATE
   const { slug } = useParams();
   const { data, loading, error } = useQuery(detailUniversityQuery.GET_MAJOR, {
     variables: {
       id: slug,
     },
   });
-  useEffect(() => {}, [data, loading, error]);
-
   const contentMajor =
     !loading &&
     !error &&
@@ -51,8 +51,8 @@ function Major() {
                         scope="row"
                         rowspan={groupMajor.majors.length}
                       >
-                        {" "}
-                        {groupMajor.name}{" "}
+                        {' '}
+                        {groupMajor.name}{' '}
                       </th>
                     )}
                     <td className="td-major">{branchMajor.name}</td>

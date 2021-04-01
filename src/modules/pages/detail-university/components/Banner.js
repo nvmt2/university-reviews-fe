@@ -1,20 +1,19 @@
-import React from "react";
-import "./style/banner.css";
-import Carousel from "react-bootstrap/Carousel";
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 
 function Banner() {
   const photos = [
     {
-      className: "d-block w-100 img-Uni",
-      src: "/assets/detail-university/banner/banner_4.jpg",
+      className: 'd-block w-100 img-Uni',
+      src: '/assets/detail-university/banner/banner_4.jpg',
     },
     {
-      className: "d-block w-100 img-Uni",
-      src: "/assets/detail-university/banner/banner_3.jpg",
+      className: 'd-block w-100 img-Uni',
+      src: '/assets/detail-university/banner/banner_3.jpg',
     },
     {
-      className: "d-block w-100 img-Uni",
-      src: "/assets/detail-university/banner/banner_2.jpg",
+      className: 'd-block w-100 img-Uni',
+      src: '/assets/detail-university/banner/banner_2.jpg',
     },
   ];
   return (

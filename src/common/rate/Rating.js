@@ -1,5 +1,5 @@
-import React from "react";
-import "./style/rating.css";
+import React from 'react';
+import 'common/rate/style.css';
 
 function Rating() {
   return (

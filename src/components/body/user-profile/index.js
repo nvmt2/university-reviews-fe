@@ -1,21 +1,21 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import { useQuery } from "@apollo/client";
-import { useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { useQuery } from '@apollo/client';
+import { useSelector } from 'react-redux';
 //importing local file
-import "./style/user.css";
-import "./style/my-post.css";
-import Header from "./Header";
-import MyPost from "./MyPost";
-import CardUniversity from "components/body/home-page/CardHome";
-import TabPanel, { a11yProps } from "common/tabs/TabPanel";
-import { pageTransition } from "common/page-transition/configVarian";
-import { userProfileQueries } from "query/user-profile";
+import './style/user.css';
+import './style/my-post.css';
+import Header from './Header';
+import MyPost from './MyPost';
+import CardUniversity from 'common/card/CardHome';
+import TabPanel, { a11yProps } from 'common/tabs/TabPanel';
+import { pageTransition } from 'common/page-transition/configVarian';
+import { userProfileQueries } from 'query/user-profile';
 //material-ui
-import { useTheme, makeStyles } from "@material-ui/core/styles";
-import SwipeableViews from "react-swipeable-views";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { useTheme, makeStyles } from '@material-ui/core/styles';
+import SwipeableViews from 'react-swipeable-views';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 // import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
@@ -45,7 +45,7 @@ export default function FullWidthTabs() {
       idUser: idUser,
     },
   });
-  console.log("dataFavourite", !!dataFavourite && dataFavourite);
+  console.log('dataFavourite', !!dataFavourite && dataFavourite);
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
@@ -85,7 +85,7 @@ export default function FullWidthTabs() {
             <Tab label="Bài viết yêu thích" {...a11yProps(1)} />
           </Tabs>
           <SwipeableViews
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"} //option, it's helpful for SEO
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'} //option, it's helpful for SEO
             index={value}
             onChangeIndex={handleChangeIndex}
           >

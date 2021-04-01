@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
 //import local file
-import LoadingImage from "common/loading/LoadingImage";
-import detailUniversityQuery from "query/detail-university";
-import "./../style/sticky.css";
+import LoadingImage from 'common/loading/LoadingImage';
+import detailUniversityQuery from 'query/detail-university';
 //import material-ui
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import VisibilityIcon from "@material-ui/icons/Visibility";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import VisibilityIcon from '@material-ui/icons/Visibility';
 
 function Sticky() {
   const { slug } = useParams();
