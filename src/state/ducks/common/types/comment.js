@@ -1,4 +1,4 @@
-import converTypes from "./../../convertType";
+import convertTypes from './../../convertType';
 
-const commentTypes = ["FETCH_COMMENT", "RENDER_COMMENT"];
-export default converTypes("homePage", commentTypes);
+const commentTypes = ['FETCH_COMMENT', 'RENDER_COMMENT'];
+export default convertTypes('comment', commentTypes);

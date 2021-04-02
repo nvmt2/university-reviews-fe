@@ -1,13 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 // react-redux
-import configureStore from 'state';
+import { store } from 'state/index';
 // react-router
 import { BrowserRouter as Router } from 'react-router-dom';
-import RouteWrapper from './Route';
+import RouteWrapper from 'route/Route';
 // graphQL
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { API_CMS } from './query/config';
+import { API_CMS } from 'query/config';
 // font awesome
 import '../node_modules/@fortawesome/fontawesome-free/js/all';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,10 +19,6 @@ const client = new ApolloClient({
   uri: API_CMS,
   cache: new InMemoryCache(),
 });
-
-// Configuration reducer
-const initialState = window.initialReduxState;
-const store = configureStore(initialState);
 
 function App() {
   return (

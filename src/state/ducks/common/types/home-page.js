@@ -1,4 +1,4 @@
-import converTypes from "./../../convertType";
+import convertTypes from './../../convertType';
 
-const homePageTypes = ["FETCH_UNIVERSITY", "FETCH_UNIVERSITY_SUCCESS"];
-export default converTypes("homePage", homePageTypes);
+const homePageTypes = ['FETCH_UNIVERSITY', 'FETCH_UNIVERSITY_SUCCESS'];
+export default convertTypes('homePage', homePageTypes);

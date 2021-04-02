@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import { routes, navigations } from 'routes-detail-university';
+import { routes } from 'constant/routes-detail-university';
+import { navigationDetailUniversity } from 'constant/navigation';
 //importing local
 import Wrapper from 'modules/pages/detail-university/components/Wrapper';
 
@@ -9,7 +10,7 @@ function Index(props) {
     <Wrapper>
       <div className="wrap-detail-university">
         <ul className="nav-detail-university">
-          {navigations.map((item, index) => (
+          {navigationDetailUniversity.map((item, index) => (
             <li key={index}>
               <NavLink
                 to={() => {
