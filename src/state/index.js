@@ -1,9 +1,9 @@
-import { createStore } from "redux";
-import { appReducer } from "./ducks";
-import { ENVIRONMENT } from "query/config";
+import { createStore } from 'redux';
+import { appReducer } from './ducks/rootReducer';
+import { ENVIRONMENT } from 'query/config';
 
-export default function configureStore(initialState = {}) {
-  if (ENVIRONMENT === "dev") {
+function configureStore(initialState = {}) {
+  if (ENVIRONMENT === 'dev') {
     return createStore(
       appReducer,
       initialState,
@@ -13,3 +13,6 @@ export default function configureStore(initialState = {}) {
   }
   return createStore(appReducer, initialState);
 }
+
+const initialState = window.initialReduxState;
+export const store = configureStore(initialState);
