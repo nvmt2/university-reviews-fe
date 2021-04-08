@@ -1,74 +1,61 @@
-
-Project for Capstone 1 & 2.
+# CAPSTONE 1
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to set up
 
-In the project directory, you can run:
+**Step 1:** git clone this repository [https://github.com/nvmt2/university-reviews-fe.git](https://github.com/nvmt2/university-reviews-fe.git)
 
-### `yarn start`
+**Step 2:** cd to the cloned repository: cd app-web
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Step 3:** Install the Application with yarn
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How to run application
 
-### `yarn test`
+- Run
+  - Run `npm run start`
+  - View app on [http://localhost:3000](http://localhost:3000)
+- Build
+  - Run `npm run build`
+  - View `build` folder in the repository
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology
 
-### `yarn build`
+### Languages
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**HTML 5**
+**CSS 3**
+**JavaScript**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Libraries
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Ecosystem ReactJs**
+**Material-UI**
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 =======
 
+# CAPSTONE 2
 
+## Estimate Toi's work
+
+| Title                                      | Timeline |
+| ------------------------------------------ | :------: |
+| Analysis feature for caps 2                |    8h    |
+| Refactor code                              |   16h    |
+| Added rating and price field into database |    8h    |
+| Code suggestion in search form feature     |   16h    |
+| Code rating feature                        |    8h    |
+| Code analysis page                         |   24h    |
+| Code multiple languages feature            |    8h    |
+| Code history post feature                  |   16h    |
+| Code Notification feature                  |   24h    |
+| Code model dark and brighten feature       |    8h    |
+| Code validation feature                    |   16h    |
+| Testing & fix bug                          |   48h    |
+| Release                                    |    2h    |
+| total                                      |   202h   |
+
+Started by: 08/04/2021
+Estimate release by: 36/05/2021 ( duration: 50 day)
+
+=======
