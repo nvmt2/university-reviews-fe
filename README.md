@@ -55,7 +55,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 | Release                                    |    2h    |
 | total                                      |   202h   |
 
-Started by: 08/04/2021
-Estimate release by: 36/05/2021 ( duration: 50 day)
+- Started by: 08/04/2021
+- Estimate release by: 36/05/2021 ( duration: 50 day)
 
 =======
