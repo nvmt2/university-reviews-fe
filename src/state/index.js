@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { appReducer } from './ducks/rootReducer';
-import { ENVIRONMENT } from 'query/config';
+import { ENVIRONMENT } from 'apollo/constance';
 
 function configureStore(initialState = {}) {
   if (ENVIRONMENT === 'dev') {

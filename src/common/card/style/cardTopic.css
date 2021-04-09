@@ -2,10 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 .topic {
-  background: url("/assets/topic/background_1.png");
+  background: url('/assets/topic/background_1.png');
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 .banner-topic {
   background-image: url(/assets/topic/banner3.jpg);
@@ -48,8 +47,8 @@ html {
   color: #1e221d;
 }
 
-.wirte {
-  width: 180px;
+.write {
+  width: 210px;
   align-items: center;
 }
 
@@ -115,7 +114,7 @@ html {
   flex-direction: column;
   /* align-items: center; */
   padding-top: 10px;
-  margin-left: 50px
+  margin-left: 50px;
 }
 
 .title-user {
@@ -252,7 +251,6 @@ html {
   width: 50px;
   height: 70px;
   /* margin-left: 10px; */
-
 }
 .wrap-topic-tag {
   text-align: right;

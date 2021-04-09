@@ -7,8 +7,11 @@ import { motion } from 'framer-motion';
 import { userEditorMutation } from 'query/user-editor';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
 import { pageTransition } from 'common/page-transition/configVarian';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function UserEditor() {
+  const { t } = useTranslation();
   //STATE
   const dispatch = useDispatch();
   const history = useHistory();
@@ -70,11 +73,11 @@ function UserEditor() {
       exit="out"
       variants={pageTransition}
     >
-      <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
+      <h1 className="text-center mt-5">{t('userEditor.title')}</h1>
       <form className="form-user-editor">
         <div id="thay-doi-avatar">
           <div id="display-anh-dai-dien" className="mb-3">
-            <label>Ảnh đại diện :</label>
+            <label>{t('userEditor.titleImage')}</label>
             <img
               id="outputUserProfile"
               alt="profile user"
@@ -89,7 +92,7 @@ function UserEditor() {
         <div>
           <input
             type="text"
-            placeholder="Tên người dùng"
+            placeholder={t('userEditor.placeHolder.name')}
             className="form-control"
             name="username"
             onChange={handleOnChange}
@@ -98,11 +101,11 @@ function UserEditor() {
         <div className="form-group form-users">
           <div className="row">
             <input type="radio" name="gioitinh" id="nam" value="Nam" />
-            <label>Nam</label>
+            <label>{t('userEditor.placeHolder.male')}</label>
           </div>
           <div className="row">
             <input type="radio" name="gioitinh" id="nu" value="Nu" />
-            <label>Nữ</label>
+            <label>{t('userEditor.placeHolder.female')}</label>
           </div>
         </div>
         <textarea
@@ -110,13 +113,13 @@ function UserEditor() {
           id="maTa"
           cols="30"
           rows="5"
-          placeholder="Mô tả thông tin về bạn .."
+          placeholder={t('userEditor.placeHolder.description')}
           className="form-control"
         ></textarea>
         <input
           type="password"
           id="upd-passwor-1"
-          placeholder="Nhập mật khẩu"
+          placeholder={t('userEditor.placeHolder.password')}
           className="form-control mb-3"
           name="passwordUser"
           onChange={handleOnChange}
@@ -130,7 +133,7 @@ function UserEditor() {
 
         <div className="text-right">
           <button id="btn-cap-nhat-tt" className="btn" onClick={handleUpdate}>
-            Cập nhật
+            {t('userEditor.btn.update')}
           </button>
         </div>
         <hr />
@@ -139,7 +142,7 @@ function UserEditor() {
           className="btn btn-outline-danger"
           onClick={handleLogOut}
         >
-          Đăng xuất
+          {t('userEditor.btn.signOut')}
         </button>
       </form>
     </motion.div>

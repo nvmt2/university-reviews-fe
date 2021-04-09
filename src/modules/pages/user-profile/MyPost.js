@@ -22,7 +22,7 @@ function MyPost(props) {
     <div className="myPost">
       <div className="group-user-topic">
         <div className="row content-user-topic">
-          <a href="#" className="col-md-8 row group-users">
+          <a href="/" className="col-md-8 row group-users">
             <AccountCircleIcon />
             <div className="infor-users">
               <p className="title-users">{username}</p>
@@ -39,11 +39,6 @@ function MyPost(props) {
                     <i className="fas fa-star" key={index}></i>
                   )) //random number of start
               }
-              {/* <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="far fa-star"></i> */}
             </div>
             <p className="title-rating-topics">Độ uy tín của Topic</p>
           </div>

@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 import { topicQuery } from 'query/topic';
 //internal components
 import Categories from 'modules/pages/topic/components/Categories';
-import CardTopic from 'modules/pages/topic/components/CardTopic';
+import CardTopic from 'common/card/CardTopic';
 import Banner from 'modules/pages/topic/components/Banner';
 import LoadingIcon from 'common/loading/LoadingIcon';
 //material-ui components

@@ -3,9 +3,12 @@ import { NavLink, useParams } from 'react-router-dom';
 //internal components
 import CreateIcon from '@material-ui/icons/Create';
 import CameraRollIcon from '@material-ui/icons/CameraRoll';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Banner(props) {
   //STATE
+  const { t } = useTranslation();
   const { name } = props;
   const { slug } = useParams();
   return (
@@ -16,13 +19,13 @@ function Banner(props) {
 
           <NavLink
             style={{}}
-            className="review-topic wirte"
+            className="review-topic write"
             to={() => {
               return { pathname: `/topics/${slug}/new-post` };
             }}
           >
             <CreateIcon />
-            Viết review
+            {t('topic.btn.review')}
           </NavLink>
           <NavLink
             className="review-topic read"
@@ -31,7 +34,7 @@ function Banner(props) {
             }}
           >
             <CameraRollIcon />
-            Xem thông tin về trường
+            {t('topic.btn.viewUni')}
           </NavLink>
         </div>
       </div>

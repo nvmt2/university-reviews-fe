@@ -13,3 +13,5 @@
 @import 'modules/pages/not-found/style.css';
 /* layout */
 @import 'layout/style/index.css';
+/* component common */
+@import 'common/card/style/cardTopic.css';

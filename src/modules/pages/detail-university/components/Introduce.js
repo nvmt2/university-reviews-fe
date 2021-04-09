@@ -8,8 +8,11 @@ import detailUniversityQuery from 'query/detail-university';
 import LoadingIcon from 'common/loading/LoadingIcon';
 import Author from 'modules/pages/detail-university/common/Author';
 import FormMail from 'modules/pages/detail-university/common/FormMail';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Introduce() {
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { data, loading, error } = useQuery(
     detailUniversityQuery.GET_INTRODUCE,
@@ -36,7 +39,9 @@ function Introduce() {
     <div className="intro-background">
       <div className="container ">
         <Author />
-        <h1 className=" title-intro-Uni">Giới thiệu tổng quan</h1>
+        <h1 className=" title-intro-Uni">
+          {t('detailUniversity.introduce.title')}
+        </h1>
         <div>
           {!!contentIntroduce ? (
             <span>{parse(`${contentIntroduce}`)}</span>

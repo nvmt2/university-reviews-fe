@@ -3,33 +3,29 @@ import { Provider } from 'react-redux';
 // react-redux
 import { store } from 'state/index';
 // react-router
-import { BrowserRouter as Router } from 'react-router-dom';
-import RouteWrapper from 'route/Route';
+import RouteWrapper from 'route/RouterWrapper';
 // graphQL
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { API_CMS } from 'query/config';
+import { ApolloProvider } from '@apollo/client';
+import { apolloClient } from 'apollo/config';
 // font awesome
 import '../node_modules/@fortawesome/fontawesome-free/js/all';
 import 'bootstrap/dist/css/bootstrap.css';
+// multiple lingual i18next
+import { I18nextProvider } from 'react-i18next';
+import i18n from 'locales/i18n/config';
 // internal style
 import 'App.css';
-
-// Configuration graphQL
-const client = new ApolloClient({
-  uri: API_CMS,
-  cache: new InMemoryCache(),
-});
 
 function App() {
   return (
     <div>
-      <ApolloProvider client={client}>
-        <Provider store={store}>
-          <Router>
+      <I18nextProvider i18n={i18n}>
+        <ApolloProvider client={apolloClient}>
+          <Provider store={store}>
             <RouteWrapper />
-          </Router>
-        </Provider>
-      </ApolloProvider>
+          </Provider>
+        </ApolloProvider>
+      </I18nextProvider>
     </div>
   );
 }

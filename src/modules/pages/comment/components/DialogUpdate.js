@@ -13,9 +13,12 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import DialogActions from '@material-ui/core/DialogActions';
 import Dialog from '@material-ui/core/Dialog';
 import Button from '@material-ui/core/Button';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function DialogUpdate(props) {
   //STATE
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { open, onClose, data } = props;
   const [updateTopic, { data: dataUpdate }] = useMutation(
@@ -81,10 +84,12 @@ function DialogUpdate(props) {
         fullWidth
         transitionDuration={500}
       >
-        <DialogTitle id="form-dialog-title">Cập nhập nội dung</DialogTitle>
+        <DialogTitle id="form-dialog-title">
+          {t('comment.dialogUpdate.title')}
+        </DialogTitle>
         <DialogContent>
           <TextField
-            label="Chủ đề bài đăng"
+            label={t('comment.dialogUpdate.titleForm.topic')}
             name="title"
             type="text"
             variant="outlined"
@@ -95,7 +100,7 @@ function DialogUpdate(props) {
           />
 
           <TextField
-            label="Nội dung"
+            label={t('comment.dialogUpdate.titleForm.content')}
             name="content"
             type="text"
             variant="outlined"
@@ -120,8 +125,8 @@ function DialogUpdate(props) {
               <TextField
                 {...params}
                 variant="outlined"
-                label="Thẻ"
-                placeholder="Thẻ liên quan ."
+                label={t('comment.dialogUpdate.titleForm.tag')}
+                placeholder={t('comment.dialogUpdate.placeHolder.tag')}
                 name="tags"
                 onChange={handleOnChange}
               />
@@ -130,10 +135,10 @@ function DialogUpdate(props) {
         </DialogContent>
         <DialogActions>
           <Button variant="outlined" onClick={handleClose}>
-            Hủy
+            {t('comment.dialogUpdate.btn.cancel')}
           </Button>
           <Button variant="outlined" color="primary" onClick={handleUpdate}>
-            Cập nhập
+            {t('comment.dialogUpdate.btn.update')}
           </Button>
         </DialogActions>
       </Dialog>

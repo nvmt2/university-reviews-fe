@@ -19,5 +19,5 @@ export const routes = [
   { path: '/user', exact: true, component: UserProfile },
   { path: '/login', component: SignIn },
   { path: '/register', component: SignUp },
-  { path: '/', component: NotFound },
+  { path: '*', component: NotFound },
 ];

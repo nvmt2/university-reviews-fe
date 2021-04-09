@@ -20,9 +20,12 @@ import EditIcon from '@material-ui/icons/Edit';
 import Chip from '@material-ui/core/Chip';
 import DoneIcon from '@material-ui/icons/Done';
 import IconButton from '@material-ui/core/IconButton';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function HeaderComment() {
   //STATE
+  const { t } = useTranslation();
   const history = useHistory();
   const { slug } = useParams();
   const idAuthor = useSelector((state) => state.login.data.id);
@@ -148,7 +151,7 @@ function HeaderComment() {
                     startIcon={<EditIcon />}
                     onClick={handleClickOpen}
                   >
-                    Chỉnh sửa
+                    {t('comment.header.btn.update')}
                   </Button>
                   <br />
                   <Button
@@ -158,7 +161,7 @@ function HeaderComment() {
                     startIcon={<DeleteIcon />}
                     onClick={handleDelete}
                   >
-                    Xóa
+                    {t('comment.header.btn.remove')}
                   </Button>
                 </div>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
@@ -10,6 +10,7 @@ import {
   navigationAuthentication,
 } from 'constant/navigation';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
+// import { useAppBarStyle } from 'layout/components/style/appBarStyle';
 //internal components
 import NotificationCard from 'common/card-notification';
 import NavBar from 'common/nav-link/NavBar';
@@ -28,12 +29,14 @@ import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
-const useStyles = makeStyles((theme) => ({
+const useAppBarStyle = makeStyles((theme) => ({
   displayInline: {
     display: 'block',
   },
-  backgorundHeader: {
+  backgroundHeader: {
     backgroundColor: '#374548',
   },
   grow: {
@@ -85,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+  //STATE
   let listAva = [
     {
       name: 'Minh Tới',
@@ -107,7 +111,11 @@ export default function PrimarySearchAppBar() {
       status: 'Đã bình luận Topic của bạn',
     },
   ];
-  const [contentSearch, setContentSearch] = React.useState({
+  const classes = useAppBarStyle();
+  const history = useHistory();
+  const { i18n } = useTranslation();
+  const state = useSelector((state) => state);
+  const [contentSearch, setContentSearch] = useState({
     first: 5,
     skip: 0,
   });
@@ -120,20 +128,6 @@ export default function PrimarySearchAppBar() {
   );
   const dataApi = !loading && !error && !!data && data.allUniversities;
 
-  const handleOnchange = (e) => {
-    setContentSearch({
-      ...contentSearch,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const clickSearch = () => {
-    dispatch(fetchUniversityAction(dataApi));
-  };
-  useEffect(() => {}, [dispatch, contentSearch]);
-
-  const state = useSelector((state) => state);
-  const classes = useStyles();
-
   const [anchorElProfile, setAnchorElProfile] = React.useState(null);
   const [anchorElNotification, setAnchorElNotification] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -142,29 +136,10 @@ export default function PrimarySearchAppBar() {
   const isMenuNotificationOpen = Boolean(anchorElNotification);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorElProfile(event.currentTarget); //pass position into
-  };
-  const handleNotificationMenuOpen = (event) => {
-    setAnchorElNotification(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
   const handleMenuClose = () => {
     setAnchorElProfile(null);
     setAnchorElNotification(null);
     handleMobileMenuClose();
-  };
-
-  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
-  const history = useHistory();
-  const handleLogout = () => {
-    dispatch(fetchAccountAction(false));
-    localStorage.removeItem('idUser');
-    history.push('/login');
   };
   const menuId = 'primary-search-account-menu';
   const renderMenuProfile = (
@@ -186,6 +161,7 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+
   const menuNotificationId = 'primary-search-account-menu';
   const renderMenuNotification = (
     <Menu
@@ -205,9 +181,40 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  //METHOD
+  const handleOnchange = (e) => {
+    setContentSearch({
+      ...contentSearch,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const clickSearch = () => {
+    dispatch(fetchUniversityAction(dataApi));
+  };
+  const handleProfileMenuOpen = (event) => {
+    setAnchorElProfile(event.currentTarget); //pass position into
+  };
+  const handleNotificationMenuOpen = (event) => {
+    setAnchorElNotification(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
+  const handleLogout = () => {
+    dispatch(fetchAccountAction(false));
+    localStorage.removeItem('idUser');
+    history.push('/login');
+  };
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className={classes.grow}>
-      <AppBar position="static" className={classes.backgorundHeader}>
+      <AppBar position="static" className={classes.backgroundHeader}>
         <div className="container my-app-bar">
           <Toolbar>
             <Avatar
@@ -246,6 +253,8 @@ export default function PrimarySearchAppBar() {
                 onChange={handleOnchange}
               />
             </div>
+            <button onClick={() => changeLanguage('vi')}>vi</button>
+            <button onClick={() => changeLanguage('en')}>en</button>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               {!!state.login.data.id && (

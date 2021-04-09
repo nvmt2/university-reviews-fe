@@ -2,16 +2,18 @@ import React, { useRef, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { TweenMax, Power2, Bounce } from 'gsap';
 import { useMutation } from '@apollo/client';
-import { useHistory } from 'react-router-dom';
 //internal modules
 import { loginMutation } from 'query/login';
 //material-ui components
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function SignUp() {
   //STATE
+  const { t } = useTranslation();
   let formSignUp = useRef(null);
   const [dataForm, setDataForm] = useState({
     username: '',
@@ -40,7 +42,6 @@ function SignUp() {
       });
     }
   };
-
   //LIFECYCLE
   useEffect(() => {
     // TweenMax.from(title, {
@@ -83,59 +84,64 @@ function SignUp() {
             className="form-SignUp"
             onSubmit={signUp}
           >
-            <h2>Đăng ký</h2>
+            <h2>{t('SignUp.title')}</h2>
             <div className="form-group">
-              <span className="title-input">Tên người dùng</span>
+              <span className="title-input">
+                {t('SignUp.titleForm.userName')}
+              </span>
               <div className="SignUp-input">
                 <AccountCircleIcon />
                 <input
                   type="text"
-                  placeholder="Nhập tên của bạn"
+                  placeholder={t('SignUp.placeHolder.userName')}
                   name="username"
                   onChange={handleOnChange}
                   required
                 />
               </div>
-              <span className="title-input">Email</span>
+              <span className="title-input">{t('SignUp.titleForm.email')}</span>
               <div className="SignUp-input">
                 <MailOutlineIcon />
                 <input
                   type="email"
-                  placeholder="Nhập tài khoản Email"
+                  placeholder={t('SignUp.placeHolder.email')}
                   name="email"
                   onChange={handleOnChange}
                   required
                 />
               </div>
-              <span className="title-input">Mật khẩu</span>
+              <span className="title-input">
+                {t('SignUp.titleForm.password')}
+              </span>
               <div className="SignUp-input">
                 <LockOpenIcon />
                 <input
                   type="password"
-                  placeholder="Nhập mật khẩu của bạn"
+                  placeholder={t('SignUp.placeHolder.password')}
                   name="passwordUser"
                   onChange={handleOnChange}
                   required
                 />
               </div>
-              <span className="title-input">Nhập lại mật khẩu</span>
+              <span className="title-input">
+                {t('SignUp.titleForm.confirmPassword')}
+              </span>
               <div className="SignUp-input">
                 <LockOpenIcon />
                 <input
                   type="password"
-                  placeholder="Nhập lại mật khẩu của bạn"
+                  placeholder={t('SignUp.placeHolder.confirmPassword')}
                   name="passwordAgain"
                   onChange={handOnChangePasswordAgain}
                   required
                 />
               </div>
               <NavLink className="acc" to="/login">
-                {' '}
-                Đã có tài khoản
+                {t('SignUp.askAccount')}
               </NavLink>
-              <button className="done">Xong</button>
+              <button className="done">{t('SignUp.btn.enter')}</button>
               <div className="infor">
-                <p>Theo dõi chúng tôi qua</p>
+                <p>{t('SignUp.followTxt')}</p>
                 <a href="https://www.facebook.com/messages/t/3555565087788394">
                   https://www.facebook/cs41.04
                 </a>
@@ -143,10 +149,6 @@ function SignUp() {
             </div>
           </form>
         </div>
-        {/**---------background---SignIn--------- */}
-        {/* <div className='bg-signIn'>
-        
-          </div> */}
       </div>
     </div>
   );

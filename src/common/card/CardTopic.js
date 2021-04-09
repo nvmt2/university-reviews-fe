@@ -6,8 +6,12 @@ import { myParseDate } from 'helper/parse';
 import { countStart } from 'helper/countStart';
 //material-UI components
 import Avatar from '@material-ui/core/Avatar';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function CardTopic(props) {
+  //STATE
+  const { t } = useTranslation();
   const {
     id,
     title,
@@ -42,7 +46,7 @@ function CardTopic(props) {
                 )) //random number of start
             }
           </div>
-          <p className="title-rating-topic">Độ tin cậy của Topic</p>
+          <p className="title-rating-topic">{t('topic.card.trustOfRating')}</p>
         </div>
       </div>
       <div className="infor-topic">
@@ -58,7 +62,7 @@ function CardTopic(props) {
                 };
               }}
             >
-              Chi tiết
+              {t('topic.btn.more')}
             </NavLink>
           </div>
           <div className="col-md-10 wrap-topic-tag">

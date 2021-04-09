@@ -10,8 +10,11 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function CardHome(props) {
+  const { t } = useTranslation();
   const { address, introduce, logo, name, id, status } = props;
   const [mark, setMark] = React.useState(false);
   const handleClickMark = () => {
@@ -40,10 +43,10 @@ function CardHome(props) {
 
           <span className="address">{address}</span>
           <span className="count-rate mr-3">
-            <i className="fas fa-star"></i> 5 đánh giá
+            <i className="fas fa-star"></i> 5 {t('cardHome.rating')}
           </span>
           <span className="count-comment">
-            <i className="fas fa-comments"></i> 15 bình luận
+            <i className="fas fa-comments"></i> 15 {t('cardHome.comment')}
           </span>
 
           <p className="demo-content">{introduce}</p>
@@ -61,7 +64,7 @@ function CardHome(props) {
               }}
               onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
             >
-              Chi tiết
+              {t('cardHome.detail')}
             </NavLink>
           }
           <i className="fas fa-chevron-right"></i>

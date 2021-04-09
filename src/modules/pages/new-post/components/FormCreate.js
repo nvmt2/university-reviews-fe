@@ -11,9 +11,12 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Chip from '@material-ui/core/Chip';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function FormCreate() {
   //STATE
+  const { t } = useTranslation();
   const idAuthor = useSelector((state) => state.login.data.id);
   const { slug } = useParams();
   const history = useHistory();
@@ -67,11 +70,11 @@ function FormCreate() {
   }, [data, createNewTopic, history]);
   return (
     <div className="form-flex-container">
-      <h4 className="text-center">Đăng bài</h4>
+      <h4 className="text-center">{t('formCreate.title')}</h4>
       <form>
         <div>
           <TextField
-            label="Chủ đề bài đăng"
+            label={t('formCreate.placeHolder.topic')}
             variant="outlined"
             fullWidth
             name="title"
@@ -85,7 +88,7 @@ function FormCreate() {
         </div>
         <div>
           <TextField
-            label="Nội dung"
+            label={t('formCreate.placeHolder.content')}
             variant="outlined"
             fullWidth
             multiline
@@ -114,8 +117,7 @@ function FormCreate() {
               <TextField
                 {...params}
                 variant="outlined"
-                label="Thẻ"
-                placeholder="Thẻ liên quan"
+                label={t('formCreate.placeHolder.tag')}
                 onChange={(e) => {
                   setInput({
                     ...input,
@@ -129,7 +131,7 @@ function FormCreate() {
       </form>
       <div className="btn-new-post">
         <Button variant="outlined" color="primary" onClick={handleClick}>
-          Đăng bài
+          {t('formCreate.btn.post')}
         </Button>
       </div>
     </div>

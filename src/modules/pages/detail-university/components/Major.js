@@ -6,9 +6,12 @@ import detailUniversityQuery from 'query/detail-university';
 //internal components
 import LoadingIcon from 'common/loading/LoadingIcon';
 import Author from 'modules/pages/detail-university/common/Author';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Major() {
   //STATE
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { data, loading, error } = useQuery(detailUniversityQuery.GET_MAJOR, {
     variables: {
@@ -25,17 +28,19 @@ function Major() {
     <div className="container">
       <Author />
 
-      <h1 className="container title-major">Ngành nghề đào tạo</h1>
+      <h1 className="container title-major">
+        {t('detailUniversity.major.title')}
+      </h1>
       <table className="table-major">
         <thead>
           <th className="th-major" scope="col">
-            Nhóm ngành
+            {t('detailUniversity.major.table.groupsOfDisciplines')}
           </th>
           <th className="th-major" scope="col">
-            Chuyên ngành
+            {t('detailUniversity.major.table.major')}
           </th>
           <th className="th-major" scope="col">
-            Tổ hợp môn
+            {t('detailUniversity.major.table.subject')}
           </th>
           {/* <th className="th-major" >Điểm chuẩn</th> */}
         </thead>
@@ -66,21 +71,22 @@ function Major() {
           <LoadingIcon />
         )}
       </table>
-      <button className="btn-major">Xem thêm</button>
+      <button className="btn-major">
+        {' '}
+        {t('detailUniversity.major.btn.more')}
+      </button>
       <div className="contact-major">
         <h4 className="title-contact-major">
-          Để lại thông tin để chúng tôi liên lạc
+          {t('detailUniversity.major.leaveInfoTxt')}
         </h4>
-        <p className="p-title-contact">
-          Đừng lo, chúng tôi sẽ không gửi quá nhiều email
-        </p>
+        <p className="p-title-contact">{t('detailUniversity.major.noteTxt')}</p>
         <input
           type="email"
           placeholder="Email"
           className="input-contact-major"
         />
         <button type="submit" className="btn-submit-major">
-          Gửi thông tin !
+          {t('detailUniversity.major.btn.send')}
         </button>
       </div>
     </div>

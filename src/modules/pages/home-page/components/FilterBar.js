@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
 import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
 import homepageQueries from 'query/homepage';
@@ -8,9 +8,12 @@ import Slider from '@material-ui/core/Slider';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Tooltip from '@material-ui/core/Tooltip';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function FilterBar() {
   //STATE
+  const { t } = useTranslation();
   const [items, setItems] = useState({
     first: 5,
     skip: 0,
@@ -67,13 +70,14 @@ function FilterBar() {
         }
       >
         <a href="/" className="map d-block text-center">
-          <i className="fas fa-map-marked-alt"></i> Xem vị trí
+          <i className="fas fa-map-marked-alt"></i>{' '}
+          {t('filterBar.watchLocation')}
         </a>
       </Tooltip>
 
       <form action="" className="filter-form" onSubmit={addItem}>
         <fieldset>
-          <legend>Tìm kiếm theo vùng</legend>
+          <legend>{t('filterBar.searchByRegion')}</legend>
           <label className="locate d-block">
             <input
               type="radio"
@@ -82,7 +86,7 @@ function FilterBar() {
               value="Mien Bac"
               onChange={handleOnChange}
             />
-            <label htmlFor="bac">Miền Bắc</label>
+            <label htmlFor="bac">{t('filterBar.rBtn.northern')}</label>
           </label>
           <label className="locate d-block">
             <input
@@ -92,7 +96,7 @@ function FilterBar() {
               value="Mien Trung"
               onChange={handleOnChange}
             />
-            <label htmlFor="trung">Miền Trung</label>
+            <label htmlFor="trung">{t('filterBar.rBtn.central')}</label>
           </label>
           <label className="locate d-block">
             <input
@@ -102,69 +106,64 @@ function FilterBar() {
               value="Mien Nam"
               onChange={handleOnChange}
             />
-            <label htmlFor="nam">Miền Nam</label>
+            <label htmlFor="nam">{t('filterBar.rBtn.southern')}</label>
           </label>
         </fieldset>
         {/* <!-- -----------end tìm kiếm theo vùng---------- -->  */}
 
         <fieldset>
-          <legend>Nhóm ngành</legend>
+          <legend>{t('filterBar.groupsOfDisciplines')}</legend>
           <select
             id="nhomNghanh"
             className="form-control"
             name="name_major"
             onChange={handleOnChange}
           >
-            <option value="">Tất cả</option>
-            <option value="Công nghệ thông tin">Công nghệ thông tin</option>
-            <option>Sản xuất và chế biến</option>
-            <option>Kiến trúc và xây dựng</option>
-            <option value="Kinh doanh">Kinh doanh</option>
-            <option>Công nghệ - thông tin</option>
-            <option value="Luật">Luật - nhân văn</option>
-            <option>Nghệ thuật - thẩm mỹ - đồ họa</option>
-            <option>Báo chí - khoa học và xã hội</option>
-            <option>Khoa học cơ bản</option>
-            <option>Sư phạm</option>
-            <option>Nông - lâm - ngư nghiệp</option>
-            <option value="Y học">Y học</option>
+            <option value="">{t('filterBar.dropBox.all')}</option>
+            <option value="Công nghệ thông tin">
+              {t('filterBar.dropBox.techMajor')}
+            </option>
+            <option>{t('filterBar.dropBox.productionMajor')}</option>
+            <option>{t('filterBar.dropBox.architectureMajor')}</option>
+            <option value="Kinh doanh">
+              {t('filterBar.dropBox.businessMajor')}
+            </option>
+            <option value="Luật">{t('filterBar.dropBox.lawMajor')}</option>
+            <option>{t('filterBar.dropBox.artMajor')}</option>
+            <option>{t('filterBar.dropBox.socialScienceMajor')}</option>
+            <option>{t('filterBar.dropBox.basicScienceMajor')}</option>
+            <option>{t('filterBar.dropBox.pedagogyMajor')}</option>
+            <option>{t('filterBar.dropBox.agricultureMajor')}</option>
+            <option value="Y học">
+              {t('filterBar.dropBox.productionMajor')}
+            </option>
           </select>
         </fieldset>
         {/* <!-- -----------end nhóm nghành---------- --> */}
-        {/* <fieldset>
-          <legend>Chuyên ngành</legend>
-          <label htmlFor="nhomNghanh" className="locate d-block margin-r-10">
-            <select name="nhomNghanh" id="nhomNghanh" className="form-control">
-              <option value="">Tất cả nghành</option>
-            </select>
-          </label>
-        </fieldset> */}
-        {/* <!-- end ngành  -->  */}
-
         <fieldset>
-          <legend>Loại trường</legend>
+          <legend>{t('filterBar.typeOfUniversity')}</legend>
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
-            label="Đại học công lập"
+            label={t('filterBar.checkBox.publicUni')}
           />
 
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
-            label="Đại học tư thục"
+            label={t('filterBar.checkBox.privateUni')}
           />
 
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
-            label="Cao đẳng"
+            label={t('filterBar.checkBox.college')}
           />
           <FormControlLabel
             control={<Checkbox name="checkedB" color="primary" />}
-            label="Đào tạo nghề"
+            label={t('filterBar.checkBox.training')}
           />
         </fieldset>
         {/* <!-- end --> */}
         <fieldset>
-          <legend>Mức học phí</legend>
+          <legend>{t('filterBar.courseFee')}</legend>
           <Slider
             defaultValue={20}
             // getAriaValueText={valuetext}
@@ -175,7 +174,9 @@ function FilterBar() {
           />
         </fieldset>
 
-        <button className="btn btn-outline-success btn-loc">Lọc</button>
+        <button className="btn btn-outline-success btn-loc">
+          {t('filterBar.btn.filter')}
+        </button>
       </form>
     </div>
   );

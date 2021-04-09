@@ -11,7 +11,6 @@ function MyLayout({ children }) {
   return (
     <div className="parrent-layout">
       <AppBar />
-      {/* short code of { props.children } */}
       <div id="children" className="child-layout">
         {/* button scoll up */}
         <ScrollToTop showUnder={160}>
