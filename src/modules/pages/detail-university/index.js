@@ -5,7 +5,7 @@ import { navigationDetailUniversity } from 'constant/navigation';
 //importing local
 import Wrapper from 'modules/pages/detail-university/components/Wrapper';
 
-function Index(props) {
+function DetailUniversity(props) {
   return (
     <Wrapper>
       <div className="wrap-detail-university">
@@ -43,4 +43,4 @@ function Index(props) {
   );
 }
 
-export default Index;
+export default DetailUniversity;

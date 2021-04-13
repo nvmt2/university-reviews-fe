@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
@@ -10,7 +10,6 @@ import {
   navigationAuthentication,
 } from 'constant/navigation';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
-// import { useAppBarStyle } from 'layout/components/style/appBarStyle';
 //internal components
 import NotificationCard from 'common/card-notification';
 import NavBar from 'common/nav-link/NavBar';
@@ -208,7 +207,8 @@ export default function PrimarySearchAppBar() {
     localStorage.removeItem('idUser');
     history.push('/login');
   };
-  const changeLanguage = (lng) => {
+  const changeLanguage = (e) => {
+    let lng = e.target.value;
     i18n.changeLanguage(lng);
   };
 
@@ -253,8 +253,21 @@ export default function PrimarySearchAppBar() {
                 onChange={handleOnchange}
               />
             </div>
-            <button onClick={() => changeLanguage('vi')}>vi</button>
-            <button onClick={() => changeLanguage('en')}>en</button>
+            <form className="form-list-lang">
+              {/* <img
+                src="/assets/header/Vietnam.jpg"
+                width="40px"
+                alt="logo vietnam"
+              /> */}
+              <select
+                name="language"
+                className="list-lang"
+                onChange={changeLanguage}
+              >
+                <option>vi</option>
+                <option>en</option>
+              </select>
+            </form>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
               {!!state.login.data.id && (

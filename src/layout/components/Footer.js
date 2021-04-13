@@ -63,7 +63,6 @@ function Footer() {
                 </ul>
               </div>
             </div>
-
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
@@ -89,7 +88,6 @@ function Footer() {
           </div>
         </div>
       </div>
-
       <div className="footer-copyright">
         <div className="container">
           <div className="row">

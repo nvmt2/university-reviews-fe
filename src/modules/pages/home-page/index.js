@@ -13,7 +13,7 @@ import Banner from 'modules/pages/home-page/components/Banner';
 //material UI component
 import Pagination from '@material-ui/lab/Pagination';
 
-function Index({ match }) {
+function HomePage({ match }) {
   //STATE
   const dispatch = useDispatch();
   // using for pagination
@@ -105,4 +105,4 @@ function Index({ match }) {
   );
 }
 
-export default Index;
+export default HomePage;

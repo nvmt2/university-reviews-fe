@@ -212,7 +212,7 @@ export const assetsVietnamese = {
     },
   },
   footer: {
-    group: 'NHÓM C1SE.04',
+    group: 'NHÓM C1SE.04',  
     descriptionGroup:
       'Là trang web cung cấp thông tin về các trường đại học, và nơi chia sẻ quan điểm...',
     shortAccess: 'Truy cập nhanh',
