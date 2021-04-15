@@ -11,7 +11,7 @@ import {
 } from 'constant/navigation';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
 //internal components
-import NotificationCard from 'common/card-notification';
+import NotificationCard from 'common/card/CardNotification';
 import NavBar from 'common/nav-link/NavBar';
 //material-ui components
 import { fade, makeStyles } from '@material-ui/core/styles';

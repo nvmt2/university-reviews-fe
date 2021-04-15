@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 //internal modules
 import { pageTransition } from 'common/page-transition/configVarian';
 //internal components
-import Rating from 'common/rate/Rating';
+// import Rating from 'common/rate/StaticRating';
 //material-ui
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import IconButton from '@material-ui/core/IconButton';
@@ -69,18 +69,17 @@ function CardHome(props) {
           }
           <i className="fas fa-chevron-right"></i>
           <div className="favourite-bookmark">
-            <Tooltip
-              title={
-                <React.Fragment>
-                  <Rating />
-                </React.Fragment>
-              }
-            >
-              {/* <button className="card-star"></button> */}
-              <IconButton onClick={handleClickMark}>
-                <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
-              </IconButton>
-            </Tooltip>
+            {/* <Tooltip
+            title={
+              <React.Fragment>
+                <Rating />
+              </React.Fragment>
+            }
+            ></Tooltip> */}
+            {/* <button className="card-star"></button> */}
+            <IconButton onClick={handleClickMark}>
+              <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
+            </IconButton>
           </div>
         </div>
       </div>

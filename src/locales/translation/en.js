@@ -159,7 +159,7 @@ export const assetsEnglish = {
     detail: 'More detail',
   },
   formCreate: {
-    title: 'Posting',
+    title: 'POSTING',
     placeHolder: {
       topic: 'Title of topic',
       content: 'Content',
@@ -167,6 +167,7 @@ export const assetsEnglish = {
     },
     btn: {
       post: 'Done',
+      cancel: 'Cancel',
     },
   },
   notFound: {

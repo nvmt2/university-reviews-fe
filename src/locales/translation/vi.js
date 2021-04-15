@@ -158,7 +158,7 @@ export const assetsVietnamese = {
     detail: 'Chi tiết',
   },
   formCreate: {
-    title: 'Đăng bài',
+    title: 'ĐĂNG BÀI',
     placeHolder: {
       topic: 'Chủ để bài đăng',
       content: 'Nội dung',
@@ -166,6 +166,7 @@ export const assetsVietnamese = {
     },
     btn: {
       post: 'Đăng bài',
+      cancel: 'Hủy',
     },
   },
   notFound: {
@@ -212,7 +213,7 @@ export const assetsVietnamese = {
     },
   },
   footer: {
-    group: 'NHÓM C1SE.04',  
+    group: 'NHÓM C1SE.04',
     descriptionGroup:
       'Là trang web cung cấp thông tin về các trường đại học, và nơi chia sẻ quan điểm...',
     shortAccess: 'Truy cập nhanh',

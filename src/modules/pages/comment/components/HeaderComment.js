@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import { useQuery } from '@apollo/client';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-//importing local file
+//internal modules
 import { topicMutation } from 'query/topic';
 import { topicQuery } from 'query/topic';
-import DialogUpdate from 'modules/pages/comment/components/DialogUpdate';
 import { myParseDate } from 'helper/parse';
 import { userProfileQueries } from 'query/user-profile';
-//importing material UI
+import { actionOpenDialogUpdateTopic } from 'state/ducks/common/actions/dialog';
+// material UI components
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ThumbDownAltOutlinedIcon from '@material-ui/icons/ThumbDownAltOutlined';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
@@ -28,6 +28,7 @@ function HeaderComment() {
   const { t } = useTranslation();
   const history = useHistory();
   const { slug } = useParams();
+  const dispatch = useDispatch();
   const idAuthor = useSelector((state) => state.login.data.id);
   //call api get one topic
   const { data, loading, error } = useQuery(topicQuery.GET_TOPIC, {
@@ -40,7 +41,6 @@ function HeaderComment() {
   const [deleteTopic, { data: response }] = useMutation(
     topicMutation.DELTETE_TOPIC
   );
-  const [openDialog, setOpenDialog] = useState(false);
   const [statusLike, setStatusLike] = useState({
     dislike: false,
     like: false,
@@ -68,12 +68,8 @@ function HeaderComment() {
       ],
     });
   };
-  // handle editor topic
-  const handleClickOpen = () => {
-    setOpenDialog(true);
-  };
-  const handleClose = () => {
-    setOpenDialog(false);
+  const handleClickOpenDialog = () => {
+    dispatch(actionOpenDialogUpdateTopic(contentHeaderComment));
   };
   // Authorization
   const checkAuthor = () => {
@@ -137,19 +133,12 @@ function HeaderComment() {
                   // }}
                   style={checkAuthor()}
                 >
-                  {/* start dialog */}
-                  <DialogUpdate
-                    open={openDialog}
-                    onClose={handleClose}
-                    data={contentHeaderComment}
-                  />
-                  {/* end dialog */}
                   <Button
                     size="small"
                     variant="outlined"
                     color="primary"
                     startIcon={<EditIcon />}
-                    onClick={handleClickOpen}
+                    onClick={handleClickOpenDialog}
                   >
                     {t('comment.header.btn.update')}
                   </Button>

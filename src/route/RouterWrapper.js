@@ -1,8 +1,11 @@
 import React from 'react';
-import Layout from '../layout';
-import { routes } from '../constant/routes-main';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+//internal modules
+import { routes } from 'constant/routes-main';
+//internal components
+import Layout from 'layout';
+import FrameDialog from 'common/dialog/FrameDialog';
 
 function RouterWrapper() {
   return (
@@ -15,6 +18,7 @@ function RouterWrapper() {
                 return <Route key={index} {...route} />;
               })}
             </Switch>
+            <FrameDialog />
           </Layout>
         </AnimatePresence>
       </Router>
