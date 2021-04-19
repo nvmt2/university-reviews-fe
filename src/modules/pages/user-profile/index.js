@@ -58,7 +58,6 @@ export default function FullWidthTabs() {
   const handleChangeIndex = (index) => {
     setValue(index);
   };
-  console.log('dataFavourite', !!dataFavourite && dataFavourite);
   return (
     <motion.div
       initial="out"

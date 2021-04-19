@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery, useMutation } from '@apollo/client';
-
+import { useQuery } from '@apollo/client';
+import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 //internal modules
 import homepageQueries from 'query/homepage';
-import { loginMutation } from 'query/login';
 import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
 //internal components
 import CardHome from 'common/card/CardHome';
@@ -73,6 +72,7 @@ function HomePage({ match }) {
     <div className="body-homepage">
       <Banner />
       <div className="container">
+        <NavLink to="/analysis">Phân tích </NavLink>
         <div className="row">
           <div className="col-md-3 p-0" id="sidebar">
             <FilterBar />

@@ -13,7 +13,6 @@ import Dialog from '@material-ui/core/Dialog';
 function FrameDialog() {
   //STATE
   const { kindOfDialog, isOpen } = useSelector((state) => state.dialog);
-  console.log('kindOfDialog', kindOfDialog);
   const dispatch = useDispatch();
 
   //METHOD
@@ -34,7 +33,6 @@ function FrameDialog() {
         return null;
     }
   };
-  console.log('DialogControl');
 
   return (
     <div>

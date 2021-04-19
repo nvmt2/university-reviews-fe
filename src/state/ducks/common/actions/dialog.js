@@ -7,9 +7,6 @@ export const typeOfDialog = {
   NEW_POST_DIALOG: 'NEW_POST_DIALOG',
 };
 
-// export const fetchCommentAction = (data) =>
-//   action(commentTypes.FETCH_COMMENT, data);
-
 export const actionOpenDialogRating = () =>
   action(dialogTypes.OPEN_DIALOG, {
     kindOfDialog: typeOfDialog.RATING_DIALOG_TYPE,

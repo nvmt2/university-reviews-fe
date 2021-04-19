@@ -11,6 +11,7 @@
 @import 'modules/pages/topic/style/index.css';
 @import 'modules/pages/authentication/style/index.css';
 @import 'modules/pages/not-found/style.css';
+@import 'modules/pages/analysis/style/index.css';
 /* layout */
 @import 'layout/style/index.css';
 /* component common */

@@ -7,6 +7,7 @@ import NotFound from 'modules/pages/not-found';
 import UserProfile from 'modules/pages/user-profile';
 import DetailUniversity from 'modules/pages/detail-university';
 import UserEditor from 'modules/pages/user-editor';
+import AnalysisPage from 'modules/pages/analysis';
 
 export const routes = [
   { path: '/', exact: true, component: Home },
@@ -17,5 +18,6 @@ export const routes = [
   { path: '/user', exact: true, component: UserProfile },
   { path: '/login', component: SignIn },
   { path: '/register', component: SignUp },
+  { path: '/analysis', component: AnalysisPage },
   { path: '*', component: NotFound },
 ];
