@@ -119,3 +119,9 @@
   background: #70a851;
   transition: 0.3s ease-in;
 }
+.form-rating-layout {
+  float: right;
+  width: 500px;
+  margin-left: 20px;
+  margin-top: 50;
+}

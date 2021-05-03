@@ -1,0 +1,168 @@
+/* ====== style cho button gửi rating======== */
+
+/* .frame {
+    margin-left: 80px;
+  }
+  
+  button {
+    margin: 20px;
+  }
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+   */
+/* button */
+/* .btn-8 {
+    background-color: #f0ecfc;
+    background-image: linear-gradient(315deg, #7fc57f 0%, #4ba51b 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
+  }
+  .btn-8 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-8:before,
+  .btn-8:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    bottom: 0;
+    background: #67ac42;
+    transition: all 0.3s ease;
+  }
+  .btn-8:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-8:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-8:hover:before {
+    height: 100%;
+  }
+  .btn-8:hover:after {
+    width: 100%;
+  }
+  .btn-8:hover {
+    background: transparent;
+  }
+  .btn-8 span:hover {
+    color: #5d963f;
+  }
+  .btn-8 span:before,
+  .btn-8 span:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    background: #5d963f;
+    transition: all 0.3s ease;
+  }
+  .btn-8 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-8 span:after {
+    height: 2px;
+    width: 0%;
+  }
+  .btn-8 span:hover:before {
+    height: 100%;
+  }
+  .btn-8 span:hover:after {
+    width: 100%;
+  } */
+/* ====== kết thúc style cho button gửi rating======== */
+
+.rating-uni-form {
+  border-radius: 25px;
+  border: 1px solid #5d963f;
+  box-sizing: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px #5d963f;
+  margin: 20px auto;
+}
+.rating-uni-form button {
+  margin-left: 40px;
+}
+.rating-uni-form h1 {
+  font-family: 'Vollkorn', serif;
+  font-weight: 600;
+  text-align: center;
+}
+.rating-uni-form h1 span {
+  color: #5d963f;
+}
+
+.rating-uni-form #plants-image {
+  width: 25%;
+  height: auto;
+  margin: -9px auto 15px auto;
+  display: block;
+}
+
+.rating-uni-form h5 {
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.rating-uni-form h5 span {
+  font-weight: 700;
+  color: #5d963f;
+}
+.rating-uni-form #text-average-gray {
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  color: #757575;
+}
+.rating-uni-form .score-average-rating {
+  font-family: 'Vollkorn', serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.rating-uni-form .score-average-rating > p {
+  font-size: 85px;
+}
+.rating-uni-form .score-average-rating > span {
+  padding-top: 17px;
+  font-size: 40px;
+}
+
+.magin-lr {
+  margin: 0px 50px;
+}
+
+.box-slider-rating {
+  margin: 20px 40px;
+}
+.box-slider-rating .title-factor-rating {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: -10px;
+  display: block;
+}

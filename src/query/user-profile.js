@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const GET_PERONAL_TOPIC = gql`
   query getPersonnalTopic($id: ID!) {
@@ -31,7 +31,35 @@ const GET_FAVOURITE_UNIVERSITY = gql`
     }
   }
 `;
+const ADD_FAVORITE_UNI = gql`
+  mutation addFavoriteUni($idUni: ID!, $idUser: ID!) {
+    updateAccount(
+      id: $idUser
+      data: { favouriteUniversity: { connect: { id: $idUni } } }
+    ) {
+      favouriteUniversity {
+        name
+      }
+    }
+  }
+`;
+const REMOVE_FAVORITE_UNI = gql`
+  mutation removeFavoriteUni($idUni: ID!, $idUser: ID!) {
+    updateAccount(
+      id: $idUser
+      data: { favouriteUniversity: { disconnect: { id: $idUni } } }
+    ) {
+      favouriteUniversity {
+        name
+      }
+    }
+  }
+`;
 export const userProfileQueries = {
   GET_PERONAL_TOPIC,
   GET_FAVOURITE_UNIVERSITY,
+};
+export const userProfileMutation = {
+  ADD_FAVORITE_UNI,
+  REMOVE_FAVORITE_UNI,
 };

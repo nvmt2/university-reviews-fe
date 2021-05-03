@@ -9,6 +9,7 @@ import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
 import CardHome from 'common/card/CardHome';
 import FilterBar from 'modules/pages/home-page/components/FilterBar';
 import Banner from 'modules/pages/home-page/components/Banner';
+
 //material UI component
 import Pagination from '@material-ui/lab/Pagination';
 

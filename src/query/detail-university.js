@@ -69,6 +69,7 @@ const GET_UNIVERSITY = gql`
 const GET_NAME_CODE_OF_UNIVERSITY = gql`
   query getNameAndCodeOfUniversity($idUni: ID!) {
     University(where: { id: $idUni }) {
+      id
       name
       code
     }

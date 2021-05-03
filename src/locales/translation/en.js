@@ -104,6 +104,29 @@ export const assetsEnglish = {
     },
   },
   detailUniversity: {
+    formRating: {
+      evaluate: 'Evaluate',
+      aboutUs: 'us',
+      available: 'There are currently',
+      userEvaluate: 'reviews from users',
+      averageRating: 'Average rating',
+      qualityOfEducation: 'Quality of education',
+      infrastructure: 'Infrastructure',
+      fee: 'Fee',
+      activities: 'Activities',
+      jobOpportunities: 'JobOpportunities',
+      btn: {
+        rated: 'You rated',
+        rate: 'Rate',
+      },
+      mark: {
+        bad: 'Bad',
+        normal: 'Normal',
+        ok: 'Ok',
+        good: 'Good',
+        excellent: 'Excellent',
+      },
+    },
     introduce: {
       title: 'Overview Introduction',
     },
@@ -234,5 +257,55 @@ export const assetsEnglish = {
     },
     copyright:
       '@ Copyright of the CS1E.04 group - all copying requires group permission',
+  },
+  analysis: {
+    title: 'ANALYSIS PAGE',
+    titleOfDinutChart: 'USER REVIEW RATIO FOR EACH SCHOOL',
+    titleOfLineChart: 'REVIEW RATIO FOR LAST THREE YEARS',
+    qualityOfEducation: 'QUALITY OF EDUCATION',
+    infrastructure: 'INFRASTRUCTURE',
+    fee: 'FEE',
+    activities: 'ACTIVITIES',
+    jobOpportunities: 'JOB OPPORTUNITIES',
+    noteY: 'Degree evaluation',
+  },
+  formSearch: {
+    placeholder: 'Type name of university',
+  },
+  navBar: {
+    introduce: 'Introduce',
+    major: 'Major',
+    cooperation: 'Cooperation',
+    gallery: 'Gallery',
+    btn: {
+      comment: 'Comment',
+    },
+  },
+  navigationAuthentication: {
+    signIn: 'Sign In',
+    signUp: 'Sign Up',
+    setting: 'Account setting',
+    myPost: 'My post',
+  },
+  notification: {
+    comment: ' has commented on your post',
+    like: ' has "like" one of your Topic',
+  },
+  dialog: {
+    rating: {
+      title: 'Rating',
+      subtitle:
+        'Please submit your rating if you have experienced the facts about our school. We would be pleased to hear from you',
+      subTitle2: 'Evaluated according to the following 5 criteria:',
+      qualityOfEducation: 'Quality of education',
+      infrastructure: 'Infrastructure',
+      fee: 'Fee',
+      activities: 'Activities',
+      jobOpportunities: 'Job opportunities',
+      btn: {
+        rate: 'RATE',
+        cancel: 'CANCEL',
+      },
+    },
   },
 };

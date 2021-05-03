@@ -103,6 +103,29 @@ export const assetsVietnamese = {
     },
   },
   detailUniversity: {
+    formRating: {
+      evaluate: 'Đánh giá',
+      aboutUs: 'về chúng tôi',
+      available: 'Hiện có',
+      userEvaluate: 'đánh giá từ người dùng',
+      averageRating: 'Đánh giá trung bình',
+      qualityOfEducation: 'Chất lượng đào tạo',
+      infrastructure: 'Cơ sở vật chất',
+      fee: 'Chi phí',
+      activities: 'Các hoạt động',
+      jobOpportunities: 'Cơ hội việc làm',
+      btn: {
+        rated: 'Đã đánh giá',
+        rate: 'Đánh giá',
+      },
+      mark: {
+        bad: 'Tệ',
+        normal: 'Tạm được',
+        ok: 'Ổn',
+        good: 'Tốt',
+        excellent: 'Cực kỳ tốt',
+      },
+    },
     introduce: {
       title: 'Giới thiệu tổng quan',
     },
@@ -233,5 +256,55 @@ export const assetsVietnamese = {
     },
     copyright:
       '@Bản quyền của nhóm CS1E.04 - mọi sự sao chép cần xin phép nhóm',
+  },
+  analysis: {
+    title: 'TRANG SO SÁNH',
+    titleOfDinutChart: 'TỶ LỆ ĐÁNH GIÁ CỦA NGƯỜI DÙNG CHO MỖI TRƯỜNG',
+    titleOfLineChart: 'TỶ LỆ ĐÁNH GIÁ TRONG BA NĂM GẦN NHẤT',
+    qualityOfEducation: 'CHÂT LƯỢNG ĐÀO TẠO',
+    infrastructure: 'CƠ SỞ VẬT CHẤT',
+    fee: 'CHI PHÍ',
+    activities: 'CÁC HOẠT ĐỘNG',
+    jobOpportunities: 'CƠ HỘI VIỆC LÀM',
+    noteY: 'Mức độ đánh giá',
+  },
+  formSearch: {
+    placeholder: 'Nhập tên trường',
+  },
+  navBar: {
+    introduce: 'Giới thiệu',
+    major: 'Chuyên ngành',
+    cooperation: 'Hợp tác',
+    gallery: 'Hoạt động',
+    btn: {
+      comment: 'Bình luận',
+    },
+  },
+  navigationAuthentication: {
+    signIn: 'Đăng nhập',
+    signUp: 'Đăng ký',
+    setting: 'Thiết lập tài khoản',
+    myPost: 'Bài viết cá nhân',
+  },
+  notification: {
+    comment: 'Đã bình luận Topic của bạn',
+    like: 'Đã "like" một Topic của bạn',
+  },
+  dialog: {
+    rating: {
+      title: 'Đánh giá',
+      subtitle:
+        'Vui lòng gửi đánh giá của bạn nếu bạn đã trải nghiệm những thông tin về trường chúng tôi. Chúng tôi rất vui khi nhận được sự đánh giá của bạn',
+      subTitle2: 'Đánh giá theo 5 tiêu chí sau:',
+      qualityOfEducation: 'Chất lượng đào tạo',
+      infrastructure: 'Cơ sở vật chất',
+      fee: 'Chi phí',
+      activities: 'Các hoạt động',
+      jobOpportunities: 'Cơ hội việc làm',
+      btn: {
+        rate: 'Đánh giá',
+        cancel: 'Hủy',
+      },
+    },
   },
 };

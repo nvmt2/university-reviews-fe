@@ -4,17 +4,22 @@ import { useMutation } from '@apollo/client';
 //internal modules
 import { actionCloseDialog } from 'state/ducks/common/actions/dialog';
 import { ratingMutation, ratingQuery } from 'query/rating';
+import { myGetDate } from 'helper/getDate';
+//internal components
+import SliderRating from 'common/slider/SliderRating';
+import DialogTitle from 'common/dialog/TitleDialog';
 //material-ui component
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogTitle from '@material-ui/core/DialogTitle';
+// import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import Rating from '@material-ui/lab/Rating';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function RatingDialog() {
   //STATE
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [start, setStart] = useState({
     qualityOfEducation: 5,
@@ -35,9 +40,9 @@ function RatingDialog() {
     handleClose();
   };
   //METHOD
-  const handleChangeStart = (e, label) => {
-    let value = e.target.value;
-    let valueParsed = parseInt(value);
+  const handleChangeStart = (valueParsed, label) => {
+    // let value = e.target.value;
+    // let valueParsed = parseInt(value);
     switch (label) {
       case 'qualityOfEducation':
         setStart({ ...start, qualityOfEducation: valueParsed });
@@ -64,6 +69,7 @@ function RatingDialog() {
         ...start,
         idUser: localStorage.getItem('idUser'),
         idUni: localStorage.getItem('slugUniversity'),
+        dateParam: myGetDate(),
       },
       refetchQueries: [
         {
@@ -87,50 +93,45 @@ function RatingDialog() {
   return (
     <Box>
       <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-        <Typography>RATING</Typography>
+        <div className="header-dialog-rating">
+          <p className="title">{t('dialog.rating.title')}</p>
+          <p>{t('dialog.rating.subtitle')}</p>
+          <p>{t('dialog.rating.subtitle2')}</p>
+        </div>
       </DialogTitle>
       {/* body */}
       <DialogContent dividers>
-        <div>
-          <Rating
-            name="qualityOfEducation"
-            defaultValue={5}
-            onChange={(e) => handleChangeStart(e, 'qualityOfEducation')}
+        <div className="body-dialog-rating">
+          <p>{t('dialog.rating.qualityOfEducation')}</p>
+          <SliderRating
+            onChange={(e, val) => handleChangeStart(val, 'qualityOfEducation')}
           />
-          <br />
-          <Rating
-            name="infrastructure"
-            defaultValue={5}
-            onChange={(e) => handleChangeStart(e, 'infrastructure')}
+          <p>{t('dialog.rating.infrastructure')}</p>
+          <SliderRating
+            onChange={(e, val) => handleChangeStart(val, 'infrastructure')}
           />
-          <br />
-          <Rating
-            name="fee"
-            defaultValue={5}
-            onChange={(e) => handleChangeStart(e, 'fee')}
+          <p>{t('dialog.rating.fee')}</p>
+          <SliderRating onChange={(e, val) => handleChangeStart(val, 'fee')} />
+          <p>{t('dialog.rating.activities')}</p>
+          <SliderRating
+            onChange={(e, val) => handleChangeStart(val, 'activities')}
           />
-          <br />
-          <Rating
-            name="activities"
-            defaultValue={5}
-            onChange={(e) => handleChangeStart(e, 'activities')}
-          />
-          <br />
-          <Rating
-            name="jobOpportunities"
-            defaultValue={5}
-            onChange={(e) => handleChangeStart(e, 'jobOpportunities')}
+          <p>{t('dialog.rating.jobOpportunities')}</p>
+          <SliderRating
+            onChange={(e, val) => handleChangeStart(val, 'jobOpportunities')}
           />
         </div>
       </DialogContent>
       {/* end of body */}
       <DialogActions>
-        <Button color="secondary" variant="outlined" onClick={handleCancel}>
-          Cancel
-        </Button>
-        <Button color="primary" variant="outlined" onClick={handleClickRate}>
-          Rate
-        </Button>
+        <div className="footer-dialog-rating">
+          <Button color="secondary" variant="outlined" onClick={handleCancel}>
+            {t('dialog.rating.btn.rate')}
+          </Button>
+          <Button color="primary" variant="outlined" onClick={handleClickRate}>
+            {t('dialog.rating.btn.cancel')}
+          </Button>
+        </div>
       </DialogActions>
     </Box>
   );

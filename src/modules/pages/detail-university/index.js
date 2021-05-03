@@ -1,11 +1,32 @@
 import React from 'react';
 import { Route, NavLink } from 'react-router-dom';
 import { routes } from 'constant/routes-detail-university';
-import { navigationDetailUniversity } from 'constant/navigation';
 //importing local
 import Wrapper from 'modules/pages/detail-university/components/Wrapper';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function DetailUniversity(props) {
+  //STATE
+  const { t } = useTranslation();
+  const navigationDetailUniversity = [
+    {
+      name: t('navBar.introduce'),
+      field: '',
+    },
+    {
+      name: t('navBar.major'),
+      field: '/major',
+    },
+    {
+      name: t('navBar.cooperation'),
+      field: '/cooperation',
+    },
+    {
+      name: t('navBar.gallery'),
+      field: '/gallery',
+    },
+  ];
   return (
     <Wrapper>
       <div className="wrap-detail-university">
@@ -31,7 +52,7 @@ function DetailUniversity(props) {
                 };
               }}
             >
-              Bình luận
+              {t('navBar.btn.comment')}
             </NavLink>
           </li>
         </ul>

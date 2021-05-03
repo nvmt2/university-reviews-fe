@@ -24,6 +24,17 @@ const GET_RATING_BY_AUTHOR = gql`
     }
   }
 `;
+const GET_LESSER_EQUAL_RATING = gql`
+  query getRatingLesserAndEqual($dateParam: DateTime, $idUni: ID!) {
+    allRatings(where: { university: { id: $idUni }, date_lte: $dateParam }) {
+      qualityOfEducation
+      infrastructure
+      fee
+      activities
+      jobOpportunities
+    }
+  }
+`;
 const CREATE_RATING = gql`
   mutation createRating(
     $idUser: ID!
@@ -33,6 +44,7 @@ const CREATE_RATING = gql`
     $fee: Int
     $activities: Int
     $jobOpportunities: Int
+    $dateParam: DateTime
   ) {
     createRating(
       data: {
@@ -41,6 +53,7 @@ const CREATE_RATING = gql`
         fee: $fee
         activities: $activities
         jobOpportunities: $jobOpportunities
+        date: $dateParam
         user: { connect: { id: $idUser } }
         university: { connect: { id: $idUni } }
       }
@@ -53,8 +66,10 @@ const CREATE_RATING = gql`
     }
   }
 `;
+
 export const ratingQuery = {
   GET_ALL_RATINGS_BY_UNIVERSITY,
   GET_RATING_BY_AUTHOR,
+  GET_LESSER_EQUAL_RATING,
 };
 export const ratingMutation = { CREATE_RATING };

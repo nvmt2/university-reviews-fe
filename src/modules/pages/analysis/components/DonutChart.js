@@ -3,91 +3,93 @@ import { useSelector } from 'react-redux';
 import Chart from 'react-apexcharts';
 //internal modules
 import { getAverageRating } from 'helper/getAverageRating';
-import { defaultOption } from 'modules/pages/analysis/components/optionChart';
+import { defaultDonutChartOption } from 'modules/pages/analysis/components/optionChart';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function DonutChart() {
   //STATE
+  const { t } = useTranslation();
   const { ratingsUni } = useSelector((state) => state.analysis);
   const { infoUni } = useSelector((state) => state.analysis);
-  const [qualityOfEducationSeries] = useState([]);
-  const [infrastructure] = useState([]);
-  const [fee] = useState([]);
-  const [activities] = useState([]);
-  const [jobOpportunities] = useState([]);
+  const [qualityOfEducationSeries, setQualityOfEducationSeries] = useState([]);
+  const [infrastructure, setInfrastructure] = useState([]);
+  const [fee, setFee] = useState([]);
+  const [activities, setActivities] = useState([]);
+  const [jobOpportunities, setJobOpportunities] = useState([]);
   const [label] = useState([]);
-  const seriesTest = [1, 2, 2];
 
   const qualityOfEducationOption = {
-    ...defaultOption,
+    ...defaultDonutChartOption,
     labels: label,
     // tiêu đề chú thích cho biểu đồ
     title: {
-      text: 'GIÁO DỤC',
-      align: 'centner',
+      text: t('analysis.qualityOfEducation'),
+      align: 'center',
       style: {
         fontSize: '15px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Helvetica, Arial, sans-serif',
         color: '#263238',
       },
     },
   };
   const infrastructureOption = {
-    ...defaultOption,
+    ...defaultDonutChartOption,
     labels: label,
     // tiêu đề chú thích cho biểu đồ
     title: {
-      text: 'CƠ SỞ HẠ TẦNG',
-      align: 'centner',
+      text: t('analysis.infrastructure'),
+      align: 'center',
       style: {
         fontSize: '15px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Helvetica, Arial, sans-serif',
         color: '#263238',
       },
     },
   };
   const feeOption = {
-    ...defaultOption,
+    ...defaultDonutChartOption,
     labels: label,
     // tiêu đề chú thích cho biểu đồ
     title: {
-      text: 'HỌC PHÍ',
-      align: 'centner',
+      text: t('analysis.fee'),
+      align: 'center',
       style: {
         fontSize: '15px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Helvetica, Arial, sans-serif',
         color: '#263238',
       },
     },
   };
   const activitiesOption = {
-    ...defaultOption,
+    ...defaultDonutChartOption,
     labels: label,
     // tiêu đề chú thích cho biểu đồ
     title: {
-      text: 'HOẠT ĐỘNG TRONG TRƯỜNG',
-      align: 'centner',
+      text: t('analysis.activities'),
+      align: 'center',
       style: {
         fontSize: '15px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Helvetica, Arial, sans-serif',
         color: '#263238',
       },
     },
   };
   const jobOpportunitiesOption = {
-    ...defaultOption,
+    ...defaultDonutChartOption,
     labels: label,
     // tiêu đề chú thích cho biểu đồ
     title: {
-      text: 'CƠ HỘI VIỆC LÀM',
-      align: 'centner',
+      text: t('analysis.jobOpportunities'),
+      align: 'center',
       style: {
         fontSize: '15px',
         fontWeight: 'bold',
-        fontFamily: 'Roboto',
+        fontFamily: 'Helvetica, Arial, sans-serif',
         color: '#263238',
       },
     },
@@ -95,102 +97,88 @@ function DonutChart() {
   //LIFECYCLE
   useEffect(() => {
     if (ratingsUni.length !== 0) {
+      setQualityOfEducationSeries([]);
+      setInfrastructure([]);
+      setFee([]);
+      setActivities([]);
+      setJobOpportunities([]);
       ratingsUni.map((item) => {
-        qualityOfEducationSeries.push(
-          getAverageRating(item.allRatings, 'qualityOfEducation')
+        let averageQualityOfEducation = getAverageRating(
+          item.allRatings,
+          'qualityOfEducation'
         );
-        infrastructure.push(
-          getAverageRating(item.allRatings, 'infrastructure')
+        let averageInfrastructure = getAverageRating(
+          item.allRatings,
+          'infrastructure'
         );
-        fee.push(getAverageRating(item.allRatings, 'fee'));
-        activities.push(getAverageRating(item.allRatings, 'activities'));
-        jobOpportunities.push(
-          getAverageRating(item.allRatings, 'jobOpportunities')
+        let averageFee = getAverageRating(item.allRatings, 'fee');
+        let averageActivities = getAverageRating(item.allRatings, 'activities');
+        let averageJobOpportunities = getAverageRating(
+          item.allRatings,
+          'jobOpportunities'
         );
+
+        setQualityOfEducationSeries((preValue) => [
+          ...preValue,
+          averageQualityOfEducation,
+        ]);
+        setInfrastructure((preValue) => [...preValue, averageInfrastructure]);
+        setFee((preValue) => [...preValue, averageFee]);
+        setActivities((preValue) => [...preValue, averageActivities]);
+        setJobOpportunities((preValue) => [
+          ...preValue,
+          averageJobOpportunities,
+        ]);
         return null;
       });
     }
   }, [ratingsUni]);
+
   useEffect(() => {
     if (infoUni.length) {
       infoUni.map((item) => label.push(item.University.code));
     }
-  }, []);
+  }, [infoUni]);
+  console.log('DonutChart');
   return (
     <div className="container-donut-chart">
-      {/* <h6>Tỷ lệ đánh giá của người dùng cho mỗi trường</h6> */}
-   
+      <h6>{t('analysis.titleOfDinutChart')}</h6>
+      <hr></hr>
       <div className="wrapper-donut-chart">
-        {/* <Chart
-          options={qualityOfEducationSeriesOptions}
-          series={seriesTest}
-          type="donut"
-          width={250}
-          height={250}
-        />
-        <Chart
-          options={qualityOfEducationSeriesOptions}
-          series={seriesTest}
-          type="donut"
-          width={250}
-          height={250}
-        />
-        <Chart
-          options={qualityOfEducationSeriesOptions}
-          series={seriesTest}
-          type="donut"
-          width={250}
-          height={250}
-        />
-        <Chart
-          options={qualityOfEducationSeriesOptions}
-          series={seriesTest}
-          type="donut"
-          width={250}
-          height={250}
-        />
-        <Chart
-          options={qualityOfEducationSeriesOptions}
-          series={seriesTest}
-          type="donut"
-          width={250}
-          height={250}
-        /> */}
-
         <Chart
           options={qualityOfEducationOption}
           series={qualityOfEducationSeries}
           type="donut"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
         <Chart
           options={infrastructureOption}
           series={infrastructure}
           type="donut"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
         <Chart
           options={feeOption}
           series={fee}
           type="donut"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
         <Chart
           options={activitiesOption}
           series={activities}
           type="donut"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
         <Chart
           options={jobOpportunitiesOption}
           series={jobOpportunities}
           type="donut"
-          width={250}
-          height={250}
+          width={200}
+          height={200}
         />
       </div>
     </div>

@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FullWidthTabs() {
+export default function UserProfile() {
   //STATE
   const { t } = useTranslation();
   const classes = useStyles();
@@ -42,9 +42,9 @@ export default function FullWidthTabs() {
   );
   //get Favourite university which was marked by user
   const {
-    data: dataFavourite,
-    loading: loadingFavourite,
-    error: errorFavourite,
+    data: dataFavorite,
+    loading: loadingFavorite,
+    error: errorFavorite,
   } = useQuery(userProfileQueries.GET_FAVOURITE_UNIVERSITY, {
     variables: {
       idUser: idUser,
@@ -97,8 +97,8 @@ export default function FullWidthTabs() {
             </TabPanel>
             {/* this tab show university which marked */}
             <TabPanel value={value} index={1}>
-              {!!dataFavourite &&
-                dataFavourite.Account.favouriteUniversity.map(
+              {!!dataFavorite &&
+                dataFavorite.Account.favouriteUniversity.map(
                   (university, index) => (
                     <CardUniversity key={index} {...university} />
                   )

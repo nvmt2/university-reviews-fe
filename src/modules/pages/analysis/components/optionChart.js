@@ -1,6 +1,6 @@
 // màu tương ứng với mỗi series
 export const defaultColor = ['#54ecb9', '#fecc6a', '#3ba9fc'];
-export const defaultOption = {
+export const defaultDonutChartOption = {
   colors: defaultColor,
   chart: {
     type: 'donut',

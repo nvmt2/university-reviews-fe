@@ -16,3 +16,5 @@
 @import 'layout/style/index.css';
 /* component common */
 @import 'common/card/style/cardTopic.css';
+@import 'common/dialog/style/index.css';
+@import 'common/search-form/style/index.css';
