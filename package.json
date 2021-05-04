@@ -38,6 +38,7 @@
     "react-swipeable-views": "^0.13.9",
     "react-tabs": "^3.1.1",
     "redux": "^4.0.5",
+    "styled-component": "^2.8.0",
     "typesafe-actions": "^5.1.0"
   },
   "scripts": {

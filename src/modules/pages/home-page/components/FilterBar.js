@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
+//internal modules
 import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
 import homepageQueries from 'query/homepage';
+//internal components
+import { SubBox } from 'theme/component/SubBox';
 //material-ui component
 import Slider from '@material-ui/core/Slider';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -55,7 +58,7 @@ function FilterBar() {
   };
 
   return (
-    <div id="filter">
+    <SubBox id="filter">
       <Tooltip
         title={
           <React.Fragment>
@@ -178,7 +181,7 @@ function FilterBar() {
           {t('filterBar.btn.filter')}
         </button>
       </form>
-    </div>
+    </SubBox>
   );
 }
 

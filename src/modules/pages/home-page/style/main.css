@@ -36,19 +36,19 @@
 /* -------CardHome component ------ */
 
 .highlight-topic {
-  /* box-shadow: 5px 5px 5px #1a262b4f; */
-  /* border-bottom: 1px solid #727272;     */
   margin-bottom: 40px;
   transition: all 0.25s;
-  background-color: #ffffff;
 
-  border: 1px solid #e5e7eb;
+  padding: 15px 10px 5px 0px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  background: #ffffff;
+  /* background-color: #ffffff;
+  border: 1px solid #e5e7eb; */
 }
 .body-card-home {
   padding: 10px 20px;
+  margin: 0 2px;
+  border-bottom: 1px solid #8e8e8e41;
 }
 .body-card-home:hover {
   /* box-shadow: 10px 10px 30px #696969; */
@@ -88,7 +88,7 @@
 
 .highlight-topic span.count-rate,
 .highlight-topic span.count-comment {
-  color: #727272;
+  color: #8e8e8e;
   font-size: 13px;
 }
 /* .padding-left-32 {
@@ -96,7 +96,7 @@
   } */
 .highlight-topic p.demo-content {
   font-size: 14px;
-  color: #5e5e5e;
+  color: #8e8e8e;
   margin-bottom: 5px;
   /* white-space: nowrap; */
   text-overflow: ellipsis;
@@ -139,15 +139,13 @@ p.demo-content:hover {
   z-index: 1000;
 }
 #sidebar #filter {
-  background-color: #ffffff;
   padding: 10px 0px;
   width: 100%;
   float: right;
-
-  border: 1px solid #e5e7eb;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  background: #ffffff;
+  /* background: #ffffff;
+  border: 1px solid #e5e7eb; */
 }
 
 #sidebar #filter a.map {
@@ -232,4 +230,7 @@ label {
 .card-star {
   outline: none;
   border: none;
+}
+.favourite-bookmark button {
+  color: #8e8e8e;
 }

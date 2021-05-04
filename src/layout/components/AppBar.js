@@ -26,6 +26,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -84,7 +85,7 @@ const useAppBarStyle = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar(props) {
   //STATE
   const { t, i18n } = useTranslation();
   const classes = useAppBarStyle();
@@ -330,7 +331,7 @@ export default function PrimarySearchAppBar() {
             </form>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              {!!state.login.data.id && (
+              {/* {!!state.login.data.id && (
                 <IconButton
                   aria-label="show notification about topics"
                   aria-controls={menuNotificationId}
@@ -342,7 +343,10 @@ export default function PrimarySearchAppBar() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-              )}
+              )} */}
+              <IconButton color="inherit" onClick={props.changeTheme}>
+                <Brightness4Icon />
+              </IconButton>
 
               <IconButton
                 edge="end"

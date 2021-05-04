@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from 'react-redux';
 //internal modules
 import homepageQueries from 'query/homepage';
 import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
+import { MyContainer } from 'theme/component/MyContainer';
+import { MyTextChange } from 'theme/component/MyTextChange';
 //internal components
 import CardHome from 'common/card/CardHome';
 import FilterBar from 'modules/pages/home-page/components/FilterBar';
 import Banner from 'modules/pages/home-page/components/Banner';
-
 //material UI component
 import Pagination from '@material-ui/lab/Pagination';
 
-function HomePage({ match }) {
+function HomePage() {
   //STATE
   const dispatch = useDispatch();
   // using for pagination
@@ -71,37 +72,41 @@ function HomePage({ match }) {
 
   return (
     <div className="body-homepage">
-      <Banner />
-      <div className="container">
-        <NavLink to="/analysis">Phân tích </NavLink>
-        <div className="row">
-          <div className="col-md-3 p-0" id="sidebar">
-            <FilterBar />
-          </div>
-          <div className="col-md-9" id="content">
-            {/* card include content of university */}
-            <div className="content-main-home">
-              {!!contentMainHome ? (
-                contentMainHome.map((item, index) => {
-                  return <CardHome key={index} {...item} status={'homepage'} />;
-                })
-              ) : (
-                <h5>Loading...</h5>
-              )}
+      <MyContainer>
+        <Banner />
+        <div className="container">
+          <NavLink to="/analysis">Phân tích </NavLink>
+          <div className="row">
+            <div className="col-md-3 p-0" id="sidebar">
+              <FilterBar />
             </div>
-            <div className="offset-md-3 col-md-9 pagination-material">
-              <Pagination
-                count={8}
-                color="primary"
-                shape="rounded"
-                variant="outlined"
-                size="medium"
-                onChange={increasePage}
-              />
+            <div className="col-md-9" id="content">
+              {/* card include content of university */}
+              <div className="content-main-home">
+                {!!contentMainHome ? (
+                  contentMainHome.map((item, index) => {
+                    return (
+                      <CardHome key={index} {...item} status={'homepage'} />
+                    );
+                  })
+                ) : (
+                  <h5>Loading...</h5>
+                )}
+              </div>
+              <div className="offset-md-3 col-md-9 pagination-material">
+                <Pagination
+                  count={8}
+                  color="primary"
+                  shape="rounded"
+                  variant="outlined"
+                  size="medium"
+                  onChange={increasePage}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </MyContainer>
     </div>
   );
 }

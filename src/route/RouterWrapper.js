@@ -7,12 +7,12 @@ import { routes } from 'constant/routes-main';
 import Layout from 'layout';
 import FrameDialog from 'common/dialog/FrameDialog';
 
-function RouterWrapper() {
+function RouterWrapper(props) {
   return (
     <div>
       <Router>
         <AnimatePresence exitBeforeEnter>
-          <Layout>
+          <Layout changeTheme={props.changeTheme}>
             <Switch>
               {routes.map((route, index) => {
                 return <Route key={index} {...route} />;

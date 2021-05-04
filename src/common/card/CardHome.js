@@ -20,6 +20,8 @@ import {
   getDateTimeISO8601OfLastOfLastYear,
 } from 'helper/getDate';
 import { getAverageTotalRating } from 'helper/getAverageRating';
+//internal components
+import { SubBox } from 'theme/component/SubBox';
 //material-ui component
 import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
@@ -140,76 +142,79 @@ function CardHome(props) {
   console.log(`CardHome`);
 
   return (
-    <motion.div
-      className="highlight-topic container-fluid"
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageTransition}
-    >
-      <div className="row body-card-home border-bottom">
-        <div className="col-md-1">
-          <div id="img-logo">
-            <img
-              src={logo.publicUrl}
-              alt="logo university"
-              className="logo-university img-fluid"
-            />
+    <SubBox className="highlight-topic">
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageTransition}
+      >
+        <div className="row body-card-home">
+          <div className="col-md-1">
+            <div id="img-logo">
+              <img
+                src={logo.publicUrl}
+                alt="logo university"
+                className="logo-university img-fluid"
+              />
+            </div>
+          </div>
+          <div className="col-md-11">
+            <p className="university-name">{name}</p>
+
+            <span className="address">{address}</span>
+            <span className="count-rate mr-3">
+              <i className="fas fa-star"></i> 5 {t('cardHome.rating')}
+            </span>
+            <span className="count-comment">
+              <i className="fas fa-comments"></i> 15 {t('cardHome.comment')}
+            </span>
+
+            <p className="demo-content">{introduce}</p>
           </div>
         </div>
-        <div className="col-md-11">
-          <p className="university-name">{name}</p>
-
-          <span className="address">{address}</span>
-          <span className="count-rate mr-3">
-            <i className="fas fa-star"></i> 5 {t('cardHome.rating')}
-          </span>
-          <span className="count-comment">
-            <i className="fas fa-comments"></i> 15 {t('cardHome.comment')}
-          </span>
-
-          <p className="demo-content">{introduce}</p>
-        </div>
-      </div>
-      <div className="row">
-        <div className="offset-md-1 col-md-11 footer-card-home">
-          {
-            <NavLink
-              className="detail-card-home"
-              to={(location) => {
-                return {
-                  pathname: `/detail-university/${id}`,
-                };
-              }}
-              onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
-            >
-              {t('cardHome.detail')}
-            </NavLink>
-          }
-          <i className="fas fa-chevron-right"></i>
-          <div className="favourite-bookmark">
-            {/* icon button for mark favorite university */}
-            <IconButton onClick={handleClickMark}>
-              <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
-            </IconButton>
-            {/* icon button for analysis */}
-            <IconButton
-              onClick={handleAddUni}
-              style={{ display: isSelected ? 'none' : 'block' }}
-            >
-              <AssessmentOutlinedIcon />
-            </IconButton>
-            <IconButton
-              color="secondary"
-              onClick={handleRemoveUni}
-              style={{ display: isSelected ? 'block' : 'none' }}
-            >
-              <AssessmentOutlinedIcon />
-            </IconButton>
+        <div className="row">
+          <div className="offset-md-1 col-md-11 footer-card-home">
+            {
+              <NavLink
+                className="detail-card-home"
+                to={(location) => {
+                  return {
+                    pathname: `/detail-university/${id}`,
+                  };
+                }}
+                onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
+              >
+                {t('cardHome.detail')}
+              </NavLink>
+            }
+            <i className="fas fa-chevron-right"></i>
+            <div className="favourite-bookmark">
+              {/* icon button for mark favorite university */}
+              <IconButton onClick={handleClickMark}>
+                <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
+              </IconButton>
+              {/* icon button for analysis */}
+              <IconButton
+                onClick={handleAddUni}
+                style={{ display: isSelected ? 'none' : 'block' }}
+              >
+                <AssessmentOutlinedIcon />
+              </IconButton>
+              <IconButton
+                onClick={handleRemoveUni}
+                style={{
+                  display: isSelected ? 'block' : 'none',
+                  color: '#53a63a',
+                }}
+              >
+                <AssessmentOutlinedIcon />
+              </IconButton>
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </SubBox>
   );
 }
 
