@@ -19,22 +19,42 @@ import 'App.css';
 import { ThemeProvider } from 'styled-components';
 import { useDarkMode } from 'theme/useDarkMode';
 import { darkTheme, lightTheme } from 'theme/theme';
+import { green, amber } from '@material-ui/core/colors';
+import {
+  createMuiTheme,
+  ThemeProvider as ThemeProviderMaterial,
+} from '@material-ui/core/styles';
 
 function App() {
   const [theme, setTheme] = useDarkMode();
+
+  const mainPrimaryColor = theme === 'light' ? green[700] : green[400];
+  const mainSecondaryColor = theme === 'light' ? amber[700] : amber[400];
+  const darkThemeMaterial = createMuiTheme({
+    palette: {
+      type: theme,
+      primary: {
+        main: mainPrimaryColor,
+      },
+      secondary: {
+        main: mainSecondaryColor,
+      },
+    },
+  });
   return (
     <div>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-        <I18nextProvider i18n={i18n}>
-          <ApolloProvider client={apolloClient}>
-            <Provider store={store}>
-              <RouteWrapper changeTheme={setTheme} />
-            </Provider>
-          </ApolloProvider>
-        </I18nextProvider>
-      </ThemeProvider>
+      <ThemeProviderMaterial theme={darkThemeMaterial}>
+        <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+          <I18nextProvider i18n={i18n}>
+            <ApolloProvider client={apolloClient}>
+              <Provider store={store}>
+                <RouteWrapper changeTheme={setTheme} />
+              </Provider>
+            </ApolloProvider>
+          </I18nextProvider>
+        </ThemeProvider>
+      </ThemeProviderMaterial>
     </div>
   );
 }
-
 export default App;

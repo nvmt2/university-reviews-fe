@@ -98,7 +98,7 @@
   border: 1px solid #5d963f;
   box-sizing: 15px;
   padding: 20px;
-  box-shadow: 0px 0px 15px #5d963f;
+  box-shadow: 0px 0px 5px #5d963f;
   margin: 20px auto;
 }
 .rating-uni-form button {
@@ -133,7 +133,7 @@
   text-align: center;
   font-size: 16px;
   display: block;
-  color: #757575;
+  color: #8e8e8e;
 }
 .rating-uni-form .score-average-rating {
   font-family: 'Vollkorn', serif;

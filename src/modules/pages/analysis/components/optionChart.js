@@ -30,7 +30,7 @@ export const defaultDonutChartOption = {
           total: {
             show: true,
             label: 'Total',
-            color: 'black',
+            color: '#8e8e8e',
             fontWeight: 600,
           },
         },

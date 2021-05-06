@@ -2,11 +2,13 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import parse from 'html-react-parser';
 //internal modules
 import { commentMutation } from 'query/comment';
 import { commentQuery } from 'query/comment';
 import DeleteOutlineRoundedIcon from '@material-ui/icons/DeleteOutlineRounded';
-import parse from 'html-react-parser';
+//internal components
+import { SubBox } from 'theme/component/SubBox';
 //material-ui component
 import IconButton from '@material-ui/core/IconButton';
 import Avatar from '@material-ui/core/Avatar';
@@ -49,7 +51,7 @@ function ContentComment(props) {
   };
 
   return (
-    <div className="item-content-comment">
+    <SubBox className="item-content-comment">
       <div className="item-news-comment">
         <div className="container">
           <div className="row">
@@ -82,7 +84,7 @@ function ContentComment(props) {
           </div>
         </div>
       </div>
-    </div>
+    </SubBox>
   );
 }
 

@@ -4,6 +4,8 @@ import Chart from 'react-apexcharts';
 //internal modules
 import { getAverageRating } from 'helper/getAverageRating';
 import { defaultDonutChartOption } from 'modules/pages/analysis/components/optionChart';
+//internal component
+import { SubBox } from 'theme/component/SubBox';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +32,7 @@ function DonutChart() {
         fontSize: '15px',
         fontWeight: 'bold',
         fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#263238',
+        color: '#8e8e8e',
       },
     },
   };
@@ -45,7 +47,7 @@ function DonutChart() {
         fontSize: '15px',
         fontWeight: 'bold',
         fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#263238',
+        color: '#8e8e8e',
       },
     },
   };
@@ -60,7 +62,7 @@ function DonutChart() {
         fontSize: '15px',
         fontWeight: 'bold',
         fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#263238',
+        color: '#8e8e8e',
       },
     },
   };
@@ -75,7 +77,7 @@ function DonutChart() {
         fontSize: '15px',
         fontWeight: 'bold',
         fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#263238',
+        color: '#8e8e8e',
       },
     },
   };
@@ -90,7 +92,7 @@ function DonutChart() {
         fontSize: '15px',
         fontWeight: 'bold',
         fontFamily: 'Helvetica, Arial, sans-serif',
-        color: '#263238',
+        color: '#8e8e8e',
       },
     },
   };
@@ -141,47 +143,49 @@ function DonutChart() {
   }, [infoUni]);
   console.log('DonutChart');
   return (
-    <div className="container-donut-chart">
-      <h6>{t('analysis.titleOfDinutChart')}</h6>
-      <hr></hr>
-      <div className="wrapper-donut-chart">
-        <Chart
-          options={qualityOfEducationOption}
-          series={qualityOfEducationSeries}
-          type="donut"
-          width={200}
-          height={200}
-        />
-        <Chart
-          options={infrastructureOption}
-          series={infrastructure}
-          type="donut"
-          width={200}
-          height={200}
-        />
-        <Chart
-          options={feeOption}
-          series={fee}
-          type="donut"
-          width={200}
-          height={200}
-        />
-        <Chart
-          options={activitiesOption}
-          series={activities}
-          type="donut"
-          width={200}
-          height={200}
-        />
-        <Chart
-          options={jobOpportunitiesOption}
-          series={jobOpportunities}
-          type="donut"
-          width={200}
-          height={200}
-        />
+    <SubBox>
+      <div className="container-donut-chart">
+        <h6>{t('analysis.titleOfDinutChart')}</h6>
+        <hr></hr>
+        <div className="wrapper-donut-chart">
+          <Chart
+            options={qualityOfEducationOption}
+            series={qualityOfEducationSeries}
+            type="donut"
+            width={200}
+            height={200}
+          />
+          <Chart
+            options={infrastructureOption}
+            series={infrastructure}
+            type="donut"
+            width={200}
+            height={200}
+          />
+          <Chart
+            options={feeOption}
+            series={fee}
+            type="donut"
+            width={200}
+            height={200}
+          />
+          <Chart
+            options={activitiesOption}
+            series={activities}
+            type="donut"
+            width={200}
+            height={200}
+          />
+          <Chart
+            options={jobOpportunitiesOption}
+            series={jobOpportunities}
+            type="donut"
+            width={200}
+            height={200}
+          />
+        </div>
       </div>
-    </div>
+    </SubBox>
   );
 }
 

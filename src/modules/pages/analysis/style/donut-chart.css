@@ -2,14 +2,12 @@
   margin-top: 10px;
   padding: 30px 0px;
   margin-bottom: 50px;
-
-  border: 1px solid #e5e7eb;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-  background: #ffffff;
 }
 .container-donut-chart > h6 {
   margin: 0px 15px 30px 15px;
+  color: #8e8e8e;
 }
 .container-donut-chart .wrapper-donut-chart {
   display: flex;

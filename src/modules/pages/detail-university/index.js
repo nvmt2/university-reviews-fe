@@ -3,6 +3,8 @@ import { Route, NavLink } from 'react-router-dom';
 import { routes } from 'constant/routes-detail-university';
 //importing local
 import Wrapper from 'modules/pages/detail-university/components/Wrapper';
+//internal components
+import { MyContainer } from 'theme/component/MyContainer';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +31,7 @@ function DetailUniversity(props) {
   ];
   return (
     <Wrapper>
-      <div className="wrap-detail-university">
+      <MyContainer className="wrap-detail-university">
         <ul className="nav-detail-university">
           {navigationDetailUniversity.map((item, index) => (
             <li key={index}>
@@ -59,7 +61,7 @@ function DetailUniversity(props) {
         {routes.map((route, index) => (
           <Route {...route} key={index} />
         ))}
-      </div>
+      </MyContainer>
     </Wrapper>
   );
 }

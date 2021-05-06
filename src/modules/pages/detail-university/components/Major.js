@@ -6,6 +6,7 @@ import detailUniversityQuery from 'query/detail-university';
 //internal components
 import LoadingIcon from 'common/loading/LoadingIcon';
 import Author from 'modules/pages/detail-university/common/Author';
+import { SubBox } from 'theme/component/SubBox';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -31,46 +32,48 @@ function Major() {
       <h1 className="container title-major">
         {t('detailUniversity.major.title')}
       </h1>
-      <table className="table-major">
-        <thead>
-          <th className="th-major" scope="col">
-            {t('detailUniversity.major.table.groupsOfDisciplines')}
-          </th>
-          <th className="th-major" scope="col">
-            {t('detailUniversity.major.table.major')}
-          </th>
-          <th className="th-major" scope="col">
-            {t('detailUniversity.major.table.subject')}
-          </th>
-          {/* <th className="th-major" >Điểm chuẩn</th> */}
-        </thead>
-        {!!contentMajor ? (
-          contentMajor.map((groupMajor, indexGroupMajor) => {
-            return (
-              <tbody className="tbody-major" key={indexGroupMajor}>
-                {groupMajor.majors.map((branchMajor, indexBranchMajor) => (
-                  <tr>
-                    {indexBranchMajor === 0 && (
-                      <th
-                        className="td-major"
-                        scope="row"
-                        rowspan={groupMajor.majors.length}
-                      >
-                        {' '}
-                        {groupMajor.name}{' '}
-                      </th>
-                    )}
-                    <td className="td-major">{branchMajor.name}</td>
-                    <td className="td-major">{branchMajor.subject}</td>
-                  </tr>
-                ))}
-              </tbody>
-            );
-          })
-        ) : (
-          <LoadingIcon />
-        )}
-      </table>
+      <SubBox>
+        <table className="table-major">
+          <thead>
+            <th className="th-major" scope="col">
+              {t('detailUniversity.major.table.groupsOfDisciplines')}
+            </th>
+            <th className="th-major" scope="col">
+              {t('detailUniversity.major.table.major')}
+            </th>
+            <th className="th-major" scope="col">
+              {t('detailUniversity.major.table.subject')}
+            </th>
+            {/* <th className="th-major" >Điểm chuẩn</th> */}
+          </thead>
+          {!!contentMajor ? (
+            contentMajor.map((groupMajor, indexGroupMajor) => {
+              return (
+                <tbody key={indexGroupMajor}>
+                  {groupMajor.majors.map((branchMajor, indexBranchMajor) => (
+                    <tr>
+                      {indexBranchMajor === 0 && (
+                        <th
+                          className="td-major"
+                          scope="row"
+                          rowspan={groupMajor.majors.length}
+                        >
+                          {' '}
+                          {groupMajor.name}{' '}
+                        </th>
+                      )}
+                      <td className="td-major">{branchMajor.name}</td>
+                      <td className="td-major">{branchMajor.subject}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              );
+            })
+          ) : (
+            <LoadingIcon />
+          )}
+        </table>
+      </SubBox>
       <button className="btn-major">
         {' '}
         {t('detailUniversity.major.btn.more')}

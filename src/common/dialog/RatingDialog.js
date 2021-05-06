@@ -96,7 +96,7 @@ function RatingDialog() {
         <div className="header-dialog-rating">
           <p className="title">{t('dialog.rating.title')}</p>
           <p>{t('dialog.rating.subtitle')}</p>
-          <p>{t('dialog.rating.subtitle2')}</p>
+          <p>{t('dialog.rating.subTitle2')}</p>
         </div>
       </DialogTitle>
       {/* body */}

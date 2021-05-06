@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 //internal modules
 import { commentMutation } from 'query/comment';
 import { commentQuery } from 'query/comment';
+//internal component
+import { SubBox } from 'theme/component/SubBox';
 //material-Ui components
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
@@ -60,12 +62,14 @@ function PostComment() {
 
   return (
     <div className=" group-input-post">
-      <textarea
-        type="text"
-        className="input-post"
-        placeholder={t('comment.formPost.placeholder')}
-        onChange={handleOnChange}
-      />
+      <SubBox>
+        <textarea
+          type="text"
+          className="input-post"
+          placeholder={t('comment.formPost.placeholder')}
+          onChange={handleOnChange}
+        />
+      </SubBox>
       <div className="bg-btn-post">
         <Button
           type="submit"

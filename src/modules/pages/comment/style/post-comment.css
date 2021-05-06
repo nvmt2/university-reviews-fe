@@ -12,8 +12,9 @@
   font-size: 16px;
   padding: 10px 10px 10px 10px;
   border-radius: 5px;
-  outline: thin;
-  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  outline: unset;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
 }
 
 .bg-btn-post {
@@ -51,7 +52,6 @@
 
 .footer-comment {
   margin-top: 20px;
-  margin-bottom: 20px;
   justify-content: center;
   display: flex;
 }
