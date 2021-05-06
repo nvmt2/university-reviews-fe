@@ -5,9 +5,12 @@ import { useParams } from 'react-router-dom';
 import { topicQuery } from 'query/topic';
 import MyProgress from 'common/loading/MyProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Categories(props) {
   //STATE
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { data, loading, error } = useQuery(topicQuery.GET_TAGS, {
     variables: {
@@ -24,7 +27,7 @@ function Categories(props) {
 
   return (
     <div>
-      <p className="title-categories-topic">Chuyên mục nổi bật</p>
+      <p className="title-categories-topic">{t('topic.categories.title')}</p>
       <div className="category-topic">
         {!!uniqueTags ? (
           uniqueTags.map((item, index) => (

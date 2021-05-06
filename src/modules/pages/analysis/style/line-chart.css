@@ -1,0 +1,7 @@
+.container-line-chart {
+  padding: 20px;
+  margin-bottom: 50px;
+
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+}

@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const GET_ALL_TOPICS = gql`
   query getAllTopics($id: ID, $tag: String) {
@@ -25,6 +25,7 @@ const GET_ALL_TOPICS = gql`
 const GET_TOPIC = gql`
   query getTopic($id: ID!) {
     Topic(where: { id: $id }) {
+      id
       title
       content
       tags

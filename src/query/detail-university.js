@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 const GET_INTRODUCE = gql`
   query getIntroduceUniversity($id: ID) {
@@ -66,11 +66,21 @@ const GET_UNIVERSITY = gql`
     }
   }
 `;
+const GET_NAME_CODE_OF_UNIVERSITY = gql`
+  query getNameAndCodeOfUniversity($idUni: ID!) {
+    University(where: { id: $idUni }) {
+      id
+      name
+      code
+    }
+  }
+`;
 const detailUniversityQuery = {
   GET_INTRODUCE,
   GET_MAJOR,
   GET_PARTNER,
   GET_GALLERY,
   GET_UNIVERSITY,
+  GET_NAME_CODE_OF_UNIVERSITY,
 };
 export default detailUniversityQuery;

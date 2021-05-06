@@ -15,8 +15,11 @@ import LockOpenIcon from '@material-ui/icons/LockOpen';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import GitHubIcon from '@material-ui/icons/GitHub';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function SignIn() {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const history = useHistory();
   let formSignIn = useRef(null);
@@ -70,34 +73,34 @@ function SignIn() {
             alt="logo"
           />
           <form onSubmit={sigin} className="form-SignIn">
-            <h2>Đăng nhập</h2>
+            <h2>{t('signIn.title')}</h2>
             <div className="form-group">
-              <span className="title-input">Email</span>
+              <span className="title-input">{t('signIn.email')}</span>
               <div className="SignIn-input">
                 <MailOutlineIcon />
                 <input
                   type="email"
                   name="email"
-                  placeholder="Nhập tài khoản Email"
+                  placeholder={t('signIn.placeHolder.email')}
                   onChange={handleOnChange}
                 />
               </div>
-              <span className="title-input">Mật khẩu</span>
+              <span className="title-input">{t('signIn.password')}</span>
               <div className="SignIn-input">
                 <LockOpenIcon />
                 <input
                   onChange={handleOnChange}
                   type="password"
                   name="passwordUser"
-                  placeholder="Nhập mật khẩu của bạn"
+                  placeholder={t('signIn.placeHolder.password')}
                 />
               </div>
               <a href="/" className="forgot">
-                Quên mật khẩu
+                {t('signIn.forgotPass')}
               </a>
-              <button className="done">Đăng nhập</button>
+              <button className="done">{t('signIn.btn.enter')}</button>
               <div className="infor-SignIn">
-                <p className="fl-me">Hoặc đăng nhập qua </p>
+                <p className="fl-me">{t('signIn.signInBy')}</p>
                 <ul className="social-group">
                   <li>
                     <a href="/">
@@ -116,10 +119,9 @@ function SignIn() {
                   </li>
                 </ul>
               </div>
-
               <div className="account-signIn">
-                <p className="q-account">Bạn chưa có tài khoản ?</p>
-                <NavLink to="/register">Đăng ký ngay</NavLink>
+                <p className="q-account">{t('signIn.askAccount')}</p>
+                <NavLink to="/register">{t('signIn.signUp')}</NavLink>
               </div>
             </div>
           </form>

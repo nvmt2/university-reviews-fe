@@ -7,10 +7,10 @@ import PostComment from 'modules/pages/comment/components/PostComment';
 import HeaderComment from 'modules/pages/comment/components/HeaderComment';
 import ContentComment from 'modules/pages/comment/components/ContentComment';
 import PaginationComment from 'modules/pages/comment/components/PaginationComment';
+import { MyContainer } from 'theme/component/MyContainer';
 //internal modules
 import { commentQuery } from 'query/comment';
 import { fetchCommentAction } from 'state/ducks/common/actions/comment';
-import 'modules/pages/comment/style/animationBorder.scss';
 //material-ui components
 import Alert from '@material-ui/lab/Alert';
 
@@ -41,7 +41,7 @@ const Index = () => {
   }, [data, loading, error, dispatch]);
 
   return (
-    <div className="comment">
+    <MyContainer>
       <HeaderComment />
       {/* Form which to post comment */}
       <div className="container body-comment">
@@ -64,7 +64,7 @@ const Index = () => {
         </div>
         <PaginationComment />
       </div>
-    </div>
+    </MyContainer>
   );
 };
 export default Index;

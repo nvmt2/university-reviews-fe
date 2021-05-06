@@ -1,0 +1,18 @@
+.header-analysis {
+  display: flex;
+  margin-bottom: 20px;
+}
+.header-analysis .__wrapper-note-uni {
+  border-radius: 5px;
+  width: 100%;
+  margin: 0 5px;
+  padding: 15px 15px 0px 15px;
+}
+.__wrapper-note-uni h6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: green;
+}
+.__wrapper-note-uni p {
+  color: #969696;
+}

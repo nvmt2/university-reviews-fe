@@ -9,9 +9,12 @@ import Author from 'modules/pages/detail-university/common/Author';
 //external components
 import GalleryImages from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway } from 'react-images';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Gallery() {
   //STATE
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { data, loading, error } = useQuery(detailUniversityQuery.GET_GALLERY, {
     variables: {
@@ -68,7 +71,7 @@ function Gallery() {
   return (
     <div className="gallery-container container">
       <Author />
-      <h1 className="title-galery">Các hoạt động của trường</h1>
+      <h1 className="title-galery">{t('detailUniversity.gallery.title')}</h1>
       {!!galleries ? (
         <div>
           {/* shows all of images on gallery */}

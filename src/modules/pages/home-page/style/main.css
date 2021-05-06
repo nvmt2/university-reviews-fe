@@ -1,0 +1,236 @@
+.body-homepage {
+  background: linear-gradient(rgb(255, 255, 255), #cad1cb);
+}
+#banner {
+  height: 215px;
+  margin-bottom: 50px;
+}
+#bg-banner {
+  background-image: url('/assets/home-page/banner_1.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.9;
+  margin-bottom: 50px;
+  height: 200px;
+  padding-top: 50px;
+}
+#banner h1 {
+  position: absolute;
+  top: 26px;
+  font-size: 60px;
+  color: #ffffff;
+  left: 515px;
+  /* box-shadow: 0px 10px 25px #ffffff;
+     */
+  text-shadow: 5px 5px 10px #4f8137;
+}
+#banner h3 {
+  position: absolute;
+  top: 105px;
+  font-size: 45px;
+  color: #ffffff;
+  left: 260px;
+}
+
+/* -------CardHome component ------ */
+
+.highlight-topic {
+  margin-bottom: 40px;
+  transition: all 0.25s;
+
+  padding: 15px 10px 5px 0px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  /* background-color: #ffffff;
+  border: 1px solid #e5e7eb; */
+}
+.body-card-home {
+  padding: 10px 20px;
+  margin: 0 2px;
+  border-bottom: 1px solid #8e8e8e41;
+}
+.body-card-home:hover {
+  /* box-shadow: 10px 10px 30px #696969; */
+  background-color: rgba(150, 190, 152, 0.2);
+  transition: all 0.25s;
+}
+
+#img-logo {
+  display: block;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  /* margin-top: 10px; */
+  padding-right: 5px;
+}
+#img-logo a {
+  display: block;
+}
+
+.university-name {
+  display: block;
+  color: #53a63a;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.university-name:hover {
+  color: #448b2f;
+}
+.highlight-topic span.address {
+  color: #007ac8;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.highlight-topic span.count-rate,
+.highlight-topic span.count-comment {
+  color: #8e8e8e;
+  font-size: 13px;
+}
+/* .padding-left-32 {
+    padding-left: 32px;
+  } */
+.highlight-topic p.demo-content {
+  font-size: 14px;
+  color: #8e8e8e;
+  margin-bottom: 5px;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: height 0.5s;
+  height: 20px;
+}
+p.demo-content:hover {
+  height: 80px;
+  /* white-space: normal;
+    overflow: unset; */
+}
+.highlight-topic a.detail-card-home {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 18px;
+}
+
+.highlight-topic button {
+  padding: 0px;
+  font-size: 20px;
+  float: right;
+}
+.highlight-topic button:hover {
+  color: #5d963f;
+}
+
+/* -----------Phân trang ---------- */
+.page-link {
+  color: #000000;
+  font-weight: 500;
+}
+.pagination-material {
+  margin-bottom: 50px;
+}
+
+/* --------------------Filter Form component ------------- */
+#sidebar {
+  z-index: 1000;
+}
+#sidebar #filter {
+  padding: 10px 0px;
+  width: 100%;
+  float: right;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  /* background: #ffffff;
+  border: 1px solid #e5e7eb; */
+}
+
+#sidebar #filter a.map {
+  color: #ffffff;
+  background-color: #5d963f;
+  width: 90%;
+  margin: 20px auto 10px auto;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 5px 0px;
+}
+/* .filter-form .form-group .locate {
+    text-align: left;
+    margin-left: 10px;
+  } */
+/* .filter-form .form-group .region {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 9px;
+  } */
+.locate.margin-r-10 {
+  margin-right: 13px;
+}
+
+/* .filter-form .form-group .locate input {
+    margin-right: 5px;
+  } */
+
+.page-item:hover > span,
+.page-item:hover > a {
+  color: #62b138 !important;
+}
+
+.btn-loc {
+  margin-left: 20% !important;
+  width: 60%;
+  color: #5d963f;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+}
+.btn-loc:hover {
+  transition: all 0.8s ease-in-out;
+  background-color: #5d963f;
+  color: #ffffff;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem #5d963f;
+}
+.filter-form fieldset {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+}
+.filter-form legend {
+  font-size: 16px;
+  font-weight: bold;
+}
+.filter-form {
+  padding: 20px;
+}
+.filter-form input,
+option,
+select,
+label {
+  margin-left: 5px;
+}
+#filter {
+  margin-bottom: 100px;
+}
+.fa-chevron-right {
+  margin-left: 5px;
+}
+.footer-card-home {
+  padding: 10px 10px;
+}
+.content-main-home {
+  min-height: 1000px;
+}
+
+.card-star {
+  outline: none;
+  border: none;
+}
+.favourite-bookmark button {
+  color: #8e8e8e;
+}

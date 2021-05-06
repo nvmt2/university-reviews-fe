@@ -1,0 +1,24 @@
+.body-dialog-rating {
+  padding: 10px 50px;
+}
+.body-dialog-rating > p {
+  font-weight: bold;
+  margin: 20px 0px 0px 0px;
+}
+.header-dialog-rating {
+  text-align: center;
+  padding: 0 50px;
+}
+.header-dialog-rating > p {
+  font-size: 15px;
+}
+.header-dialog-rating .title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.footer-dialog-rating {
+  padding: 0 60px;
+}
+.footer-dialog-rating button {
+  margin-left: 10px;
+}

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import parse from 'html-react-parser';
 import { useQuery } from '@apollo/client';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-//importing local file
+//internal modules
 import { topicMutation } from 'query/topic';
 import { topicQuery } from 'query/topic';
-import DialogUpdate from 'modules/pages/comment/components/DialogUpdate';
 import { myParseDate } from 'helper/parse';
 import { userProfileQueries } from 'query/user-profile';
-//importing material UI
+import { actionOpenDialogUpdateTopic } from 'state/ducks/common/actions/dialog';
+// material UI components
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ThumbDownAltOutlinedIcon from '@material-ui/icons/ThumbDownAltOutlined';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
@@ -20,11 +20,15 @@ import EditIcon from '@material-ui/icons/Edit';
 import Chip from '@material-ui/core/Chip';
 import DoneIcon from '@material-ui/icons/Done';
 import IconButton from '@material-ui/core/IconButton';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function HeaderComment() {
   //STATE
+  const { t } = useTranslation();
   const history = useHistory();
   const { slug } = useParams();
+  const dispatch = useDispatch();
   const idAuthor = useSelector((state) => state.login.data.id);
   //call api get one topic
   const { data, loading, error } = useQuery(topicQuery.GET_TOPIC, {
@@ -37,7 +41,6 @@ function HeaderComment() {
   const [deleteTopic, { data: response }] = useMutation(
     topicMutation.DELTETE_TOPIC
   );
-  const [openDialog, setOpenDialog] = useState(false);
   const [statusLike, setStatusLike] = useState({
     dislike: false,
     like: false,
@@ -65,12 +68,8 @@ function HeaderComment() {
       ],
     });
   };
-  // handle editor topic
-  const handleClickOpen = () => {
-    setOpenDialog(true);
-  };
-  const handleClose = () => {
-    setOpenDialog(false);
+  const handleClickOpenDialog = () => {
+    dispatch(actionOpenDialogUpdateTopic(contentHeaderComment));
   };
   // Authorization
   const checkAuthor = () => {
@@ -134,21 +133,14 @@ function HeaderComment() {
                   // }}
                   style={checkAuthor()}
                 >
-                  {/* start dialog */}
-                  <DialogUpdate
-                    open={openDialog}
-                    onClose={handleClose}
-                    data={contentHeaderComment}
-                  />
-                  {/* end dialog */}
                   <Button
                     size="small"
                     variant="outlined"
                     color="primary"
                     startIcon={<EditIcon />}
-                    onClick={handleClickOpen}
+                    onClick={handleClickOpenDialog}
                   >
-                    Chỉnh sửa
+                    {t('comment.header.btn.update')}
                   </Button>
                   <br />
                   <Button
@@ -158,7 +150,7 @@ function HeaderComment() {
                     startIcon={<DeleteIcon />}
                     onClick={handleDelete}
                   >
-                    Xóa
+                    {t('comment.header.btn.remove')}
                   </Button>
                 </div>
 

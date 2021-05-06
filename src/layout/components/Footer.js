@@ -1,6 +1,9 @@
 import React from 'react';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
+  const { t } = useTranslation();
   return (
     <footer id="footer" className="footer-1">
       <div className="main-footer widgets-dark typo-light">
@@ -9,91 +12,87 @@ function Footer() {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget subscribe no-box">
                 <h5 className="widget-title">
-                  NHÓM C1SE.04<span></span>
+                  {t('footer.group')}
+                  <span></span>
                 </h5>
-                <p>
-                  Là trang web cung cấp thông tin về các trường đại học, và nơi
-                  chia sẻ quan điểm...{' '}
-                </p>
+                <p>{t('footer.descriptionGroup')}</p>
               </div>
             </div>
 
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Truy cập nhanh<span></span>
+                  {t('footer.shortAccess')} <span></span>
                 </h5>
                 <ul className="thumbnail-widget">
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Trang chủ</a>
+                      <a href="#."> {t('footer.homepage')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Chi tiết trường học</a>
+                      <a href="#.">{t('footer.detailUni')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Bài đăng nổi bật</a>
+                      <a href="#.">{t('footer.post')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Đánh giá</a>
+                      <a href="#.">{t('footer.rate')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Khu vực</a>
+                      <a href="#.">{t('footer.zone')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Chuyên ngành</a>
+                      <a href="#.">{t('footer.major')}</a>
                     </div>
                   </li>
                   <li>
                     <div className="thumb-content">
-                      <a href="#.">Câu hỏi thường găp</a>
+                      <a href="#.">{t('footer.fqs')}</a>
                     </div>
                   </li>
                 </ul>
               </div>
             </div>
-
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Bắt đầu<span></span>
+                  {t('footer.start')}
+                  <span></span>
                 </h5>
-                <p>Đăng nhập để cùng trải nghiệm</p>
+                <p>{t('footer.descriptionStart')}</p>
                 <a className="btn btn-home-page" href="#." target="_blank">
-                  Register Now
+                  {t('footer.btn.signUp')}
                 </a>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">
-                  Liên lạc<span></span>
+                  {t('footer.contact')}
+                  <span></span>
                 </h5>
-                <p>cs1e.04@gmail.com</p>
+                <p> {t('footer.descriptionContact')}</p>
                 <ul className="social-footer2"></ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div className="footer-copyright">
         <div className="container">
           <div className="row">
             <div className="col-md-12 text-center">
-              <p>
-                @Bản quyền của nhóm CS1E.04 - mọi sự sao chép cần xin phép nhóm
-              </p>
+              <p>{t('footer.copyright')}</p>
             </div>
           </div>
         </div>

@@ -7,8 +7,13 @@ import { motion } from 'framer-motion';
 import { userEditorMutation } from 'query/user-editor';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
 import { pageTransition } from 'common/page-transition/configVarian';
+//internal components
+import { MyContainer } from 'theme/component/MyContainer';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function UserEditor() {
+  const { t } = useTranslation();
   //STATE
   const dispatch = useDispatch();
   const history = useHistory();
@@ -63,86 +68,88 @@ function UserEditor() {
   }, [data, error, loading]);
 
   return (
-    <motion.div
-      className="container user-editor"
-      initial="out"
-      animate="in"
-      exit="out"
-      variants={pageTransition}
-    >
-      <h1 className="text-center mt-5">Thiết lập tài khoản</h1>
-      <form className="form-user-editor">
-        <div id="thay-doi-avatar">
-          <div id="display-anh-dai-dien" className="mb-3">
-            <label>Ảnh đại diện :</label>
-            <img
-              id="outputUserProfile"
-              alt="profile user"
-              height="150px"
-              width="150px"
+    <MyContainer>
+      <motion.div
+        className="container user-editor"
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageTransition}
+      >
+        <h1 className="text-center">{t('userEditor.title')}</h1>
+        <form className="form-user-editor">
+          <div id="thay-doi-avatar">
+            <div id="display-anh-dai-dien" className="mb-3">
+              <label>{t('userEditor.titleImage')}</label>
+              <img
+                id="outputUserProfile"
+                alt="profile user"
+                height="150px"
+                width="150px"
+              />
+            </div>
+            <div id="them-anh" className="form-group ml-2">
+              <input type="file" accept="image/*" onChange={loadFile} />
+            </div>
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder={t('userEditor.placeHolder.name')}
+              className="form-control"
+              name="username"
+              onChange={handleOnChange}
             />
           </div>
-          <div id="them-anh" className="form-group ml-2">
-            <input type="file" accept="image/*" onChange={loadFile} />
+          <div className="form-group form-users">
+            <div className="row">
+              <input type="radio" name="gioitinh" id="nam" value="Nam" />
+              <label>{t('userEditor.placeHolder.male')}</label>
+            </div>
+            <div className="row">
+              <input type="radio" name="gioitinh" id="nu" value="Nu" />
+              <label>{t('userEditor.placeHolder.female')}</label>
+            </div>
           </div>
-        </div>
-        <div>
-          <input
-            type="text"
-            placeholder="Tên người dùng"
+          <textarea
+            name="moTa-thong-tin"
+            id="maTa"
+            cols="30"
+            rows="5"
+            placeholder={t('userEditor.placeHolder.description')}
             className="form-control"
-            name="username"
+          ></textarea>
+          <input
+            type="password"
+            id="upd-passwor-1"
+            placeholder={t('userEditor.placeHolder.password')}
+            className="form-control mb-3"
+            name="passwordUser"
             onChange={handleOnChange}
           />
-        </div>
-        <div className="form-group form-users">
-          <div className="row">
-            <input type="radio" name="gioitinh" id="nam" value="Nam" />
-            <label>Nam</label>
-          </div>
-          <div className="row">
-            <input type="radio" name="gioitinh" id="nu" value="Nu" />
-            <label>Nữ</label>
-          </div>
-        </div>
-        <textarea
-          name="moTa-thong-tin"
-          id="maTa"
-          cols="30"
-          rows="5"
-          placeholder="Mô tả thông tin về bạn .."
-          className="form-control"
-        ></textarea>
-        <input
-          type="password"
-          id="upd-passwor-1"
-          placeholder="Nhập mật khẩu"
-          className="form-control mb-3"
-          name="passwordUser"
-          onChange={handleOnChange}
-        />
-        {/* <input
+          {/* <input
           type="password"
           id="upd-password-2"
           placeholder="Nhập lại mật khẩu"
           className="form-control"
         /> */}
 
-        <div className="text-right">
-          <button id="btn-cap-nhat-tt" className="btn" onClick={handleUpdate}>
-            Cập nhật
+          <div className="text-right">
+            <button id="btn-cap-nhat-tt" className="btn" onClick={handleUpdate}>
+              {t('userEditor.btn.update')}
+            </button>
+          </div>
+          <hr />
+          <button
+            id="btn-huy-tt"
+            className="btn btn-outline-danger"
+            onClick={handleLogOut}
+          >
+            {t('userEditor.btn.signOut')}
           </button>
-        </div>
-        <hr />
-        <button
-          id="btn-huy-tt"
-          className="btn btn-outline-danger"
-          onClick={handleLogOut}
-        >
-          Đăng xuất
-        </button>
-      </form>
-    </motion.div>
+        </form>
+      </motion.div>
+    </MyContainer>
   );
 }
 

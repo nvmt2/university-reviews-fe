@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Lobster&display=swap');
 
 #form_thong_tin_LH {
   border: 0.5px solid #b8b8b8e0;
@@ -9,14 +9,14 @@
 }
 
 #form_thong_tin_LH #label_thong_tin_lien_he {
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
   font-size: 14px;
   font-weight: 600;
-  color: #6e6e6ec5;
+  color: #8e8e8e;
 }
 
 #form_thong_tin_LH .tieu-de-lien-he {
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
 }
 
 #form_thong_tin_LH .tieu-de-lien-he #doi-mau {
@@ -60,12 +60,12 @@
 #form_thong_tin_LH p.chi-tietLH,
 p.lable-dia-chi {
   margin: 0px;
-  font-family: "Libre Baskerville", serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
 }
 
 #form_thong_tin_LH p.chi-tietLH {
-  color: #6e6e6ec5;
+  color: #8e8e8e;
 }
 
 .form-group {

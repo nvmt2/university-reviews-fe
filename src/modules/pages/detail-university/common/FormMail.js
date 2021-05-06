@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import detailUniversityQuery from 'query/detail-university';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function FormMail() {
+  const { t } = useTranslation();
   const { slug } = useParams();
   const { data, loading, error } = useQuery(
     detailUniversityQuery.GET_UNIVERSITY,
@@ -19,10 +22,10 @@ function FormMail() {
     <div className="container">
       <div id="form_thong_tin_LH">
         <span id="label_thong_tin_lien_he" className=" d-block text-center">
-          THÔNG TIN LIÊN HỆ
+          {t('detailUniversity.formMail.subTitle')}
         </span>
         <h1 className="tieu-de-lien-he text-center mt-1">
-          <span id="doi-mau">Liên hệ</span> với chúng tôi
+          <span id="doi-mau"> {t('detailUniversity.formMail.title')}</span>
         </h1>
         <img id="trangtri" src="images/Image 26.png" alt="" />
         {!!contentAuthor ? (
@@ -31,21 +34,27 @@ function FormMail() {
               <span className="icon-LH">
                 <i className="fas fa-map-marker-alt"></i>
               </span>
-              <p className="lable-dia-chi text-center">Địa Chỉ</p>
+              <p className="lable-dia-chi text-center">
+                {t('detailUniversity.formMail.address')}
+              </p>
               <p className="chi-tietLH text-center">{contentAuthor.address}</p>
             </div>
             <div className="col-md-4">
               <span className="icon-LH">
                 <i className="fas fa-phone"></i>
               </span>
-              <p className="lable-dia-chi text-center">Điện Thoại</p>
+              <p className="lable-dia-chi text-center">
+                {t('detailUniversity.formMail.phone')}
+              </p>
               <p className="chi-tietLH text-center">09056633225</p>
             </div>
             <div className="col-md-4">
               <span className="icon-LH">
                 <i className="far fa-envelope"></i>
               </span>
-              <p className="lable-dia-chi text-center">Email</p>
+              <p className="lable-dia-chi text-center">
+                {t('detailUniversity.formMail.email')}
+              </p>
               <p className="chi-tietLH text-center">{contentAuthor.email}</p>
             </div>
           </div>
@@ -63,7 +72,9 @@ function FormMail() {
                   type="text"
                   className="form-control"
                   id="namehotenLH"
-                  placeholder="Họ và tên"
+                  placeholder={t(
+                    'detailUniversity.formMail.placeHolder.fullName'
+                  )}
                 />
               </div>
               <div className="form-group">
@@ -71,7 +82,7 @@ function FormMail() {
                   type="email"
                   className="form-control"
                   id="emailLH"
-                  placeholder="Email"
+                  placeholder={t('detailUniversity.formMail.placeHolder.email')}
                 />
               </div>
               <div className="form-group">
@@ -79,7 +90,7 @@ function FormMail() {
                   type="text"
                   className="form-control"
                   id="sdtLH"
-                  placeholder="Số điện thoại"
+                  placeholder={t('detailUniversity.formMail.placeHolder.phone')}
                 />
               </div>
               <div className="form-group">
@@ -88,11 +99,13 @@ function FormMail() {
                   id="noidungLH"
                   cols=""
                   rows="3"
-                  placeholder="Nội dung . . ."
+                  placeholder={t(
+                    'detailUniversity.formMail.placeHolder.content'
+                  )}
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-outline-success">
-                Gửi thông tin
+                {t('detailUniversity.formMail.btn.send')}
               </button>
             </form>
           </div>

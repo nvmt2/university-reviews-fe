@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 //internal modules
 import { commentMutation } from 'query/comment';
 import { commentQuery } from 'query/comment';
+//internal component
+import { SubBox } from 'theme/component/SubBox';
 //material-Ui components
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
@@ -13,9 +15,12 @@ import Alert from '@material-ui/lab/Alert';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
 function PostComment() {
   //STATE
+  const { t } = useTranslation();
   const idAuthor = useSelector((state) => state.login.data.id);
   const { slug } = useParams();
   const [createNewcomment, { data }] = useMutation(
@@ -57,12 +62,14 @@ function PostComment() {
 
   return (
     <div className=" group-input-post">
-      <textarea
-        type="text"
-        className="input-post"
-        placeholder="Viết bình luận ở đây..."
-        onChange={handleOnChange}
-      />
+      <SubBox>
+        <textarea
+          type="text"
+          className="input-post"
+          placeholder={t('comment.formPost.placeholder')}
+          onChange={handleOnChange}
+        />
+      </SubBox>
       <div className="bg-btn-post">
         <Button
           type="submit"
@@ -73,7 +80,7 @@ function PostComment() {
           size="small"
           color="primary"
         >
-          Đăng
+          {t('comment.formPost.btnPost')}
         </Button>
 
         <Collapse in={open}>
@@ -91,7 +98,7 @@ function PostComment() {
               </IconButton>
             }
           >
-            Đăng bình luận thành công !
+            {t('comment.formPost.notificationSuccess')}
           </Alert>
         </Collapse>
       </div>

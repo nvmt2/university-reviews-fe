@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 //internal modules
 import { fetchUniversityAction } from 'state/ducks/common/actions/home-page';
 import homepageQueries from 'query/homepage';
-import {
-  navigationUnAuthentication,
-  navigationAuthentication,
-} from 'constant/navigation';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
 //internal components
-import NotificationCard from 'common/card-notification';
+import NotificationCard from 'common/card/CardNotification';
 import NavBar from 'common/nav-link/NavBar';
+import SearchMaterial from 'common/search-form/SearchMaterial';
 //material-ui components
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -28,12 +26,15 @@ import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+//multiple i18n
+import { useTranslation } from 'react-i18next';
 
-const useStyles = makeStyles((theme) => ({
+const useAppBarStyle = makeStyles((theme) => ({
   displayInline: {
     display: 'block',
   },
-  backgorundHeader: {
+  backgroundHeader: {
     backgroundColor: '#374548',
   },
   grow: {
@@ -84,30 +85,56 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar(props) {
+  //STATE
+  const { t, i18n } = useTranslation();
+  const classes = useAppBarStyle();
+  const history = useHistory();
+  const state = useSelector((state) => state);
+  const navigationUnAuthentication = [
+    {
+      name: t('navigationAuthentication.signIn'),
+      to: '/login',
+    },
+    {
+      name: t('navigationAuthentication.signUp'),
+      to: '/register',
+    },
+  ];
+  const navigationAuthentication = [
+    {
+      name: t('navigationAuthentication.setting'),
+      to: '/user/editor',
+    },
+    {
+      name: t('navigationAuthentication.myPost'),
+      to: '/user',
+    },
+  ];
   let listAva = [
     {
       name: 'Minh Tới',
       src: '/assets/header/avatar/toi.jpg',
-      status: 'Đã bình luận Topic của bạn',
+      status: t('notification.comment'),
     },
     {
       name: 'Hữu Thiện',
       src: '/assets/header/avatar/thien.jpg',
-      status: 'Đã "like" một Topic của bạn',
+      status: t('notification.like'),
     },
     {
       name: 'Xuân Sang',
       src: '/assets/header/avatar/sang.jpg',
-      status: 'Đã "like" một Topic của bạn',
+      status: t('notification.like'),
     },
     {
       name: 'Qúy Thương',
       src: '/assets/header/avatar/thuong.jpg',
-      status: 'Đã bình luận Topic của bạn',
+      status: t('notification.comment'),
     },
   ];
-  const [contentSearch, setContentSearch] = React.useState({
+
+  const [contentSearch, setContentSearch] = useState({
     first: 5,
     skip: 0,
   });
@@ -120,20 +147,6 @@ export default function PrimarySearchAppBar() {
   );
   const dataApi = !loading && !error && !!data && data.allUniversities;
 
-  const handleOnchange = (e) => {
-    setContentSearch({
-      ...contentSearch,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const clickSearch = () => {
-    dispatch(fetchUniversityAction(dataApi));
-  };
-  useEffect(() => {}, [dispatch, contentSearch]);
-
-  const state = useSelector((state) => state);
-  const classes = useStyles();
-
   const [anchorElProfile, setAnchorElProfile] = React.useState(null);
   const [anchorElNotification, setAnchorElNotification] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -142,29 +155,10 @@ export default function PrimarySearchAppBar() {
   const isMenuNotificationOpen = Boolean(anchorElNotification);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
-    setAnchorElProfile(event.currentTarget); //pass position into
-  };
-  const handleNotificationMenuOpen = (event) => {
-    setAnchorElNotification(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
   const handleMenuClose = () => {
     setAnchorElProfile(null);
     setAnchorElNotification(null);
     handleMobileMenuClose();
-  };
-
-  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
-  const history = useHistory();
-  const handleLogout = () => {
-    dispatch(fetchAccountAction(false));
-    localStorage.removeItem('idUser');
-    history.push('/login');
   };
   const menuId = 'primary-search-account-menu';
   const renderMenuProfile = (
@@ -186,6 +180,7 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+
   const menuNotificationId = 'primary-search-account-menu';
   const renderMenuNotification = (
     <Menu
@@ -205,9 +200,71 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  //METHOD
+  const handleOnchange = (e) => {
+    setContentSearch({
+      ...contentSearch,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const clickSearch = () => {
+    dispatch(fetchUniversityAction(dataApi));
+  };
+  const handleProfileMenuOpen = (event) => {
+    setAnchorElProfile(event.currentTarget); //pass position into
+  };
+  const handleNotificationMenuOpen = (event) => {
+    setAnchorElNotification(event.currentTarget);
+  };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  // handle button Log out: dispath empty object into login state into reducer and remove localstorage[idUser]
+  const handleLogout = () => {
+    dispatch(fetchAccountAction(false));
+    localStorage.removeItem('idUser');
+    history.push('/login');
+  };
+  const changeLanguage = (e) => {
+    let lng = e.target.value;
+    i18n.changeLanguage(lng);
+  };
+  const items = [
+    {
+      id: 0,
+      name: 'Cobol',
+    },
+    {
+      id: 1,
+      name: 'JavaScript',
+    },
+    {
+      id: 2,
+      name: 'Basic',
+    },
+    {
+      id: 3,
+      name: 'PHP',
+    },
+    {
+      id: 4,
+      name: 'Java',
+    },
+  ];
+  const handleOnSearch = () => {
+    console.log('handleOnSearch');
+  };
+  const handleOnSelect = () => {
+    console.log('handleOnSelect');
+  };
+  const handleOnFocus = () => {
+    console.log('handleOnFocus');
+  };
   return (
     <div className={classes.grow}>
-      <AppBar position="static" className={classes.backgorundHeader}>
+      <AppBar position="static" className={classes.backgroundHeader}>
         <div className="container my-app-bar">
           <Toolbar>
             <Avatar
@@ -229,7 +286,9 @@ export default function PrimarySearchAppBar() {
                 URs
               </NavLink>
             </Typography>
-            <div className={classes.search}>
+            <SearchMaterial />
+
+            {/* <div className={classes.search}>
               <IconButton aria-label="search" onClick={clickSearch}>
                 <div className={classes.searchIcon}>
                   <SearchIcon />
@@ -245,10 +304,34 @@ export default function PrimarySearchAppBar() {
                 name="nameUniversity"
                 onChange={handleOnchange}
               />
-            </div>
+            </div> */}
+            {/* <div style={{ width: 400, heigh: 500 }}>
+              <ReactSearchAutocomplete
+                items={items}
+                onSearch={handleOnSearch}
+                onSelect={handleOnSelect}
+                onFocus={handleOnFocus}
+                autoFocus
+              />
+            </div> */}
+            <form className="form-list-lang">
+              {/* <img
+                src="/assets/header/Vietnam.jpg"
+                width="40px"
+                alt="logo vietnam"
+              /> */}
+              <select
+                name="language"
+                className="list-lang"
+                onChange={changeLanguage}
+              >
+                <option>vi</option>
+                <option>en</option>
+              </select>
+            </form>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              {!!state.login.data.id && (
+              {/* {!!state.login.data.id && (
                 <IconButton
                   aria-label="show notification about topics"
                   aria-controls={menuNotificationId}
@@ -260,7 +343,10 @@ export default function PrimarySearchAppBar() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-              )}
+              )} */}
+              <IconButton color="inherit" onClick={props.changeTheme}>
+                <Brightness4Icon />
+              </IconButton>
 
               <IconButton
                 edge="end"
