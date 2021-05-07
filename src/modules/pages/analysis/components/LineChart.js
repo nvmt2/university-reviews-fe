@@ -28,7 +28,7 @@ function LineChart() {
       curve: 'smooth',
     },
     xaxis: {
-      categories: ['31/12/2019', '31/12/2020', '31/12/2021'],
+      categories: ['2019', '2020', '2021'],
       tickAmount: 10,
       labels: {
         show: true,

@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 .topic {
-  background: url('/assets/topic/background_1.png');
+  /* background: url('/assets/topic/background_1.png'); */
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -82,20 +82,13 @@ html {
   padding: 0;
   content: none;
 }
-
 .group-topic {
   padding: 25px 35px 25px 35px;
   border-radius: 5px;
-  background-color: #ffffff;
   align-items: center;
   margin-bottom: 40px;
   height: auto;
   border: 1px solid green;
-}
-
-.group-topic:hover {
-  background: #f7fff4;
-  transition: all 0.3s;
 }
 
 .group-user {
@@ -112,7 +105,6 @@ html {
 .infor-user {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   padding-top: 10px;
   margin-left: 50px;
 }
@@ -129,7 +121,6 @@ html {
   color: #bbb;
   font-size: 0.8rem;
   display: block;
-  /* margin-left: -16px; */
 }
 
 .rating-topic {
@@ -139,14 +130,13 @@ html {
 .count-topic > svg {
   color: #53a63a;
   font-size: 15px;
-  justify-content: center;
-  /* text-align: center; */
+  /* justify-content: center; */
   margin-right: 1.5px;
 }
 
 .title-rating-topic {
   font-size: 12px;
-  color: #013248;
+  color: #8e8e8e;
 }
 
 .infor-topic {
@@ -156,13 +146,12 @@ html {
 .title-infor-topic {
   font-size: 18px;
   font-weight: 600;
-  color: #013248;
   margin-bottom: 3px;
 }
 
 .content-infor-topic {
   font-weight: 300;
-  color: rgb(109, 109, 109);
+  color: '#8e8e8e';
   margin-bottom: 15px;
   font-size: 1rem;
   line-height: 1.3rem;
@@ -201,23 +190,6 @@ html {
   background-color: #53a63a;
   color: #ffffff;
   transition: all 0.3s;
-}
-
-.group-categories-topic {
-  height: 370px;
-  background: #f3f3f3;
-  border-radius: 10px;
-  padding-left: 21px;
-  margin-left: 35px;
-}
-
-.title-categories-topic {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0px;
-  color: #1e221d;
-  margin-top: 16px;
-  margin-bottom: 0;
 }
 
 .category-topic {

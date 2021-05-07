@@ -125,10 +125,14 @@ function RatingDialog() {
       {/* end of body */}
       <DialogActions>
         <div className="footer-dialog-rating">
-          <Button color="secondary" variant="outlined" onClick={handleCancel}>
+          <Button
+            color="secondary"
+            variant="outlined"
+            onClick={handleClickRate}
+          >
             {t('dialog.rating.btn.rate')}
           </Button>
-          <Button color="primary" variant="outlined" onClick={handleClickRate}>
+          <Button color="primary" variant="outlined" onClick={handleCancel}>
             {t('dialog.rating.btn.cancel')}
           </Button>
         </div>

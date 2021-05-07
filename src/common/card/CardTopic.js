@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import parse from 'html-react-parser';
 //internal modules
 import { myParseDate } from 'helper/parse';
+//internal modules
+import { SubBox } from 'theme/component/SubBox';
 import { countStart } from 'helper/countStart';
 //material-UI components
 import Avatar from '@material-ui/core/Avatar';
@@ -24,7 +26,7 @@ function CardTopic(props) {
   } = props;
 
   return (
-    <div className="group-topic container">
+    <SubBox className="group-topic container">
       <div className="row">
         <div className="col-md-8 group-user ">
           <div className="ava-user">
@@ -72,7 +74,7 @@ function CardTopic(props) {
           </div>
         </div>
       </div>
-    </div>
+    </SubBox>
   );
 }
 export default CardTopic;
