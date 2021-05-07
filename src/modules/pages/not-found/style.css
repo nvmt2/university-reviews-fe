@@ -1,11 +1,11 @@
 .wrap-not-found {
   text-align: center;
-  padding-top: 100px;
-  padding-bottom: 60px;
+  padding: 200px 0;
 }
 .img-notFound {
-  width: 30%;
+  width: 40%;
   height: auto;
+  margin-left: 50px;
 }
 .text-not-found {
   font-weight: 700;

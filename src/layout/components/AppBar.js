@@ -344,7 +344,7 @@ export default function PrimarySearchAppBar(props) {
                   </Badge>
                 </IconButton>
               )} */}
-              <IconButton color="inherit" onClick={props.changeTheme}>
+              <IconButton onClick={props.changeTheme}>
                 <Brightness4Icon />
               </IconButton>
 
@@ -354,12 +354,11 @@ export default function PrimarySearchAppBar(props) {
                 aria-controls={menuId}
                 aria-haspopup="true"
                 onClick={handleProfileMenuOpen} //handle event passing position into state
-                color="inherit"
               >
                 <MenuIcon />
               </IconButton>
               {!!state.login.data.id && (
-                <IconButton color="inherit" onClick={handleLogout}>
+                <IconButton onClick={handleLogout}>
                   <ExitToAppIcon />
                 </IconButton>
               )}

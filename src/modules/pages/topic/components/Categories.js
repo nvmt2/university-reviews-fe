@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { topicQuery } from 'query/topic';
 import MyProgress from 'common/loading/MyProgress';
 import LinearProgress from '@material-ui/core/LinearProgress';
+//internal components
+import { SubBox } from 'theme/component/SubBox';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -26,7 +28,7 @@ function Categories(props) {
     );
 
   return (
-    <div>
+    <SubBox className="group-categories-topic">
       <p className="title-categories-topic">{t('topic.categories.title')}</p>
       <div className="category-topic">
         {!!uniqueTags ? (
@@ -44,7 +46,7 @@ function Categories(props) {
           <h1>...</h1>
         )}
       </div>
-    </div>
+    </SubBox>
   );
 }
 

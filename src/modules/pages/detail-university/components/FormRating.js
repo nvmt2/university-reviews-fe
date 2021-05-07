@@ -178,7 +178,7 @@ function FormRating() {
           : t('detailUniversity.formRating.btn.rate')}
       </Button>
       {isRating === 'unAuthentication' && (
-        <AlertAuthor label="để đánh giá!" severity="success" />
+        <AlertAuthor label="để đánh giá!" variant="outlined" />
       )}
     </div>
 

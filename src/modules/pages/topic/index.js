@@ -8,6 +8,7 @@ import Categories from 'modules/pages/topic/components/Categories';
 import CardTopic from 'common/card/CardTopic';
 import Banner from 'modules/pages/topic/components/Banner';
 import LoadingIcon from 'common/loading/LoadingIcon';
+import { MyContainer } from 'theme/component/MyContainer';
 //material-ui components
 import Pagination from '@material-ui/lab/Pagination';
 
@@ -39,39 +40,41 @@ function Topic() {
   }, [data, loading, error, tag]); // render when data, loading or error variables have a new value
 
   return (
-    <div className="topic">
-      {!!nameUniversity && <Banner name={nameUniversity} />}
-      <div className="container">
-        <div className="main-topic">
-          <div className="row">
-            <div className="col-md-8 items-topics">
-              {!!contentTopic ? (
-                contentTopic.map((item, index) => (
-                  <CardTopic key={index} {...item} />
-                ))
-              ) : (
-                <LoadingIcon />
-              )}
-            </div>
-            {/* show list tags at right */}
-            <div className="col-md-3 group-categories-topic">
-              <Categories handleEvent={handleClickTag} />
-            </div>
-            <div className="col-md-8 mb-5 ">
-              <div style={{ width: '50%', margin: 'auto' }}>
-                <Pagination
-                  count={2}
-                  color="primary"
-                  shape="rounded"
-                  variant="outlined"
-                  size="medium"
-                />
+    <MyContainer>
+      <div className="topic">
+        {!!nameUniversity && <Banner name={nameUniversity} />}
+        <div className="container">
+          <div className="main-topic">
+            <div className="row">
+              <div className="  col-md-8 items-topics">
+                {!!contentTopic ? (
+                  contentTopic.map((item, index) => (
+                    <CardTopic key={index} {...item} />
+                  ))
+                ) : (
+                  <LoadingIcon />
+                )}
+              </div>
+              {/* show list tags at right */}
+              <div className="col-md-3">
+                <Categories handleEvent={handleClickTag} />
+              </div>
+              <div className="col-md-8 mb-5 ">
+                <div style={{ width: '50%', margin: 'auto' }}>
+                  <Pagination
+                    count={2}
+                    color="primary"
+                    shape="rounded"
+                    variant="outlined"
+                    size="medium"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </MyContainer>
   );
 }
 export default Topic;

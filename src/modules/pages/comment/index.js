@@ -8,6 +8,7 @@ import HeaderComment from 'modules/pages/comment/components/HeaderComment';
 import ContentComment from 'modules/pages/comment/components/ContentComment';
 import PaginationComment from 'modules/pages/comment/components/PaginationComment';
 import { MyContainer } from 'theme/component/MyContainer';
+import AlertAuthor from 'common/alert/AlertAuthor';
 //internal modules
 import { commentQuery } from 'query/comment';
 import { fetchCommentAction } from 'state/ducks/common/actions/comment';
@@ -48,10 +49,7 @@ const Index = () => {
         {!!author ? (
           <PostComment />
         ) : (
-          <Alert color="info">
-            <NavLink to="/login">Đăng nhập</NavLink>{' '}
-            <span>để có thể bình luận</span>
-          </Alert>
+          <AlertAuthor label="để có thể bình luận!" variant="outlined" />
         )}
 
         {/* Block of content comments */}
