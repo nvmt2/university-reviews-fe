@@ -6,9 +6,12 @@ import { actionCloseDialog } from 'state/ducks/common/actions/dialog';
 import { topicMutation, topicQuery } from 'query/topic';
 import { userProfileQueries } from 'query/user-profile';
 import { myGetDate } from 'helper/getDate';
+import { validEmail } from 'mixin/validation';
+import { typeOfValidation } from 'mixin/typeOfValidation';
 //internal component
 import AlertAuthor from 'common/alert/AlertAuthor';
 import TitleDialog from 'common/dialog/TitleDialog';
+import MyTextField from 'common/text-field/MyTextField';
 //material-ui component
 import { makeStyles } from '@material-ui/core';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -42,6 +45,7 @@ function NewPostDialog() {
     'thân thiện',
     'hài hước',
   ]);
+  const [isError, setIsError] = useState();
   const [input, setInput] = useState({
     title: '',
     content: '',
@@ -57,6 +61,17 @@ function NewPostDialog() {
   const handleClose = () => {
     dispatch(actionCloseDialog());
   };
+  //validate email
+  const validateEmail = (event) => {
+    let v = event.target.value;
+    validEmail(v) ? setIsError(false) : setIsError(true);
+
+    // setInput({
+    //   ...input,
+    //   [event.target.name]: event.target.value,
+    // }) &&
+  };
+
   const handleClickPost = () => {
     if (input.content === '' || input.title === '') {
       alert('Phải điền tiều đề và nội dung của bài đăng');
@@ -93,33 +108,31 @@ function NewPostDialog() {
           <DialogContent dividers>
             <form className={classes.myForm}>
               <div>
-                <TextField
+                <MyTextField
+                  type="text"
+                  fullWidth
                   label={t('formCreate.placeHolder.topic')}
                   variant="outlined"
-                  fullWidth
                   name="title"
-                  onChange={(e) =>
-                    setInput({
-                      ...input,
-                      [e.target.name]: e.target.value,
-                    })
-                  }
+                  helperText="Invalid field"
+                  typeValid={typeOfValidation.VALID_WHITE_SPACE}
+                  onSetState={setInput}
+                  onState={input}
                 />
               </div>
               <div>
-                <TextField
-                  label={t('formCreate.placeHolder.content')}
-                  variant="outlined"
+                <MyTextField
+                  type="text"
                   fullWidth
                   multiline
                   rows={15}
+                  label={t('formCreate.placeHolder.content')}
+                  variant="outlined"
                   name="content"
-                  onChange={(e) =>
-                    setInput({
-                      ...input,
-                      [e.target.name]: e.target.value,
-                    })
-                  }
+                  helperText="Invalid field"
+                  typeValid={typeOfValidation.VALID_WHITE_SPACE}
+                  onSetState={setInput}
+                  onState={input}
                 />
               </div>
               <div>
@@ -172,7 +185,7 @@ function NewPostDialog() {
             <Typography>{t('formCreate.title')}</Typography>
           </TitleDialog>
           <DialogContent>
-            <AlertAuthor label="để có thể viết bài!" />
+            <AlertAuthor label="để có thể viết bài!" variant="outlined" />
           </DialogContent>
         </div>
       )}

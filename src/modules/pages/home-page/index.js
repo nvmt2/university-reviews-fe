@@ -75,7 +75,6 @@ function HomePage() {
       <MyContainer>
         <Banner />
         <div className="container">
-          <NavLink to="/analysis">Phân tích </NavLink>
           <div className="row">
             <div className="col-md-3 p-0" id="sidebar">
               <FilterBar />

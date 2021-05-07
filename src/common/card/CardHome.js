@@ -22,7 +22,11 @@ import {
 import { getAverageTotalRating } from 'helper/getAverageRating';
 //internal components
 import { SubBox } from 'theme/component/SubBox';
-//material-ui component
+//material components
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
+import Button from '@material-ui/core/Button';
+//material-ui icons
 import IconButton from '@material-ui/core/IconButton';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined';
@@ -42,7 +46,17 @@ function CardHome(props) {
   const [addFavoriteUniversity, { data }] = useMutation(
     userProfileMutation.ADD_FAVORITE_UNI
   );
+  const [openSnack, setOpenSnack] = useState(false);
+  const link = <NavLink to="/analysis">Đi đến trang phân tích </NavLink>;
+
   //METHOD
+  const handleCloseSnack = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenSnack(false);
+  };
   const handleClickMark = async () => {
     setMark(!mark);
     addFavoriteUniversity({
@@ -82,6 +96,7 @@ function CardHome(props) {
   };
 
   const handleAddUni = async () => {
+    setOpenSnack(true);
     // getBasicInfoUni();
     const { data } = await client.query({
       query: detailUniversityQuery.GET_NAME_CODE_OF_UNIVERSITY,
@@ -201,6 +216,28 @@ function CardHome(props) {
               >
                 <AssessmentOutlinedIcon />
               </IconButton>
+              <Snackbar
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'right',
+                }}
+                open={openSnack}
+                autoHideDuration={1500}
+                onClose={handleCloseSnack}
+                message={link}
+                action={
+                  <React.Fragment>
+                    <IconButton
+                      size="small"
+                      aria-label="close"
+                      color="inherit"
+                      onClick={handleCloseSnack}
+                    >
+                      <CloseIcon fontSize="small" />
+                    </IconButton>
+                  </React.Fragment>
+                }
+              />
               <IconButton
                 onClick={handleRemoveUni}
                 style={{

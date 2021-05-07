@@ -6,8 +6,10 @@ import { useSelector } from 'react-redux';
 //internal modules
 import { commentMutation } from 'query/comment';
 import { commentQuery } from 'query/comment';
+import { typeOfValidation } from 'mixin/typeOfValidation';
 //internal component
 import { SubBox } from 'theme/component/SubBox';
+import MyTextField from 'common/text-field/MyTextField';
 //material-Ui components
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
@@ -63,11 +65,24 @@ function PostComment() {
   return (
     <div className=" group-input-post">
       <SubBox>
-        <textarea
+        {/* <textarea
           type="text"
           className="input-post"
           placeholder={t('comment.formPost.placeholder')}
           onChange={handleOnChange}
+        /> */}
+        <MyTextField
+          multiline
+          rows={5}
+          type="text"
+          fullWidth
+          label={t('comment.formPost.placeholder')}
+          variant="outlined"
+          name="title"
+          helperText="Invalid field"
+          typeValid={typeOfValidation.VALID_WHITE_SPACE}
+          onSetState={setComment}
+          onState={comment}
         />
       </SubBox>
       <div className="bg-btn-post">

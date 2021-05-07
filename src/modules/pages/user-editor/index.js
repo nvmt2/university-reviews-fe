@@ -7,8 +7,10 @@ import { motion } from 'framer-motion';
 import { userEditorMutation } from 'query/user-editor';
 import { fetchAccountAction } from 'state/ducks/common/actions/login';
 import { pageTransition } from 'common/page-transition/configVarian';
+import { typeOfValidation } from 'mixin/typeOfValidation';
 //internal components
 import { MyContainer } from 'theme/component/MyContainer';
+import MyTextField from 'common/text-field/MyTextField';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -93,12 +95,23 @@ function UserEditor() {
             </div>
           </div>
           <div>
-            <input
+            {/* <input
               type="text"
               placeholder={t('userEditor.placeHolder.name')}
               className="form-control"
               name="username"
               onChange={handleOnChange}
+            /> */}
+            <MyTextField
+              type="text"
+              fullWidth
+              label={t('userEditor.placeHolder.name')}
+              variant="outlined"
+              name="username"
+              helperText="Invalid field"
+              typeValid={typeOfValidation.VALID_WHITE_SPACE}
+              onSetState={setFormData}
+              onState={formData}
             />
           </div>
           <div className="form-group form-users">
@@ -111,22 +124,44 @@ function UserEditor() {
               <label>{t('userEditor.placeHolder.female')}</label>
             </div>
           </div>
-          <textarea
+          <MyTextField
+            type="text"
+            multiline
+            rows={10}
+            fullWidth
+            label={t('userEditor.placeHolder.description')}
+            variant="outlined"
+            name="descriptionInfo"
+            helperText="Invalid field"
+            typeValid={typeOfValidation.VALID_WHITE_SPACE}
+          />
+          <MyTextField
+            type="password"
+            fullWidth
+            label={t('userEditor.placeHolder.password')}
+            variant="outlined"
+            name="passwordUser"
+            helperText="Invalid password"
+            typeValid={typeOfValidation.VALID_PASSWORD}
+            onSetState={setFormData}
+            onState={formData}
+          />
+          {/* <textarea
             name="moTa-thong-tin"
             id="maTa"
             cols="30"
             rows="5"
             placeholder={t('userEditor.placeHolder.description')}
             className="form-control"
-          ></textarea>
-          <input
+          ></textarea> */}
+          {/* <input
             type="password"
             id="upd-passwor-1"
             placeholder={t('userEditor.placeHolder.password')}
             className="form-control mb-3"
             name="passwordUser"
             onChange={handleOnChange}
-          />
+          /> */}
           {/* <input
           type="password"
           id="upd-password-2"
