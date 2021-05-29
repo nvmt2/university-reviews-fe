@@ -25,8 +25,8 @@ const useSearchFormStyle = makeStyles((theme) => ({
     zIndex: 99,
   },
   search: {
-    width: '60%',
-    margin: '0 30px',
+    width: '50%',
+    margin: '0px 20px 0px 60px',
     position: 'relative',
 
     '& input': {

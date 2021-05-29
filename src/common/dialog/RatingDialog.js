@@ -95,6 +95,11 @@ function RatingDialog() {
       <DialogTitle id="customized-dialog-title" onClose={handleClose}>
         <div className="header-dialog-rating">
           <p className="title">{t('dialog.rating.title')}</p>
+          <img
+            src="/assets/detail-university/form-rating/5.png"
+            className="plants-image"
+            alt="plants green"
+          />
           <p>{t('dialog.rating.subtitle')}</p>
           <p>{t('dialog.rating.subTitle2')}</p>
         </div>
@@ -103,6 +108,7 @@ function RatingDialog() {
       <DialogContent dividers>
         <div className="body-dialog-rating">
           <p>{t('dialog.rating.qualityOfEducation')}</p>
+
           <SliderRating
             onChange={(e, val) => handleChangeStart(val, 'qualityOfEducation')}
           />

@@ -113,13 +113,13 @@ p.demo-content:hover {
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
-  margin-left: 18px;
+  /* margin-left: 18px; */
 }
 
 .highlight-topic button {
-  padding: 0px;
-  font-size: 20px;
-  float: right;
+  /* padding: 0px;
+  float: left;
+  margin-right: 50px; */
 }
 .highlight-topic button:hover {
   color: #5d963f;
@@ -221,7 +221,7 @@ label {
   margin-left: 5px;
 }
 .footer-card-home {
-  padding: 10px 10px;
+  padding: 5px;
 }
 .content-main-home {
   min-height: 1000px;
@@ -231,6 +231,54 @@ label {
   outline: none;
   border: none;
 }
+.favourite-bookmark {
+  display: flex;
+  justify-content: space-around;
+}
 .favourite-bookmark button {
   color: #8e8e8e;
+}
+.mbti {
+  position: fixed;
+  bottom: 45px;
+  right: 30px;
+
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: #08639c;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+.mbti:hover {
+  background-color: #075383;
+}
+.mbti-table {
+  position: fixed;
+  bottom: 45px;
+  right: 90px;
+
+  padding: 10px 5px;
+  border-radius: 5px;
+  /* border: none; */
+  background-color: #08639c;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+.chatbot {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+
+  padding: 13px;
+  border-radius: 50px;
+  border: none;
+  background-color: #08639c;
+  color: white;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+.chatbot a {
+  color: white;
 }

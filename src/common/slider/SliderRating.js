@@ -40,6 +40,7 @@ export default function SliderRating(props) {
       <PrettoSlider
         valueLabelDisplay="auto"
         aria-label="pretto slider"
+        defaultValue={5}
         min={1}
         max={5}
         step={1}

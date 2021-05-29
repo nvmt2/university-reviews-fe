@@ -47,7 +47,7 @@ function CardHome(props) {
     userProfileMutation.ADD_FAVORITE_UNI
   );
   const [openSnack, setOpenSnack] = useState(false);
-  const link = <NavLink to="/analysis">Đi đến trang phân tích </NavLink>;
+  let link = <NavLink to="/analysis">Đi đến trang phân tích </NavLink>;
 
   //METHOD
   const handleCloseSnack = (event, reason) => {
@@ -57,7 +57,7 @@ function CardHome(props) {
 
     setOpenSnack(false);
   };
-  const handleClickMark = async () => {
+  const handleClickMark = () => {
     setMark(!mark);
     addFavoriteUniversity({
       variables: { idUni: id, idUser: localStorage.getItem('idUser') },
@@ -186,36 +186,54 @@ function CardHome(props) {
             </span>
 
             <p className="demo-content">{introduce}</p>
+            <NavLink
+              className="detail-card-home"
+              to={(location) => {
+                return {
+                  pathname: `/detail-university/${id}`,
+                };
+              }}
+              onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
+            >
+              {t('cardHome.detail')}
+            </NavLink>
+
+            <i className="fas fa-chevron-right"></i>
           </div>
         </div>
         <div className="row">
           <div className="offset-md-1 col-md-11 footer-card-home">
-            {
-              <NavLink
-                className="detail-card-home"
-                to={(location) => {
-                  return {
-                    pathname: `/detail-university/${id}`,
-                  };
-                }}
-                onClick={() => localStorage.setItem('slugUniversity', id)} //pass id university to localStorage so that it resolve matching url at detail-university/index directory
-              >
-                {t('cardHome.detail')}
-              </NavLink>
-            }
-            <i className="fas fa-chevron-right"></i>
             <div className="favourite-bookmark">
               {/* icon button for mark favorite university */}
-              <IconButton onClick={handleClickMark}>
-                <BookmarkBorderIcon style={{ color: mark ? 'blue' : '' }} />
-              </IconButton>
-              {/* icon button for analysis */}
-              <IconButton
-                onClick={handleAddUni}
-                style={{ display: isSelected ? 'none' : 'block' }}
+              <div
+                style={{
+                  display: localStorage.getItem('idUser') ? 'block' : 'none',
+                }}
               >
-                <AssessmentOutlinedIcon />
-              </IconButton>
+                <Button
+                  onClick={handleClickMark}
+                  startIcon={
+                    <BookmarkBorderIcon style={{ color: mark && '#53a63a' }} />
+                  }
+                  // size="large"
+                >
+                  <span style={{ color: mark && '#53a63a' }}>
+                    {t('cardHome.btn.save')}
+                  </span>
+                </Button>
+              </div>
+
+              {/* icon button for analysis */}
+              <div style={{ display: isSelected ? 'none' : 'block' }}>
+                <Button
+                  onClick={handleAddUni}
+                  startIcon={<AssessmentOutlinedIcon />}
+                  // size="large"
+                >
+                  {t('cardHome.btn.analysis')}
+                </Button>
+              </div>
+
               <Snackbar
                 anchorOrigin={{
                   vertical: 'bottom',
@@ -238,15 +256,21 @@ function CardHome(props) {
                   </React.Fragment>
                 }
               />
-              <IconButton
-                onClick={handleRemoveUni}
+              <div
                 style={{
                   display: isSelected ? 'block' : 'none',
-                  color: '#53a63a',
                 }}
               >
-                <AssessmentOutlinedIcon />
-              </IconButton>
+                <Button
+                  onClick={handleRemoveUni}
+                  style={{
+                    color: '#53a63a',
+                  }}
+                  startIcon={<AssessmentOutlinedIcon />}
+                >
+                  {t('cardHome.btn.unAnalysis')}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
