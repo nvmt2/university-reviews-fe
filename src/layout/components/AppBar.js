@@ -21,12 +21,14 @@ import InputBase from '@material-ui/core/InputBase';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import MenuIcon from '@material-ui/icons/Menu';
+import Avatar from '@material-ui/core/Avatar';
+//material-ui icons
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import Avatar from '@material-ui/core/Avatar';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
+import MenuIcon from '@material-ui/icons/Menu';
+
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -100,6 +102,10 @@ export default function PrimarySearchAppBar(props) {
       name: t('navigationAuthentication.signUp'),
       to: '/register',
     },
+    {
+      name: t('navigationAuthentication.analysis'),
+      to: '/analysis',
+    },
   ];
   const navigationAuthentication = [
     {
@@ -109,6 +115,10 @@ export default function PrimarySearchAppBar(props) {
     {
       name: t('navigationAuthentication.myPost'),
       to: '/user',
+    },
+    {
+      name: t('navigationAuthentication.analysis'),
+      to: '/analysis',
     },
   ];
   let listAva = [

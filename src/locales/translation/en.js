@@ -180,6 +180,11 @@ export const assetsEnglish = {
     rating: 'rating',
     comment: 'comments',
     detail: 'More detail',
+    btn: {
+      save: 'SAVE',
+      analysis: 'ADD INTO ANALYSIS',
+      unAnalysis: 'REMOVE FROM ANALYSIS',
+    },
   },
   formCreate: {
     title: 'POSTING',
@@ -286,6 +291,7 @@ export const assetsEnglish = {
     signUp: 'Sign Up',
     setting: 'Account setting',
     myPost: 'My post',
+    analysis: 'Analysic',
   },
   notification: {
     comment: ' has commented on your post',
@@ -306,6 +312,16 @@ export const assetsEnglish = {
         rate: 'RATE',
         cancel: 'CANCEL',
       },
+    },
+  },
+  mbti: {
+    title: 'What personality group do you belong to?',
+    survey: 'If not know, press into here',
+    group: {
+      one: 'GROUP 1 (ESFP, INFJ)',
+      two: 'GROUP 2  (ISFJ, ISFP, ENFJ, INFP)',
+      three: 'GROUP 3  (INTJ, ENTJ, ENFP, ISTP, ENTP)',
+      four: 'GROUP 4  (ISTJ, ESTJ, ESTP, ESFJ, INTP)',
     },
   },
 };

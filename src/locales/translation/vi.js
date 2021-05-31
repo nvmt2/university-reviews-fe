@@ -179,6 +179,11 @@ export const assetsVietnamese = {
     rating: 'đánh giá',
     comment: 'bình luận',
     detail: 'Chi tiết',
+    btn: {
+      save: 'LƯU',
+      analysis: 'THÊM VÀO SO SÁNH',
+      unAnalysis: 'XÓA KHỎI SO SÁNH',
+    },
   },
   formCreate: {
     title: 'ĐĂNG BÀI',
@@ -285,6 +290,7 @@ export const assetsVietnamese = {
     signUp: 'Đăng ký',
     setting: 'Thiết lập tài khoản',
     myPost: 'Bài viết cá nhân',
+    analysis: 'Phân tích',
   },
   notification: {
     comment: 'Đã bình luận Topic của bạn',
@@ -305,6 +311,16 @@ export const assetsVietnamese = {
         rate: 'Đánh giá',
         cancel: 'Hủy',
       },
+    },
+  },
+  mbti: {
+    title: 'Bạn thuộc nhóm tính cách nào?',
+    survey: 'Nếu chưa biết, bấm vào đây',
+    group: {
+      one: 'NHÓM 1 (ESFP, INFJ)',
+      two: 'NHÓM 2  (ISFJ, ISFP, ENFJ, INFP)',
+      three: 'NHÓM 3  (INTJ, ENTJ, ENFP, ISTP, ENTP)',
+      four: 'NHÓM 4  (ISTJ, ESTJ, ESTP, ESFJ, INTP)',
     },
   },
 };

@@ -13,7 +13,7 @@ function MyLayout(props) {
       <AppBar changeTheme={props.changeTheme} />
       <div id="children" className="child-layout">
         {/* button scoll up */}
-        <ScrollToTop showUnder={160}>
+        <ScrollToTop showUnder={160} style={{ bottom: 165 }}>
           <Fab size="medium" color="primary" aria-label="scoll-top">
             <div className="rotate-icon">
               <ExpandLessOutlinedIcon />

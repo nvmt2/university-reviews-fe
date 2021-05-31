@@ -14,11 +14,18 @@
 }
 .header-dialog-rating .title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
+  /* color: #5d963f; */
 }
 .footer-dialog-rating {
   padding: 0 60px;
 }
 .footer-dialog-rating button {
   margin-left: 10px;
+}
+.plants-image {
+  width: 25%;
+  height: auto;
+  margin: -9px auto 5px auto;
+  display: block;
 }

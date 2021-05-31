@@ -1,7 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 // react-redux
-import { store } from 'state/index';
+import { store, persistor } from 'state/index';
+// redux-persist
+import { PersistGate } from 'redux-persist/lib/integration/react';
 // react-router
 import RouteWrapper from 'route/RouterWrapper';
 // graphQL
@@ -48,7 +50,9 @@ function App() {
           <I18nextProvider i18n={i18n}>
             <ApolloProvider client={apolloClient}>
               <Provider store={store}>
-                <RouteWrapper changeTheme={setTheme} />
+                <PersistGate loading={<h5>Loading</h5>} persistor={persistor}>
+                  <RouteWrapper changeTheme={setTheme} />
+                </PersistGate>
               </Provider>
             </ApolloProvider>
           </I18nextProvider>
