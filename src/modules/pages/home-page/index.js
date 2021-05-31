@@ -14,8 +14,10 @@ import Banner from 'modules/pages/home-page/components/Banner';
 //material UI component
 import Pagination from '@material-ui/lab/Pagination';
 import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 //material icon
 import ChatBubbleIcon from '@material-ui/icons/ChatBubble';
+import CloseIcon from '@material-ui/icons/Close';
 //multiple i18n
 import { useTranslation } from 'react-i18next';
 
@@ -44,22 +46,22 @@ function HomePage() {
     one: {
       first: 5,
       skip: 0,
-      name_major: 'Công nghệ thông tin',
+      name_major: 'Nghệ thuật - Thẩm mỹ - Đồ họa',
     },
     two: {
       first: 5,
       skip: 0,
-      name_major: 'Luật',
+      name_major: 'Báo chí - Khoa học và xã hội',
     },
     three: {
       first: 5,
       skip: 0,
-      name_major: '',
+      name_major: 'Công nghệ thông tin',
     },
     four: {
       first: 5,
       skip: 0,
-      name_major: '',
+      name_major: 'Kinh doanh',
     },
   };
   let urlMBTI =
@@ -85,6 +87,12 @@ function HomePage() {
         break;
       case 2:
         setParamPagination(groupMBTI.two);
+        break;
+      case 3:
+        setParamPagination(groupMBTI.three);
+        break;
+      case 4:
+        setParamPagination(groupMBTI.four);
         break;
       default:
         return null;
@@ -162,23 +170,33 @@ function HomePage() {
         className="mbti-table"
         style={{ display: isOpen ? 'block' : 'none' }}
       >
-        <button onClick={closeMBTI}> close</button>
-        <p> {t('mbti.title')}</p>
-        <a href={urlMBTI} target="_black">
-          {t('mbti.survey')}
-        </a>
-        <br />
-        <Button onClick={() => handleChooseMBTI(1)}>
-          {t('mbti.group.one')}
-        </Button>
-        <br />
-        <Button onClick={() => handleChooseMBTI(2)}>
-          {t('mbti.group.two')}
-        </Button>
-        <br />
-        <Button> {t('mbti.group.three')}</Button>
-        <br />
-        <Button> {t('mbti.group.four')}</Button>
+        <IconButton aria-label="close" onClick={closeMBTI}>
+          <CloseIcon />
+        </IconButton>
+        <div className="body-mbti">
+          <p> {t('mbti.title')}</p>
+          <a href={urlMBTI} target="_black">
+            {t('mbti.survey')}
+          </a>
+          <br />
+          <Button onClick={() => handleChooseMBTI(1)}>
+            {t('mbti.group.one')}
+          </Button>
+          <br />
+          <Button onClick={() => handleChooseMBTI(2)}>
+            {t('mbti.group.two')}
+          </Button>
+          <br />
+          <Button onClick={() => handleChooseMBTI(3)}>
+            {' '}
+            {t('mbti.group.three')}
+          </Button>
+          <br />
+          <Button onClick={() => handleChooseMBTI(4)}>
+            {' '}
+            {t('mbti.group.four')}
+          </Button>
+        </div>
       </div>
       <button className="chatbot">
         <a href="http://localhost:3001/">

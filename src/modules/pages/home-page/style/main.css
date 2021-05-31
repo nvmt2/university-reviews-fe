@@ -254,6 +254,11 @@ label {
 .mbti:hover {
   background-color: #075383;
 }
+.body-mbti > a {
+  border-bottom: 1px solid black;
+  padding: 5px;
+  color: #02366d;
+}
 .mbti-table {
   position: fixed;
   bottom: 45px;
@@ -262,7 +267,7 @@ label {
   padding: 10px 5px;
   border-radius: 5px;
   /* border: none; */
-  background-color: #08639c;
+  background-color: #7498af;
   color: white;
   font-weight: 600;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
@@ -275,10 +280,13 @@ label {
   padding: 13px;
   border-radius: 50px;
   border: none;
-  background-color: #08639c;
+  background-color: #075383;
   color: white;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 .chatbot a {
   color: white;
+}
+.body-mbti {
+  padding-left: 10px;
 }

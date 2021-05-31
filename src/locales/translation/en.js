@@ -318,10 +318,10 @@ export const assetsEnglish = {
     title: 'What personality group do you belong to?',
     survey: 'If not know, press into here',
     group: {
-      one: 'GROUP 1 (JBN, IJTB, IKKJK, HIOO)',
-      two: 'GROUP 2  (JBN, IJTB, IKKJK, HIOO)',
-      three: 'GROUP 3  (JBN, IJTB, IKKJK, HIOO)',
-      four: 'GROUP 4  (JBN, IJTB, IKKJK, HIOO)',
+      one: 'GROUP 1 (ESFP, INFJ)',
+      two: 'GROUP 2  (ISFJ, ISFP, ENFJ, INFP)',
+      three: 'GROUP 3  (INTJ, ENTJ, ENFP, ISTP, ENTP)',
+      four: 'GROUP 4  (ISTJ, ESTJ, ESTP, ESFJ, INTP)',
     },
   },
 };

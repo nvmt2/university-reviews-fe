@@ -317,10 +317,10 @@ export const assetsVietnamese = {
     title: 'Bạn thuộc nhóm tính cách nào?',
     survey: 'Nếu chưa biết, bấm vào đây',
     group: {
-      one: 'NHÓM 1 (JBN, IJTB, IKKJK, HIOO)',
-      two: 'NHÓM 2  (JBN, IJTB, IKKJK, HIOO)',
-      three: 'NHÓM 3  (JBN, IJTB, IKKJK, HIOO)',
-      four: 'NHÓM 4  (JBN, IJTB, IKKJK, HIOO)',
+      one: 'NHÓM 1 (ESFP, INFJ)',
+      two: 'NHÓM 2  (ISFJ, ISFP, ENFJ, INFP)',
+      three: 'NHÓM 3  (INTJ, ENTJ, ENFP, ISTP, ENTP)',
+      four: 'NHÓM 4  (ISTJ, ESTJ, ESTP, ESFJ, INTP)',
     },
   },
 };
