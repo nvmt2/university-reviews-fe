@@ -199,7 +199,7 @@ function HomePage() {
         </div>
       </div>
       <button className="chatbot">
-        <a href="http://localhost:3001/">
+        <a href="http://192.168.1.117:5000/">
           {' '}
           <ChatBubbleIcon />
         </a>
